@@ -1,0 +1,1466 @@
+{
+  "reviewed": "2026-10-19",
+  "sources": {
+    "FR-ROAD": {
+      "id": "FR-ROAD",
+      "actor": "rasamny",
+      "speaker": {
+        "en": "Fayez Rasamny",
+        "ar": "فايز رسامني"
+      },
+      "date": "2026-08-05",
+      "url": "https://raiseyasi.com/رسامني-إعادة-إعمار-الجنوب-تبدأ-من-الأر/",
+      "publisher": {
+        "en": "Rai Siyasi — field visit",
+        "ar": "رأي سياسي — جولة ميدانية"
+      },
+      "summary": {
+        "en": "Rasamny announced a temporary Qaqaiyet crossing, retaining-wall repairs and rehabilitation of damaged southern roads.",
+        "ar": "أعلن رسامني إنشاء معبر مؤقت في القاقعية وترميم حائط الدعم وتأهيل طرق متضررة في الجنوب."
+      },
+      "checked": "2026-10-19"
+    },
+    "FR-WB": {
+      "id": "FR-WB",
+      "actor": "rasamny",
+      "speaker": {
+        "en": "Fayez Rasamny",
+        "ar": "فايز رسامني"
+      },
+      "date": "2026-01-16",
+      "url": "https://gate.ahram.org.eg/News/5461705.aspx",
+      "publisher": {
+        "en": "Al-Ahram / MENA",
+        "ar": "الأهرام / وكالة أنباء الشرق الأوسط"
+      },
+      "summary": {
+        "en": "Rasamny backed cooperation with the World Bank on infrastructure; the meeting agreed practical steps to activate the LEAP reconstruction loan.",
+        "ar": "أيد رسامني التعاون مع البنك الدولي في البنية التحتية، واتُفق في اللقاء على خطوات عملية لتفعيل قرض مشروع المساعدة الطارئة للإعمار."
+      },
+      "checked": "2026-10-19"
+    },
+    "MM-RETURN": {
+      "id": "MM-RETURN",
+      "actor": "menassa",
+      "speaker": {
+        "en": "Michel Menassa",
+        "ar": "ميشال منسى"
+      },
+      "date": "2026-08-05",
+      "url": "https://raiseyasi.com/رسامني-إعادة-إعمار-الجنوب-تبدأ-من-الأر/",
+      "publisher": {
+        "en": "Rai Siyasi — field visit",
+        "ar": "رأي سياسي — جولة ميدانية"
+      },
+      "summary": {
+        "en": "Menassa said restoring state institutions must include basic services that help residents return. The road-project announcements in the same report were Rasamny’s.",
+        "ar": "قال منسى إن عودة مؤسسات الدولة تشمل الخدمات الأساسية لتشجيع عودة السكان. أما إعلانات مشاريع الطرق في الخبر فهي لرسامني."
+      },
+      "checked": "2026-10-19"
+    },
+    "MM-ARMS": {
+      "id": "MM-ARMS",
+      "actor": "menassa",
+      "speaker": {
+        "en": "Michel Menassa",
+        "ar": "ميشال منسى"
+      },
+      "date": "2025-11-05",
+      "url": "https://www.mtv.com.lb/news/1626241",
+      "publisher": {
+        "en": "MTV — Télé Liban interview",
+        "ar": "إم تي في — مقابلة تلفزيون لبنان"
+      },
+      "summary": {
+        "en": "Menassa endorsed the army’s state-arms-control plan and described its first geographic phase south of the Litani.",
+        "ar": "أيد منسى خطة الجيش لحصر السلاح بالدولة وشرح مرحلتها الجغرافية الأولى جنوب الليطاني."
+      },
+      "checked": "2026-10-19"
+    },
+    "NH-RECOVERY": {
+      "id": "NH-RECOVERY",
+      "actor": "hani",
+      "speaker": {
+        "en": "Nizar Hani",
+        "ar": "نزار هاني"
+      },
+      "date": "2025-10-23",
+      "url": "https://www.elnashra.com/news/show/1747018/هاني-نعمل-على-تنفيذ-خارطة-طريق-إصلاحية-وتعزيز-دعم-",
+      "publisher": {
+        "en": "Elnashra — Al-Diyar interview",
+        "ar": "النشرة — مقابلة الديار"
+      },
+      "summary": {
+        "en": "Hani proposed damage surveys, farmer support, agricultural infrastructure repairs and a disaster fund, mobilising domestic and international finance.",
+        "ar": "طرح هاني مسح الأضرار ودعم المزارعين وترميم البنى الزراعية وصندوقاً للكوارث، مع تعبئة التمويل المحلي والدولي."
+      },
+      "checked": "2026-10-19"
+    },
+    "NH-ARMS": {
+      "id": "NH-ARMS",
+      "actor": "hani",
+      "speaker": {
+        "en": "Nizar Hani",
+        "ar": "نزار هاني"
+      },
+      "date": "2025-09-08",
+      "url": "https://www.aljazeeramubasher.net/amp/news/politics/2025/9/8/وزير-لبناني-يكشف-للجزيرة-مباشر-تفاصيل",
+      "publisher": {
+        "en": "Al Jazeera Mubasher — interview",
+        "ar": "الجزيرة مباشر — مقابلة"
+      },
+      "summary": {
+        "en": "Hani supported the army’s five-stage arms-control plan, with dialogue and implementation dependent on capabilities and conditions.",
+        "ar": "أيد هاني خطة الجيش من خمس مراحل لحصر السلاح، مع الحوار وتنفيذ يرتبط بالإمكانات والظروف."
+      },
+      "checked": "2026-10-19"
+    },
+    "HS-RETURN": {
+      "id": "HS-RETURN",
+      "actor": "sayed",
+      "speaker": {
+        "en": "Haneen Sayed",
+        "ar": "حنين السيد"
+      },
+      "date": "2026-07-04",
+      "url": "https://www.elnashra.com/news/show/1789014/السيد-جالت-النبطية-هناك-خطة-كبيرة-لإعادة-الإعمار-و",
+      "publisher": {
+        "en": "Elnashra — Nabatieh visit",
+        "ar": "النشرة — زيارة النبطية"
+      },
+      "summary": {
+        "en": "Sayed proposed temporary housing, restoration of the Nabatieh social-services centre and support for return, while seeking reconstruction finance from friendly states.",
+        "ar": "طرحت السيد مساكن مؤقتة وترميم مركز الشؤون في النبطية ودعم العودة، مع السعي لتمويل الإعمار من دول صديقة وشقيقة."
+      },
+      "checked": "2026-10-19"
+    },
+    "TZ-RECOVERY": {
+      "id": "TZ-RECOVERY",
+      "actor": "zein",
+      "speaker": {
+        "en": "Tamara El Zein",
+        "ar": "تمارا الزين"
+      },
+      "date": "2026-06-24",
+      "url": "https://www.aman-alliance.org/Home/ContentDetail/104417",
+      "publisher": {
+        "en": "NNA / AMAN — Télé Liban interview",
+        "ar": "الوكالة الوطنية / آمان — مقابلة تلفزيون لبنان"
+      },
+      "summary": {
+        "en": "El Zein described rubble-recycling and housing-rehabilitation priorities, World Bank project funding, and the need for both local and international reconstruction finance.",
+        "ar": "شرحت الزين أولويات تدوير الأنقاض وتأهيل المساكن وتمويل مشروع من البنك الدولي والحاجة إلى تمويل إعمار محلي ودولي."
+      },
+      "checked": "2026-10-19"
+    },
+    "RN-HEALTH": {
+      "id": "RN-HEALTH",
+      "actor": "nassereddine",
+      "speaker": {
+        "en": "Rakan Nassereddine",
+        "ar": "ركان ناصر الدين"
+      },
+      "date": "2025-09-30",
+      "url": "https://www.moph.gov.lb/en/Pages/127/80901/nassereddine-continues-his-visit-in-qatar-and-met-the-minister-of-health-the-director-of-the-develop",
+      "publisher": {
+        "en": "Ministry of Public Health",
+        "ar": "وزارة الصحة العامة"
+      },
+      "summary": {
+        "en": "Nassereddine asked Qatar to help rebuild hospitals and primary-care centres damaged in the war and discussed rehabilitation with the Qatar Fund for Development.",
+        "ar": "طلب ناصر الدين مساعدة قطر في إعمار المستشفيات ومراكز الرعاية المتضررة بالحرب وبحث التأهيل مع صندوق قطر للتنمية."
+      },
+      "checked": "2026-10-19"
+    },
+    "MH-LABOUR": {
+      "id": "MH-LABOUR",
+      "actor": "haidar",
+      "speaker": {
+        "en": "Mohammad Haidar",
+        "ar": "محمد حيدر"
+      },
+      "date": "2026-07-04",
+      "url": "https://www.elnashra.com/news/show/1789018/حيدر-اتفاق-الإطار-يبصر-النور-والحكومة-مصرّة-على-إع",
+      "publisher": {
+        "en": "Elnashra — Tyre visit",
+        "ar": "النشرة — زيارة صور"
+      },
+      "summary": {
+        "en": "Haidar called for production and residents’ return and said reconstruction programmes awaited international funding.",
+        "ar": "دعا حيدر إلى استئناف الإنتاج وعودة الأهالي وقال إن برامج الإعمار تنتظر التمويل الدولي."
+      },
+      "checked": "2026-10-19"
+    },
+    "KS-STATE": {
+      "id": "KS-STATE",
+      "actor": "shehadeh",
+      "speaker": {
+        "en": "Kamal Shehadeh",
+        "ar": "كمال شحادة"
+      },
+      "date": "2025-10-23",
+      "url": "https://www.lebanon24.com/news/lebanon/1432989/شحادة-المهجرون-وملف-حصرية-السلاح-أولويات-الدولة",
+      "publisher": {
+        "en": "Lebanon24 / NNA — LBCI interview",
+        "ar": "لبنان٢٤ / الوكالة الوطنية — مقابلة إل بي سي آي"
+      },
+      "summary": {
+        "en": "Shehadeh called for reconstruction through state institutions and exclusive army control of arms. His separate budget request concerned older displacement files and is not coded as war-reconstruction financing.",
+        "ar": "دعا شحادة إلى الإعمار عبر مؤسسات الدولة وحصرية السلاح للجيش. طلبه المنفصل في الموازنة يخص ملفات تهجير قديمة ولا يُصنّف تمويلاً لإعمار الحرب."
+      },
+      "checked": "2026-10-19"
+    },
+    "NF-PROGRAMME": {
+      "id": "NF-PROGRAMME",
+      "actor": "frem",
+      "speaker": {
+        "en": "Neemat Frem",
+        "ar": "نعمة افرام"
+      },
+      "date": "2024-12-12",
+      "url": "https://nna-leb.gov.lb/ar/سياسة/745562/افرام-أعلن-رسميا-ترشحه-لرئاسة-الجمهورية-فجر-جديد-ي",
+      "publisher": {
+        "en": "National News Agency — candidacy statement",
+        "ar": "الوكالة الوطنية — بيان الترشح"
+      },
+      "summary": {
+        "en": "Frem’s presidential programme prioritised reconstruction plans and restricted arms to legitimate forces.",
+        "ar": "جعل برنامج افرام الرئاسي خطط الإعمار أولوية ودعا إلى حصر السلاح بالقوى الشرعية."
+      },
+      "checked": "2026-10-19"
+    },
+    "WW-REBUILD": {
+      "id": "WW-REBUILD",
+      "actor": "wahhab",
+      "speaker": {
+        "en": "Wiam Wahhab",
+        "ar": "وئام وهاب"
+      },
+      "date": "2025-10-21",
+      "url": "https://tawhidarabi.org/archives/236",
+      "publisher": {
+        "en": "Arab Tawhid Party — interview report",
+        "ar": "حزب التوحيد العربي — عرض مقابلة"
+      },
+      "summary": {
+        "en": "Wahhab proposed direct payments to affected families from Iran or other able funders, and a development plan for damaged southern border villages.",
+        "ar": "اقترح وهاب دفع الأموال مباشرة للمتضررين من إيران أو جهات قادرة على التمويل وخطة إنماء للقرى الحدودية المتضررة."
+      },
+      "checked": "2026-10-19"
+    },
+    "ML-JOINT": {
+      "id": "ML-JOINT",
+      "actor": "mmfd-lana",
+      "speaker": {
+        "en": "MMFD & Lana — joint statement",
+        "ar": "مواطنون ومواطنات في دولة وحزب لنا — بيان مشترك"
+      },
+      "date": "2026-07-16",
+      "url": "https://mmfidawla.com/2026/07/16/إتفاق-الإطار-لا-يعبّر-عن-صوت-المواطنين/",
+      "publisher": {
+        "en": "MMFD — joint statement with Lana",
+        "ar": "مواطنون ومواطنات في دولة — بيان مشترك مع لنا"
+      },
+      "summary": {
+        "en": "The two parties called for Hezbollah to relinquish arms through direct political dialogue and an inclusive state framework guaranteeing reconstruction and equal protection.",
+        "ar": "دعا الحزبان إلى تخلي حزب الله عن السلاح عبر حوار سياسي مباشر وإطار جامع للدولة يضمن الإعمار والحماية المتساوية."
+      },
+      "checked": "2026-10-19"
+    },
+    "PY-ARMS": {
+      "id": "PY-ARMS",
+      "actor": "yacoubian",
+      "speaker": {
+        "en": "Paula Yacoubian",
+        "ar": "بولا يعقوبيان"
+      },
+      "date": "2025-02-25",
+      "url": "https://janoubia.com/2025/02/25/بري-رفع-جلسة-مناقشة-البيان-الوزاري-إلى/",
+      "publisher": {
+        "en": "Janoubia — parliamentary speech",
+        "ar": "جنوبية — كلمة نيابية"
+      },
+      "summary": {
+        "en": "Yacoubian called rebuilding necessary and urged removal of non-state arms to prevent repeated destruction.",
+        "ar": "عدّت يعقوبيان الإعمار ضرورياً ودعت إلى نزع السلاح غير الشرعي لتجنب تكرار الدمار."
+      },
+      "checked": "2026-10-19"
+    },
+    "PY-FUNDING": {
+      "id": "PY-FUNDING",
+      "actor": "yacoubian",
+      "speaker": {
+        "en": "Paula Yacoubian",
+        "ar": "بولا يعقوبيان"
+      },
+      "date": "2025-06-29",
+      "url": "https://www.lebanon24.com/news/lebanon/1384299/عن-الشيخ-قاسم-ماذا-قالت-يعقوبيان؟",
+      "publisher": {
+        "en": "Lebanon24 — public statement",
+        "ar": "لبنان٢٤ — تصريح علني"
+      },
+      "summary": {
+        "en": "Yacoubian warned that renewed regional entanglement would deprive Lebanon of rebuilding and Arab and international aid.",
+        "ar": "حذرت يعقوبيان من أن التورط الإقليمي مجدداً يحرم لبنان الإعمار والمساعدات العربية والدولية."
+      },
+      "checked": "2026-10-19"
+    },
+    "HAH-FUND": {
+      "id": "HAH-FUND",
+      "actor": "aboulhosn",
+      "speaker": {
+        "en": "Hadi Aboul Hosn",
+        "ar": "هادي أبو الحسن"
+      },
+      "date": "2025-02-25",
+      "url": "https://janoubia.com/2025/02/25/بري-رفع-جلسة-مناقشة-البيان-الوزاري-إلى/",
+      "publisher": {
+        "en": "Janoubia — parliamentary speech",
+        "ar": "جنوبية — كلمة نيابية"
+      },
+      "summary": {
+        "en": "Aboul Hosn backed a state reconstruction fund with contributions from friendly countries and endorsed state control of arms.",
+        "ar": "أيد أبو الحسن صندوق إعمار تديره الدولة بمساهمات الدول الصديقة وحصر السلاح بالدولة."
+      },
+      "checked": "2026-10-19"
+    },
+    "IK-BUDGET": {
+      "id": "IK-BUDGET",
+      "actor": "kanaan",
+      "speaker": {
+        "en": "Ibrahim Kanaan",
+        "ar": "إبراهيم كنعان"
+      },
+      "date": "2025-12-12",
+      "url": "https://aawsat.com/العالم-العربي/المشرق-العربي/5218755-الدولة-اللبنانية-تنخرط-رسمياً-في-عملية-إعادة-الإعمار-بتمويل",
+      "publisher": {
+        "en": "Asharq Al-Awsat — budget committee",
+        "ar": "الشرق الأوسط — لجنة المال والموازنة"
+      },
+      "summary": {
+        "en": "Kanaan welcomed moving budget reserves to shelter and repairs as an initial state contribution.",
+        "ar": "رحب كنعان بنقل احتياطي من الموازنة للإيواء والترميم كمساهمة أولى للدولة."
+      },
+      "checked": "2026-10-19"
+    },
+    "GAY-FUND": {
+      "id": "GAY-FUND",
+      "actor": "ayoub",
+      "speaker": {
+        "en": "Ghada Ayoub",
+        "ar": "غادة أيوب"
+      },
+      "date": "2025-12-12",
+      "url": "https://aawsat.com/العالم-العربي/المشرق-العربي/5218755-الدولة-اللبنانية-تنخرط-رسمياً-في-عملية-إعادة-الإعمار-بتمويل",
+      "publisher": {
+        "en": "Asharq Al-Awsat — public statement",
+        "ar": "الشرق الأوسط — تصريح علني"
+      },
+      "summary": {
+        "en": "Ayoub advocated a dedicated reconstruction fund under international oversight with external financing, opposing the proposed reserve transfer.",
+        "ar": "دعت أيوب إلى صندوق إعمار بإشراف دولي وتمويل خارجي وعارضت نقل الاعتماد المقترح من الاحتياطي."
+      },
+      "checked": "2026-10-19"
+    },
+    "AK-BUDGET": {
+      "id": "AK-BUDGET",
+      "actor": "khalil",
+      "speaker": {
+        "en": "Ali Hassan Khalil",
+        "ar": "علي حسن خليل"
+      },
+      "date": "2025-12-12",
+      "url": "https://aawsat.com/العالم-العربي/المشرق-العربي/5218755-الدولة-اللبنانية-تنخرط-رسمياً-في-عملية-إعادة-الإعمار-بتمويل",
+      "publisher": {
+        "en": "Asharq Al-Awsat — press conference",
+        "ar": "الشرق الأوسط — مؤتمر صحافي"
+      },
+      "summary": {
+        "en": "Khalil urged a government implementation decision and described the approved shelter allocations as a beginning for reconstruction.",
+        "ar": "طالب خليل بقرار حكومي للتنفيذ وعدّ اعتمادات الإيواء المقررة بداية للإعمار."
+      },
+      "checked": "2026-10-19"
+    },
+    "IM-OCT17": {
+      "id": "IM-OCT17",
+      "actor": "mneimneh",
+      "speaker": {
+        "en": "Ibrahim Mneimneh",
+        "ar": "إبراهيم منيمنة"
+      },
+      "date": "2026-10-17",
+      "url": "https://www.lebanondebate.com/article/889641-الإعمار-يكشف-العجز-نواب-يضعون-الحزب-أمام-مسؤوليته",
+      "publisher": {
+        "en": "Lebanon Debate — Asharq Al-Awsat interview",
+        "ar": "ليبانون ديبايت — مقابلة الشرق الأوسط"
+      },
+      "summary": {
+        "en": "Mneimneh supported state-led rebuilding, called for implementing government arms-control decisions and said donors feared funding reconstruction followed by another war.",
+        "ar": "أيد منيمنة إعماراً تقوده الدولة ودعا إلى تنفيذ قرارات حصر السلاح وقال إن المانحين يخشون تمويل الإعمار ثم اندلاع حرب جديدة."
+      },
+      "checked": "2026-10-19"
+    },
+    "HF-ARMS26": {
+      "id": "HF-ARMS26",
+      "actor": "fadlallah",
+      "speaker": {
+        "en": "Hassan Fadlallah",
+        "ar": "حسن فضل الله"
+      },
+      "date": "2026-06-27",
+      "url": "https://www.independentarabia.com/node/652081/سياسة/متابعات/اتفاق-إطار-بين-لبنان-وإسرائيل-ونتنياهو-لن-ننسحب-قبل-نزع-سلاح-حزب-الله",
+      "publisher": {
+        "en": "Independent Arabia / agencies",
+        "ar": "اندبندنت عربية / وكالات"
+      },
+      "summary": {
+        "en": "Fadlallah explicitly said Hezbollah would retain its arms and oppose state implementation of disarmament commitments.",
+        "ar": "قال فضل الله صراحة إن حزب الله سيتمسك بسلاحه ويعارض تنفيذ الدولة التزامات نزع السلاح."
+      },
+      "checked": "2026-10-19"
+    },
+    "HJ-BRIDGES": {
+      "id": "HJ-BRIDGES",
+      "actor": "jishi",
+      "speaker": {
+        "en": "Hussein Jishi",
+        "ar": "حسين جشي"
+      },
+      "date": "2026-06-27",
+      "url": "https://www.mtv.com.lb/news/1711692",
+      "publisher": {
+        "en": "MTV — Tyre meeting",
+        "ar": "إم تي في — لقاء صور"
+      },
+      "summary": {
+        "en": "Jishi prioritised displaced residents and proposed fast procurement to build permanent bridges during summer.",
+        "ar": "أعطى جشي الأولوية للنازحين واقترح تلزيماً سريعاً لبناء جسور دائمة خلال الصيف."
+      },
+      "checked": "2026-10-19"
+    },
+    "HJ-ARMS": {
+      "id": "HJ-ARMS",
+      "actor": "jishi",
+      "speaker": {
+        "en": "Hussein Jishi",
+        "ar": "حسين جشي"
+      },
+      "date": "2025-07-21",
+      "url": "https://arabicradio.net/news/209041",
+      "publisher": {
+        "en": "IRIB Arabic radio — speech report",
+        "ar": "إذاعة إيران بالعربية — نقل كلمة"
+      },
+      "summary": {
+        "en": "Jishi opposed giving up Hezbollah’s weapons and rejected exchanging them for American promises.",
+        "ar": "رفض جشي التخلي عن سلاح حزب الله ومقايضته بوعود أميركية."
+      },
+      "checked": "2026-10-19"
+    },
+    "AKH-HOUSING": {
+      "id": "AKH-HOUSING",
+      "actor": "khreis",
+      "speaker": {
+        "en": "Ali Khreis",
+        "ar": "علي خريس"
+      },
+      "date": "2026-06-27",
+      "url": "https://www.mtv.com.lb/news/1711692",
+      "publisher": {
+        "en": "MTV — Tyre meeting",
+        "ar": "إم تي في — لقاء صور"
+      },
+      "summary": {
+        "en": "Khreis called on the state to provide prefabricated housing and, if possible, rent allowances, and urged rapid rehabilitation of Qasmiyeh bridge.",
+        "ar": "طالب خريس الدولة بتأمين مساكن جاهزة وبدلات إيجار إن أمكن والإسراع في تأهيل جسر القاسمية."
+      },
+      "checked": "2026-10-19"
+    },
+    "HHH-BUDGET": {
+      "id": "HHH-BUDGET",
+      "actor": "hajjhassan",
+      "speaker": {
+        "en": "Hussein Hajj Hassan",
+        "ar": "حسين الحاج حسن"
+      },
+      "date": "2026-10-06",
+      "url": "https://jabalamel.org/الحاج-حسن-مشروع-إنهاء-المقاومة-لم-يحقق/",
+      "publisher": {
+        "en": "Jabal Amel — Halabta speech report",
+        "ar": "شبكة جبل عامل — نقل كلمة حلبتا"
+      },
+      "summary": {
+        "en": "Hajj Hassan demanded actual budget allocations for reconstruction, repairs and shelter, and pledged parliamentary opposition to their absence.",
+        "ar": "طالب الحاج حسن باعتمادات فعلية للإعمار والترميم والإيواء وتعهد بمعارضة غيابها في البرلمان."
+      },
+      "checked": "2026-10-19"
+    },
+    "HHH-ARMS": {
+      "id": "HHH-ARMS",
+      "actor": "hajjhassan",
+      "speaker": {
+        "en": "Hussein Hajj Hassan",
+        "ar": "حسين الحاج حسن"
+      },
+      "date": "2026-07-01",
+      "url": "https://www.almanartv.com.lb/article/990807/",
+      "publisher": {
+        "en": "Al-Manar — speech report",
+        "ar": "المنار — نقل كلمة"
+      },
+      "summary": {
+        "en": "Hajj Hassan explicitly said Hezbollah would not initiate handing over its weapons.",
+        "ar": "قال الحاج حسن صراحة إن حزب الله لن يبادر إلى تسليم سلاحه."
+      },
+      "checked": "2026-10-19"
+    },
+    "MD-ARMS26": {
+      "id": "MD-ARMS26",
+      "actor": "daou",
+      "speaker": {
+        "en": "Mark Daou",
+        "ar": "مارك ضو"
+      },
+      "date": "2026-09-15",
+      "url": "https://www.lebanon24.com/news/articles/1571854/lebanon24",
+      "publisher": {
+        "en": "Lebanon24 — parliamentary speech",
+        "ar": "لبنان٢٤ — كلمة نيابية"
+      },
+      "summary": {
+        "en": "Daou urged firm army implementation of exclusive state arms control, arguing that continued dialogue had not delivered it.",
+        "ar": "دعا ضو إلى تنفيذ حازم عبر الجيش لحصرية السلاح بالدولة معتبراً أن الحوار لم يحققها."
+      },
+      "checked": "2026-10-19"
+    },
+    "MMO-RETURN": {
+      "id": "MMO-RETURN",
+      "actor": "moawad",
+      "speaker": {
+        "en": "Michel Moawad",
+        "ar": "ميشال معوض"
+      },
+      "date": "2026-06-23",
+      "url": "https://www.mtv.com.lb/news/محليات/1710241/معو-ض--كل-الدعم-لمسار-المفاوضات-المباشرة",
+      "publisher": {
+        "en": "MTV — public statement",
+        "ar": "إم تي في — تصريح علني"
+      },
+      "summary": {
+        "en": "Moawad supported negotiations and restoring Arab, international and diaspora confidence to enable reconstruction and economic recovery.",
+        "ar": "أيد معوض التفاوض واستعادة الثقة العربية والدولية وثقة الانتشار بما يتيح الإعمار والتعافي الاقتصادي."
+      },
+      "checked": "2026-10-19"
+    },
+    "MMO-ARMS": {
+      "id": "MMO-ARMS",
+      "actor": "moawad",
+      "speaker": {
+        "en": "Michel Moawad",
+        "ar": "ميشال معوض"
+      },
+      "date": "2026-03-04",
+      "url": "https://aawsat.com/العالم-العربي/المشرق-العربي/5247547-لبنان-يبذل-مزيداً-من-الجهود-لوقف-الحرب-وحظر-نشاط-حزب-الله",
+      "publisher": {
+        "en": "Asharq Al-Awsat — Serail statement",
+        "ar": "الشرق الأوسط — تصريح السراي"
+      },
+      "summary": {
+        "en": "Moawad called for swift implementation of the government’s decision on Hezbollah’s military activity and state control of arms.",
+        "ar": "دعا معوض إلى الإسراع بتنفيذ قرار الحكومة بشأن النشاط العسكري لحزب الله وحصر السلاح بيد الدولة."
+      },
+      "checked": "2026-10-19"
+    },
+    "TF-DIALOGUE25": {
+      "id": "TF-DIALOGUE25",
+      "actor": "tony",
+      "speaker": {
+        "en": "Tony Frangieh",
+        "ar": "طوني فرنجية"
+      },
+      "date": "2025-04-09",
+      "url": "https://www.imlebanon.org/2025/04/09/tony-franjiyeh/",
+      "publisher": {
+        "en": "IMLebanon — LBCI interview",
+        "ar": "آي إم ليبانون — مقابلة إل بي سي آي"
+      },
+      "summary": {
+        "en": "Frangieh urged support for the army in controlling weapons and a domestic dialogue with the president. He called reconstruction of the South and residents’ return priorities.",
+        "ar": "دعا فرنجية إلى مساندة الجيش في حصر السلاح وحوار داخلي مع رئيس الجمهورية، وجعل إعمار الجنوب وعودة السكان من الأولويات."
+      },
+      "checked": "2026-10-19"
+    },
+    "SH-STATE25": {
+      "id": "SH-STATE25",
+      "actor": "hariri",
+      "speaker": {
+        "en": "Saad Hariri",
+        "ar": "سعد الحريري"
+      },
+      "date": "2025-02-14",
+      "url": "https://www.alaraby.co.uk/politics/سعد-الحريري-يعلن-عودة-تياره-إلى-الحياة-السياسية",
+      "publisher": {
+        "en": "Al-Araby Al-Jadeed — speech report",
+        "ar": "العربي الجديد — تغطية خطاب"
+      },
+      "summary": {
+        "en": "Hariri backed the new presidency and government, exclusive arms possession by the army and state institutions, rebuilding and renewed Arab relationships.",
+        "ar": "أيد الحريري العهد والحكومة وحصر حمل السلاح بالجيش ومؤسسات الدولة، ودعا إلى الإعمار وتجديد العلاقات العربية."
+      },
+      "checked": "2026-10-19"
+    },
+    "NM-PARIS24": {
+      "id": "NM-PARIS24",
+      "actor": "mikati",
+      "speaker": {
+        "en": "Najib Mikati",
+        "ar": "نجيب ميقاتي"
+      },
+      "date": "2024-10-24",
+      "url": "https://pcm.gov.lb/arabic/subpg.aspx?pageid=24841",
+      "publisher": {
+        "en": "Presidency of the Council of Ministers — Paris conference",
+        "ar": "رئاسة مجلس الوزراء — مؤتمر باريس"
+      },
+      "summary": {
+        "en": "Mikati called for international financing to rebuild transport, electricity, water and telecommunications infrastructure and remove rubble, alongside humanitarian support.",
+        "ar": "دعا ميقاتي إلى تمويل دولي لإعادة بناء النقل والكهرباء والمياه والاتصالات وإزالة الأنقاض، إلى جانب المساعدات الإنسانية."
+      },
+      "checked": "2026-10-19"
+    },
+    "AT-RETURN26": {
+      "id": "AT-RETURN26",
+      "actor": "trabulsi",
+      "speaker": {
+        "en": "Adnan Traboulsi",
+        "ar": "عدنان طرابلسي"
+      },
+      "date": "2026-04-16",
+      "url": "https://almarkazia.com/ar/النائب-عدنان-طرابلسي-في-مؤتمر-لنواب-بيروت-1",
+      "publisher": {
+        "en": "Al-Markazia — Beirut MPs press conference",
+        "ar": "المركزية — مؤتمر نواب بيروت"
+      },
+      "summary": {
+        "en": "Traboulsi called for an immediate ceasefire, extending state authority across Lebanon and serious work on reconstruction. The report does not specify a financing channel or an explicit arms arrangement.",
+        "ar": "طالب طرابلسي بوقف فوري لإطلاق النار وبسط سلطة الدولة على كل لبنان والعمل الجاد على الإعمار. لا يحدد الخبر قناة تمويل أو ترتيباً صريحاً للسلاح."
+      },
+      "checked": "2026-10-19"
+    },
+    "LH-JAN25": {
+      "id": "LH-JAN25",
+      "actor": "lihaqqi-bouhamdan",
+      "speaker": {
+        "en": "Raed Bou Hamdan",
+        "ar": "رائد بو حمدان"
+      },
+      "date": "2025-01-07",
+      "url": "https://lihaqqi.org/سقوط-النظام-في-سوريا-ولبنان/",
+      "publisher": {
+        "en": "Lihaqqi — signed article",
+        "ar": "لحقي — مقال موقّع"
+      },
+      "summary": {
+        "en": "In an article on Lihaqqi’s website, Bou Hamdan calls for the government to manage reconstruction in the South, Bekaa and southern suburbs and compensate affected families. He calls for all Lebanese-party and Palestinian-faction weapons to be handed to the army. He does not identify the reconstruction funding source.",
+        "ar": "في مقال على موقع لحقي، يدعو بو حمدان الحكومة إلى إدارة إعمار الجنوب والبقاع والضاحية وتعويض العائلات المتضررة، ووضع سلاح الأحزاب اللبنانية والفصائل الفلسطينية بيد الجيش. لا يحدد مصدر تمويل الإعمار."
+      },
+      "checked": "2026-10-19"
+    },
+    "NB-JUN26": {
+      "id": "NB-JUN26",
+      "actor": "hijazi",
+      "speaker": {
+        "en": "Ali Hijazi — joint meeting with Asaad Hardan",
+        "ar": "علي حجازي — لقاء مشترك مع أسعد حردان"
+      },
+      "date": "2026-06-09",
+      "url": "https://www.almanartv.com.lb/article/934997/",
+      "publisher": {
+        "en": "Al-Manar — meeting report",
+        "ar": "المنار — خبر اللقاء"
+      },
+      "summary": {
+        "en": "The meeting of National Banner leader Ali Hijazi and SSNP leader Asaad Hardan called for residents’ return and the launch of reconstruction alongside ending attacks and occupation. The report does not specify a financing channel or a position on state ownership of weapons.",
+        "ar": "دعا لقاء رئيس الراية الوطني علي حجازي ورئيس القومي أسعد حردان إلى عودة الأهالي وإطلاق ورشة الإعمار، بالتوازي مع وقف الاعتداءات وإنهاء الاحتلال. لا يحدد الخبر قناة تمويل أو موقفاً من حصر السلاح بالدولة."
+      },
+      "checked": "2026-10-19"
+    },
+    "GR-JUN25": {
+      "id": "GR-JUN25",
+      "actor": "abiallam",
+      "speaker": {
+        "en": "Fadi Abi Allam",
+        "ar": "فادي أبي علام"
+      },
+      "date": "2025-06-06",
+      "url": "https://khiyam.com/news/article.php?articleID=51706",
+      "publisher": {
+        "en": "Khiyam — reconstruction forum report",
+        "ar": "خيامكم — خبر لقاء الإعمار"
+      },
+      "summary": {
+        "en": "Green Party leader Fadi Abi Allam co-convened a reconstruction forum and called for finding new ways to rebuild after presenting the losses. The donor fund and other proposals in the report are collective participants’ recommendations, not separately attributed to Abi Allam.",
+        "ar": "شارك رئيس حزب الخضر فادي أبي علام في الدعوة إلى لقاء عن الإعمار، وعرض الخسائر ودعا إلى إيجاد سبل جديدة لإعادة البناء. اقتراحات صندوق التبرعات وسائر التوصيات في الخبر صادرة عن المشاركين مجتمعين، وليست منسوبة منفردة إلى أبي علام."
+      },
+      "checked": "2026-10-19"
+    },
+    "ZT-SEP26": {
+      "id": "ZT-SEP26",
+      "actor": "zakitaha",
+      "speaker": {
+        "en": "Zaki Taha",
+        "ar": "زكي طه"
+      },
+      "date": "2026-09-16",
+      "url": "https://bey-alhouryeh.com/الكلمة-التي-القاها-الرفيق-زكي-طه-في-الن/",
+      "publisher": {
+        "en": "Beirut Al-Houryeh — speech transcript",
+        "ar": "بيروت الحرية — نص المداخلة"
+      },
+      "summary": {
+        "en": "In his 16 September 2026 speech, executive-bureau head Zaki Taha puts return and reconstruction among the priorities of a unified Lebanese position. He calls for a democratic state with exclusive control of weapons and war-and-peace decisions, while rejecting external domination. No reconstruction funding channel is specified.",
+        "ar": "في مداخلته بتاريخ ١٦ أيلول ٢٠٢٦، يضع رئيس المكتب التنفيذي زكي طه العودة والإعمار ضمن أولويات موقف لبناني موحد، ويدعو إلى دولة ديمقراطية تحتكر السلاح وقرار الحرب والسلم، مع رفض الوصاية الخارجية. لا يحدد قناة لتمويل الإعمار."
+      },
+      "checked": "2026-10-19"
+    }
+  },
+  "codes": {
+    "rasamny": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "FR-ROAD"
+        ],
+        "reason": {
+          "en": "Specifies bridge crossings, road repairs and a 2026 road project.",
+          "ar": "يحدد معابر للجسور وإصلاح الطرق ومشروعاً ضمن برنامج عام ٢٠٢٦."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "FR-WB"
+        ],
+        "reason": {
+          "en": "Supports World Bank financing and international infrastructure partners.",
+          "ar": "يؤيد تمويل البنك الدولي والشراكة الدولية لتأهيل البنية التحتية."
+        }
+      }
+    },
+    "menassa": {
+      "reconstruction": {
+        "value": 1,
+        "sources": [
+          "MM-RETURN"
+        ],
+        "reason": {
+          "en": "Supports restoring services and residents’ return.",
+          "ar": "يؤيد استعادة الخدمات وعودة السكان."
+        }
+      },
+      "arms": {
+        "value": 2,
+        "sources": [
+          "MM-ARMS"
+        ],
+        "reason": {
+          "en": "Supports implementation through the army’s geographic phases.",
+          "ar": "يؤيد التنفيذ عبر المراحل الجغرافية لخطة الجيش."
+        }
+      }
+    },
+    "hani": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "NH-RECOVERY"
+        ],
+        "reason": {
+          "en": "Sets out agricultural repairs, documented compensation and a disaster fund.",
+          "ar": "يطرح ترميم البنى الزراعية وتعويضات موثقة وصندوقاً للكوارث."
+        }
+      },
+      "financing": {
+        "value": 2,
+        "sources": [
+          "NH-RECOVERY"
+        ],
+        "reason": {
+          "en": "Explicitly seeks domestic and international recovery funding.",
+          "ar": "يطلب صراحة تمويلاً محلياً ودولياً للتعافي."
+        }
+      },
+      "arms": {
+        "value": 2,
+        "sources": [
+          "NH-ARMS"
+        ],
+        "reason": {
+          "en": "Endorses phased state control with continuing political dialogue.",
+          "ar": "يؤيد الحصر المرحلي للسلاح مع استمرار الحوار السياسي."
+        }
+      }
+    },
+    "sayed": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "HS-RETURN"
+        ],
+        "reason": {
+          "en": "Names housing arrangements and reconstruction of a public service centre.",
+          "ar": "تحدد حلولاً للسكن وإعادة تأهيل مركز للخدمات العامة."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "HS-RETURN"
+        ],
+        "reason": {
+          "en": "Seeks reconstruction finance from friendly and Arab states.",
+          "ar": "تطلب تمويلاً للإعمار من دول صديقة وشقيقة."
+        }
+      }
+    },
+    "zein": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "TZ-RECOVERY"
+        ],
+        "reason": {
+          "en": "Specifies rubble reuse and a methodology for housing rehabilitation.",
+          "ar": "تحدد إعادة استعمال الأنقاض ومنهجية تأهيل المساكن."
+        }
+      },
+      "financing": {
+        "value": 2,
+        "sources": [
+          "TZ-RECOVERY"
+        ],
+        "reason": {
+          "en": "Explicitly combines local and international funding needs.",
+          "ar": "تجمع صراحة بين الحاجة إلى التمويل المحلي والدولي."
+        }
+      }
+    },
+    "nassereddine": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "RN-HEALTH"
+        ],
+        "reason": {
+          "en": "Requests rebuilding of damaged hospitals and primary-care centres.",
+          "ar": "يطلب إعادة بناء المستشفيات ومراكز الرعاية المتضررة."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "RN-HEALTH"
+        ],
+        "reason": {
+          "en": "Seeks Qatari support for reconstruction of health facilities.",
+          "ar": "يطلب دعماً قطرياً لإعمار المنشآت الصحية."
+        }
+      }
+    },
+    "haidar": {
+      "reconstruction": {
+        "value": 2,
+        "sources": [
+          "MH-LABOUR"
+        ],
+        "reason": {
+          "en": "Urges the launch of rebuilding and restoration of production.",
+          "ar": "يدعو إلى إطلاق الإعمار واستعادة الإنتاج."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "MH-LABOUR"
+        ],
+        "reason": {
+          "en": "Identifies international financing as necessary to implement the plans.",
+          "ar": "يحدد التمويل الدولي شرطاً لتنفيذ الخطط."
+        }
+      }
+    },
+    "shehadeh": {
+      "reconstruction": {
+        "value": 1,
+        "sources": [
+          "KS-STATE"
+        ],
+        "reason": {
+          "en": "Supports reconstruction through state institutions.",
+          "ar": "يؤيد الإعمار عبر مؤسسات الدولة."
+        }
+      },
+      "arms": {
+        "value": 3,
+        "sources": [
+          "KS-STATE"
+        ],
+        "reason": {
+          "en": "Calls for exclusive army arms control and faster implementation.",
+          "ar": "يدعو إلى حصرية السلاح للجيش وتسريع التنفيذ."
+        }
+      }
+    },
+    "frem": {
+      "reconstruction": {
+        "value": 2,
+        "sources": [
+          "NF-PROGRAMME"
+        ],
+        "reason": {
+          "en": "Names reconstruction among the programme’s priorities.",
+          "ar": "يضع الإعمار ضمن أولويات البرنامج."
+        }
+      },
+      "arms": {
+        "value": 3,
+        "sources": [
+          "NF-PROGRAMME"
+        ],
+        "reason": {
+          "en": "Commits to arms held only by legitimate forces.",
+          "ar": "يلتزم بحصر السلاح بالقوى الشرعية."
+        }
+      }
+    },
+    "wahhab": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "WW-REBUILD"
+        ],
+        "reason": {
+          "en": "Proposes direct rebuilding payments and a southern development plan.",
+          "ar": "يقترح دفعات مباشرة للإعمار وخطة إنماء للجنوب."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "WW-REBUILD"
+        ],
+        "reason": {
+          "en": "Explicitly proposes Iranian financing; no pledge is established.",
+          "ar": "يقترح صراحة تمويلاً إيرانياً؛ ولا يثبت التصريح وجود تعهد."
+        }
+      }
+    },
+    "mmfd-lana": {
+      "reconstruction": {
+        "value": 1,
+        "sources": [
+          "ML-JOINT"
+        ],
+        "reason": {
+          "en": "Calls for equal reconstruction guarantees across regions.",
+          "ar": "يدعو إلى ضمانات متساوية للإعمار بين المناطق."
+        }
+      },
+      "arms": {
+        "value": 2,
+        "sources": [
+          "ML-JOINT"
+        ],
+        "reason": {
+          "en": "Calls for negotiated disarmament and sole army defence responsibilities.",
+          "ar": "يدعو إلى نزع السلاح بالتفاوض وتولي الجيش وحده الدفاع."
+        }
+      }
+    },
+    "yacoubian": {
+      "reconstruction": {
+        "value": 2,
+        "sources": [
+          "PY-ARMS"
+        ],
+        "reason": {
+          "en": "Calls reconstruction a necessity.",
+          "ar": "تعدّ الإعمار ضرورة."
+        }
+      },
+      "arms": {
+        "value": 3,
+        "sources": [
+          "PY-ARMS"
+        ],
+        "reason": {
+          "en": "Explicitly calls for removal of non-state arms.",
+          "ar": "تدعو صراحة إلى نزع السلاح غير الشرعي."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "PY-FUNDING"
+        ],
+        "reason": {
+          "en": "Seeks access to Arab and international reconstruction assistance.",
+          "ar": "تدعو إلى إتاحة المساعدات العربية والدولية للإعمار."
+        }
+      }
+    },
+    "aboulhosn": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "HAH-FUND"
+        ],
+        "reason": {
+          "en": "Backs a dedicated state reconstruction fund.",
+          "ar": "يؤيد صندوقاً حكومياً مخصصاً للإعمار."
+        }
+      },
+      "arms": {
+        "value": 3,
+        "sources": [
+          "HAH-FUND"
+        ],
+        "reason": {
+          "en": "Endorses state control of arms.",
+          "ar": "يؤيد حصر السلاح بيد الدولة."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "HAH-FUND"
+        ],
+        "reason": {
+          "en": "Supports contributions from friendly countries.",
+          "ar": "يؤيد مساهمات الدول الصديقة."
+        }
+      }
+    },
+    "kanaan": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "IK-BUDGET"
+        ],
+        "reason": {
+          "en": "Backs a specified reserve transfer for shelter and repairs.",
+          "ar": "يؤيد نقل اعتماد من الاحتياطي للإيواء والترميم."
+        }
+      },
+      "financing": {
+        "value": 1,
+        "sources": [
+          "IK-BUDGET"
+        ],
+        "reason": {
+          "en": "Supports a state-budget contribution.",
+          "ar": "يؤيد مساهمة من الموازنة العامة."
+        }
+      }
+    },
+    "ayoub": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "GAY-FUND"
+        ],
+        "reason": {
+          "en": "Proposes a dedicated, externally supervised fund.",
+          "ar": "تقترح صندوقاً مخصصاً بإشراف دولي."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "GAY-FUND"
+        ],
+        "reason": {
+          "en": "Calls for external funding instead of the proposed budget transfer.",
+          "ar": "تدعو إلى تمويل خارجي بدلاً من نقل الاعتماد المقترح."
+        }
+      }
+    },
+    "khalil": {
+      "financing": {
+        "value": 1,
+        "sources": [
+          "AK-BUDGET"
+        ],
+        "reason": {
+          "en": "Supports the approved state allocations for shelter as an initial step.",
+          "ar": "يؤيد الاعتمادات الحكومية المقررة للإيواء كخطوة أولى."
+        }
+      }
+    },
+    "mneimneh": {
+      "reconstruction": {
+        "value": 1,
+        "sources": [
+          "IM-OCT17"
+        ],
+        "reason": {
+          "en": "Supports state-led reconstruction with security prerequisites.",
+          "ar": "يؤيد إعماراً تقوده الدولة مع شروط أمنية."
+        }
+      },
+      "arms": {
+        "value": 3,
+        "sources": [
+          "IM-OCT17"
+        ],
+        "reason": {
+          "en": "Calls for implementation of state arms-control decisions.",
+          "ar": "يدعو إلى تنفيذ قرارات الدولة بحصر السلاح."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "IM-OCT17"
+        ],
+        "reason": {
+          "en": "Discusses donor-funded reconstruction and the conditions for it.",
+          "ar": "يناقش إعماراً بتمويل المانحين وشروطه."
+        }
+      }
+    },
+    "fadlallah": {
+      "arms": {
+        "value": 1,
+        "sources": [
+          "HF-ARMS26"
+        ],
+        "reason": {
+          "en": "Explicitly defends retaining Hezbollah’s weapons.",
+          "ar": "يدافع صراحة عن الاحتفاظ بسلاح حزب الله."
+        }
+      }
+    },
+    "jishi": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "HJ-BRIDGES"
+        ],
+        "reason": {
+          "en": "Proposes accelerated procurement of permanent bridges.",
+          "ar": "يقترح تسريع تلزيم الجسور الدائمة."
+        }
+      },
+      "arms": {
+        "value": 1,
+        "sources": [
+          "HJ-ARMS"
+        ],
+        "reason": {
+          "en": "Explicitly rejects relinquishing Hezbollah’s weapons.",
+          "ar": "يرفض صراحة التخلي عن سلاح حزب الله."
+        }
+      }
+    },
+    "khreis": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "AKH-HOUSING"
+        ],
+        "reason": {
+          "en": "Calls for housing, rent allowances and a named bridge repair.",
+          "ar": "يطلب مساكن وبدلات إيجار وتأهيل جسر محدد."
+        }
+      },
+      "financing": {
+        "value": 1,
+        "sources": [
+          "AKH-HOUSING"
+        ],
+        "reason": {
+          "en": "Asks the state to cover housing and rent support.",
+          "ar": "يطلب من الدولة توفير دعم السكن والإيجار."
+        }
+      }
+    },
+    "hajjhassan": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "HHH-BUDGET"
+        ],
+        "reason": {
+          "en": "Demands explicit allocations for rebuilding, repairs and shelter.",
+          "ar": "يطالب باعتمادات صريحة للإعمار والترميم والإيواء."
+        }
+      },
+      "financing": {
+        "value": 1,
+        "sources": [
+          "HHH-BUDGET"
+        ],
+        "reason": {
+          "en": "Calls for reconstruction funding in the state budget.",
+          "ar": "يطالب بتمويل الإعمار في الموازنة العامة."
+        }
+      },
+      "arms": {
+        "value": 1,
+        "sources": [
+          "HHH-ARMS"
+        ],
+        "reason": {
+          "en": "Rejects handing over Hezbollah’s weapons.",
+          "ar": "يرفض تسليم سلاح حزب الله."
+        }
+      }
+    },
+    "daou": {
+      "arms": {
+        "value": 3,
+        "sources": [
+          "MD-ARMS26"
+        ],
+        "reason": {
+          "en": "Calls for firm implementation of exclusive state arms control.",
+          "ar": "يدعو إلى تنفيذ حازم لحصرية السلاح بالدولة."
+        }
+      }
+    },
+    "moawad": {
+      "reconstruction": {
+        "value": 1,
+        "sources": [
+          "MMO-RETURN"
+        ],
+        "reason": {
+          "en": "Supports rebuilding through security and restored external confidence.",
+          "ar": "يؤيد الإعمار عبر الاستقرار واستعادة الثقة الخارجية."
+        }
+      },
+      "arms": {
+        "value": 3,
+        "sources": [
+          "MMO-ARMS"
+        ],
+        "reason": {
+          "en": "Calls for swift implementation of exclusive state arms control.",
+          "ar": "يدعو إلى الإسراع بتنفيذ حصر السلاح بالدولة."
+        }
+      }
+    },
+    "tony": {
+      "arms": {
+        "value": 2,
+        "sources": [
+          "TF-DIALOGUE25"
+        ],
+        "reason": {
+          "en": "Calls for army-led arms control through domestic dialogue and a clear implementation path.",
+          "ar": "يدعو إلى حصر السلاح بقيادة الجيش عبر حوار داخلي ومسار تنفيذ واضح."
+        }
+      }
+    },
+    "hariri": {
+      "arms": {
+        "value": 3,
+        "sources": [
+          "SH-STATE25"
+        ],
+        "reason": {
+          "en": "Explicitly places weapons in the hands of the army and legitimate state forces.",
+          "ar": "يحصر السلاح صراحة بالجيش والقوى الشرعية."
+        }
+      }
+    },
+    "mikati": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "NM-PARIS24"
+        ],
+        "reason": {
+          "en": "Identifies sectors and a financing mechanism for post-war rebuilding.",
+          "ar": "يحدد القطاعات وآلية التمويل لإعادة البناء بعد الحرب."
+        }
+      },
+      "financing": {
+        "value": 3,
+        "sources": [
+          "NM-PARIS24"
+        ],
+        "reason": {
+          "en": "Explicitly requests international reconstruction funding.",
+          "ar": "يطلب صراحة تمويلاً دولياً لإعادة الإعمار."
+        }
+      }
+    },
+    "trabulsi": {
+      "reconstruction": {
+        "value": 2,
+        "sources": [
+          "AT-RETURN26"
+        ],
+        "reason": {
+          "en": "Calls for serious reconstruction work alongside a ceasefire and restoring state authority.",
+          "ar": "يدعو إلى عمل جاد على الإعمار مع وقف إطلاق النار واستعادة سلطة الدولة."
+        }
+      }
+    },
+    "lihaqqi-bouhamdan": {
+      "reconstruction": {
+        "value": 3,
+        "sources": [
+          "LH-JAN25"
+        ],
+        "reason": {
+          "en": "Proposes government-led reconstruction and compensation for human and property losses.",
+          "ar": "يطرح إدارة حكومية للإعمار وتعويض الأضرار البشرية والمادية."
+        }
+      },
+      "arms": {
+        "value": 3,
+        "sources": [
+          "LH-JAN25"
+        ],
+        "reason": {
+          "en": "Explicitly calls for all party and faction weapons to be held by the Lebanese army.",
+          "ar": "يدعو صراحة إلى وضع كل سلاح الأحزاب والفصائل بيد الجيش اللبناني."
+        }
+      }
+    },
+    "hijazi": {
+      "reconstruction": {
+        "value": 2,
+        "sources": [
+          "NB-JUN26"
+        ],
+        "reason": {
+          "en": "Calls for launching reconstruction and enabling residents to return as national priorities.",
+          "ar": "يدعو إلى إطلاق الإعمار وعودة الأهالي ضمن الأولويات الوطنية."
+        }
+      }
+    },
+    "abiallam": {
+      "reconstruction": {
+        "value": 1,
+        "sources": [
+          "GR-JUN25"
+        ],
+        "reason": {
+          "en": "Calls for finding ways to reconstruct; the report does not attribute a specific implementation plan to him.",
+          "ar": "يدعو إلى إيجاد سبل للإعمار؛ ولا ينسب الخبر إليه منفرداً خطة تنفيذ محددة."
+        }
+      }
+    },
+    "zakitaha": {
+      "reconstruction": {
+        "value": 2,
+        "sources": [
+          "ZT-SEP26"
+        ],
+        "reason": {
+          "en": "Names residents’ return and reconstruction among the foremost national objectives.",
+          "ar": "يضع عودة المهجرين والإعمار في مقدمة الأهداف الوطنية."
+        }
+      },
+      "arms": {
+        "value": 3,
+        "sources": [
+          "ZT-SEP26"
+        ],
+        "reason": {
+          "en": "Explicitly calls for a state monopoly over weapons and decisions on war and peace.",
+          "ar": "يدعو صراحة إلى احتكار الدولة السلاح وقرار الحرب والسلم."
+        }
+      }
+    }
+  },
+  "mpActors": {
+    "27": "khreis",
+    "110": "kanaan",
+    "165": "hajjhassan",
+    "279": "jishi",
+    "284": "frem",
+    "297": "moawad",
+    "306": "yacoubian",
+    "325": "aboulhosn",
+    "340": "mneimneh",
+    "378": "ayoub",
+    "312": "trabulsi"
+  },
+  "representatives": {
+    "projectwatan": "frem",
+    "mmfd": "mmfd-lana",
+    "lana": "mmfd-lana",
+    "tawhid": "wahhab",
+    "independence": "moawad",
+    "azm": "mikati",
+    "ahbash": "trabulsi",
+    "lihaqqi": "lihaqqi-bouhamdan",
+    "banner": "hijazi",
+    "green": "abiallam",
+    "communistaction": "zakitaha"
+  },
+  "partyScopes": {
+    "lana": {
+      "en": "Joint MMFD–Lana statement. It is not assigned to any MP as a personal statement.",
+      "ar": "بيان مشترك لمواطنون ومواطنات في دولة وحزب لنا. لا يُنسب إلى أي نائب كموقف شخصي."
+    },
+    "mmfd": {
+      "en": "Joint MMFD–Lana statement. It is not assigned to any MP as a personal statement.",
+      "ar": "بيان مشترك لمواطنون ومواطنات في دولة وحزب لنا. لا يُنسب إلى أي نائب كموقف شخصي."
+    },
+    "azm": {
+      "en": "Najib Mikati’s Paris conference speech, delivered while prime minister; it is not a separate party manifesto.",
+      "ar": "خطاب نجيب ميقاتي في مؤتمر باريس بصفته رئيساً للحكومة آنذاك؛ ليس بياناً حزبياً مستقلاً."
+    },
+    "ahbash": {
+      "en": "Based on MP Adnan Traboulsi’s statement; no position is inferred for other association members.",
+      "ar": "بناءً على تصريح النائب عدنان طرابلسي؛ لا يُستنتج منه موقف سائر أعضاء الجمعية."
+    },
+    "lihaqqi": {
+      "en": "Raed Bou Hamdan’s signed article on Lihaqqi’s website. He was identified as a founding-committee member by Public Works Studio; this is not a collective party resolution.",
+      "ar": "مقال موقّع لرائد بو حمدان على موقع لحقي. عرّفته «أشغال عامة» عضواً في اللجنة التأسيسية؛ المقال ليس قراراً جماعياً للحركة."
+    },
+    "banner": {
+      "en": "Joint meeting statement involving party leader Ali Hijazi, 9 June 2026. The party adopted the National Banner name in December 2025.",
+      "ar": "موقف لقاء مشترك شارك فيه رئيس الحزب علي حجازي في ٩ حزيران ٢٠٢٦. اعتمد الحزب اسم الراية الوطني في كانون الأول ٢٠٢٥."
+    },
+    "green": {
+      "en": "Fadi Abi Allam’s own opening remarks as Green Party leader. The wider forum’s financing and arms recommendations are not assigned to him or the party.",
+      "ar": "كلمة فادي أبي علام الافتتاحية بصفته رئيس حزب الخضر. لا تُنسب توصيات سائر المشاركين بشأن التمويل والسلاح إليه أو إلى الحزب."
+    },
+    "communistaction": {
+      "en": "Executive-bureau head Zaki Taha’s speech. The current organization succeeds the Communist Action Organization; the old name remains searchable.",
+      "ar": "مداخلة رئيس المكتب التنفيذي زكي طه. المنظمة الحالية امتداد لمنظمة العمل الشيوعي؛ يبقى الاسم السابق متاحاً للبحث."
+    }
+  },
+  "partyDetails": {
+    "lihaqqi": {
+      "rosterUrl": "https://lihaqqi.org/",
+      "affiliationUrl": "https://publicworksstudio.com/urban-struggles-in-the-arab-region/"
+    },
+    "banner": {
+      "rosterUrl": "https://alrayahalwatani.org/"
+    },
+    "green": {
+      "rosterUrl": "https://greenpartyoflebanon.com/?lang=ar&page_id=770"
+    },
+    "communistaction": {
+      "name": {
+        "en": "Democratic Secular Left Action Organization",
+        "ar": "منظمة العمل اليساري الديمقراطي العلماني"
+      },
+      "aliases": [
+        "Communist Action Organization in Lebanon",
+        "OCAL",
+        "OACL",
+        "منظمة العمل الشيوعي في لبنان"
+      ],
+      "rosterUrl": "https://bey-alhouryeh.com/الوثائق-الصادرة-عن-مؤتمر-العام-لمنظمة/"
+    }
+  }
+}

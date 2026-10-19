@@ -1,0 +1,663 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-19",
+  "axes": {
+    "reconstruction": [
+      {
+        "id": 1,
+        "label": {
+          "en": "General recovery commitment",
+          "ar": "التزام عام بالتعافي"
+        },
+        "description": {
+          "en": "Supports rebuilding, recovery or equal guarantees without a more specific priority in the cited passage.",
+          "ar": "يؤيد الإعمار أو التعافي أو الضمانات المتساوية دون تحديد أولوية أدق في المقطع المستشهد به."
+        },
+        "examples": {
+          "en": "Rebuilding, livelihoods, equal guarantees.",
+          "ar": "الإعمار، سبل العيش، ضمانات متساوية."
+        },
+        "shortLabel": {
+          "en": "General recovery",
+          "ar": "التعافي العام"
+        }
+      },
+      {
+        "id": 2,
+        "label": {
+          "en": "Security or state authority first",
+          "ar": "الأمن أو سلطة الدولة أولاً"
+        },
+        "description": {
+          "en": "Presents security, state authority, arms control or restored external confidence as a prerequisite for reconstruction.",
+          "ar": "يطرح الأمن أو سلطة الدولة أو حصر السلاح أو استعادة الثقة الخارجية شرطاً يمهّد للإعمار."
+        },
+        "examples": {
+          "en": "Resolve security and sovereignty obstacles.",
+          "ar": "معالجة عوائق الأمن والسيادة."
+        },
+        "shortLabel": {
+          "en": "Security first",
+          "ar": "الأمن أولاً"
+        }
+      },
+      {
+        "id": 9,
+        "label": {
+          "en": "Rebuild without political conditions",
+          "ar": "الإعمار دون شروط سياسية"
+        },
+        "description": {
+          "en": "Explicitly rejects delaying reconstruction over political disputes, bargaining or political prices.",
+          "ar": "يرفض صراحة تأخير الإعمار بسبب الخلافات أو المساومات أو الأثمان السياسية."
+        },
+        "examples": {
+          "en": "Reconstruction is a right, independent of political files.",
+          "ar": "الإعمار حق مستقل عن الملفات السياسية."
+        },
+        "shortLabel": {
+          "en": "No political terms",
+          "ar": "دون شروط سياسية"
+        }
+      },
+      {
+        "id": 3,
+        "label": {
+          "en": "Start now / keep rebuilding moving",
+          "ar": "البدء الآن ومواصلة الإعمار"
+        },
+        "description": {
+          "en": "Demands an urgent start or continued rebuilding, without an explicit rejection of political conditions in this coded passage.",
+          "ar": "يطالب بالبدء العاجل أو استمرار الإعمار دون رفض صريح للشروط السياسية في هذا المقطع المصنّف."
+        },
+        "examples": {
+          "en": "Start urgently; continue alongside political work.",
+          "ar": "البدء العاجل والاستمرار بالتوازي مع العمل السياسي."
+        },
+        "shortLabel": {
+          "en": "Urgent action",
+          "ar": "تحرك عاجل"
+        }
+      },
+      {
+        "id": 4,
+        "label": {
+          "en": "Return, housing & compensation",
+          "ar": "العودة والسكن والتعويضات"
+        },
+        "description": {
+          "en": "Centres residents’ return, shelter, direct household assistance or compensation for losses.",
+          "ar": "يركز على عودة السكان أو الإيواء أو المساعدة المباشرة للأسر أو التعويض عن الخسائر."
+        },
+        "examples": {
+          "en": "Return, rent support, housing payments.",
+          "ar": "العودة، بدل الإيجار، مساهمات سكنية."
+        },
+        "shortLabel": {
+          "en": "Return & support",
+          "ar": "العودة والدعم"
+        }
+      },
+      {
+        "id": 5,
+        "label": {
+          "en": "Repairs, infrastructure & services",
+          "ar": "الترميم والبنية التحتية والخدمات"
+        },
+        "description": {
+          "en": "Identifies physical works, service restoration or technical steps needed to rebuild.",
+          "ar": "يحدد أعمالاً مادية أو استعادة خدمات أو خطوات تقنية لازمة لإعادة الإعمار."
+        },
+        "examples": {
+          "en": "Roads, schools, hospitals, debris, building materials.",
+          "ar": "طرق، مدارس، مستشفيات، أنقاض، مواد بناء."
+        },
+        "shortLabel": {
+          "en": "Repairs & services",
+          "ar": "ترميم وخدمات"
+        }
+      },
+      {
+        "id": 6,
+        "label": {
+          "en": "Reconstruction in the budget",
+          "ar": "الإعمار في الموازنة"
+        },
+        "description": {
+          "en": "Asks for a reconstruction allocation or supports transferring public reserves to repairs and shelter.",
+          "ar": "يطالب باعتماد للإعمار أو يؤيد تحويل احتياطيات عامة للترميم والإيواء."
+        },
+        "examples": {
+          "en": "Budget lines and reserve transfers.",
+          "ar": "اعتمادات الموازنة وتحويل الاحتياطيات."
+        },
+        "shortLabel": {
+          "en": "Budget allocation",
+          "ar": "اعتماد بالموازنة"
+        }
+      },
+      {
+        "id": 7,
+        "label": {
+          "en": "Dedicated fund & financing mechanism",
+          "ar": "صندوق مخصص وآلية تمويل"
+        },
+        "description": {
+          "en": "Proposes a reconstruction fund or an identifiable financing and grant-management mechanism.",
+          "ar": "يقترح صندوقاً للإعمار أو آلية محددة للتمويل وإدارة المنح."
+        },
+        "examples": {
+          "en": "Reconstruction fund, managed grants, infrastructure loan.",
+          "ar": "صندوق إعمار، إدارة منح، قرض للبنية التحتية."
+        },
+        "shortLabel": {
+          "en": "Dedicated fund",
+          "ar": "صندوق مخصص"
+        }
+      },
+      {
+        "id": 8,
+        "label": {
+          "en": "State delivery & institutional oversight",
+          "ar": "تنفيذ عبر الدولة ورقابة مؤسسية"
+        },
+        "description": {
+          "en": "Focuses on which institutions should deliver reconstruction; oversight requirements are stated where the speaker specifies them.",
+          "ar": "يركز على المؤسسات التي ينبغي أن تنفذ الإعمار؛ وتذكر متطلبات الرقابة حين يحددها المتحدث."
+        },
+        "examples": {
+          "en": "State institutions; transparency and oversight where stated.",
+          "ar": "مؤسسات الدولة؛ شفافية ورقابة عند ذكرهما."
+        },
+        "shortLabel": {
+          "en": "State delivery",
+          "ar": "تنفيذ عبر الدولة"
+        }
+      }
+    ],
+    "arms": [
+      {
+        "id": 5,
+        "label": {
+          "en": "Exclusive state control: principle",
+          "ar": "حصرية السلاح بالدولة كمبدأ"
+        },
+        "description": {
+          "en": "Explicitly endorses state monopoly of arms without a more specific implementation route in the coded passage.",
+          "ar": "يؤيد صراحة حصرية السلاح بالدولة دون مسار تنفيذي أكثر تحديداً في المقطع المصنّف."
+        },
+        "examples": {
+          "en": "Weapons only with legitimate state forces.",
+          "ar": "السلاح لدى القوى الشرعية وحدها."
+        },
+        "shortLabel": {
+          "en": "State monopoly",
+          "ar": "حصرية السلاح بالدولة"
+        }
+      },
+      {
+        "id": 6,
+        "label": {
+          "en": "Implement disarmament or handover",
+          "ar": "تنفيذ نزع السلاح أو تسليمه"
+        },
+        "description": {
+          "en": "Explicitly calls for weapons collection, handover, removal or implementation of state arms-control decisions.",
+          "ar": "يدعو صراحة إلى جمع السلاح أو تسليمه أو إزالته أو تنفيذ قرارات حصره بالدولة."
+        },
+        "examples": {
+          "en": "Collect weapons, hand them over, implement decisions.",
+          "ar": "جمع السلاح وتسليمه وتنفيذ القرارات."
+        },
+        "shortLabel": {
+          "en": "Implement handover",
+          "ar": "تنفيذ التسليم"
+        }
+      },
+      {
+        "id": 7,
+        "label": {
+          "en": "Arms control before reconstruction aid",
+          "ar": "حصر السلاح قبل الإعمار ومساعداته"
+        },
+        "description": {
+          "en": "Treats arms control as a condition for rebuilding or external support, including reported donor conditions.",
+          "ar": "يتعامل مع حصر السلاح كشرط للإعمار أو الدعم الخارجي، بما في ذلك الشروط المنقولة عن المانحين."
+        },
+        "examples": {
+          "en": "Resolve the arms issue to unlock rebuilding or aid.",
+          "ar": "معالجة ملف السلاح لتمكين الإعمار أو المساعدة."
+        },
+        "shortLabel": {
+          "en": "Arms control before aid",
+          "ar": "حصر السلاح قبل المساعدة"
+        }
+      },
+      {
+        "id": 8,
+        "label": {
+          "en": "Convert armed structures to civilian politics",
+          "ar": "تحويل البنى المسلحة إلى عمل مدني"
+        },
+        "description": {
+          "en": "Specifically proposes turning armed structures into civilian political or productive institutions.",
+          "ar": "يقترح تحديداً تحويل البنى المسلحة إلى مؤسسات سياسية مدنية أو نشاط إنتاجي."
+        },
+        "examples": {
+          "en": "Civilian political and productive activity.",
+          "ar": "عمل سياسي مدني ونشاط إنتاجي."
+        },
+        "shortLabel": {
+          "en": "Civilian transition",
+          "ar": "التحول المدني"
+        }
+      },
+      {
+        "id": 4,
+        "label": {
+          "en": "Phased army implementation",
+          "ar": "تنفيذ مرحلي بقيادة الجيش"
+        },
+        "description": {
+          "en": "Supports an army plan implemented in geographic or successive phases.",
+          "ar": "يؤيد خطة للجيش تنفذ عبر مراحل جغرافية أو متتابعة."
+        },
+        "examples": {
+          "en": "Army phases, implementation capacity and sequencing.",
+          "ar": "مراحل للجيش وقدرات تنفيذ وتسلسل خطوات."
+        },
+        "shortLabel": {
+          "en": "Phased army plan",
+          "ar": "خطة مرحلية للجيش"
+        }
+      },
+      {
+        "id": 3,
+        "label": {
+          "en": "Reciprocal or coordinated steps",
+          "ar": "خطوات متبادلة أو متزامنة"
+        },
+        "description": {
+          "en": "Links state arms control to withdrawal, return, reconstruction or reciprocal implementation.",
+          "ar": "يربط حصر السلاح بالانسحاب أو العودة أو الإعمار أو التنفيذ المتبادل."
+        },
+        "examples": {
+          "en": "Arms control alongside withdrawal or reciprocal gains.",
+          "ar": "حصر السلاح بالتزامن مع انسحاب أو مكاسب متبادلة."
+        },
+        "shortLabel": {
+          "en": "Reciprocal steps",
+          "ar": "خطوات متبادلة"
+        }
+      },
+      {
+        "id": 2,
+        "label": {
+          "en": "Transfer through political dialogue",
+          "ar": "نقل السلاح عبر حوار سياسي"
+        },
+        "description": {
+          "en": "Makes domestic dialogue or a negotiated political framework the route to state control.",
+          "ar": "يجعل الحوار الداخلي أو الإطار السياسي التفاوضي مساراً لحصر السلاح بالدولة."
+        },
+        "examples": {
+          "en": "Negotiation and an inclusive political agreement.",
+          "ar": "تفاوض واتفاق سياسي جامع."
+        },
+        "shortLabel": {
+          "en": "Political dialogue",
+          "ar": "حوار سياسي"
+        }
+      },
+      {
+        "id": 1,
+        "label": {
+          "en": "Retain non-state weapons",
+          "ar": "الاحتفاظ بالسلاح خارج الدولة"
+        },
+        "description": {
+          "en": "Explicitly defends retaining Hezbollah’s weapons or rejects their handover.",
+          "ar": "يدافع صراحة عن بقاء سلاح حزب الله أو يرفض تسليمه."
+        },
+        "examples": {
+          "en": "Keep weapons; reject surrender.",
+          "ar": "الإبقاء على السلاح ورفض تسليمه."
+        },
+        "shortLabel": {
+          "en": "Retain non-state arms",
+          "ar": "الاحتفاظ بسلاح خارج الدولة"
+        }
+      }
+    ],
+    "financing": [
+      {
+        "id": 5,
+        "label": {
+          "en": "Donor assistance & foreign contributions",
+          "ar": "مساعدات مانحين ومساهمات خارجية"
+        },
+        "description": {
+          "en": "Seeks, welcomes or expects international assistance or contributions from friendly states without a more specific instrument.",
+          "ar": "يطلب أو يرحب أو يتوقع مساعدات دولية أو مساهمات من دول صديقة دون أداة أكثر تحديداً."
+        },
+        "examples": {
+          "en": "Donor conferences, Arab support, friendly-state funding.",
+          "ar": "مؤتمرات مانحين ودعم عربي وتمويل دول صديقة."
+        },
+        "shortLabel": {
+          "en": "Donor contributions",
+          "ar": "مساهمات مانحين"
+        }
+      },
+      {
+        "id": 6,
+        "label": {
+          "en": "World Bank / infrastructure loans",
+          "ar": "قروض البنك الدولي والبنية التحتية"
+        },
+        "description": {
+          "en": "Specifically supports an international infrastructure or reconstruction loan, sometimes alongside donor contributions.",
+          "ar": "يؤيد تحديداً قرضاً دولياً للبنية التحتية أو الإعمار، أحياناً إلى جانب مساهمات مانحين."
+        },
+        "examples": {
+          "en": "World Bank financing and the LEAP loan.",
+          "ar": "تمويل البنك الدولي وقرض LEAP."
+        },
+        "shortLabel": {
+          "en": "World Bank / loans",
+          "ar": "البنك الدولي والقروض"
+        }
+      },
+      {
+        "id": 10,
+        "label": {
+          "en": "Grants through a supervised fund",
+          "ar": "منح عبر صندوق خاضع للرقابة"
+        },
+        "description": {
+          "en": "Specifies transparent grant management or an externally supervised reconstruction fund.",
+          "ar": "يحدد إدارة شفافة للمنح أو صندوق إعمار تحت رقابة خارجية."
+        },
+        "examples": {
+          "en": "Transparent grant mechanism or international oversight.",
+          "ar": "آلية منح شفافة أو رقابة دولية."
+        },
+        "shortLabel": {
+          "en": "Supervised grants",
+          "ar": "منح خاضعة للرقابة"
+        }
+      },
+      {
+        "id": 9,
+        "label": {
+          "en": "External aid depends on political / security progress",
+          "ar": "مساعدة خارجية مرتبطة بتقدم سياسي أو أمني"
+        },
+        "description": {
+          "en": "Focuses on obstacles or conditions affecting access to donor funding; this may describe donors’ requirements rather than endorse them.",
+          "ar": "يركز على عوائق أو شروط الوصول إلى تمويل المانحين؛ وقد يصف متطلباتهم دون تأييدها."
+        },
+        "examples": {
+          "en": "Arms control, security assurances or reforms for aid.",
+          "ar": "حصر السلاح أو ضمانات أمنية أو إصلاحات للمساعدة."
+        },
+        "shortLabel": {
+          "en": "Conditions for aid",
+          "ar": "شروط المساعدة"
+        }
+      },
+      {
+        "id": 8,
+        "label": {
+          "en": "Investment for reconstruction",
+          "ar": "الاستثمار لتمويل الإعمار"
+        },
+        "description": {
+          "en": "Specifically discusses investment as a reconstruction funding route.",
+          "ar": "يناقش الاستثمار تحديداً كمسار لتمويل الإعمار."
+        },
+        "examples": {
+          "en": "Mobilise promised reconstruction investment.",
+          "ar": "استقطاب الاستثمارات الموعودة للإعمار."
+        },
+        "shortLabel": {
+          "en": "Investment",
+          "ar": "الاستثمار"
+        }
+      },
+      {
+        "id": 7,
+        "label": {
+          "en": "Seek an Iranian contribution",
+          "ar": "طلب مساهمة إيرانية"
+        },
+        "description": {
+          "en": "Explicitly proposes or demands an Iranian reconstruction contribution, possibly alongside other external sources.",
+          "ar": "يقترح أو يطالب صراحة بمساهمة إيرانية للإعمار، وقد يذكر معها مصادر خارجية أخرى."
+        },
+        "examples": {
+          "en": "Iranian payments or a contribution to rebuilding costs.",
+          "ar": "دفعات إيرانية أو مساهمة في كلفة الإعمار."
+        },
+        "shortLabel": {
+          "en": "Iranian contribution",
+          "ar": "مساهمة إيرانية"
+        }
+      },
+      {
+        "id": 4,
+        "label": {
+          "en": "Domestic & international funding together",
+          "ar": "تمويل محلي ودولي معاً"
+        },
+        "description": {
+          "en": "Explicitly combines domestic public resources with external reconstruction support.",
+          "ar": "يجمع صراحة بين الموارد العامة المحلية والدعم الخارجي للإعمار."
+        },
+        "examples": {
+          "en": "Local resources plus foreign recovery finance.",
+          "ar": "موارد محلية مع تمويل خارجي للتعافي."
+        },
+        "shortLabel": {
+          "en": "Domestic + foreign",
+          "ar": "محلي وخارجي"
+        }
+      },
+      {
+        "id": 3,
+        "label": {
+          "en": "Party assistance alongside state responsibility",
+          "ar": "مساعدة حزبية مع مسؤولية الدولة"
+        },
+        "description": {
+          "en": "Combines a party assistance or shelter programme with demands for state funding or compensation.",
+          "ar": "يجمع بين برنامج مساعدة أو إيواء حزبي ومطالبة الدولة بالتمويل أو التعويض."
+        },
+        "examples": {
+          "en": "Party programmes plus public compensation.",
+          "ar": "برامج حزبية إلى جانب التعويض العام."
+        },
+        "shortLabel": {
+          "en": "Party aid + state",
+          "ar": "مساعدة حزبية والدولة"
+        }
+      },
+      {
+        "id": 2,
+        "label": {
+          "en": "Use reserves / treasury resources now",
+          "ar": "استخدام الاحتياطيات والخزينة الآن"
+        },
+        "description": {
+          "en": "Identifies existing reserves or treasury resources as an initial available contribution.",
+          "ar": "يحدد الاحتياطيات أو موارد الخزينة المتاحة كمساهمة أولية."
+        },
+        "examples": {
+          "en": "Reserve transfers or available treasury funds.",
+          "ar": "تحويل احتياطيات أو أموال الخزينة المتاحة."
+        },
+        "shortLabel": {
+          "en": "Reserves / treasury",
+          "ar": "الاحتياطيات والخزينة"
+        }
+      },
+      {
+        "id": 1,
+        "label": {
+          "en": "State budget allocations",
+          "ar": "اعتمادات من موازنة الدولة"
+        },
+        "description": {
+          "en": "Calls for public reconstruction, shelter or compensation allocations in the state budget.",
+          "ar": "يدعو إلى اعتمادات عامة للإعمار أو الإيواء أو التعويضات في موازنة الدولة."
+        },
+        "examples": {
+          "en": "Reconstruction budget lines and state housing support.",
+          "ar": "بنود إعمار ودعم سكني من الدولة."
+        },
+        "shortLabel": {
+          "en": "State budget",
+          "ar": "موازنة الدولة"
+        }
+      }
+    ]
+  },
+  "assignments": {
+    "reconstruction": {
+      "SH-01": 1,
+      "IH-01": 1,
+      "ML-JOINT": 1,
+      "NF-PROGRAMME": 1,
+      "GR-JUN25": 1,
+      "PY-ARMS": 1,
+      "SG-03": 2,
+      "SM-02": 2,
+      "CC-01": 2,
+      "MMO-RETURN": 2,
+      "IM-OCT17": 2,
+      "PB-01": 2,
+      "SS-01": 2,
+      "GH-02": 2,
+      "YR-01": 2,
+      "NB-02": 3,
+      "AH-02": 3,
+      "MD-02": 3,
+      "AT-RETURN26": 3,
+      "HQ-03": 4,
+      "TJ-02": 4,
+      "TF-01": 4,
+      "HG-01": 4,
+      "HT-02": 4,
+      "FK-01 FK-02": 4,
+      "NB-JUN26": 4,
+      "MH-01": 4,
+      "WW-REBUILD": 4,
+      "LH-JAN25": 4,
+      "ZT-SEP26": 4,
+      "AKH-HOUSING": 4,
+      "MH-LABOUR": 4,
+      "NM-PARIS24": 5,
+      "HF-02 HF-04": 5,
+      "HJ-BRIDGES": 5,
+      "AF-02": 5,
+      "IE-01 IE-02": 5,
+      "NA-01": 5,
+      "NS-04": 5,
+      "MM-RETURN": 5,
+      "HS-RETURN": 5,
+      "FR-ROAD": 5,
+      "NH-RECOVERY": 5,
+      "TZ-RECOVERY": 5,
+      "RN-HEALTH": 5,
+      "OS-02": 6,
+      "IK-BUDGET": 6,
+      "HHH-BUDGET": 6,
+      "GA-01": 6,
+      "EH-01": 7,
+      "GAY-FUND": 7,
+      "HAH-FUND": 7,
+      "TM-01": 7,
+      "YJ-01": 7,
+      "FM-01": 8,
+      "KS-STATE": 8,
+      "GB-02": 9,
+      "HM-02": 9,
+      "AK-02": 9
+    },
+    "arms": {
+      "HQ-ARMS": 1,
+      "HF-ARMS26": 1,
+      "HJ-ARMS": 1,
+      "HHH-ARMS": 1,
+      "TF-DIALOGUE25": 2,
+      "ML-JOINT": 2,
+      "GB-01": 3,
+      "FM-01": 3,
+      "NS-02 NS-05": 3,
+      "TM-01": 4,
+      "MM-ARMS": 4,
+      "NH-ARMS": 4,
+      "TJ-02": 5,
+      "SH-STATE25": 5,
+      "FK-02": 5,
+      "NF-PROGRAMME": 5,
+      "MH-01": 5,
+      "ZT-SEP26": 5,
+      "HAH-FUND": 5,
+      "KS-STATE": 5,
+      "CC-01 CC-02": 6,
+      "MD-ARMS26": 6,
+      "MMO-ARMS": 6,
+      "IM-OCT17": 6,
+      "PY-ARMS": 6,
+      "LH-JAN25": 6,
+      "SG-01 SG-03": 7,
+      "SM-01 SM-02": 7,
+      "EH-02": 7,
+      "GH-01 GH-02": 7,
+      "YR-01": 7,
+      "SS-01": 8
+    },
+    "financing": {
+      "AK-BUDGET": 1,
+      "GA-01": 1,
+      "OS-02": 1,
+      "HHH-BUDGET": 1,
+      "AKH-HOUSING": 1,
+      "IK-BUDGET": 2,
+      "AF-02": 2,
+      "HQ-01 HQ-03": 3,
+      "HF-03 HF-04": 3,
+      "NS-04 NS-05": 4,
+      "NH-RECOVERY": 4,
+      "TZ-RECOVERY": 4,
+      "TJ-01": 5,
+      "IH-01": 5,
+      "HT-02": 5,
+      "MD-01": 5,
+      "NM-PARIS24": 5,
+      "PY-FUNDING": 5,
+      "PB-01": 5,
+      "HAH-FUND": 5,
+      "HS-RETURN": 5,
+      "MH-LABOUR": 5,
+      "RN-HEALTH": 5,
+      "TM-01": 6,
+      "YJ-01": 6,
+      "FR-WB": 6,
+      "GH-01 GH-02": 7,
+      "WW-REBUILD": 7,
+      "CC-01": 8,
+      "SM-01": 9,
+      "IM-OCT17": 9,
+      "SS-01": 9,
+      "YR-01": 9,
+      "EH-01": 10,
+      "GAY-FUND": 10
+    }
+  },
+  "method": {
+    "en": "Each point uses the main emphasis of its own cited statement bundle. Categories are not scores or mutually exclusive beliefs. Other stated positions remain in the adjacent summary. Missing evidence stays unclassified.",
+    "ar": "تعتمد كل نقطة على المحور الرئيسي في تصريحاتها المستشهد بها. الفئات ليست درجات أو معتقدات يستبعد بعضها بعضاً. تبقى المواقف الأخرى في الملخص المجاور، ويظل نقص الأدلة دون تصنيف."
+  }
+}

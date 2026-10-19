@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.cache/
+.artifacts/
+.streamlit/secrets.toml
+.env
+.env.*
+!.env.example
+tmp/
+node_modules/
+*.log
+*.pem
+*.key
+.DS_Store

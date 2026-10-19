@@ -1,0 +1,20 @@
+{
+  "imported_on": "2026-10-09",
+  "tenders": {
+    "source": "C:\\Users\\Achra\\Documents\\ChatGPT\\mona2asat",
+    "counts": {
+      "ppa": 1168,
+      "cdr": 1122
+    },
+    "mode": "bundled snapshot"
+  },
+  "parties": {
+    "source": "C:\\Users\\Achra\\Documents\\ChatGPT\\what parties are saying about reconstruction\\website\\Lebanon reconstruction.html",
+    "source_sha256": "1426e3c64504d92820e0573f3957727d4326139485bfd722ad48f8441ea3e1e7"
+  },
+  "evidence": {
+    "source": "C:\\Users\\Achra\\Documents\\Codex\\2026-10-07\\fi\\outputs\\lebanon-gallery\\index.html",
+    "source_sha256": "c2dc98c4f93886328771cf8b9826b18666438413a8287c0d20bebacbd74675ae",
+    "asset_count": 112
+  }
+}

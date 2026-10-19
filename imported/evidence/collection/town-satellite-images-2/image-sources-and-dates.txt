@@ -1,0 +1,78 @@
+LEBANON SATELLITE IMAGE ATLAS — PART 2
+Compiled 7 October 2026
+
+17 source image files, containing 22 satellite panels across 11 named locations. Naqoura also appeared in Part 1.
+No images are claimed to show current conditions on the compilation date.
+Earlier images may already show damage; visual differences alone do not establish building counts or destroyed area.
+Original image files and publisher annotations preserved in the archive. PDF uses compressed copies for viewing. No AI reconstruction or inferred damage polygons added.
+
+BBC VERIFY / AIRBUS DS (2026)
+https://www.bbc.com/news/articles/cdxkk1vnp57o
+https://www.bbc.com/mundo/articles/cd0rpdp0rdyo
+Taybeh: 28 February -> 11 April 2026. Original image date labels are in Spanish.
+Composite: top row Deir Seryan, 3 March -> 12 April 2026; middle row Khiam, 28 February -> 13 April 2026; bottom row Naqoura, 3 March -> 11 April 2026.
+
+PLANET LABS PBC VIA ASSOCIATED PRESS
+https://www.clickondetroit.com/news/world/2024/11/02/israels-path-of-destruction-in-southern-lebanon-raises-fears-of-an-attempt-to-create-a-buffer-zone/
+Mhaibib, Ramyah and Blida: all earlier images 26 September 2024; all later images 24 October 2024.
+Publication: 2 November 2024. Town/date attribution follows AP photo captions.
+
+ONGEO INTELLIGENCE / GOOGLE
+https://ongeo-intelligence.com/blog/lebanon-satellite-bombing-destruction
+Locations: Maroun al-Ras / Yaroun area; Majdel Selm; Haret Hreik (Rue 87); Ash Shumara / Borj En-Naqoura.
+Article published 10 January 2025. Earlier dates not stated. Article describes later images as a November–December 2024 collection; individual capture dates are not specified.
+Maroun al-Ras / Yaroun: the source caption includes both towns; exact municipality has not been independently verified.
+Before/after order follows the article captions and visual evidence. Some OnGeo asset filenames contain reversed Before/After words; those filenames were not used to set panel order.
+White boundary annotations are retained from the publisher and are not independently verified measures.
+
+SOURCE ASSET URLS:
+taybeh-after.jpg
+https://public.flourish.studio/uploads/1101730/0b9940c9-d5fd-4cd0-ad64-0369155dd33b.jpg
+
+taybeh-before.jpg
+https://public.flourish.studio/uploads/1101730/7a0a026c-6348-46cc-85b1-cdca2b8a1638.jpg
+
+khiam-deir-seryan-naqoura.webp
+https://ichef.bbci.co.uk/news/1536/cpsprodpb/62eb/live/ba2367d0-3977-11f1-9d5c-8ba507d7dbde.png.webp
+
+maroun-area-before.jpg
+https://cms.ongeo-intelligence.com/uploads/8_2_After_Maroun_Al_Ras_Yaroun_Bint_Jbeil_District_Muhafaza_An_Nabatijja_Liban_6a74809ead.jpeg
+
+maroun-area-after.jpg
+https://cms.ongeo-intelligence.com/uploads/8_1_Before_Maroun_Al_Ras_Yaroun_Bint_Jbeil_District_Muhafaza_An_Nabatijja_Liban_bf11677e01.jpeg
+
+majdel-selm-before.jpg
+https://cms.ongeo-intelligence.com/uploads/3_2_After_Majdel_Selm_Marjayoun_District_Muhafaza_An_Nabatijja_Liban_c37a382eb2.jpeg
+
+majdel-selm-after.jpg
+https://cms.ongeo-intelligence.com/uploads/3_1_Before_Majdel_Selm_Marjayoun_District_Muhafaza_An_Nabatijja_Liban_55c351948d.jpeg
+
+haret-hreik-before.jpg
+https://cms.ongeo-intelligence.com/uploads/16_4_Before_no_area_line_Bejrut_Rue_87_Haret_Hreik_Baabda_District_Muhafaza_Dzabal_Lubnan_1001_Liban_b3717ce0e7.jpeg
+
+haret-hreik-after.jpg
+https://cms.ongeo-intelligence.com/uploads/16_3_After_no_area_line_Rue_87_Bejrut_Haret_Hreik_Baabda_District_Muhafaza_Dzabal_Lubnan_1001_Liban_a44a6c4f55.jpeg
+
+ash-shumara-before.jpg
+https://cms.ongeo-intelligence.com/uploads/19_4_Before_no_area_line_Ash_Shumara_Borj_En_Naqoura_Kada_Tyr_Dystrykt_Poludniowy_Liban_eed5632b86.jpeg
+
+ash-shumara-after.jpg
+https://cms.ongeo-intelligence.com/uploads/19_3_After_no_area_line_Ash_Shumara_Borj_En_Naqoura_Kada_Tyr_Dystrykt_Poludniowy_Liban_b6dcc6b85f.jpeg
+
+ramyah-before.webp
+https://bc.gmg.io/image/upload/q_auto,c_lfill,w_2560,h_1706,f_webp/media/gmg/YYLMJMGNOVDEHHUSGRIUKQ7YNU.jpg?api_key=clickondetroit_06f87fefb2123598
+
+ramyah-after.webp
+https://bc.gmg.io/image/upload/q_auto,c_lfill,w_2560,h_1707,f_webp/media/gmg/WUMFHU3GLFA7XONLDQZ7SOTXRU.jpg?api_key=clickondetroit_06f87fefb2123598
+
+blida-before.webp
+https://bc.gmg.io/image/upload/q_auto,c_lfill,w_2560,h_1707,f_webp/media/gmg/WPPMEHNGL5ACJJWJDTF6HI5RRQ.jpg?api_key=clickondetroit_06f87fefb2123598
+
+blida-after.webp
+https://bc.gmg.io/image/upload/q_auto,c_lfill,w_2560,h_1707,f_webp/media/gmg/KGYTYPGAQFGZ3FGOYAYRIRYFGM.jpg?api_key=clickondetroit_06f87fefb2123598
+
+mhaibib-before.webp
+https://bc.gmg.io/image/upload/q_auto,c_lfill,w_2560,h_1707,f_webp/media/gmg/PWVYCQZJCNAWTOHCHDRS4TWW74.jpg?api_key=clickondetroit_06f87fefb2123598
+
+mhaibib-after.webp
+https://bc.gmg.io/image/upload/q_auto,c_lfill,w_2560,h_1707,f_webp/media/gmg/IJBZJ4FAL5GRNKW5HCKOOH3MMM.jpg?api_key=clickondetroit_06f87fefb2123598

@@ -1,0 +1,121 @@
+LEBANON: TOWN SATELLITE IMAGE COLLECTION
+Compiled 7 October 2026
+
+Nine towns; 18 original image files containing 22 dated satellite panels.
+This collection supplements the earlier Lebanon destruction comparison.
+Images retain publisher annotations, dates and credits. No AI reconstruction, retouching or inferred building counts have been added.
+Earlier images may already contain damage. Dates do not describe the condition on 7 October 2026.
+Changes in colour, vegetation, shadow and image resolution are not independently proof of destruction.
+
+Bint Jbeil: 14 January 2026 -> 9 May 2026
+Files: bint-jbeil-before.jpg / bint-jbeil-after.jpg
+Source: Arabic Post, 8 June 2026
+https://story360.arabicpost.net/GazaLebanon/index-en.html
+The central urban area changes markedly between the two published views.
+
+Aita al-Shaab: 4 January 2026 -> 9 May 2026
+Files: aita-al-shaab-before.jpg / aita-al-shaab-after.jpg
+Source: Arabic Post, 8 June 2026
+https://story360.arabicpost.net/GazaLebanon/index-en.html
+Damage is already visible in January; compare the remaining buildings with the May view.
+
+Kfar Kila: 4 January 2026 -> 9 May 2026
+Files: kfar-kila-before.jpg / kfar-kila-after.jpg
+Source: Arabic Post, 8 June 2026
+https://story360.arabicpost.net/GazaLebanon/index-en.html
+The views include Kfar Kila and the border area. January already shows extensive earlier damage.
+
+Meiss El Jabal: 4 January 2026 -> 9 May 2026
+Files: meiss-el-jabal-before.jpg / meiss-el-jabal-after.jpg
+Source: Arabic Post, 8 June 2026
+https://story360.arabicpost.net/GazaLebanon/index-en.html
+Compare the town centre and roads in both views; pale cleared areas extend through the later image.
+
+Aitaroun: 4 January 2026 -> 9 May 2026
+Files: aitaroun-before.jpg / aitaroun-after.jpg
+Source: Arabic Post, 8 June 2026
+https://story360.arabicpost.net/GazaLebanon/index-en.html
+The same town and surrounding fields are shown in both dates.
+
+Naqoura: 4 January 2026 -> 9 May 2026
+Files: naqoura-before.jpg / naqoura-after.jpg
+Source: Arabic Post, 8 June 2026
+https://story360.arabicpost.net/GazaLebanon/index-en.html
+The coast helps orient the comparison. Seasonal colour differences alone are not evidence of damage.
+
+Odaisseh / Odeisseh: 29 September 2024 -> 24 October 2024
+Files: odaisseh-before.jpg / odaisseh-after.jpg
+Source: Amnesty International, 26 August 2025
+https://www.amnesty.org/en/latest/research/2025/08/israel-lebanon-extensive-destruction/
+Local detail around the Baalbaki family home. Original analyst annotations are retained.
+
+Dhayra: 4 October 2024 -> 30 January 2025
+Files: dhayra-before.jpg / dhayra-after.jpg
+Source: Amnesty International, 26 August 2025
+https://www.amnesty.org/en/latest/research/2025/08/israel-lebanon-extensive-destruction/
+The publisher marks three mosque locations. This pair spans the 2024 war and the following ceasefire period.
+
+Yaroun: top left 5 October 2024; top right 10 January 2025; bottom left 30 January 2025; bottom right 2 May 2026.
+File: yaroun-four-dates.jpg
+Credit: Planet Labs PBC / AFP
+https://today.rtl.lu/news/world/lebanese-accuse-israel-of-wiping-their-towns-off-the-map-532119953
+
+Bint Jbeil 2006: earlier 17 June 2005; later 10 September 2006. Map version 1.1 dated 13 October 2006.
+File: bint-jbeil-2006-unosat.jpg
+Credit: UNOSAT; Ikonos imagery
+https://unosat.org/products/255
+
+Original download URLs:
+bint-jbeil-2006-unosat.jpg
+https://unosat.org/static/unosat_filesystem/255/UNOSAT_BentJbail_PrePost_A1map_lowres_v1.1.jpg
+
+yaroun-four-dates.jpg
+https://static-prod.rtl.lu/dims4/default/160b092/2147483647/strip/true/crop/768x512%2B0%2B0/resize/1224x816%21/quality/90/?url=https%3A%2F%2Frtl-luxembourg-new-production-web.s3.eu-central-1.amazonaws.com%2Fbrightspot%2F64%2F0f%2F6174508fcd4f6e1468b19fe06456%2Fmedias
+
+bint-jbeil-before.jpg
+https://story360.arabicpost.net/GazaLebanon/BintJbeil_web.jpg
+
+bint-jbeil-after.jpg
+https://story360.arabicpost.net/GazaLebanon/BintJbeil2_web.jpg
+
+aita-al-shaab-before.jpg
+https://story360.arabicpost.net/GazaLebanon/AytaashShabBefor_web.jpg
+
+aita-al-shaab-after.jpg
+https://story360.arabicpost.net/GazaLebanon/AytaashShabAfter_web.jpg
+
+kfar-kila-before.jpg
+https://story360.arabicpost.net/GazaLebanon/KfarkelaBefore_web.jpg
+
+kfar-kila-after.jpg
+https://story360.arabicpost.net/GazaLebanon/KfarkelaAfter_web.jpg
+
+meiss-el-jabal-before.jpg
+https://story360.arabicpost.net/GazaLebanon/MeissElJabalBefore_web.jpg
+
+meiss-el-jabal-after.jpg
+https://story360.arabicpost.net/GazaLebanon/MeissElJabalAfter_web.jpg
+
+aitaroun-before.jpg
+https://story360.arabicpost.net/GazaLebanon/AitarounBefore_web.jpg
+
+aitaroun-after.jpg
+https://story360.arabicpost.net/GazaLebanon/AitarounAfter_web.jpg
+
+naqoura-before.jpg
+https://story360.arabicpost.net/GazaLebanon/NaqouraBefore_web.jpg
+
+naqoura-after.jpg
+https://story360.arabicpost.net/GazaLebanon/NaqouraAfter_web.jpg
+
+dhayra-before.jpg
+https://www.amnesty.org/en/wp-content/uploads/2025/07/Dhayra_Mosques_2024_1004-838x1024.jpg
+
+dhayra-after.jpg
+https://www.amnesty.org/en/wp-content/uploads/2025/07/Dhayra_Mosques_2025_0130-839x1024.jpg
+
+odaisseh-before.jpg
+https://www.amnesty.org/en/wp-content/uploads/2025/07/Baalbaki_2024_0929-838x1024.jpg
+
+odaisseh-after.jpg
+https://www.amnesty.org/en/wp-content/uploads/2025/07/Baalbaki_2024_1024-838x1024.jpg

@@ -1,0 +1,83 @@
+{
+  "reviewed_on": "2026-10-12",
+  "scope": "One-time review of selected official and news sources; not an exhaustive or live news inventory.",
+  "government": {
+    "added_sources": [
+      "https://pcm.gov.lb/arabic/subpg.aspx?pageid=27598",
+      "https://lebanon.un.org/en/324094-southern-lebanon-families-are-returning-daily-survival-remains-struggle",
+      "https://north-africa-middle-east-gulf.ec.europa.eu/news/eu-adopts-eur505-million-package-support-lebanons-stability-recovery-and-reforms-2026-09-23_en"
+    ],
+    "initial_funding_snapshot_retained": "2026-02-17",
+    "national_needs_estimate_period": "2023-10-08 to 2024-12-20",
+    "procurement_notes": {
+      "roads": "The saved CDR record collected on 9 October 2026 says “Awarded”. The web reader returned an older “Under Evaluation” version and direct retrieval was unavailable. Award date, contractor and completed works were not verified.",
+      "esia": "The saved CDR record collected on 1 October 2026 says “Under Evaluation”. The notice is verified; an award or delivery of the consultancy was not established."
+    }
+  },
+  "budget": {
+    "listing": "https://finance.gov.lb/ar-lb/Pages/Pdf-Preview.aspx?dt=OL1644",
+    "published": "2026-10-07",
+    "pdf_pages": 1074,
+    "version_issue": "Listing says parliamentary referral; downloaded cover says Council of Ministers. User CSV has no draft dates or conversion rate.",
+    "amounts_reconciled": false
+  },
+  "tenders": {
+    "revision": "14c3d66e8baaf99413b0021e6a3c52ac62345f16",
+    "live": true,
+    "error": null,
+    "sources": {
+      "ppa": {
+        "records": 1194,
+        "visible_year_records": 1049,
+        "checked_at": "2026-10-12T00:46:42.201603+00:00",
+        "pending_details": 0,
+        "detail_failures": [],
+        "latest_announcement": "2026-10-10"
+      },
+      "cdr": {
+        "records": 1128,
+        "visible_year_records": 354,
+        "checked_at": "2026-10-12T00:46:52.344840+00:00",
+        "pending_details": 0,
+        "detail_failures": [],
+        "latest_announcement": "2026-10-09"
+      }
+    }
+  },
+  "parties": {
+    "statements": 66,
+    "new_ids": [
+      "NS-04",
+      "NS-05",
+      "NS-06",
+      "HF-03",
+      "HF-04"
+    ],
+    "latest_statement": "2026-10-11"
+  },
+  "countries": {
+    "new_countries": [
+      "Sweden",
+      "Denmark"
+    ],
+    "new_ids": [
+      "C-SE-01",
+      "C-DK-01",
+      "C-FR-04"
+    ],
+    "sources": [
+      "https://www.government.se/press-releases/2026/04/sweden-increases-humanitarian-support-to-lebanon/",
+      "https://pcm.gov.lb/arabic/subpg.aspx?pageid=27164"
+    ],
+    "older_statements_keep_original_dates": true
+  },
+  "evidence": {
+    "new_sources": [
+      "https://www.unicef.org/lebanon/press-releases/four-five-households-lebanon-struggle-afford-basic-needs-conflict-deepens",
+      "https://lebanon.un.org/en/324094-southern-lebanon-families-are-returning-daily-survival-remains-struggle"
+    ],
+    "original_image_research_cutoff": "2026-10-07",
+    "new_satellite_images_added": 0,
+    "limitations": "No newer comparable nationwide destruction census verified. UNDP South issue 2 remains the located building-level update; original imagery capture dates retained."
+  }
+}

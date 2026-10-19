@@ -1,0 +1,111 @@
+LEBANON: MORE SATELLITE IMAGES FROM 2026
+Compiled 7 October 2026
+
+Ten atlas pages; 16 source image files containing 26 panels. Twenty-three panels are dated 2026; three are explicitly marked August 2025 reference views.
+Latest individually dated image in this collection: 22 August 2026.
+Original downloaded files are retained. The PDF compresses images for viewing but adds no damage markings or AI reconstructions.
+This is an image collection, not an independent count of buildings or destroyed land area.
+Some composites overlay dated satellite coverage on an older background mosaic. Dates refer to survey coverage, not every background pixel.
+Provider credits follow each publisher; Vantor watermarks visible in the Al Jazeera composites are preserved.
+
+PAGE 1
+Two neighbouring towns on the same date. These are separate locations, not a before-and-after pair. Dates follow the article captions.
+Al Jazeera, 29 July 2026; Airbus / Esri
+https://www.aljazeera.net/news/2026/7/29/لبنان-صور-أقمار-صناعية-تكشف-دمارا
+
+PAGE 2
+Survey imagery is overlaid on a background map. The background outside the dated layer may come from other dates. Original composites retain a Vantor watermark; Al Jazeera credits Airbus for the dated survey imagery.
+Al Jazeera, 23 June 2026; Airbus as credited by publisher
+https://www.aljazeera.net/amp/news/2026/6/23/ما-الذي-جرى-حول-تلة-علي-الطاهر-بلبنان
+
+PAGE 3
+Red outlines are the publisher’s fire-area annotations. They are not boundaries of all destroyed buildings. Original composites retain a Vantor watermark; Al Jazeera credits Airbus for the dated survey imagery.
+Al Jazeera, 23 June 2026; Airbus as credited by publisher
+https://www.aljazeera.net/amp/news/2026/6/23/ما-الذي-جرى-حول-تلة-علي-الطاهر-بلبنان
+
+PAGE 4
+Dates follow the published comparison. Original annotations and background mosaic retained; the basemap is not necessarily from the survey date.
+Al Jazeera; Airbus as credited by publisher
+https://www.aljazeera.com/amp/news/2026/6/10/satellite-images-show-israels-destruction-of-historical-city-of-tyre
+
+PAGE 5
+Dates follow the published comparison. Original annotations and background mosaic retained; the basemap is not necessarily from the survey date.
+Al Jazeera; Airbus as credited by publisher
+https://www.aljazeera.com/amp/news/2026/6/10/satellite-images-show-israels-destruction-of-historical-city-of-tyre
+
+PAGE 6
+Dates follow the published comparison. Original annotations and background mosaic retained; the basemap is not necessarily from the survey date.
+Al Jazeera; Airbus as credited by publisher
+https://www.aljazeera.com/amp/news/2026/6/10/satellite-images-show-israels-destruction-of-historical-city-of-tyre
+
+PAGE 7
+Top: 28 July 2026. Bottom: 3 August 2026. The castle marker is an orientation aid; this regional view does not establish damage to individual castle structures.
+Arab News, 11 August 2026, updated 15 August; Copernicus EO
+https://www.arabnews.com/middle-east/new-satellite-imagery-shows-scale-of-israeli-destruction-at-lebanons-beaufort-castle-2654211
+
+PAGE 8
+Publisher’s panel order: LEFT 28 July; RIGHT 15 July 2026. The outlined locations are Kfar Tebnit (top) and Safita (bottom). Regional imagery cannot reliably count individual destroyed buildings.
+Misbar, 24 August 2026; Sentinel-2 imagery
+https://www.misbar.com/amp/en/editorial/2026/08/24/satellite-images-reveal-impact-israeli-attacks-around-beaufort-castle
+
+PAGE 9
+Four dated views: top left 2 August; top right 4 August; bottom left 12 August; bottom right 22 August 2026. Pale areas show broad surface change; they are not a measured destruction boundary.
+Misbar, 24 August 2026; Sentinel-2 imagery
+https://www.misbar.com/amp/en/editorial/2026/08/24/satellite-images-reveal-impact-israeli-attacks-around-beaufort-castle
+
+PAGE 10
+August 2026 views are on the RIGHT. August 2025 reference views are on the LEFT and already show damage. Rows: Majdal Zoun, Bint Jbeil, Taybeh. Individual capture days are not printed on this graphic.
+Arab News, 11 August 2026, updated 15 August; Copernicus EO
+https://www.arabnews.com/middle-east/new-satellite-imagery-shows-scale-of-israeli-destruction-at-lebanons-beaufort-castle-2654211
+
+Additional date corroboration for Tyre:
+https://www.aljazeera.net/news/2026/6/11/إلى-أين-يذهب-النازحون-خريطة-تكشف-كيف
+
+ORIGINAL ASSET URLS:
+zawtar-west.png
+https://www.aljazeera.net/wp-content/uploads/2026/07/2-2-1785325523.png?quality=80&resize=770%2C527&w=770
+
+zawtar-east.png
+https://www.aljazeera.net/wp-content/uploads/2026/07/3-2-1785325608.png?quality=80&resize=770%2C527&w=770
+
+nabatieh-a.png
+https://public.flourish.studio/uploads/3505734/39786363-7aaf-4f45-9992-ed07d44e601a.png
+
+nabatieh-b.png
+https://public.flourish.studio/uploads/3505734/add45a1e-5b2a-49dd-a14f-18b027148f47.png
+
+nabatieh-fires-a.png
+https://public.flourish.studio/uploads/3505734/37b78dd6-ecc7-4fee-bc66-b78bd5fe2ea3.png
+
+nabatieh-fires-b.png
+https://public.flourish.studio/uploads/3505734/d76bc41c-06e3-4c61-8445-b4790e88071c.png
+
+tyre-city-a.png
+https://public.flourish.studio/uploads/3503393/7efdc91d-6ebc-4a54-abc5-dc2a43ec46f8.png
+
+tyre-city-b.png
+https://public.flourish.studio/uploads/3503393/8a72beec-c526-4b13-b504-d350fed77883.png
+
+tyre-heritage-a.png
+https://public.flourish.studio/uploads/3503393/9deb771d-97e9-4699-89c7-80860cfea04f.png
+
+tyre-heritage-b.png
+https://public.flourish.studio/uploads/3503393/242c3d66-8910-43c2-8608-8771bcebf10f.png
+
+tyre-camp-a.png
+https://public.flourish.studio/uploads/3503393/7288947a-885b-4add-9045-14152fc0a015.png
+
+tyre-camp-b.png
+https://public.flourish.studio/uploads/3503393/4f1f3e67-f09d-4777-b394-5e7572840a1e.png
+
+beaufort-arabnews-comparison.png
+https://assets.maestronewsroom.com/media/30f6532d-717b-4366-9158-9c455299fcd9/arabnews-import/2026/08/body/screenshot_2026-08-11_at_1.45.13_pm.png
+
+kfar-tebnit-july-pair.png
+https://assets.misbar.com/inline-images/147f411d7d_image.png
+
+beaufort-august-pair.png
+https://assets.misbar.com/inline-images/14615c7a20_image.png
+
+south-arabnews.png
+https://assets.maestronewsroom.com/media/30f6532d-717b-4366-9158-9c455299fcd9/arabnews-import/2026/08/body/screenshot_2026-08-11_at_2.13.26_pm.png

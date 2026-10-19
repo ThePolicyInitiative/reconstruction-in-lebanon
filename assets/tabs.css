@@ -1,0 +1,30 @@
+.st-key-tenders-page,.st-key-tenders-page *{color:#000!important}
+.st-key-tenders-page h1{font-size:30px;letter-spacing:-1px;color:#000}
+.st-key-tenders-page [data-testid="stMetric"]{background:#f4f8f5;border:1px solid #dce4e0;border-radius:0;padding:15px}
+.st-key-tenders-page [data-testid="stMetricValue"],.st-key-tenders-page [data-testid="stMetricLabel"]{color:#000}
+.st-key-tenders-page .eyebrow{font-size:11px;letter-spacing:.08em;color:#000;font-weight:700;margin:12px 0}
+.st-key-tenders-page .intro{color:#000;font-size:15px;margin:0 0 18px}
+.st-key-tenders-page .tender-title{font-size:17px;line-height:1.8;font-weight:600;text-align:right;direction:rtl;margin:10px 0;color:#000}
+.st-key-tenders-page .tender-buyer{color:#000;text-align:right;direction:rtl;font-size:13px;min-height:40px}
+.st-key-tenders-page .tag{display:inline-block;background:#e7f2ef;color:#000;padding:4px 7px;font-size:10px}
+.st-key-tenders-page .arabic-copy{white-space:pre-wrap;unicode-bidi:plaintext;line-height:1.9;font-size:15px;color:#000}
+.stMainBlockContainer [data-testid="stCaptionContainer"],.stMainBlockContainer [data-testid="stCaptionContainer"] p{color:#000}
+.st-key-tenders-page [data-testid="stCaptionContainer"] *,.st-key-tenders-page [data-testid="stCaption"] *,.st-key-tenders-page [data-testid="stAlert"] *{color:#000!important;opacity:1}
+.st-key-tenders-page input::placeholder{color:#000!important;opacity:1}
+.st-key-tenders-page [data-baseweb="select"] *{color:#000!important}
+.stMainBlockContainer [data-baseweb="tab-list"]{overflow-x:auto;gap:18px}
+.stMainBlockContainer [data-baseweb="tab"]{white-space:nowrap}
+/* Embedded archives fill the remaining viewport; remove iframe baseline space. */
+iframe[title="integrated_pages.party_statements"],iframe[title="integrated_pages.country_statements"],iframe[title="integrated_pages.destruction_evidence"]{display:block;min-height:160px}
+.stMainBlockContainer:has(iframe[title^="integrated_pages."]){padding-bottom:0}
+.st-key-site-header [data-testid="stHorizontalBlock"]{flex-wrap:nowrap!important;direction:ltr}
+.st-key-site-header [data-testid="stColumn"]:first-child{flex:1 1 auto!important;min-width:0!important}
+.st-key-site-header [data-testid="stColumn"]:last-child{flex:0 0 98px!important;min-width:98px!important}
+.st-key-site-header button{white-space:nowrap;color:#000!important}
+.st-key-gazette-page,.st-key-gazette-page *{color:#000!important}
+.st-key-gazette-page h1{font-size:30px;letter-spacing:-1px}
+.st-key-gazette-page [data-testid="stMetric"]{background:#f4f7fa;border:1px solid #dce3e9;border-radius:0;padding:15px}
+.st-key-gazette-page [data-testid="stMetricValue"]{font-size:28px}
+.st-key-gazette-page .gazette-title{font-size:17px;line-height:1.85;font-weight:600;text-align:right;direction:rtl;margin:10px 0;overflow-wrap:anywhere}
+.st-key-gazette-page .gazette-tag{display:inline-block;background:#e5edf5;padding:4px 8px;font-size:11px;margin:3px}
+.st-key-gazette-page input::placeholder{color:#000!important;opacity:1}

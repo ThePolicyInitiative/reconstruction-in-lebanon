@@ -1,0 +1,333 @@
+"""Mona2asat dashboard integrated from the user's local project."""
+from __future__ import annotations
+import html
+import json
+from datetime import datetime, timedelta
+from pathlib import Path
+from zoneinfo import ZoneInfo
+import altair as alt
+import pandas as pd
+from i18n import st, translate
+from .tender_analytics import UNKNOWN, LEAP_SOURCE, district_counts, newest_first, normalize
+from .live_data import FeedError
+from .automatic import AutomaticTenderFeed, get_process_monitor
+from .categories import CATEGORIES, DEFINITIONS, VERSION as CATEGORY_VERSION, classify
+
+ROOT = Path(__file__).resolve().parent
+DATA = ROOT / "data"
+REPO = "https://github.com/ThePolicyInitiative/mona2asat"
+CDR_START = "https://www.cdr.gov.lb/ar/Procurment.aspx?aliaspath=%2fProcurment"
+ANNOUNCEMENT_YEARS = ('2026', '2025', '2024')
+
+
+def covered_tenders(rows):
+    """The website covers announcements dated in 2024, 2025 or 2026."""
+    return [row for row in rows if (row.get('announcement_date') or '')[:4] in ANNOUNCEMENT_YEARS]
+
+@st.cache_resource
+def get_monitor():
+    return get_process_monitor()
+
+
+@st.cache_resource
+def get_feed():
+    return AutomaticTenderFeed(monitor=get_monitor())
+
+
+def preserve_filters():
+    """Retain tender choices while another top-level tab is being displayed."""
+    keys = ['search', 'districts', 'declared_only', 'years_2024_2026', 'period', 'tender_category',
+            'buyers', 'cdr_stage']
+    keys += [source + suffix for source in ('ppa', 'cdr')
+             for suffix in ('_all_tenders_leap', '_topic_tenders_leap', '_detail')]
+    for key in keys:
+        if key in st.session_state:
+            st.session_state[key] = st.session_state[key]
+
+@st.cache_data(show_spinner=False)
+def load_json(path, modified_ns):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def read_data(path):
+    return load_json(str(path), path.stat().st_mtime_ns)
+
+
+@st.cache_data(show_spinner=False)
+def classified_tenders(rows, category_version):
+    return [classify(row) for row in covered_tenders(rows)]
+
+
+def ratio_metric(column, label, count, total, help=None):
+    column.metric(label, f"{count / total:.2%}" if total else "—", help=help)
+    column.caption(f"{count:,} / {total:,} filtered tenders" if total else "No tenders match the current filters.")
+
+
+def export_frame(rows):
+    return pd.DataFrame([{
+        "ID": r["id"], "Announced": r.get("announcement_date") or r.get("announced_on", ""),
+        "Tender": r["title"], "Buyer": r["procuring_entity"],
+        "Districts": " · ".join(r["districts"]), "District basis": r["district_basis"],
+        "Deadline": r.get("submission_deadline", ""), "Source status": r.get("status", ""),
+        "Categories": " · ".join(r['categories']) or "Not classified",
+        **{category: category in r['categories'] for category in CATEGORIES},
+        "Source": r["source_url"],
+    } for r in rows])
+
+
+def draw_table(rows, key, source):
+    frame = export_frame(rows)
+    if frame.empty:
+        st.info("No tenders match these filters. Change the category, widen the date range, or clear the search.")
+        return rows
+    st.dataframe(frame, hide_index=True, width="stretch", height=440,
+                 column_order=["Announced", "Categories", "Tender", "Buyer", "Districts", "Deadline", "Source"],
+                 column_config={"Tender": st.column_config.TextColumn(width="large"),
+                                "Buyer": st.column_config.TextColumn(width="medium"),
+                                "Categories": st.column_config.TextColumn(width="medium"),
+                                "Source": st.column_config.LinkColumn(f"{source.upper()} record", display_text="Open ↗")}, key=key)
+    # Neutralize spreadsheet formula prefixes in source text, while preserving Unicode.
+    safe = frame.map(lambda v: "'" + v if isinstance(v, str) and v.lstrip().startswith(("=", "+", "-", "@")) else v)
+    st.download_button("Download these tenders · CSV", safe.to_csv(index=False).encode("utf-8-sig"),
+                       file_name=f"{source}_tenders_filtered.csv", mime="text/csv", key=key + "_csv")
+    return rows
+
+
+def show_detail(row, source, revision):
+    st.divider()
+    st.subheader("Tender details")
+    st.markdown(f'<div class="tender-title">{html.escape(row["title"])}</div>', unsafe_allow_html=True)
+    st.caption(f'ID {row["id"]} · {row["procuring_entity"]} · Announced {row.get("announcement_date") or "not specified"}')
+    st.caption("Categories: " + (" · ".join(row['categories']) or "Not classified"))
+    st.link_button(f"Open original {source.upper()} record ↗", row["source_url"])
+    if row["summary"]:
+        st.markdown(f'<div class="arabic-copy">{html.escape(row["summary"])}</div>', unsafe_allow_html=True)
+    with st.expander("District and category evidence"):
+        st.write("District basis: " + row["district_basis"])
+        if row["district_evidence"]:
+            st.dataframe(pd.DataFrame(row["district_evidence"]), hide_index=True, width="stretch")
+        else:
+            st.caption("The saved record does not identify an execution/delivery district or explicitly name a district in its project text.")
+        if row["category_evidence"]:
+            st.dataframe(pd.DataFrame(row["category_evidence"]), hide_index=True, width="stretch")
+        else:
+            st.caption("No wording for the seven categories was found in the saved notice text.")
+    try:
+        record = get_feed().detail(source, row['id'], revision)
+    except (FeedError, OSError, ValueError):
+        record = None
+        st.info('The complete record could not be loaded. You can still open the original source above.')
+    if record is not None:
+        if source == "cdr":
+            with st.expander(f'All lots and source fields · {len(record["lots"])} lots'):
+                for lot in record["lots"]:
+                    st.markdown(f'**Lot {lot["lot"]}**')
+                    if lot["lot_title"]:
+                        st.text(lot["lot_title"])
+                    st.link_button(f'Open CDR lot {lot["lot"]} ↗', lot["source_url"])
+                    st.dataframe(pd.DataFrame(lot["metadata"]), hide_index=True, width="stretch")
+                    if lot["events"]:
+                        st.dataframe(pd.DataFrame(lot["events"]), hide_index=True, width="stretch")
+        with st.expander(f'Documents and complete record · {row["attachment_links"]} attachment entries'):
+            links = {}
+            for attachment in record.get("attachments", []):
+                url = attachment.get("url", attachment.get("href", ""))
+                if url.startswith(("https://", "http://")):
+                    links.setdefault(url, attachment.get("text") or attachment.get("label") or url.rsplit("/", 1)[-1])
+            if links:
+                st.dataframe(pd.DataFrame([{"Document": text, "Download": url} for url, text in links.items()]),
+                             hide_index=True, width="stretch", column_config={
+                                 "Download": st.column_config.LinkColumn(display_text="Open document ↗")})
+            else:
+                st.caption("No document links in the saved record.")
+            st.download_button("Download complete tender · JSON", json.dumps(record, ensure_ascii=False, indent=2),
+                               file_name=f'{source}_tender_{row["id"]}.json', mime="application/json", key=source + "_detail_json")
+            for section in record.get("sections", []):
+                st.text(section.get("title", section.get("label", section.get("id", ""))))
+                st.text(section.get("text", ""))
+
+
+def tender_filters(rows):
+    with st.expander("Filter tenders", expanded=False):
+        st.divider()
+        search = st.text_input("Search tenders", placeholder="Arabic, English, buyer or ID", key="search")
+        district_options = sorted({d for r in rows for d in r["districts"] if d != UNKNOWN})
+        districts = st.multiselect("District / القضاء", district_options + [UNKNOWN], key="districts")
+        declared_only = st.checkbox("Use declared locations only", key="declared_only",
+                                    help="Exclude districts inferred from explicit district/caza names in project text, including Arabic district lists.")
+        years = st.multiselect("Announcement year / السنة", ANNOUNCEMENT_YEARS, key="years_2024_2026", placeholder="2024, 2025 and 2026",
+                               help="Choose one or more years. Leave empty to include 2024, 2025 and 2026. Applies to both source tabs and combines with the other filters.")
+        period = st.selectbox("Announcement period", ["All dates", "Last 7 days", "Last 30 days", "Last 90 days", "This year"], key="period")
+        topic = st.selectbox("Category", ["All tenders", *CATEGORIES], key="tender_category")
+        buyers = st.multiselect("Procuring entity / الجهة الشارية", sorted({r["procuring_entity"] for r in rows if r["procuring_entity"]}), key="buyers")
+        if st.button("Refresh data", width="stretch"):
+            get_feed().refresh(force=True)
+            load_json.clear()
+            st.rerun()
+    return search, districts, declared_only, years, period, topic, buyers
+
+
+def source_dashboard(source, payload, status, filters, revision=None):
+    rows = classified_tenders(payload["tenders"], CATEGORY_VERSION)
+    search, districts, declared_only, years, period, topic, buyers = filters
+    today = datetime.now(ZoneInfo("Asia/Beirut")).date()
+    if source == "cdr":
+        st.markdown('<div class="eyebrow">COUNCIL FOR DEVELOPMENT AND RECONSTRUCTION / مجلس الإنماء والإعمار</div>', unsafe_allow_html=True)
+        stage = st.selectbox("CDR section", ["All sections", "Ongoing", "Archive", "Others"], key="cdr_stage")
+        st.caption("One procurement per CDR project ID, with all lots retained. PPA and CDR can publish the same procurement; their totals are kept separate.")
+        if status.get("stages"):
+            st.caption("Last full scan · " + " · ".join(f'{name}: {item["rows"]:,} rows' for name, item in status["stages"].items()))
+        st.link_button("Open CDR procurement list ↗", CDR_START)
+    else:
+        st.markdown('<div class="eyebrow">PUBLIC PROCUREMENT AUTHORITY / هيئة الشراء العام</div>', unsafe_allow_html=True)
+
+    filtered = rows
+    if source == "cdr" and stage != "All sections":
+        filtered = [r for r in filtered if stage in r.get("stages", [])]
+    if search.strip():
+        query = normalize(search)
+        filtered = [r for r in filtered if query in normalize(" ".join([r["id"], r["title"], r["procuring_entity"], r["summary"]]))]
+    if districts:
+        filtered = [r for r in filtered if set(r["districts"]) & set(districts)]
+    if declared_only:
+        filtered = [r for r in filtered if r["district_basis"] == "Declared"]
+    if years:
+        filtered = [r for r in filtered if r["announcement_date"][:4] in years]
+    if period != "All dates":
+        start = today.replace(month=1, day=1) if period == "This year" else today - timedelta(days=int(period.split()[1])-1)
+        filtered = [r for r in filtered if r.get("announcement_date") and start.isoformat() <= r["announcement_date"] <= today.isoformat()]
+    if topic in CATEGORIES:
+        filtered = [r for r in filtered if topic in r['categories']]
+    if buyers:
+        filtered = [r for r in filtered if r["procuring_entity"] in buyers]
+    filtered = newest_first(filtered)
+
+    total, matching, related, mapped = st.columns(4)
+    total.metric("Total tenders", f"{len(rows):,}", help="Unique tenders announced in 2024, 2025 or 2026, before applying the optional filters.")
+    matching.metric("Filtered tenders", f"{len(filtered):,}")
+    ratio_metric(related, "Categorised tenders", sum(bool(r['categories']) for r in filtered), len(filtered),
+                 help="Tenders matching at least one of the seven categories, counted once. Open a tender to inspect the evidence.")
+    mapped.metric("Districts represented", len({d for r in filtered for d in r["districts"] if d != UNKNOWN}), help="Within the current filters. See the Districts tab for source coverage and missing locations.")
+    check = status.get("checked_at", "")
+    try:
+        check = datetime.fromisoformat(check).astimezone(ZoneInfo("Asia/Beirut")).strftime("%d %b %Y, %H:%M Beirut")
+    except ValueError:
+        check = "unavailable"
+    st.caption(f"Last successful source check: {check}")
+    if status.get("pending_details") or status.get("detail_failures"):
+        st.warning(f'{status.get("pending_details", 0)} {"lots" if source == "cdr" else "tenders"} are waiting for complete details. Counts include saved records only.')
+    if status.get("scan_error"):
+        st.warning("The latest source check failed. Saved records remain available while automatic retries continue.")
+    if status.get("checked_at"):
+        try:
+            age = datetime.now(ZoneInfo("UTC")) - datetime.fromisoformat(status["checked_at"])
+            if age > timedelta(hours=36):
+                st.warning("This source has not been checked successfully for over 36 hours. Automatic collection will retry; original source links may have later updates.")
+        except ValueError:
+            pass
+
+    latest_tab, district_tab, topic_tab, about_tab = st.tabs(["Newest tenders", "By district", "By category", "How counts work"])
+    with latest_tab:
+        st.subheader("Latest announcements")
+        st.caption("Announcements from 2024–2026, newest first; tender ID breaks ties.")
+        for column, row in zip(st.columns(3), filtered[:3]):
+            with column, st.container(border=True):
+                st.caption(f'{row.get("announcement_date") or "Date not specified"}  ·  #{row["id"]}')
+                if row['categories']:
+                    st.markdown(' '.join(f'<span class="tag">{html.escape(category)}</span>' for category in row['categories']), unsafe_allow_html=True)
+                st.markdown(f'<div class="tender-title">{html.escape(row["title"])}</div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="tender-buyer">{html.escape(row["procuring_entity"])}</div>', unsafe_allow_html=True)
+                st.link_button(f"View on {source.upper()} ↗", row["source_url"])
+        table_rows = draw_table(filtered, source + "_all_tenders", source)
+        if table_rows:
+            lookup = {r["id"]: r for r in table_rows}
+            selected = st.selectbox("Explore a tender", list(lookup), format_func=lambda value: f'#{value} · {lookup[value]["title"]}', key=source + "_detail")
+            show_detail(lookup[selected], source, revision)
+
+    with district_tab:
+        st.subheader("Where tenders are located")
+        declared = sum(r["district_basis"] == "Declared" for r in filtered)
+        inferred = sum(r["district_basis"] == "Text mention" for r in filtered)
+        unknown = sum(r["district_basis"] == "Not specified" for r in filtered)
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Declared location", declared)
+        c2.metric("Explicit district in text", inferred)
+        c3.metric("District not specified", unknown)
+        st.caption("District means the stated execution/delivery location, which may be a delivery office. Each tender counts once per district; multi-district tenders appear in each district, so bars can add up to more than the tender total. Governorate-only entries remain unassigned.")
+        counts = district_counts(filtered)
+        named = [(name, count) for name, count in counts if name != UNKNOWN]
+        if named:
+            frame = pd.DataFrame(named, columns=["District", "Tenders"])
+            chart = alt.Chart(frame).mark_bar(color="#0B766D", cornerRadiusEnd=4).encode(
+                x=alt.X("Tenders:Q", axis=alt.Axis(tickMinStep=1), title="Number of tenders"),
+                y=alt.Y("District:N", sort="-x", title=None, axis=alt.Axis(labelLimit=180)),
+                tooltip=["District", "Tenders"]).properties(height=max(260, len(named)*27))
+            st.altair_chart(chart.configure_axis(labelColor="#000", titleColor="#000"), width="stretch")
+        if counts:
+            st.dataframe(pd.DataFrame(counts, columns=["District", "Distinct tenders"]), hide_index=True, width="stretch")
+        else:
+            st.info("No district data for the current filters.")
+
+    with topic_tab:
+        st.subheader("Tenders by category")
+        st.caption("A tender can appear in several categories. Each bar counts it once within that category; category totals must not be added together.")
+        counts = pd.DataFrame([{"Category": category, "Tenders": sum(category in r['categories'] for r in filtered)} for category in CATEGORIES])
+        chart = alt.Chart(counts).mark_bar(color="#24566B", cornerRadiusEnd=4).encode(
+            x=alt.X("Tenders:Q", axis=alt.Axis(tickMinStep=1), title="Number of tenders"),
+            y=alt.Y("Category:N", sort=[translate(c) for c in CATEGORIES], title=None, axis=alt.Axis(labelLimit=210)),
+            tooltip=["Category", "Tenders"]).properties(height=300)
+        st.altair_chart(chart.configure_axis(labelColor="#000", titleColor="#000"), width="stretch")
+        st.dataframe(counts, hide_index=True, width="stretch")
+        st.caption("Categories are based on the saved wording, not an official source classification. Roads, utilities and shelter services are not automatically linked to war damage.")
+        candidates = [r for r in filtered if r['categories']]
+        candidates = draw_table(candidates, source + "_topic_tenders", source)
+        if candidates:
+            with st.expander("Why these tenders matched"):
+                evidence = [{"Tender ID": r["id"], **e} for r in candidates for e in r["category_evidence"]]
+                st.dataframe(pd.DataFrame(evidence), hide_index=True, width="stretch")
+        with st.expander("What each category includes"):
+            for category, definition in DEFINITIONS.items():
+                st.markdown(f"**{category}**")
+                st.write(definition)
+            st.link_button("Read the World Bank's LEAP definitions ↗", LEAP_SOURCE)
+
+    with about_tab:
+        st.subheader("Clear definitions, visible evidence")
+        if source == "cdr":
+            st.markdown("**CDR coverage:** ongoing, archive, and other notices are scanned to the end of pagination. Totals count unique CDR project IDs; all lots and document links are preserved. Older notices with no Arabic title use the source's English version. The CDR section filter changes the filtered counts and ratio denominators. Source tabs are never added together.")
+            st.markdown("**CDR updates:** listing changes trigger detail refreshes, and ongoing lots are refreshed daily. Archived details remain snapshots until their listing changes. A project with multiple lots uses the latest listed announcement and deadline dates; inspect its lot details for individual dates.")
+        st.markdown(f"**Total:** unique saved {source.upper()} procurement IDs with announcement dates in 2024, 2025 or 2026. Separate lots are not counted as separate tenders.")
+        st.markdown("""
+- **Newest:** announcement date parsed from the source, with ID as a tie-breaker. A newly discovered old notice retains its original publication date.
+- **Year filter:** coverage is limited to 2024, 2025 and 2026. Choose a year or leave empty for all three. Notices with other or unknown announcement years are excluded. Counts, district charts, ratios and downloads use this coverage; Total tenders is the three-year total before optional filters.
+- **District:** first use the source's `أماكن التنفيذ` execution/delivery fields. If absent, read named district lists after `قضاء`, `قضاءي`, `قضائي`, or `أقضية`, plus supported English caza/district names, in the title, purchase subject, summary, or lot title. No district is guessed from a buyer's head office or from a municipality name. Labels retain the source's district names; combined المنية–الضنية wording is kept together.
+- **Categories:** LEAP, Reconstruction, Damage assessment, Roads, Electricity / water, Shelter management, and Debris removal. A notice can match several categories; each category counts unique tenders. Categorised tenders counts the union once, divided by all filtered tenders.
+- **Classification:** the website rechecks titles, summaries and saved source-text evidence whenever the feed changes. Buyer names alone do not establish a category. Unmatched notices remain under All tenders; they are not forced into one of the seven categories.
+- **Evidence:** open a tender to see the wording behind each category. Attached documents are not scanned, and indirect references may be missed. Source downloads retain the original monitor data; table CSVs include the website's categories.
+- **Automatic updates:** the cloud monitor can collect notices while this computer is off, provided GitHub Actions is available. This page checks its saved results every minute. If the cloud's last saved check is more than 36 hours old, local collection provides a backup every 30 minutes while this server is running. Refresh data checks for cloud results and requests a local scan. Each source's tables and downloads use the same saved version.
+- **PPA history:** saved PPA details and status labels are snapshots from first discovery. PPA amendments are not continuously refreshed. Document links point to the original source.
+- **Check time:** the source-check time saved with the displayed data. The cloud monitor saves this time when records or errors change, or at least once per day; the local collector saves every completed check. Pending or failed detail downloads are shown separately.
+""")
+
+
+@st.fragment(run_every="60s")
+def dashboard():
+    st.title("A clearer view of public tenders.")
+    st.caption("Coverage: announcements dated 2024–2026.")
+    with st.spinner("Loading tenders…"):
+        snapshot = get_feed().refresh()
+    sources = snapshot['sources']
+    all_rows = covered_tenders([row for data in sources.values() if data for row in data[0]["tenders"]])
+    if snapshot['error']:
+        st.warning(snapshot['error'])
+    if snapshot.get('collecting'):
+        st.caption("Checking PPA and CDR for updates… Saved records remain available.")
+    filters = tender_filters(all_rows)
+    tabs = st.tabs(["PPA · هيئة الشراء العام", "CDR · مجلس الإنماء والإعمار"])
+    for tab, source in zip(tabs, sources):
+        with tab:
+            if sources[source] is None:
+                st.error(f"{source.upper()} dashboard data is unavailable. Automatic collection will retry.")
+            else:
+                revision = snapshot.get('revisions', {}).get(source, snapshot['revision'])
+                source_dashboard(source, *sources[source], filters, revision=revision)

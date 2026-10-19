@@ -1,0 +1,452 @@
+[
+  {
+    "town": "Mansouri",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/mansouri-a.webp",
+        "date": "6 September 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/mansouri-b.webp",
+        "date": "16 September 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching Sentinel-2 views. Eekad identifies expanding cleared and damaged areas during this interval; these images do not provide an individual building count.",
+    "source": "Eekad / Copernicus Sentinel-2",
+    "url": "https://eekad.com/اتساع-آثار-التفجيرات-في-المنصوري-جنو/"
+  },
+  {
+    "town": "Hanine",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/hanine-before.svg",
+        "date": "2 March 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/hanine-after.svg",
+        "date": "8 May 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching map views. Cloud obscures part of the earlier view; it may also contain existing damage. Vegetation changes alone are not evidence of destruction.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "map_url": "https://bellingcat.github.io/lebanon-may-2026/",
+    "coordinate_source": "https://lub-anan.com/المحافظات/النبطية/بنت-جبيل/حانين/",
+    "center": [
+      33.1101277,
+      35.3809648
+    ],
+    "projection": "EPSG:3857",
+    "map_resolution": 6.350203369203177,
+    "viewport_pixels": [
+      512,
+      512
+    ],
+    "tile_urls": {
+      "march-2-3": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/19/5.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/19/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/19/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/20/5.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/20/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/20/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/21/5.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/21/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/21/7.jpg"
+      ],
+      "may-8": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/19/5.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/19/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/19/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/20/5.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/20/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/20/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/21/5.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/21/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/21/7.jpg"
+      ]
+    }
+  },
+  {
+    "town": "Rshaf / Rashaf",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/rshaf-before.svg",
+        "date": "2 March 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/rshaf-after.svg",
+        "date": "8 May 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "map_url": "https://bellingcat.github.io/lebanon-may-2026/",
+    "coordinate_source": "https://mapcarta.com/12882996",
+    "center": [
+      33.14399,
+      35.36454
+    ],
+    "projection": "EPSG:3857",
+    "map_resolution": 6.350203369203177,
+    "viewport_pixels": [
+      512,
+      512
+    ],
+    "tile_urls": {
+      "march-2-3": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/18/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/18/9.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/18/10.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/19/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/19/9.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/19/10.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/20/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/20/9.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/20/10.jpg"
+      ],
+      "may-8": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/18/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/18/9.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/18/10.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/19/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/19/9.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/19/10.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/20/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/20/9.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/20/10.jpg"
+      ]
+    }
+  },
+  {
+    "town": "Markaba",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/markaba-before.svg",
+        "date": "2 March 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/markaba-after.svg",
+        "date": "8 May 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "map_url": "https://bellingcat.github.io/lebanon-may-2026/",
+    "coordinate_source": "https://www.ibiblio.org/maggot/vhic/Lebanon_reference_Atlas_13_08_06.pdf",
+    "center": [
+      33.233414,
+      35.515897
+    ],
+    "projection": "EPSG:3857",
+    "map_resolution": 6.350203369203177,
+    "viewport_pixels": [
+      512,
+      512
+    ],
+    "tile_urls": {
+      "march-2-3": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/17.jpg"
+      ],
+      "may-8": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/17.jpg"
+      ]
+    }
+  },
+  {
+    "town": "Talloussa",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/talloussa-before.svg",
+        "date": "2 March 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/talloussa-after.svg",
+        "date": "8 May 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "map_url": "https://bellingcat.github.io/lebanon-may-2026/",
+    "coordinate_source": "https://mapcarta.com/N6967797617",
+    "center": [
+      33.2295,
+      35.48899
+    ],
+    "projection": "EPSG:3857",
+    "map_resolution": 6.350203369203177,
+    "viewport_pixels": [
+      512,
+      512
+    ],
+    "tile_urls": {
+      "march-2-3": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/27/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/27/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/27/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/28/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/28/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/28/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/17.jpg"
+      ],
+      "may-8": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/27/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/27/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/27/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/28/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/28/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/28/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/17.jpg"
+      ]
+    }
+  },
+  {
+    "town": "Bani Hayyan",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/bani-hayyan-before.svg",
+        "date": "2 March 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/bani-hayyan-after.svg",
+        "date": "8 May 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "map_url": "https://bellingcat.github.io/lebanon-may-2026/",
+    "coordinate_source": "https://mapcarta.com/12899756",
+    "center": [
+      33.2441,
+      35.49081
+    ],
+    "projection": "EPSG:3857",
+    "map_resolution": 6.350203369203177,
+    "viewport_pixels": [
+      512,
+      512
+    ],
+    "tile_urls": {
+      "march-2-3": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/27/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/27/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/27/18.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/28/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/28/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/28/18.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/18.jpg"
+      ],
+      "may-8": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/27/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/27/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/27/18.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/28/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/28/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/28/18.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/18.jpg"
+      ]
+    }
+  },
+  {
+    "town": "Rab Thalathin",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/rab-thalathin-before.svg",
+        "date": "2 March 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/rab-thalathin-after.svg",
+        "date": "8 May 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "map_url": "https://bellingcat.github.io/lebanon-may-2026/",
+    "coordinate_source": "https://mapcarta.com/12883474",
+    "center": [
+      33.249,
+      35.51898
+    ],
+    "projection": "EPSG:3857",
+    "map_resolution": 6.350203369203177,
+    "viewport_pixels": [
+      512,
+      512
+    ],
+    "tile_urls": {
+      "march-2-3": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/18.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/18.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/18.jpg"
+      ],
+      "may-8": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/18.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/18.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/16.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/17.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/18.jpg"
+      ]
+    }
+  },
+  {
+    "town": "Tayr Harfa",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/tayr-harfa-before.svg",
+        "date": "2 March 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/tayr-harfa-after.svg",
+        "date": "8 May 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "map_url": "https://bellingcat.github.io/lebanon-may-2026/",
+    "coordinate_source": "https://mapcarta.com/12879182",
+    "center": [
+      33.12669,
+      35.21913
+    ],
+    "projection": "EPSG:3857",
+    "map_resolution": 6.350203369203177,
+    "viewport_pixels": [
+      512,
+      512
+    ],
+    "tile_urls": {
+      "march-2-3": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/8/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/8/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/8/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/9/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/9/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/9/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/10/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/10/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/10/8.jpg"
+      ],
+      "may-8": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/8/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/8/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/8/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/9/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/9/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/9/8.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/10/6.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/10/7.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/10/8.jpg"
+      ]
+    }
+  },
+  {
+    "town": "Houla",
+    "images": [
+      {
+        "file": "assets/satellite-pairs/houla-before.svg",
+        "date": "2 March 2026",
+        "type": "satellite"
+      },
+      {
+        "file": "assets/satellite-pairs/houla-after.svg",
+        "date": "8 May 2026",
+        "type": "satellite"
+      }
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "map_url": "https://bellingcat.github.io/lebanon-may-2026/",
+    "coordinate_source": "https://mapcarta.com/12893422",
+    "center": [
+      33.20895,
+      35.51528
+    ],
+    "projection": "EPSG:3857",
+    "map_resolution": 6.350203369203177,
+    "viewport_pixels": [
+      512,
+      512
+    ],
+    "tile_urls": {
+      "march-2-3": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/13.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/14.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/29/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/13.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/14.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/30/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/13.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/14.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/march-2-3/6/31/15.jpg"
+      ],
+      "may-8": [
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/13.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/14.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/29/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/13.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/14.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/30/15.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/13.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/14.jpg",
+        "https://bellingcat-embeds.ams3.cdn.digitaloceanspaces.com/2026-lebanon/may-8/6/31/15.jpg"
+      ]
+    }
+  }
+]

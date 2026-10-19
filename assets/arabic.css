@@ -1,0 +1,39 @@
+.stMainBlockContainer{direction:rtl;text-align:right;font-family:Tahoma,Arial,sans-serif}
+.stMainBlockContainer p,.stMainBlockContainer h1,.stMainBlockContainer h2,.stMainBlockContainer h3,.stMainBlockContainer label{font-family:Tahoma,Arial,sans-serif}
+.overview,.budget-page,.source-notes{font-family:Tahoma,Arial,sans-serif;direction:rtl;text-align:right}
+.overview h1,.budget-heading h1{letter-spacing:0;line-height:1.45}
+.overview .actor-role,.overview .sector-label,.overview .allocation-heading,.budget-kicker{letter-spacing:0}
+.overview-title>p,.budget-unit{text-align:left}
+.funding-panel{border-right:0;border-left:1px solid #bdcdc4}
+.budget-total+.budget-total{border-left:0;border-right:1px solid #c7d4ce}
+.budget-table th,.budget-table caption{text-align:right}
+.budget-number,.budget-total>strong,.budget-total>p,.budget-flow-start strong,.budget-flow-split strong,.funding-numbers strong{direction:ltr;unicode-bidi:isolate;text-align:right}
+.budget-total>strong,.budget-flow-start strong,.budget-flow-split strong{display:block}
+.funding-numbers>div{flex:1;min-width:0}
+.funding-numbers strong{font-size:36px;letter-spacing:0}
+.funding-numbers em{display:block;font-size:15px;margin:5px 0 0;letter-spacing:0}
+.allocation-line strong{direction:ltr;unicode-bidi:isolate;white-space:nowrap;font-size:13px;letter-spacing:0}
+.works-gap strong{direction:ltr;unicode-bidi:isolate;white-space:nowrap;font-size:24px;letter-spacing:0}
+.budget-difference>strong{display:flex;align-items:baseline;gap:8px}
+.budget-difference>strong>span{direction:ltr;unicode-bidi:isolate}
+.overview .stage:not(:last-child):after{content:'←';right:auto;left:-25px}
+.overview .checks-grid>div{border-left:0;border-right:2px solid #b5cabe;padding-left:0;padding-right:8px}
+.overview .panel-title>small{margin-left:0;margin-right:auto}
+.budget-table small,.budget-code-note p{direction:ltr;unicode-bidi:isolate;text-align:right}
+.budget-difference{border-left:0;border-right:3px solid #8da7bb}
+.budget-difference>strong{direction:ltr;unicode-bidi:isolate}
+.stage ul{padding-left:0;padding-right:18px}
+.brand{direction:rtl;letter-spacing:0;text-align:right}
+.brand span{letter-spacing:0;font-size:12px}
+.st-key-site-header{direction:ltr}
+.st-key-site-header [data-testid="stHorizontalBlock"]{direction:ltr}
+.st-key-site-header [data-testid="stButton"] button{direction:ltr;white-space:nowrap}
+.st-key-tenders-page [data-testid="stDataFrame"]{direction:ltr}
+.source-row,.source-row a{overflow-wrap:anywhere}
+.stMainBlockContainer [data-baseweb="tab-list"]{direction:rtl}
+.stMainBlockContainer [data-baseweb="tab"]{font-family:Tahoma,Arial,sans-serif;font-size:13px}
+.stMainBlockContainer input[type="text"]{text-align:right;direction:auto}
+[data-baseweb="popover"]{direction:rtl}
+@media(max-width:800px){.funding-panel{border-left:0}.overview-title>p,.budget-unit{text-align:right}}
+@media(max-width:560px){.budget-total+.budget-total{border-right:0}.budget-page h2{font-size:21px}.overview h1{font-size:29px}}
+@media(max-width:760px){.overview .stage:not(:last-child):after{content:'↓';right:29px;left:auto}.overview .actor{border-left:0;border-right:2px solid #6c9c85}.overview .stages-panel .panel-title>small{margin-right:24px}.funding-numbers{gap:25px}}

@@ -1,0 +1,934 @@
+[
+  {
+    "section": "additional-towns",
+    "town": "Mansouri",
+    "images": [
+      [
+        "assets/satellite-pairs/mansouri-a.webp",
+        "6 September 2026"
+      ],
+      [
+        "assets/satellite-pairs/mansouri-b.webp",
+        "16 September 2026"
+      ]
+    ],
+    "note": "Matching Sentinel-2 views. Eekad identifies expanding cleared and damaged areas during this interval; these images do not provide an individual building count.",
+    "source": "Eekad / Copernicus Sentinel-2",
+    "url": "https://eekad.com/اتساع-آثار-التفجيرات-في-المنصوري-جنو/",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "additional-towns",
+    "town": "Hanine",
+    "images": [
+      [
+        "assets/satellite-pairs/hanine-before.svg",
+        "2 March 2026"
+      ],
+      [
+        "assets/satellite-pairs/hanine-after.svg",
+        "8 May 2026"
+      ]
+    ],
+    "note": "Matching map views. Cloud obscures part of the earlier view; it may also contain existing damage. Vegetation changes alone are not evidence of destruction.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "additional-towns",
+    "town": "Rshaf / Rashaf",
+    "images": [
+      [
+        "assets/satellite-pairs/rshaf-before.svg",
+        "2 March 2026"
+      ],
+      [
+        "assets/satellite-pairs/rshaf-after.svg",
+        "8 May 2026"
+      ]
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "additional-towns",
+    "town": "Markaba",
+    "images": [
+      [
+        "assets/satellite-pairs/markaba-before.svg",
+        "2 March 2026"
+      ],
+      [
+        "assets/satellite-pairs/markaba-after.svg",
+        "8 May 2026"
+      ]
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "additional-towns",
+    "town": "Talloussa",
+    "images": [
+      [
+        "assets/satellite-pairs/talloussa-before.svg",
+        "2 March 2026"
+      ],
+      [
+        "assets/satellite-pairs/talloussa-after.svg",
+        "8 May 2026"
+      ]
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "additional-towns",
+    "town": "Bani Hayyan",
+    "images": [
+      [
+        "assets/satellite-pairs/bani-hayyan-before.svg",
+        "2 March 2026"
+      ],
+      [
+        "assets/satellite-pairs/bani-hayyan-after.svg",
+        "8 May 2026"
+      ]
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "additional-towns",
+    "town": "Rab Thalathin",
+    "images": [
+      [
+        "assets/satellite-pairs/rab-thalathin-before.svg",
+        "2 March 2026"
+      ],
+      [
+        "assets/satellite-pairs/rab-thalathin-after.svg",
+        "8 May 2026"
+      ]
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "additional-towns",
+    "town": "Tayr Harfa",
+    "images": [
+      [
+        "assets/satellite-pairs/tayr-harfa-before.svg",
+        "2 March 2026"
+      ],
+      [
+        "assets/satellite-pairs/tayr-harfa-after.svg",
+        "8 May 2026"
+      ]
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "additional-towns",
+    "town": "Houla",
+    "images": [
+      [
+        "assets/satellite-pairs/houla-before.svg",
+        "2 March 2026"
+      ],
+      [
+        "assets/satellite-pairs/houla-after.svg",
+        "8 May 2026"
+      ]
+    ],
+    "note": "Matching map views; the earlier date may already contain damage. Seasonal vegetation changes are not a damage count.",
+    "source": "Bellingcat / Planet Labs PBC",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "latest",
+    "town": "Majdal Zoun",
+    "images": [
+      [
+        "assets/majdal-zoun-april.png",
+        "16 April 2026"
+      ],
+      [
+        "assets/majdal-zoun-august.png",
+        "5 August 2026"
+      ]
+    ],
+    "note": "The same area on two dates, showing expanded rubble and demolition. The earlier view already contains damage.",
+    "source": "Al Jazeera / Airbus",
+    "url": "https://www.aljazeera.net/news/2026/8/11/مبان-تختفي-ومساحات-تجرف-صور-فضائية",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "latest",
+    "town": "Chamaa",
+    "images": [
+      [
+        "assets/comparison-panels/chamaa-before.svg",
+        "11 April 2026"
+      ],
+      [
+        "assets/comparison-panels/chamaa-after.svg",
+        "17 April 2026"
+      ]
+    ],
+    "note": "Before-and-after imagery of the Shamoun al-Safa sanctuary. Original red annotations retained.",
+    "source": "France 24 via inkl · Legal Agenda / Green Southerners / OnGeo Intelligence",
+    "url": "https://www.inkl.com/news/the-aim-is-to-erase-our-identity-how-south-lebanons-cultural-heritage-is-going-up-in-smoke",
+    "original": "assets/chamaa.png",
+    "annotated": true,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Nabatieh al-Fawqa and Ali al-Taher",
+    "images": [
+      [
+        "collection/satellite-images-2026-more/nabatieh-a.png",
+        "28 February 2026"
+      ],
+      [
+        "collection/satellite-images-2026-more/nabatieh-b.png",
+        "20 June 2026"
+      ]
+    ],
+    "note": "Wide view. Dated survey coverage is overlaid on a background mosaic that may have different dates. Original Vantor watermark retained.",
+    "source": "Al Jazeera / Airbus as credited by publisher",
+    "url": "https://www.aljazeera.net/amp/news/2026/6/23/ما-الذي-جرى-حول-تلة-علي-الطاهر-بلبنان",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Nabatieh al-Fawqa — closer view",
+    "images": [
+      [
+        "assets/clean-sources/nabatieh-detail-before.svg",
+        "28 February 2026"
+      ],
+      [
+        "assets/clean-sources/nabatieh-detail-after.svg",
+        "20 June 2026"
+      ]
+    ],
+    "note": "Matching crops from the publisher’s unmarked overview pair. No red outlines or reconstructed pixels. The surrounding background mosaic can have different dates.",
+    "source": "Al Jazeera / Airbus as credited by publisher",
+    "url": "https://www.aljazeera.net/amp/news/2026/6/23/ما-الذي-جرى-حول-تلة-علي-الطاهر-بلبنان",
+    "annotated": false,
+    "originals": [
+      "collection/satellite-images-2026-more/nabatieh-a.png",
+      "collection/satellite-images-2026-more/nabatieh-b.png"
+    ],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Tyre / Sour — city overview",
+    "images": [
+      [
+        "collection/satellite-images-2026-more/tyre-city-a.png",
+        "4 January 2026"
+      ],
+      [
+        "collection/satellite-images-2026-more/tyre-city-b.png",
+        "4 June 2026"
+      ]
+    ],
+    "note": "Original annotations and background mosaic retained. The background may differ in date from the survey imagery.",
+    "source": "Al Jazeera / Airbus as credited by publisher",
+    "url": "https://www.aljazeera.com/amp/news/2026/6/10/satellite-images-show-israels-destruction-of-historical-city-of-tyre",
+    "annotated": true,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Tyre — archaeological surroundings",
+    "images": [
+      [
+        "collection/satellite-images-2026-more/tyre-heritage-a.png",
+        "4 January 2026"
+      ],
+      [
+        "collection/satellite-images-2026-more/tyre-heritage-b.png",
+        "4 June 2026"
+      ]
+    ],
+    "note": "Original annotations and background mosaic retained. The background may differ in date from the survey imagery.",
+    "source": "Al Jazeera / Airbus as credited by publisher",
+    "url": "https://www.aljazeera.com/amp/news/2026/6/10/satellite-images-show-israels-destruction-of-historical-city-of-tyre",
+    "annotated": true,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "El-Buss refugee camp, Tyre",
+    "images": [
+      [
+        "collection/satellite-images-2026-more/tyre-camp-a.png",
+        "4 January 2026"
+      ],
+      [
+        "collection/satellite-images-2026-more/tyre-camp-b.png",
+        "4 June 2026"
+      ]
+    ],
+    "note": "Original annotations and background mosaic retained. The background may differ in date from the survey imagery.",
+    "source": "Al Jazeera / Airbus as credited by publisher",
+    "url": "https://www.aljazeera.com/amp/news/2026/6/10/satellite-images-show-israels-destruction-of-historical-city-of-tyre",
+    "annotated": true,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Arnoun and Beaufort Castle area",
+    "images": [
+      [
+        "assets/comparison-panels/arnoun-before.svg",
+        "28 July 2026"
+      ],
+      [
+        "assets/comparison-panels/arnoun-after.svg",
+        "3 August 2026"
+      ]
+    ],
+    "note": "The castle marker is for orientation. This regional view does not establish damage to individual castle structures.",
+    "source": "Arab News / Copernicus EO",
+    "url": "https://www.arabnews.com/middle-east/new-satellite-imagery-shows-scale-of-israeli-destruction-at-lebanons-beaufort-castle-2654211",
+    "original": "collection/satellite-images-2026-more/beaufort-arabnews-comparison.png",
+    "annotated": true,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Kfar Tebnit and Safita / Yahmar area",
+    "images": [
+      [
+        "assets/comparison-panels/kfar-tebnit-before.svg",
+        "15 July 2026"
+      ],
+      [
+        "assets/comparison-panels/kfar-tebnit-after.svg",
+        "28 July 2026"
+      ]
+    ],
+    "note": "Panels reordered chronologically from the original graphic. Kfar Tebnit is at the top; Safita at the bottom.",
+    "source": "Misbar / Sentinel-2",
+    "url": "https://www.misbar.com/amp/en/editorial/2026/08/24/satellite-images-reveal-impact-israeli-attacks-around-beaufort-castle",
+    "original": "collection/satellite-images-2026-more/kfar-tebnit-july-pair.png",
+    "annotated": true,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Beaufort, Arnoun and surrounding land",
+    "images": [
+      [
+        "assets/comparison-panels/beaufort-before.svg",
+        "2 August 2026"
+      ],
+      [
+        "assets/comparison-panels/beaufort-after.svg",
+        "22 August 2026"
+      ]
+    ],
+    "note": "Broad surface changes are visible; the pale areas are not a measured destruction boundary.",
+    "source": "Misbar / Sentinel-2",
+    "url": "https://www.misbar.com/amp/en/editorial/2026/08/24/satellite-images-reveal-impact-israeli-attacks-around-beaufort-castle",
+    "original": "collection/satellite-images-2026-more/beaufort-august-pair.png",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Majdal Zoun — regional view",
+    "images": [
+      [
+        "assets/comparison-panels/majdal-regional-before.svg",
+        "August 2025"
+      ],
+      [
+        "assets/comparison-panels/majdal-regional-after.svg",
+        "August 2026"
+      ]
+    ],
+    "note": "One row of the publisher’s comparison. Individual capture days are not specified.",
+    "source": "Arab News / Copernicus EO",
+    "url": "https://www.arabnews.com/middle-east/new-satellite-imagery-shows-scale-of-israeli-destruction-at-lebanons-beaufort-castle-2654211",
+    "original": "collection/satellite-images-2026-more/south-arabnews.png",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Bint Jbeil — regional view",
+    "images": [
+      [
+        "assets/comparison-panels/bint-regional-before.svg",
+        "August 2025"
+      ],
+      [
+        "assets/comparison-panels/bint-regional-after.svg",
+        "August 2026"
+      ]
+    ],
+    "note": "One row of the publisher’s comparison. Individual capture days are not specified.",
+    "source": "Arab News / Copernicus EO",
+    "url": "https://www.arabnews.com/middle-east/new-satellite-imagery-shows-scale-of-israeli-destruction-at-lebanons-beaufort-castle-2654211",
+    "original": "collection/satellite-images-2026-more/south-arabnews.png",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Taybeh — regional view",
+    "images": [
+      [
+        "assets/comparison-panels/taybeh-regional-before.svg",
+        "August 2025"
+      ],
+      [
+        "assets/comparison-panels/taybeh-regional-after.svg",
+        "August 2026"
+      ]
+    ],
+    "note": "One row of the publisher’s comparison. Individual capture days are not specified.",
+    "source": "Arab News / Copernicus EO",
+    "url": "https://www.arabnews.com/middle-east/new-satellite-imagery-shows-scale-of-israeli-destruction-at-lebanons-beaufort-castle-2654211",
+    "original": "collection/satellite-images-2026-more/south-arabnews.png",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Bint Jbeil",
+    "images": [
+      [
+        "collection/town-satellite-images/bint-jbeil-before.jpg",
+        "14 January 2026"
+      ],
+      [
+        "collection/town-satellite-images/bint-jbeil-after.jpg",
+        "9 May 2026"
+      ]
+    ],
+    "note": "The earlier image may already show damage from previous fighting. Seasonal colour differences alone are not evidence of destruction.",
+    "source": "Arabic Post · published 8 June 2026",
+    "url": "https://story360.arabicpost.net/GazaLebanon/index-en.html",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Aita al-Shaab",
+    "images": [
+      [
+        "collection/town-satellite-images/aita-al-shaab-before.jpg",
+        "4 January 2026"
+      ],
+      [
+        "collection/town-satellite-images/aita-al-shaab-after.jpg",
+        "9 May 2026"
+      ]
+    ],
+    "note": "The earlier image may already show damage from previous fighting. Seasonal colour differences alone are not evidence of destruction.",
+    "source": "Arabic Post · published 8 June 2026",
+    "url": "https://story360.arabicpost.net/GazaLebanon/index-en.html",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Kfar Kila",
+    "images": [
+      [
+        "collection/town-satellite-images/kfar-kila-before.jpg",
+        "4 January 2026"
+      ],
+      [
+        "collection/town-satellite-images/kfar-kila-after.jpg",
+        "9 May 2026"
+      ]
+    ],
+    "note": "The earlier image may already show damage from previous fighting. Seasonal colour differences alone are not evidence of destruction.",
+    "source": "Arabic Post · published 8 June 2026",
+    "url": "https://story360.arabicpost.net/GazaLebanon/index-en.html",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Meiss El Jabal",
+    "images": [
+      [
+        "collection/town-satellite-images/meiss-el-jabal-before.jpg",
+        "4 January 2026"
+      ],
+      [
+        "collection/town-satellite-images/meiss-el-jabal-after.jpg",
+        "9 May 2026"
+      ]
+    ],
+    "note": "The earlier image may already show damage from previous fighting. Seasonal colour differences alone are not evidence of destruction.",
+    "source": "Arabic Post · published 8 June 2026",
+    "url": "https://story360.arabicpost.net/GazaLebanon/index-en.html",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Aitaroun",
+    "images": [
+      [
+        "collection/town-satellite-images/aitaroun-before.jpg",
+        "4 January 2026"
+      ],
+      [
+        "collection/town-satellite-images/aitaroun-after.jpg",
+        "9 May 2026"
+      ]
+    ],
+    "note": "The earlier image may already show damage from previous fighting. Seasonal colour differences alone are not evidence of destruction.",
+    "source": "Arabic Post · published 8 June 2026",
+    "url": "https://story360.arabicpost.net/GazaLebanon/index-en.html",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Naqoura",
+    "images": [
+      [
+        "collection/town-satellite-images/naqoura-before.jpg",
+        "4 January 2026"
+      ],
+      [
+        "collection/town-satellite-images/naqoura-after.jpg",
+        "9 May 2026"
+      ]
+    ],
+    "note": "The earlier image may already show damage from previous fighting. Seasonal colour differences alone are not evidence of destruction.",
+    "source": "Arabic Post · published 8 June 2026",
+    "url": "https://story360.arabicpost.net/GazaLebanon/index-en.html",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2024",
+    "town": "Yaroun — 2024 aftermath",
+    "images": [
+      [
+        "assets/comparison-panels/yaroun-2024-before.svg",
+        "5 October 2024"
+      ],
+      [
+        "assets/comparison-panels/yaroun-2024-after.svg",
+        "10 January 2025"
+      ]
+    ],
+    "note": "Two dated panels from the publisher’s four-date comparison. The earlier image already shows damage.",
+    "source": "Planet Labs PBC / AFP via RTL",
+    "url": "https://today.rtl.lu/news/world/lebanese-accuse-israel-of-wiping-their-towns-off-the-map-532119953",
+    "original": "collection/town-satellite-images/yaroun-four-dates.jpg",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Yaroun — 2026 comparison",
+    "images": [
+      [
+        "assets/comparison-panels/yaroun-2026-before.svg",
+        "30 January 2025"
+      ],
+      [
+        "assets/comparison-panels/yaroun-2026-after.svg",
+        "2 May 2026"
+      ]
+    ],
+    "note": "Two dated panels from the publisher’s four-date comparison. The earlier image already shows damage.",
+    "source": "Planet Labs PBC / AFP via RTL",
+    "url": "https://today.rtl.lu/news/world/lebanese-accuse-israel-of-wiping-their-towns-off-the-map-532119953",
+    "original": "collection/town-satellite-images/yaroun-four-dates.jpg",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Taybeh",
+    "images": [
+      [
+        "collection/town-satellite-images-2/taybeh-before.jpg",
+        "28 February 2026"
+      ],
+      [
+        "collection/town-satellite-images-2/taybeh-after.jpg",
+        "11 April 2026"
+      ]
+    ],
+    "note": "Original Spanish date labels are preserved.",
+    "source": "BBC Verify / Airbus DS",
+    "url": "https://www.bbc.com/news/articles/cdxkk1vnp57o",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2026",
+    "town": "Deir Seryan",
+    "images": [
+      [
+        "assets/comparison-panels/deir-seryan-before.svg",
+        "3 March 2026"
+      ],
+      [
+        "assets/comparison-panels/deir-seryan-after.svg",
+        "12 April 2026"
+      ]
+    ],
+    "note": "A matched pair from the BBC Verify satellite comparison. Original publisher annotations retained.",
+    "source": "BBC Verify / Airbus DS",
+    "url": "https://www.bbc.com/news/articles/cdxkk1vnp57o",
+    "original": "collection/town-satellite-images-2/khiam-deir-seryan-naqoura.webp",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Khiam",
+    "images": [
+      [
+        "assets/comparison-panels/khiam-before.svg",
+        "28 February 2026"
+      ],
+      [
+        "assets/comparison-panels/khiam-after.svg",
+        "13 April 2026"
+      ]
+    ],
+    "note": "A matched pair from the BBC Verify satellite comparison. Original publisher annotations retained.",
+    "source": "BBC Verify / Airbus DS",
+    "url": "https://www.bbc.com/news/articles/cdxkk1vnp57o",
+    "original": "collection/town-satellite-images-2/khiam-deir-seryan-naqoura.webp",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Naqoura — BBC comparison",
+    "images": [
+      [
+        "assets/comparison-panels/naqoura-bbc-before.svg",
+        "3 March 2026"
+      ],
+      [
+        "assets/comparison-panels/naqoura-bbc-after.svg",
+        "11 April 2026"
+      ]
+    ],
+    "note": "A matched pair from the BBC Verify satellite comparison. Original publisher annotations retained.",
+    "source": "BBC Verify / Airbus DS",
+    "url": "https://www.bbc.com/news/articles/cdxkk1vnp57o",
+    "original": "collection/town-satellite-images-2/khiam-deir-seryan-naqoura.webp",
+    "annotated": false,
+    "originals": []
+  },
+  {
+    "section": "2026",
+    "town": "Qantara and Aadshit",
+    "images": [
+      [
+        "collection/qantara-aadshit-2026-before.jpg",
+        "2 March 2026"
+      ],
+      [
+        "collection/qantara-aadshit-2026-after.jpg",
+        "30 April 2026"
+      ]
+    ],
+    "note": "Original publisher annotations retained. Any explosive quantity is a reported military claim, not a measurement from the imagery.",
+    "source": "Bellingcat / Planet Labs",
+    "url": "https://www.bellingcat.com/?p=52519",
+    "annotated": true,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2024",
+    "town": "Odaisseh / Odeisseh",
+    "images": [
+      [
+        "assets/clean-sources/odeisseh-before.svg",
+        "26 September 2024"
+      ],
+      [
+        "assets/clean-sources/odeisseh-after.svg",
+        "27 January 2025"
+      ]
+    ],
+    "note": "A wider town view replaces the boxed house detail. Matching crops leave the source’s border annotation outside the frame. The dates differ from the previous house-detail comparison.",
+    "source": "Amnesty International / © 2025 Planet Labs PBC (before), Airbus (after)",
+    "url": "https://www.amnesty.de/sites/default/files/2025-08/Amnesty-Bericht-Libanon-Israel-Angriffe-August-2025.pdf#page=32",
+    "annotated": false,
+    "original": null,
+    "originals": [
+      "assets/clean-sources/odeisseh-before-original.jpg",
+      "assets/clean-sources/odeisseh-after-original.jpg"
+    ]
+  },
+  {
+    "section": "2024",
+    "town": "Dhayra",
+    "images": [
+      [
+        "assets/clean-sources/dhayra-before.svg",
+        "4 October 2024"
+      ],
+      [
+        "assets/clean-sources/dhayra-after.svg",
+        "30 January 2025"
+      ]
+    ],
+    "note": "Matching town-area crops without building boxes; the border annotation sits outside this view. The earlier date follows the image label, 4 October 2024; the report’s prose gives a conflicting date.",
+    "source": "Amnesty International / © 2025 Airbus (before), Planet Labs PBC (after)",
+    "url": "https://www.amnesty.de/sites/default/files/2025-08/Amnesty-Bericht-Libanon-Israel-Angriffe-August-2025.pdf#page=41",
+    "annotated": false,
+    "original": null,
+    "originals": [
+      "assets/clean-sources/dhayra-before-original.jpg",
+      "assets/clean-sources/dhayra-after-original.jpg"
+    ]
+  },
+  {
+    "section": "2024",
+    "town": "Mhaibib",
+    "images": [
+      [
+        "collection/town-satellite-images-2/mhaibib-before.webp",
+        "26 September 2024"
+      ],
+      [
+        "collection/town-satellite-images-2/mhaibib-after.webp",
+        "24 October 2024"
+      ]
+    ],
+    "note": "Dates and location follow the AP photo captions.",
+    "source": "Planet Labs PBC / Associated Press",
+    "url": "https://www.clickondetroit.com/news/world/2024/11/02/israels-path-of-destruction-in-southern-lebanon-raises-fears-of-an-attempt-to-create-a-buffer-zone/",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2024",
+    "town": "Ramyah",
+    "images": [
+      [
+        "collection/town-satellite-images-2/ramyah-before.webp",
+        "26 September 2024"
+      ],
+      [
+        "collection/town-satellite-images-2/ramyah-after.webp",
+        "24 October 2024"
+      ]
+    ],
+    "note": "Dates and location follow the AP photo captions.",
+    "source": "Planet Labs PBC / Associated Press",
+    "url": "https://www.clickondetroit.com/news/world/2024/11/02/israels-path-of-destruction-in-southern-lebanon-raises-fears-of-an-attempt-to-create-a-buffer-zone/",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2024",
+    "town": "Blida",
+    "images": [
+      [
+        "collection/town-satellite-images-2/blida-before.webp",
+        "26 September 2024"
+      ],
+      [
+        "collection/town-satellite-images-2/blida-after.webp",
+        "24 October 2024"
+      ]
+    ],
+    "note": "Dates and location follow the AP photo captions.",
+    "source": "Planet Labs PBC / Associated Press",
+    "url": "https://www.clickondetroit.com/news/world/2024/11/02/israels-path-of-destruction-in-southern-lebanon-raises-fears-of-an-attempt-to-create-a-buffer-zone/",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2024",
+    "town": "Maroun el Ras",
+    "images": [
+      [
+        "assets/clean-sources/maroun-el-ras-before-original.jpg",
+        "29 September 2024"
+      ],
+      [
+        "assets/clean-sources/maroun-el-ras-after-original.jpg",
+        "30 January 2025"
+      ]
+    ],
+    "note": "Unmarked wider-town comparison from Amnesty’s report. The black corner in the later image is missing coverage, not destruction.",
+    "source": "Amnesty International / © 2025 Planet Labs PBC",
+    "url": "https://www.amnesty.de/sites/default/files/2025-08/Amnesty-Bericht-Libanon-Israel-Angriffe-August-2025.pdf#page=26",
+    "annotated": false,
+    "original": null,
+    "originals": [
+      "assets/clean-sources/maroun-el-ras-before-original.jpg",
+      "assets/clean-sources/maroun-el-ras-after-original.jpg"
+    ]
+  },
+  {
+    "section": "2024",
+    "town": "Majdel Selm",
+    "images": [
+      [
+        "collection/town-satellite-images-2/majdel-selm-before.jpg",
+        "Earlier view · exact date unstated"
+      ],
+      [
+        "collection/town-satellite-images-2/majdel-selm-after.jpg",
+        "November–December 2024 collection"
+      ]
+    ],
+    "note": "Individual capture dates are not specified. Location names and original boundary annotations follow the publisher; they are not independently measured destruction areas.",
+    "source": "OnGeo Intelligence / Google · published 10 January 2025",
+    "url": "https://ongeo-intelligence.com/blog/lebanon-satellite-bombing-destruction",
+    "annotated": true,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2024",
+    "town": "Haret Hreik — Rue 87",
+    "images": [
+      [
+        "collection/town-satellite-images-2/haret-hreik-before.jpg",
+        "Earlier view · exact date unstated"
+      ],
+      [
+        "collection/town-satellite-images-2/haret-hreik-after.jpg",
+        "November–December 2024 collection"
+      ]
+    ],
+    "note": "Individual capture dates are not specified. Location names and original boundary annotations follow the publisher; they are not independently measured destruction areas.",
+    "source": "OnGeo Intelligence / Google · published 10 January 2025",
+    "url": "https://ongeo-intelligence.com/blog/lebanon-satellite-bombing-destruction",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2024",
+    "town": "Ash Shumara / Borj En-Naqoura",
+    "images": [
+      [
+        "collection/town-satellite-images-2/ash-shumara-before.jpg",
+        "Earlier view · exact date unstated"
+      ],
+      [
+        "collection/town-satellite-images-2/ash-shumara-after.jpg",
+        "November–December 2024 collection"
+      ]
+    ],
+    "note": "Individual capture dates are not specified. Location names and original boundary annotations follow the publisher; they are not independently measured destruction areas.",
+    "source": "OnGeo Intelligence / Google · published 10 January 2025",
+    "url": "https://ongeo-intelligence.com/blog/lebanon-satellite-bombing-destruction",
+    "annotated": false,
+    "originals": [],
+    "original": null
+  },
+  {
+    "section": "2006",
+    "town": "Beirut",
+    "images": [
+      [
+        "assets/comparison-panels/beirut-2006-before.svg",
+        "17 June 2005"
+      ],
+      [
+        "assets/comparison-panels/beirut-2006-after.svg",
+        "19 August 2006"
+      ]
+    ],
+    "note": "UNOSAT’s mapped subscene identifies 178 severely damaged or destroyed buildings. This is a local analysis, not a national total.",
+    "source": "UNOSAT · product 253",
+    "url": "https://unosat.org/products/253",
+    "original": "collection/beirut-2006-satellite-before-after.jpg",
+    "annotated": true,
+    "originals": []
+  },
+  {
+    "section": "2006",
+    "town": "Bint Jbeil",
+    "images": [
+      [
+        "assets/comparison-panels/bint-jbeil-2006-before.svg",
+        "17 June 2005"
+      ],
+      [
+        "assets/comparison-panels/bint-jbeil-2006-after.svg",
+        "10 September 2006"
+      ]
+    ],
+    "note": "UNOSAT map version 1.1, dated 13 October 2006. Original map labels and legend retained.",
+    "source": "UNOSAT / Ikonos · product 255",
+    "url": "https://unosat.org/products/255",
+    "original": "collection/town-satellite-images/bint-jbeil-2006-unosat.jpg",
+    "annotated": true,
+    "originals": []
+  }
+]

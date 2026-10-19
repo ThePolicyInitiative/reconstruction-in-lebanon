@@ -1,0 +1,657 @@
+{
+  "party-tawhid": {
+    "path": "symbols/tawhid-party-site.jpg",
+    "kind": "emblem",
+    "sourceUrl": "https://tawhidarabi.org/",
+    "imageUrl": "https://tawhidarabi.org/wp-content/uploads/2026/03/Tawhid-Flag-1-696x337.jpg",
+    "author": "Arab Unification Party",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "Use the party-site variant with its Arabic name below the red-and-green symbol. The previous drawing placed the name above it. Both identify the same organization.",
+      "references": [
+        "https://tawhidarabi.org/",
+        "https://tawhidarabi.org/wp-content/uploads/2026/03/Tawhid-Flag-1-696x337.jpg"
+      ],
+      "assetSha256": "eba1cfa95c57bbdcd10387c4962239bda8ee503c9176ba36bb64fb98cca860a7"
+    },
+    "verification": "Use the party-site variant with its Arabic name below the red-and-green symbol. The previous drawing placed the name above it. Both identify the same organization."
+  },
+  "party-tashnag": {
+    "path": "symbols/tashnag.png",
+    "kind": "flag",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Armenian_Revolutionary_Federation_Flag.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Armenian_Revolutionary_Federation_Flag.svg/250px-Armenian_Revolutionary_Federation_Flag.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Jeromi Mikhael",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website-and-published-reference",
+      "finding": "The hand, sword, feather and spade identify the ARF. Official-site artwork is multicolored; the retained gold-on-red version is a separately attributed flag, not a claim that the official website uses that exact color variant.",
+      "references": [
+        "https://www.arfd.am/eng/",
+        "https://www.arfd.am/eng/wp-content/uploads/sites/3/2018/10/cropped-Eng.png",
+        "https://commons.wikimedia.org/wiki/File:Armenian_Revolutionary_Federation_Flag.svg",
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 12,
+      "assetSha256": "7fe012d7eb320ba47c9bf091fb7269779234f8b9122c0dfd1fdc974902e72543"
+    },
+    "verification": "The hand, sword, feather and spade identify the ARF. Official-site artwork is multicolored; the retained gold-on-red version is a separately attributed flag, not a claim that the official website uses that exact color variant."
+  },
+  "party-mmfd": {
+    "path": "symbols/mmfd-official.png",
+    "kind": "emblem",
+    "sourceUrl": "https://mmfidawla.com/",
+    "imageUrl": "https://mmfidawla.com/wp-content/uploads/2016/03/MMD-logo-final-e1518867805288.png",
+    "author": "Citizens in a State",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "verifiedOn": "2026-10-19",
+    "verification": "Retained the original party-site image already visually checked on the same review date.",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "Retained the original party-site image already visually checked on the same review date.",
+      "references": [
+        "https://mmfidawla.com/",
+        "https://mmfidawla.com/wp-content/uploads/2016/03/MMD-logo-final-e1518867805288.png"
+      ],
+      "assetSha256": "563c955dea48dd6ebbb19c205836d7d592ffd36978adebbf84300b512f4ccb21"
+    }
+  },
+  "party-kataeb": {
+    "path": "symbols/kataeb.png",
+    "kind": "flag",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kataeb_Party.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Flag_of_Kataeb_Party.svg/250px-Flag_of_Kataeb_Party.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "MrPenguin20",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "published-reference",
+      "finding": "Three green cedar tiers and brown trunk match the published guide. This confirms documented identity, not a newly issued 2026 design standard.",
+      "references": [
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11",
+        "https://commons.wikimedia.org/wiki/File:Flag_of_Kataeb_Party.svg"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 24,
+      "assetSha256": "6db56b4bea243971181cdaabfec293db72a7e7863773e998f6d14a42b8050921"
+    },
+    "verification": "Three green cedar tiers and brown trunk match the published guide. This confirms documented identity, not a newly issued 2026 design standard."
+  },
+  "party-nlp": {
+    "path": "symbols/nlp-named-emblem.png",
+    "kind": "emblem",
+    "sourceUrl": "https://www.nna-leb.gov.lb/ar/news/292820/حزب-الوطنيين-الاحرار-ما-الداعي-من-تكريس-يوم-25-أيا",
+    "imageUrl": "https://backend.nna-leb.gov.lb/uploads/143250/0288c3440b3965e2938e87596399ebda.png",
+    "author": "National Liberal Party emblem, reproduced by the National News Agency",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "news-agency-and-published-reference",
+      "finding": "The previous yellow cedar on a red/white flag is documented in the 2018 guide. Use the gold cedar in a circle with the Arabic party name, as reproduced by the National News Agency. This is a variant/source update, not evidence that the historical flag belongs to another party.",
+      "references": [
+        "https://www.nna-leb.gov.lb/ar/news/292820/حزب-الوطنيين-الاحرار-ما-الداعي-من-تكريس-يوم-25-أيا",
+        "https://backend.nna-leb.gov.lb/uploads/143250/0288c3440b3965e2938e87596399ebda.png",
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 15,
+      "assetSha256": "ee08e1ab69db350ab508a1902f4e47916cc619a09d362a81a08c94407c6c553a"
+    },
+    "verification": "The previous yellow cedar on a red/white flag is documented in the 2018 guide. Use the gold cedar in a circle with the Arabic party name, as reproduced by the National News Agency. This is a variant/source update, not evidence that the historical flag belongs to another party."
+  },
+  "party-fpm": {
+    "path": "symbols/fpm-official.jpg",
+    "kind": "emblem",
+    "sourceUrl": "https://api.tayyar.org/FPM/CharterAndLogo",
+    "imageUrl": "https://api.tayyar.org/Shared/getOnlineImage?location=http://static.tayyar.org/Content/uploads/CorporatePage/150418115515207~logo1.jpg&width=262&height=195",
+    "author": "Free Patriotic Movement",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "verifiedOn": "2026-10-19",
+    "verification": "Retained the original party-site image already visually checked on the same review date.",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "Retained the original party-site image already visually checked on the same review date.",
+      "references": [
+        "https://api.tayyar.org/FPM/CharterAndLogo",
+        "https://api.tayyar.org/Shared/getOnlineImage?location=http://static.tayyar.org/Content/uploads/CorporatePage/150418115515207~logo1.jpg&width=262&height=195"
+      ],
+      "assetSha256": "d9f40893b4598cc2104d8d65aeefadc7aad67915de016d8a2bf0dc7eab3dd05d"
+    }
+  },
+  "party-jamaa": {
+    "path": "symbols/jamaa-party-site.png",
+    "kind": "emblem",
+    "sourceUrl": "https://al-jamaa.org/",
+    "imageUrl": "https://al-jamaa.org/images/logo.png",
+    "author": "Jamaa Islamiya, Lebanon",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "The old monochrome flag has the correct identifying elements. Use the full-color emblem supplied by the Lebanese organization itself.",
+      "references": [
+        "https://al-jamaa.org/",
+        "https://al-jamaa.org/images/logo.png"
+      ],
+      "assetSha256": "d1451ed9eb3425a9f678c586aee35602bd74a9bdb613e4a32b4a5f78164765c5"
+    },
+    "verification": "The old monochrome flag has the correct identifying elements. Use the full-color emblem supplied by the Lebanese organization itself."
+  },
+  "party-lf": {
+    "path": "symbols/lf.png",
+    "kind": "flag",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Lebanese_Forces.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Flag_of_the_Lebanese_Forces.svg/250px-Flag_of_the_Lebanese_Forces.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "愛喝奶茶",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "published-reference",
+      "finding": "Green cedar and brown trunk within a red ring match the published guide. This confirms documented identity, not a newly issued 2026 design standard.",
+      "references": [
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11",
+        "https://commons.wikimedia.org/wiki/File:Flag_of_the_Lebanese_Forces.svg"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 30,
+      "assetSha256": "bb2d94f6792f6e0152316ecb1b4b36222cd95d1bb978cebdd75521c0061a8e78"
+    },
+    "verification": "Green cedar and brown trunk within a red ring match the published guide. This confirms documented identity, not a newly issued 2026 design standard."
+  },
+  "party-pno": {
+    "path": "symbols/pno.png",
+    "kind": "flag",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Popular_Nasserist_Organization.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_the_Popular_Nasserist_Organization.svg/250px-Flag_of_the_Popular_Nasserist_Organization.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "MrPenguin20",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "news-agency-photograph",
+      "finding": "White eagle, wreath and Arabic organization name on green with red bands match the organization banner photographed at its central committee meeting in Saida. Retain the flag.",
+      "references": [
+        "https://www.nna-leb.gov.lb/ar/متفرقات/693607",
+        "https://backend.nna-leb.gov.lb/uploads/141527/49bf7f76e3c16578875609625beaa124.png"
+      ],
+      "assetSha256": "6f8840e6f8b92acb28eb08e4253a607ce871bada526eee0fda916ed09ed7a883"
+    },
+    "verification": "White eagle, wreath and Arabic organization name on green with red bands match the organization banner photographed at its central committee meeting in Saida. Retain the flag."
+  },
+  "party-psp": {
+    "path": "symbols/psp.png",
+    "kind": "flag",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Progressive_Socialist_Party.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Flag_of_the_Progressive_Socialist_Party.svg/250px-Flag_of_the_Progressive_Socialist_Party.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Lexicon",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "The globe, triangle, pen and pickaxe match the image served by the party website. Retain the existing flag.",
+      "references": [
+        "https://psp.org.lb/",
+        "https://psp.org.lb/logo-og.jpg"
+      ],
+      "assetSha256": "919ae2d4c287829821f5141b547acbf5f592add9d660fad2e3c8a4882844a3ab"
+    },
+    "verification": "The globe, triangle, pen and pickaxe match the image served by the party website. Retain the existing flag."
+  },
+  "party-lana": {
+    "path": "symbols/lana.png",
+    "kind": "emblem",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lana_Party_logo.png",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Lana_Party_logo.png/250px-Lana_Party_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Lana party",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "secondary-source-only",
+      "finding": "The image matches the Commons file attributed to Lana and sourced to its website. The party site returned HTTP 500, so current party-site confirmation remains unavailable. Retain the attributed version with this limitation.",
+      "references": [
+        "https://commons.wikimedia.org/wiki/File:Lana_Party_logo.png",
+        "https://lnalebanon.org/"
+      ],
+      "assetSha256": "37a42495655b6389581ebf4db644616b348d3471a3632e7361be817ccaffc9db"
+    },
+    "verification": "The image matches the Commons file attributed to Lana and sourced to its website. The party site returned HTTP 500, so current party-site confirmation remains unavailable. Retain the attributed version with this limitation."
+  },
+  "party-dialogue": {
+    "path": "symbols/dialogue-party-site.png",
+    "kind": "emblem",
+    "sourceUrl": "https://alhiwar.com/en/homepage",
+    "imageUrl": "https://alhiwar.com/wp-content/uploads/2020/06/Hiwar-logo-PNG.png",
+    "author": "National Dialogue Party",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "The red Hiwar wordmark matches the current party website. Replace the secondary copy with the original site asset; do not revert to the different logo in the 2018 guide.",
+      "references": [
+        "https://alhiwar.com/en/homepage",
+        "https://alhiwar.com/wp-content/uploads/2020/06/Hiwar-logo-PNG.png"
+      ],
+      "assetSha256": "34e5f9304ee67b8db55d1896dd89c4d188033adc41bca92b5982046240dbfc70"
+    },
+    "verification": "The red Hiwar wordmark matches the current party website. Replace the secondary copy with the original site asset; do not revert to the different logo in the 2018 guide."
+  },
+  "party-taqaddom": {
+    "path": "symbols/taqaddom-party-site.png",
+    "kind": "emblem",
+    "sourceUrl": "https://taqaddomlb.org/home",
+    "imageUrl": "https://img1.wsimg.com/isteam/ip/2a74bbb2-d20f-428a-8d94-69c168ec3935/taqaddom%20logo%20New%20red.png/:/rs=w:417,h:201,cg:true,m/cr=w:417,h:201/qt=q:95",
+    "author": "Taqaddom",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "The existing red wordmark and two forward arrows match. Source-quality update only: use the party-site PNG and preserve both arrows.",
+      "references": [
+        "https://taqaddomlb.org/home",
+        "https://img1.wsimg.com/isteam/ip/2a74bbb2-d20f-428a-8d94-69c168ec3935/taqaddom%20logo%20New%20red.png/:/rs=w:417,h:201,cg:true,m/cr=w:417,h:201/qt=q:95"
+      ],
+      "assetSha256": "83062d3c9a4148a3097b5dde94f3e942a9809ddbd8bb06cc4685b88307a8b88c"
+    },
+    "verification": "The existing red wordmark and two forward arrows match. Source-quality update only: use the party-site PNG and preserve both arrows."
+  },
+  "party-hezbollah": {
+    "path": "symbols/hezbollah.png",
+    "kind": "flag",
+    "sourceUrl": "https://en.wikipedia.org/wiki/File:Flag_of_Hezbollah.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/0/08/Flag_of_Hezbollah.svg/250px-Flag_of_Hezbollah.svg.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "",
+    "license": "Fair use",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "published-reference",
+      "finding": "Raised-arm/rifle, globe, Arabic lettering and yellow field match the documented flag; fine print uses a different color variant. This confirms documented identity, not a newly issued 2026 design standard.",
+      "references": [
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11",
+        "https://en.wikipedia.org/wiki/File:Flag_of_Hezbollah.svg"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 34,
+      "assetSha256": "6c39d4fe2c062ceeaef5d135d91a8219fc11ccded0e2e5c9ef66181c43ba2938"
+    },
+    "verification": "Raised-arm/rifle, globe, Arabic lettering and yellow field match the documented flag; fine print uses a different color variant. This confirms documented identity, not a newly issued 2026 design standard."
+  },
+  "party-independence": {
+    "path": "symbols/independence.png",
+    "kind": "emblem",
+    "sourceUrl": "https://en.wikipedia.org/wiki/File:Independence_Movement_Lebanon_logo.png",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/33/Independence_Movement_Lebanon_logo.png/250px-Independence_Movement_Lebanon_logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "",
+    "license": "Fair use",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "published-reference",
+      "finding": "Red profile, gray Arabic name and red underline match the published guide. This confirms documented identity, not a newly issued 2026 design standard.",
+      "references": [
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11",
+        "https://en.wikipedia.org/wiki/File:Independence_Movement_Lebanon_logo.png"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 8,
+      "assetSha256": "6cb55bd3b761e678d0a9729e16a12e82484e8ebd353ba35d3ce3651f3103eb09"
+    },
+    "verification": "Red profile, gray Arabic name and red underline match the published guide. This confirms documented identity, not a newly issued 2026 design standard."
+  },
+  "party-karama": {
+    "path": "symbols/karama.png",
+    "kind": "emblem",
+    "sourceUrl": "https://en.wikipedia.org/wiki/File:TayyarKarame-logo.png",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/cb/TayyarKarame-logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "author": "",
+    "license": "Fair use",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "news-agency-image",
+      "finding": "Green rose and Arabic name match the NNA image. Retain the complete existing image; the reference is tightly cropped. Do not revert to the different red-flame image in the 2018 guide.",
+      "references": [
+        "https://www.nna-leb.gov.lb/ar/news/167830/تيار-الكرامة-لاصحة-لأي-كلام-عن-اعلان-لائحة-يؤلفها",
+        "https://backend.nna-leb.gov.lb/uploads/17947/b84c06731b6f48de5726f8d44b6d912c.png"
+      ],
+      "assetSha256": "db2428ff882c2485e0e2606825c9d69bbc8541f6b51f077f5c4eedbad7611a8e"
+    },
+    "verification": "Green rose and Arabic name match the NNA image. Retain the complete existing image; the reference is tightly cropped. Do not revert to the different red-flame image in the 2018 guide."
+  },
+  "party-projectwatan": {
+    "path": "symbols/projectwatan.png",
+    "kind": "emblem",
+    "sourceUrl": "https://projectwatan.com/",
+    "imageUrl": "https://projectwatan.com/static/media/logo_ar.6033558181e6a07cd7a1.png",
+    "author": "Project Watan",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "The saved site assets and displayed emblem match; retained the original image.",
+      "references": [
+        "https://projectwatan.com/",
+        "https://projectwatan.com/static/media/logo_ar.6033558181e6a07cd7a1.png"
+      ],
+      "assetSha256": "ab3a4d7693f3dd4993373f2e10dd17a35884896d91a790c8acaea65ef5d7dfe2"
+    },
+    "verification": "The saved site assets and displayed emblem match; retained the original image."
+  },
+  "party-nationalbloc": {
+    "path": "symbols/nationalbloc.svg",
+    "kind": "emblem",
+    "sourceUrl": "https://www.nationalbloc.org/",
+    "imageUrl": "https://assets.nationbuilder.com/nationalbloc/sites/5/meta_images/original/Logo_National_Bloc_2.svg?1556657468",
+    "author": "National Bloc",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "The saved site assets and displayed emblem match; retained the original image.",
+      "references": [
+        "https://www.nationalbloc.org/",
+        "https://assets.nationbuilder.com/nationalbloc/sites/5/meta_images/original/Logo_National_Bloc_2.svg?1556657468"
+      ],
+      "assetSha256": "442c3c5b162647fec506141a2bf50d85095a6264a43ab8c980c740badf6689d2"
+    },
+    "verification": "The saved site assets and displayed emblem match; retained the original image."
+  },
+  "party-amal": {
+    "path": "symbols/party-amal.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Amal_Movement.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_the_Amal_Movement.svg/250px-Flag_of_the_Amal_Movement.svg.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Lexicon",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "kind": "flag",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-description-and-published-reference",
+      "finding": "The green field and white Amal lettering inside red-and-green circular rings match the party description and the guide image. Retain the flag.",
+      "references": [
+        "https://amal-movement.org/حركتنا/",
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 32,
+      "assetSha256": "c2923eceefb6e8790fddfe1cb3baded9cde79a4d934ec29e3657133c63d94ffb"
+    },
+    "verification": "The green field and white Amal lettering inside red-and-green circular rings match the party description and the guide image. Retain the flag."
+  },
+  "party-marada": {
+    "path": "symbols/marada-official.png",
+    "kind": "emblem",
+    "sourceUrl": "https://elmarada.org/",
+    "imageUrl": "https://elmarada.org/wp-content/themes/elmarada/images/logo.png",
+    "author": "Marada Movement",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "verifiedOn": "2026-10-19",
+    "verification": "Retained the original party-site image already visually checked on the same review date.",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "Retained the original party-site image already visually checked on the same review date.",
+      "references": [
+        "https://elmarada.org/",
+        "https://elmarada.org/wp-content/themes/elmarada/images/logo.png"
+      ],
+      "assetSha256": "ba0d6c7f8f20e60916827104ed9ac36c1c8f76eea3c6bafbf25bdad4a44cc0a6"
+    }
+  },
+  "party-future": {
+    "path": "symbols/party-future.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Future_Movement.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_the_Future_Movement.svg/250px-Flag_of_the_Future_Movement.svg.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Lexicon",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "retrieved": "2026-10-19",
+    "kind": "flag",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "published-reference",
+      "finding": "White partial sun on a blue field matches the published guide. This confirms documented identity, not a newly issued 2026 design standard.",
+      "references": [
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11",
+        "https://commons.wikimedia.org/wiki/File:Flag_of_the_Future_Movement.svg"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 20,
+      "assetSha256": "6d4ce0bb64b9af881f4787d6681e5b511b1bcedc2b85e03157abdce3fc531882"
+    },
+    "verification": "White partial sun on a blue field matches the published guide. This confirms documented identity, not a newly issued 2026 design standard."
+  },
+  "party-lcp": {
+    "path": "symbols/party-lcp.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Lebanese_Communist_Party.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_the_Lebanese_Communist_Party.svg/250px-Flag_of_the_Lebanese_Communist_Party.svg.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Lexicon",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "kind": "flag",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "published-reference",
+      "finding": "Red/white/red vertical flag, green cedar and gold hammer-and-sickle match the published guide. This confirms documented identity, not a newly issued 2026 design standard.",
+      "references": [
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11",
+        "https://commons.wikimedia.org/wiki/File:Flag_of_the_Lebanese_Communist_Party.svg"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 7,
+      "assetSha256": "704f99af0e59d8bb19b58b604fd50c364ee73fb34333bbb157029752a4de0700"
+    },
+    "verification": "Red/white/red vertical flag, green cedar and gold hammer-and-sickle match the published guide. This confirms documented identity, not a newly issued 2026 design standard."
+  },
+  "party-ssnp": {
+    "path": "symbols/party-ssnp.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_of_the_Syrian_Social_Nationalist_Party.svg",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Logo_of_the_Syrian_Social_Nationalist_Party.svg/250px-Logo_of_the_Syrian_Social_Nationalist_Party.svg.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Az88. Created from Lexicon version of flag of SSNP.",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "kind": "emblem",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "published-reference",
+      "finding": "Red four-bladed whirlwind in a white circle matches the emblem on the documented black flag. The current asset is the standalone emblem. This confirms documented identity, not a newly issued 2026 design standard.",
+      "references": [
+        "https://www.kas.de/c/document_library/get_file?groupId=284382&uuid=053f526e-d7c1-cab0-68d9-c2db2a3d6e11",
+        "https://commons.wikimedia.org/wiki/File:Logo_of_the_Syrian_Social_Nationalist_Party.svg"
+      ],
+      "referenceYear": 2018,
+      "referencePage": 18,
+      "assetSha256": "afb39259f5438b47793d1d867cc5596a4a8c96a4938b2c18bf69329bf010cba8"
+    },
+    "verification": "Red four-bladed whirlwind in a white circle matches the emblem on the documented black flag. The current asset is the standalone emblem. This confirms documented identity, not a newly issued 2026 design standard."
+  },
+  "party-union": {
+    "path": "symbols/union-cedar-emblem.jpg",
+    "sourceUrl": "https://pressnewsnow.com/articles/32684",
+    "imageUrl": "https://press-news.ams3.cdn.digitaloceanspaces.com/1658481931922.jpg",
+    "author": "Union Party emblem, reproduced by Press News",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "kind": "emblem",
+    "sourceDate": "2022-07-22",
+    "verification": "Retained the user-selected cedar with the party name beneath it. Press News coverage identifies this as the Lebanese Union Party. Not an official-site certification.",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "user-selected-media-reference",
+      "finding": "Retained the user-selected cedar with the party name beneath it. Press News coverage identifies this as the Lebanese Union Party. Not an official-site certification.",
+      "references": [
+        "https://pressnewsnow.com/articles/32684"
+      ],
+      "assetSha256": "d58145cbe85cfe37a9c6d73fad88652cd3fb6d6ae750bc658d1dfeaaad79690a"
+    }
+  },
+  "party-ahbash": {
+    "path": "symbols/party-ahbash.png",
+    "sourceUrl": "https://en.wikipedia.org/wiki/File:Association_of_Islamic_Charitable_Projects_logo.png",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/6/61/Association_of_Islamic_Charitable_Projects_logo.png/250px-Association_of_Islamic_Charitable_Projects_logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "",
+    "license": "Fair use",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "kind": "emblem",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "news-agency-image",
+      "finding": "Black bilingual ring, yellow center, book and building match the NNA image for the Lebanese association. Retain it; do not substitute the differently drawn international AICP badge in the old guide.",
+      "references": [
+        "https://www.nna-leb.gov.lb/ar/agenda/284410/tuesday-january-21-2014",
+        "https://backend.nna-leb.gov.lb/uploads/134819/cee056d2f77232d8539aa74df64ddd2b.png"
+      ],
+      "assetSha256": "bbb23ccc3ba2adb0fd17071bd0ad4208a77c900b505651ec481b19bd9caedb68"
+    },
+    "verification": "Black bilingual ring, yellow center, book and building match the NNA image for the Lebanese association. Retain it; do not substitute the differently drawn international AICP badge in the old guide."
+  },
+  "party-azm": {
+    "path": "symbols/party-azm.png",
+    "sourceUrl": "https://en.wikipedia.org/wiki/File:AzmTayyar-logo.png",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/8/84/AzmTayyar-logo.png/250px-AzmTayyar-logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "",
+    "license": "Fair use",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "kind": "emblem",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "news-agency-image",
+      "finding": "Purple ribbon with two gray squares and Arabic/Latin name matches the NNA image. Retain this version rather than the older text-only logo in the guide.",
+      "references": [
+        "https://www.nna-leb.gov.lb/ar/news/309702/جلسة-نقاش-لقطاع-المرأة-في-تيار-العزم-حول-تعديل-الم",
+        "https://backend.nna-leb.gov.lb/uploads/160159/a229efc106a1e4f91a734466682b96ce.png"
+      ],
+      "assetSha256": "6ed6ce1c761d81a6ed1afb9aaa4fd392ab83a31aacb352e00c3f449a1fc9e0e8"
+    },
+    "verification": "Purple ribbon with two gray squares and Arabic/Latin name matches the NNA image. Retain this version rather than the older text-only logo in the guide."
+  },
+  "party-lihaqqi": {
+    "path": "symbols/lihaqqi-official.png",
+    "kind": "emblem",
+    "sourceUrl": "https://lihaqqi.org/",
+    "imageUrl": "https://lihaqqi.org/wp-content/uploads/2019/07/cropped-cropped-logo.png",
+    "author": "Lihaqqi",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "verifiedOn": "2026-10-19",
+    "verification": "Retained the original party-site image already visually checked on the same review date.",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "Retained the original party-site image already visually checked on the same review date.",
+      "references": [
+        "https://lihaqqi.org/",
+        "https://lihaqqi.org/wp-content/uploads/2019/07/cropped-cropped-logo.png"
+      ],
+      "assetSha256": "e92ee43efcd0d5eb79a8236566c5063ebbb635cb35ab508f0f0cdde92ea752de"
+    }
+  },
+  "party-banner": {
+    "path": "symbols/banner-official.png",
+    "kind": "emblem",
+    "sourceUrl": "https://alrayahalwatani.org/",
+    "imageUrl": "https://alrayahalwatani.org/wp-content/uploads/2025/12/logo1.png",
+    "author": "National Banner Party",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "verifiedOn": "2026-10-19",
+    "verification": "Retained the original party-site image already visually checked on the same review date.",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "party-website",
+      "finding": "Retained the original party-site image already visually checked on the same review date.",
+      "references": [
+        "https://alrayahalwatani.org/",
+        "https://alrayahalwatani.org/wp-content/uploads/2025/12/logo1.png"
+      ],
+      "assetSha256": "d1bd471a48d03e6007c60d32325c65d9f06088cbc6470c2cf341f095d4400edf"
+    }
+  },
+  "party-communistaction": {
+    "status": "unverified",
+    "label": {
+      "en": "Left action",
+      "ar": "عمل يساري"
+    },
+    "note": {
+      "en": "A current emblem has not yet been verified. A text label is used rather than the predecessor organization’s emblem.",
+      "ar": "لم يُتحقق بعد من شعار حالي. يُستخدم اسم مختصر بدلاً من شعار المنظمة السابق."
+    },
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "unverified-no-image",
+      "finding": "No current emblem verified. Preserve the bilingual text label; do not use the predecessor organization emblem.",
+      "references": []
+    }
+  },
+  "party-green": {
+    "path": "symbols/green.png",
+    "kind": "emblem",
+    "sourceUrl": "https://ifg.groenlinks.nl/our-partners/green-party-of-lebanon-oud",
+    "imageUrl": "https://ifg.groenlinks.nl/sites/groenlinks/files/styles/video_big/public/2024-06/center%20for%20green%20politics%20canva%20%281%29.png?h=d1cb525d&itok=Rex2l-aS",
+    "author": "Green Party of Lebanon, via International Foundation GroenLinks",
+    "license": "Party emblem — editorial identification",
+    "licenseUrl": "",
+    "retrieved": "2026-10-19",
+    "verification": "The green sphere and Arabic/English name match the named partner profile. The party site has a PHP error; a current official variant cannot be independently confirmed. Retain the partner-documented version.",
+    "transform": "White outer margin removed and image resized; no emblem content altered.",
+    "audit": {
+      "checkedOn": "2026-10-19",
+      "basis": "partner-reference",
+      "finding": "The green sphere and Arabic/English name match the named partner profile. The party site has a PHP error; a current official variant cannot be independently confirmed. Retain the partner-documented version.",
+      "references": [
+        "https://ifg.groenlinks.nl/our-partners/green-party-of-lebanon-oud",
+        "https://greenpartyoflebanon.com/"
+      ],
+      "assetSha256": "eb045d00b2cf5ff825d193f069826dc286a468327805c136c3aeaeeca33d4076"
+    }
+  }
+}

@@ -1,0 +1,1011 @@
+{
+  "reviewed_on": "2026-10-19",
+  "scope": "lebanese_authorities_only",
+  "sources": {
+    "building_report": {
+      "publisher": {
+        "en": "Al-Akhbar, republished by Khiyam",
+        "ar": "الأخبار، نقلاً عن موقع الخيام"
+      },
+      "title": {
+        "en": "Reported building stoppages in southern villages",
+        "ar": "تقرير عن وقف ورش بناء في قرى جنوبية"
+      },
+      "date": "2025-03-04",
+      "url": "https://khiyam.com/news/article.php?articleID=51007",
+      "kind": "report",
+      "access": {
+        "en": "Indexed full article reviewed; the original Al-Akhbar page confirms the author and date. No enforcement order obtained.",
+        "ar": "رُوجع النص الكامل المفهرس؛ وتؤكد صفحة الأخبار الأصلية الكاتبة والتاريخ. لم تتوفر نسخة من محضر الضبط."
+      }
+    },
+    "nabatieh": {
+      "publisher": {
+        "en": "Sawt Lubnan al-Ightirabi",
+        "ar": "صوت لبنان الاغترابي"
+      },
+      "title": {
+        "en": "Nabatieh security council: building and rubble requirements",
+        "ar": "مجلس الأمن الفرعي في النبطية: شروط البناء ونقل الردميات"
+      },
+      "date": "2025-01-16",
+      "url": "https://www.sla-news.com/227557",
+      "kind": "reported_statement",
+      "access": {
+        "en": "Full report reproducing the meeting's decisions; also reported by Al-Binaa on 17 January 2025.",
+        "ar": "قُرئ التقرير الذي ينقل قرارات الاجتماع؛ ونشرتها أيضاً جريدة البناء في 17 كانون الثاني 2025."
+      }
+    },
+    "dgu": {
+      "publisher": {
+        "en": "Directorate General of Urban Planning",
+        "ar": "المديرية العامة للتنظيم المدني"
+      },
+      "title": {
+        "en": "Reconstruction registers under Law 22/2025",
+        "ar": "سجلات إعادة الإعمار بموجب القانون 22/2025"
+      },
+      "date": null,
+      "url": "https://www.dgu.gov.lb/reconstruction.html",
+      "kind": "official",
+      "access": {
+        "en": "Official page read. It cites the law dated 11 July 2025; the page itself has no publication date.",
+        "ar": "قُرئت الصفحة الرسمية. تشير إلى القانون الصادر في 11 تموز 2025؛ ولا تعرض تاريخ نشر الصفحة."
+      }
+    },
+    "army_roads": {
+      "publisher": {
+        "en": "Lebanese Army — Directorate of Orientation",
+        "ar": "الجيش اللبناني — مديرية التوجيه"
+      },
+      "title": {
+        "en": "Return, road reopening and closed routes",
+        "ar": "مواكبة العودة وفتح الطرقات والطرق المقفلة"
+      },
+      "date": "2026-04-17",
+      "url": "https://www.lebarmy.gov.lb/ar/content/الجيش-يواكب-عودة-الأهالي-إلى-القرى-والبلدات-الجنوبية",
+      "kind": "official",
+      "access": {
+        "en": "Full official statement read. It does not identify every closed road or give reopening dates.",
+        "ar": "قُرئ البيان الرسمي كاملاً. لا يسمي كل الطرق المقفلة ولا يحدد مواعيد فتحها."
+      }
+    },
+    "blat": {
+      "publisher": {
+        "en": "Municipal Work Association, relaying Blat municipality",
+        "ar": "جمعية العمل البلدي، نقلاً عن بلدية بلاط"
+      },
+      "title": {
+        "en": "Blat: wait for a new notice before entering",
+        "ar": "بلاط: التريث في الدخول حتى إشعار جديد"
+      },
+      "date": "2026-06-19",
+      "url": "https://www.amalbaladi.org.lb/details/7845/",
+      "kind": "reported_statement",
+      "access": {
+        "en": "Full municipal notice as republished. A subsequent lifting notice was not verified in this review.",
+        "ar": "قُرئ البيان البلدي المعاد نشره. لم تُتحقق في هذه المراجعة نسخة من إشعار لاحق برفع القيد."
+      }
+    },
+    "harvest_road": {
+      "publisher": {
+        "en": "Yasour",
+        "ar": "ياصور"
+      },
+      "title": {
+        "en": "Army opens a route for olive-harvest access",
+        "ar": "الجيش يفتح طريقاً للوصول إلى الأراضي قبل قطاف الزيتون"
+      },
+      "date": "2026-09-25",
+      "url": "https://www.yasour.org/755964",
+      "kind": "report",
+      "access": {
+        "en": "Full news report read; this concerns a different route and does not establish that all earlier closures ended.",
+        "ar": "قُرئ الخبر كاملاً؛ وهو يخص طريقاً أخرى ولا يثبت انتهاء جميع الإقفالات السابقة."
+      }
+    },
+    "leap": {
+      "publisher": {
+        "en": "World Bank",
+        "ar": "البنك الدولي"
+      },
+      "title": {
+        "en": "LEAP FAQ: financing table and eligibility, questions 2–4",
+        "ar": "أسئلة LEAP: جدول التمويل والأهلية، الأسئلة 2–4"
+      },
+      "date": "2026-02-17",
+      "url": "https://www.worldbank.org/en/news/factsheet/2026/02/17/lebanon-emergency-assistance-project-frequently-asked-questions",
+      "kind": "programme",
+      "access": {
+        "en": "Full FAQ read. Figures describe initial programme financing, not current expenditure or Lebanon's entire budget.",
+        "ar": "قُرئت الأسئلة والأجوبة كاملة. الأرقام للتمويل الأولي للبرنامج، وليست الإنفاق الحالي أو كامل الموازنة اللبنانية."
+      }
+    },
+    "cdr": {
+      "publisher": {
+        "en": "Council for Development and Reconstruction",
+        "ar": "مجلس الإنماء والإعمار"
+      },
+      "title": {
+        "en": "LEAP programme and implementing responsibilities",
+        "ar": "برنامج LEAP ومسؤوليات التنفيذ"
+      },
+      "date": null,
+      "url": "https://cdr.gov.lb/en-US/Projects/LEAP.aspx",
+      "kind": "official",
+      "access": {
+        "en": "Programme page and linked FAQ read. The linked 1 October 2026 project update returned 404; it was not used as evidence of new funding.",
+        "ar": "قُرئت صفحة البرنامج وملف الأسئلة المرتبط بها. تعذر فتح تحديث 1 تشرين الأول 2026 برمز 404؛ فلم يُستخدم لإثبات تمويل إضافي."
+      }
+    },
+    "draft_budget": {
+      "publisher": {
+        "en": "The Policy Initiative",
+        "ar": "مبادرة سياسات الغد"
+      },
+      "title": {
+        "en": "Procedure Over Purpose: reading the 2026 draft budget",
+        "ar": "إصلاح في الشكل لا في المضمون: قراءة في مسودة موازنة 2026"
+      },
+      "date": "2025-10-28",
+      "url": "https://www.thepolicyinitiative.org/article/details/482/procedure-over-purpose-reading-lebanon%E2%80%99s-2026-draft-budget",
+      "kind": "analysis",
+      "access": {
+        "en": "Indexed article excerpt reviewed; date and authors checked against the publisher's listing. This is analysis of a draft, not the enacted budget.",
+        "ar": "رُوجع مقتطف المقال المفهرس وتُحقق التاريخ والكتّاب من قائمة الناشر. التحليل يخص مشروع الموازنة لا القانون النهائي."
+      }
+    },
+    "budget_committee": {
+      "publisher": {
+        "en": "Lebanese Parliament",
+        "ar": "مجلس النواب اللبناني"
+      },
+      "title": {
+        "en": "Finance Committee introduces shelter and repair provision",
+        "ar": "لجنة المال تعتمد نبذة للإيواء والترميم"
+      },
+      "date": "2025-12-10",
+      "url": "https://www.lp.gov.lb/ContentRecordDetails?Id=35570",
+      "kind": "official",
+      "access": {
+        "en": "Full committee report read. It describes a reserve transfer but gives no amount or proof of payment.",
+        "ar": "قُرئ تقرير اللجنة كاملاً. يذكر نقلاً من الاحتياطي دون تحديد المبلغ أو إثبات الدفع."
+      }
+    },
+    "aitaroun_notice": {
+      "publisher": {
+        "en": "Janoubia",
+        "ar": "جنوبية"
+      },
+      "title": {
+        "en": "Aitaroun municipality: wait for the army survey",
+        "ar": "بلدية عيترون: انتظار انتهاء المسح"
+      },
+      "date": "2025-02-01",
+      "url": "https://janoubia.com/2025/02/01/الجيش-اللبناني-يدخل-عيترون-وبيان-للبل/",
+      "kind": "reported_statement",
+      "access": {
+        "en": "Municipal statement reproduced in the full article.",
+        "ar": "بيان البلدية منقول في النص الكامل للمقال."
+      }
+    },
+    "blida_notice": {
+      "publisher": {
+        "en": "Safir al-Chamal",
+        "ar": "سفير الشمال"
+      },
+      "title": {
+        "en": "Blida municipality: entry and property-removal rules",
+        "ar": "بلدية بليدا: ضوابط الدخول ونقل الممتلكات"
+      },
+      "date": "2025-02-17",
+      "url": "https://safiralchamal.com/2025/02/17/572016/",
+      "kind": "reported_statement",
+      "access": {
+        "en": "Indexed full notice reviewed; direct page retrieval failed.",
+        "ar": "رُوجع البيان الكامل المفهرس؛ وتعذر جلب الصفحة مباشرة."
+      }
+    },
+    "houla_notice": {
+      "publisher": {
+        "en": "Elnashra",
+        "ar": "النشرة"
+      },
+      "title": {
+        "en": "Houla municipality asks residents to delay entry",
+        "ar": "بلدية حولا تطلب تأجيل الدخول"
+      },
+      "date": "2025-02-17",
+      "url": "https://www.elnashra.com/news/show/1711336/بلدية-حولا-لتأجيل-دخول-المواطنين-إلى-البلدة-إلى-ال",
+      "kind": "reported_statement",
+      "access": {
+        "en": "Full municipal statement read; the requested return date was 19 February.",
+        "ar": "قُرئ البيان البلدي كاملاً؛ وحدد موعد العودة المطلوب في 19 شباط."
+      }
+    },
+    "houla_march": {
+      "publisher": {
+        "en": "Al-Modon — Hussein Saad",
+        "ar": "المدن — حسين سعد"
+      },
+      "title": {
+        "en": "Houla, Mays and Blida: uneven returns",
+        "ar": "حولا وميس وبليدا: تفاوت بعودة الأهالي"
+      },
+      "date": "2025-03-17",
+      "url": "https://www.almodon.com/society/2025/03/17/حولا-وميس-وبليدا-مساواة-بالدمار-وتفاوت-بعودة-الأهالي",
+      "kind": "report",
+      "access": {
+        "en": "Dated field report; identifies a road restriction and later return to Houla.",
+        "ar": "تقرير ميداني مؤرخ يحدد قيداً على طريق ويوثق عودة لاحقة إلى حولا."
+      }
+    },
+    "maroun_notice": {
+      "publisher": {
+        "en": "Al-Jareeda",
+        "ar": "الجريدة"
+      },
+      "title": {
+        "en": "Maroun al-Ras municipality: return instructions",
+        "ar": "بلدية مارون الراس: إرشادات العودة"
+      },
+      "date": "2025-02-17",
+      "url": "https://al-jareeda.com/archives/644885",
+      "kind": "reported_statement",
+      "access": {
+        "en": "Full indexed notice reviewed; its date is corroborated by the same-title Addiyar report.",
+        "ar": "رُوجع البيان الكامل المفهرس؛ وتؤكد تغطية الديار بالعنوان نفسه تاريخه."
+      }
+    },
+    "maroun_date": {
+      "publisher": {
+        "en": "Addiyar",
+        "ar": "الديار"
+      },
+      "title": {
+        "en": "Dated report of Maroun al-Ras return instructions",
+        "ar": "تغطية مؤرخة لإرشادات العودة إلى مارون الراس"
+      },
+      "date": "2025-02-17",
+      "url": "https://addiyar.com/article/2228734-إرشادات-من-بلدية-مارون-الراس-قبل-العودة-إليها",
+      "kind": "report",
+      "access": {
+        "en": "Headline and publication timestamp accessible; article body is paywalled. Used only to corroborate the date.",
+        "ar": "العنوان وتوقيت النشر متاحان؛ أما النص فمحجوب باشتراك. استُخدم لتأكيد التاريخ فقط."
+      }
+    },
+    "basta_statement": {
+      "publisher": {
+        "en": "NNA, via Nabd",
+        "ar": "الوكالة الوطنية للإعلام، عبر نبض"
+      },
+      "title": {
+        "en": "Offre Joie objects to stopping Basta repairs",
+        "ar": "فرح العطاء ترفض وقف ورشة البسطة"
+      },
+      "date": "2025-10-10",
+      "url": "https://nabd.com/s/162169818-dc69c0/فرح-العطاء-رفضت-وقف-ورشة-إعادة-الترميم-في-البسطة-لم-ولن-نشارك-في-أي-عمل-مخالف-للقانون",
+      "kind": "organisation_statement",
+      "access": {
+        "en": "Indexed NGO statement and publication date reviewed; the agency page was unavailable.",
+        "ar": "رُوجع بيان الجمعية المفهرس وتاريخ نشره؛ وتعذر فتح صفحة الوكالة."
+      }
+    },
+    "basta_analysis": {
+      "publisher": {
+        "en": "AlSifr — Mohammad al-Khansa",
+        "ar": "صفر — محمد الخنسا"
+      },
+      "title": {
+        "en": "Obstacles to reconstruction: four examples",
+        "ar": "عوائق إعادة الإعمار: أربعة أمثلة"
+      },
+      "date": null,
+      "url": "https://alsifr.org/en/node/1960",
+      "kind": "report",
+      "access": {
+        "en": "Indexed report identifies ISF and the alleged building violations. Exact publication date not verified.",
+        "ar": "يسمي التقرير المفهرس قوى الأمن والمخالفات المزعومة. لم يُتحقق من تاريخ نشره الدقيق."
+      }
+    },
+    "houla_services": {
+      "publisher": {
+        "en": "Manateq — Mahdi Krayem",
+        "ar": "مناطق — مهدي كريّم"
+      },
+      "title": {
+        "en": "Reconstruction and local service needs",
+        "ar": "إعادة التعمير وحاجات الخدمات المحلية"
+      },
+      "date": "2025-07-21",
+      "url": "https://manateq.net/إعادة-التعمير-الدولة-غائبة-وشُبهة-حول/",
+      "kind": "report",
+      "access": {
+        "en": "Full interview report read. Local testimony, not a municipal or national budget ledger.",
+        "ar": "قُرئ تقرير المقابلات كاملاً. شهادة محلية وليست كشف موازنة بلدية أو وطنية."
+      }
+    },
+    "border_schools": {
+      "publisher": {
+        "en": "Legal Agenda — Inas Sherri",
+        "ar": "المفكرة القانونية — إيناس شرّي"
+      },
+      "title": {
+        "en": "Frontline pupils in temporary schools",
+        "ar": "تلامذة الحافة الأمامية في مدارس مؤقتة"
+      },
+      "date": "2025-12-29",
+      "url": "https://legal-agenda.com/تلامذة-الحافّة-الأمامية-مدارس-مؤقّتة/",
+      "kind": "report",
+      "access": {
+        "en": "Indexed article sections reviewed; the publisher listing confirms 29 December 2025. Direct retrieval returned 403.",
+        "ar": "رُوجعت أقسام المقال المفهرسة؛ وتؤكد قائمة الناشر تاريخ 29 كانون الأول 2025. تعذر الجلب المباشر برمز 403."
+      }
+    }
+  },
+  "physical": [
+    {
+      "id": "permit_stoppage",
+      "category": "building",
+      "status": "reported_enforcement",
+      "date": "2025-03-04",
+      "sources": [
+        "building_report"
+      ],
+      "title": {
+        "en": "Building work stopped over permits",
+        "ar": "وقف ورش بناء بسبب التراخيص"
+      },
+      "place": {
+        "en": "Mays al-Jabal; Houra, near Kfarkila",
+        "ar": "ميس الجبل؛ هورة قرب كفركلا"
+      },
+      "actor": {
+        "en": "Internal Security Forces",
+        "ar": "قوى الأمن الداخلي"
+      },
+      "action": {
+        "en": "Al-Akhbar reported that police stopped small replacement-building works. Mays mayor Abdel Moneim Choucair said planning and land-registry permits were required.",
+        "ar": "أفادت الأخبار بأن الدرك أوقف ورش مساكن بديلة صغيرة. وقال رئيس بلدية ميس الجبل عبد المنعم شقير إن المطلوب تراخيص من التنظيم المدني والدوائر العقارية."
+      },
+      "limit": {
+        "en": "Reported incidents from March 2025; no current stop-work order verified.",
+        "ar": "وقائع مبلّغ عنها في آذار 2025؛ لم يُتحقق من أمر وقف سارٍ اليوم."
+      },
+      "date_kind": "report_date",
+      "blocked": {
+        "en": "Small replacement homes pending formal permits.",
+        "ar": "مساكن بديلة صغيرة بانتظار التراخيص الرسمية."
+      }
+    },
+    {
+      "id": "basta_repairs",
+      "category": "building",
+      "status": "reported_enforcement",
+      "date": "2025-10-10",
+      "date_kind": "statement_date",
+      "sources": [
+        "basta_statement",
+        "basta_analysis"
+      ],
+      "title": {
+        "en": "Repair work challenged over building violations",
+        "ar": "خلاف حول مخالفات يوقف ورشة ترميم"
+      },
+      "place": {
+        "en": "Basta, Al-Maamoun Street — Beirut",
+        "ar": "البسطة، شارع المأمون — بيروت"
+      },
+      "actor": {
+        "en": "Internal Security Forces, according to AlSifr",
+        "ar": "قوى الأمن الداخلي، بحسب تقرير صفر"
+      },
+      "blocked": {
+        "en": "Continuation of Offre Joie’s building repairs.",
+        "ar": "استكمال ترميم الأبنية الذي تنفذه جمعية فرح العطاء."
+      },
+      "action": {
+        "en": "AlSifr reported a stoppage over roof tiles and glazed balconies. The NGO disputed any illegality and said it had the Beirut governor’s approval.",
+        "ar": "ربط تقرير صفر الوقف بالقرميد وواجهات الشرفات الزجاجية. ونفت الجمعية مخالفة القانون، مؤكدة حصولها على موافقة محافظ بيروت."
+      },
+      "limit": {
+        "en": "10 October is the NGO statement date, not a verified start date of the stoppage. No order or lifting date verified.",
+        "ar": "10 تشرين الأول تاريخ بيان الجمعية، لا تاريخ بدء الوقف المؤكد. لم يُتحقق من نص الأمر أو تاريخ رفعه."
+      }
+    },
+    {
+      "id": "houla_markaba_road",
+      "category": "roads",
+      "status": "safety_restriction",
+      "date": "2025-03-17",
+      "date_kind": "report_date",
+      "sources": [
+        "houla_march"
+      ],
+      "title": {
+        "en": "Passage between two towns stopped",
+        "ar": "منع العبور بين بلدتين"
+      },
+      "place": {
+        "en": "Houla–Markaba road — Marjayoun",
+        "ar": "طريق حولا–مركبا — مرجعيون"
+      },
+      "actor": {
+        "en": "Lebanese Army",
+        "ar": "الجيش اللبناني"
+      },
+      "blocked": {
+        "en": "Using the road connecting Houla and Markaba.",
+        "ar": "سلوك الطريق الواصلة بين حولا ومركبا."
+      },
+      "action": {
+        "en": "Al-Modon reported an army restriction after attacks on people using the route, citing protection of residents.",
+        "ar": "أفادت المدن بمنع الجيش المرور بعد استهداف عابرين، لحماية السكان."
+      },
+      "limit": {
+        "en": "Observed in a March 2025 report. A later reopening of this particular road was not verified.",
+        "ar": "موثق في تقرير آذار 2025. لم يُتحقق من فتح هذه الطريق تحديداً لاحقاً."
+      }
+    },
+    {
+      "id": "aitaroun_return",
+      "category": "return",
+      "status": "temporary_restriction",
+      "date": "2025-02-01",
+      "date_kind": "notice_date",
+      "sources": [
+        "aitaroun_notice"
+      ],
+      "title": {
+        "en": "Entry delayed for explosive-remnant clearance",
+        "ar": "تأجيل الدخول لإزالة مخلفات الحرب"
+      },
+      "place": {
+        "en": "Aitaroun — Bint Jbeil",
+        "ar": "عيترون — بنت جبيل"
+      },
+      "actor": {
+        "en": "Aitaroun municipality / Lebanese Army",
+        "ar": "بلدية عيترون / الجيش اللبناني"
+      },
+      "blocked": {
+        "en": "Residents entering before the army completed its survey.",
+        "ar": "دخول الأهالي قبل انتهاء مسح الجيش."
+      },
+      "action": {
+        "en": "The municipality said troops reached Bir Nasser in the north and were clearing mines and explosives; it asked residents to wait.",
+        "ar": "قالت البلدية إن الجيش بلغ بير ناصر شمال البلدة ويزيل الألغام والعبوات، وطلبت من الأهالي الانتظار."
+      },
+      "limit": {
+        "en": "Safety notice at that date; the source’s expected deployment timetable does not establish when entry resumed.",
+        "ar": "إشعار سلامة في حينه؛ ولا يثبت الجدول المتوقع للانتشار موعد استئناف الدخول."
+      }
+    },
+    {
+      "id": "blida_entry",
+      "category": "return",
+      "status": "temporary_restriction",
+      "date": "2025-02-17",
+      "date_kind": "notice_date",
+      "sources": [
+        "blida_notice"
+      ],
+      "title": {
+        "en": "One access route and restrictions on removal",
+        "ar": "مسلك واحد وقيود على نقل الممتلكات"
+      },
+      "place": {
+        "en": "Blida — Marjayoun",
+        "ar": "بليدا — مرجعيون"
+      },
+      "actor": {
+        "en": "Blida municipality",
+        "ar": "بلدية بليدا"
+      },
+      "blocked": {
+        "en": "Other entry routes, scrap dealers and, temporarily, non-Lebanese entrants.",
+        "ar": "مسالك الدخول الأخرى وتجار الخردة، وغير اللبنانيين مؤقتاً."
+      },
+      "action": {
+        "en": "Access was designated via Aitaroun by Wahid Hamad station after army clearance. Removing belongings required the owner and municipal permission.",
+        "ar": "حُدد الدخول عبر عيترون عند محطة وحيد حمد بعد مسح الجيش. واشترط نقل الأغراض حضور أصحابها وإذن البلدية."
+      },
+      "limit": {
+        "en": "These are the notice’s restrictions; their current enforcement has not been verified.",
+        "ar": "هذه قيود البيان في حينه؛ لم يُتحقق من استمرار تطبيقها اليوم."
+      }
+    },
+    {
+      "id": "houla_return",
+      "category": "return",
+      "status": "temporary_restriction",
+      "date": "2025-02-17",
+      "date_kind": "notice_date",
+      "sources": [
+        "houla_notice",
+        "houla_march"
+      ],
+      "title": {
+        "en": "Return postponed until 19 February",
+        "ar": "تأجيل العودة إلى 19 شباط"
+      },
+      "place": {
+        "en": "Houla — Marjayoun",
+        "ar": "حولا — مرجعيون"
+      },
+      "actor": {
+        "en": "Houla municipality, coordinating with the army",
+        "ar": "بلدية حولا بالتنسيق مع الجيش"
+      },
+      "blocked": {
+        "en": "Entry before Wednesday 19 February 2025.",
+        "ar": "الدخول قبل الأربعاء 19 شباط 2025."
+      },
+      "action": {
+        "en": "The municipality asked residents to give army machinery time to open and secure roads from 18 February.",
+        "ar": "طلبت البلدية إفساح الوقت لآليات الجيش لفتح الطرق وتأمينها بدءاً من 18 شباط."
+      },
+      "limit": {
+        "en": "Later evidence: on 17 March, mayor Chakib Koteich reported over 100 families back. The February notice is historical.",
+        "ar": "تطور لاحق: في 17 آذار أفاد رئيس البلدية شكيب قطيش بعودة أكثر من 100 عائلة. إشعار شباط تاريخي."
+      }
+    },
+    {
+      "id": "maroun_return",
+      "category": "return",
+      "status": "temporary_restriction",
+      "date": "2025-02-17",
+      "date_kind": "notice_date",
+      "sources": [
+        "maroun_notice",
+        "maroun_date"
+      ],
+      "title": {
+        "en": "A controlled route for return",
+        "ar": "مسار محدد للعودة"
+      },
+      "place": {
+        "en": "Maroun al-Ras — Bint Jbeil",
+        "ar": "مارون الراس — بنت جبيل"
+      },
+      "actor": {
+        "en": "Maroun al-Ras municipality",
+        "ar": "بلدية مارون الراس"
+      },
+      "blocked": {
+        "en": "Early entry, other routes, scrap-collection vehicles and non-Lebanese entrants.",
+        "ar": "الدخول المبكر والمسالك الأخرى وسيارات الخردة وغير اللبنانيين."
+      },
+      "action": {
+        "en": "The notice asked residents to wait until 11 a.m. for engineering work and use only the Bint Jbeil–Maroun al-Ras road.",
+        "ar": "طلب البيان انتظار الساعة 11 قبل الظهر لإنجاز الأعمال الهندسية، واعتماد طريق بنت جبيل–مارون الراس حصراً."
+      },
+      "limit": {
+        "en": "17 February is the publication date. No current continuation of these entry rules was verified.",
+        "ar": "17 شباط هو تاريخ النشر. لم يُتحقق من استمرار ضوابط الدخول هذه اليوم."
+      }
+    },
+    {
+      "id": "boundary_documents",
+      "category": "building",
+      "status": "administrative_condition",
+      "date": "2025-01-16",
+      "sources": [
+        "nabatieh"
+      ],
+      "title": {
+        "en": "A boundary document before a permit",
+        "ar": "بيان إظهار حدود قبل الترخيص"
+      },
+      "place": {
+        "en": "Nabatieh governorate",
+        "ar": "محافظة النبطية"
+      },
+      "actor": {
+        "en": "Governor Howaida Turk / local security council",
+        "ar": "المحافظ هويدا الترك / مجلس الأمن الفرعي"
+      },
+      "action": {
+        "en": "The reported decision instructed municipalities not to issue building permits before an official boundary statement, while prioritising reconstruction applications.",
+        "ar": "طلب القرار المنقول من البلديات عدم إصدار تراخيص بناء قبل بيان إظهار حدود رسمي، مع إعطاء الأولوية لمعاملات إعادة الإعمار."
+      },
+      "limit": {
+        "en": "A documented administrative prerequisite at that date, not proof of a general reconstruction ban.",
+        "ar": "شرط إداري موثق في ذلك التاريخ، وليس دليلاً على منع عام للإعمار."
+      },
+      "date_kind": "notice_date",
+      "blocked": {
+        "en": "Issuing a building permit without an official plot-boundary document.",
+        "ar": "إصدار رخصة بناء دون بيان رسمي لإظهار حدود العقار."
+      }
+    },
+    {
+      "id": "rubble_approval",
+      "category": "debris",
+      "status": "administrative_condition",
+      "date": "2025-01-16",
+      "sources": [
+        "nabatieh"
+      ],
+      "title": {
+        "en": "Rubble cannot be moved freely",
+        "ar": "نقل الردميات يحتاج إلى موافقات"
+      },
+      "place": {
+        "en": "Private property in Nabatieh governorate",
+        "ar": "الأملاك الخاصة في محافظة النبطية"
+      },
+      "actor": {
+        "en": "Municipalities / local security council",
+        "ar": "البلديات / مجلس الأمن الفرعي"
+      },
+      "action": {
+        "en": "Before Council of the South contracting, rubble removal required municipal approval, a designated destination and transport permits.",
+        "ar": "قبل إرساء التلزيم على مجلس الجنوب، اشترط نقل الردميات موافقة البلدية وتحديد موقع تجميع وتراخيص نقل."
+      },
+      "limit": {
+        "en": "An approval requirement, not a blanket ban on clearing rubble.",
+        "ar": "شرط موافقات، لا منع شامل لإزالة الأنقاض."
+      },
+      "date_kind": "notice_date",
+      "blocked": {
+        "en": "Moving rubble without municipal and transport approvals.",
+        "ar": "نقل الردميات دون الموافقات البلدية وتراخيص النقل."
+      }
+    },
+    {
+      "id": "army_road_closures",
+      "category": "roads",
+      "status": "safety_restriction",
+      "date": "2026-04-17",
+      "sources": [
+        "army_roads"
+      ],
+      "title": {
+        "en": "Do not use roads closed by the army",
+        "ar": "عدم سلوك الطرق التي أقفلها الجيش"
+      },
+      "place": {
+        "en": "Routes to occupied southern villages",
+        "ar": "الطرق المؤدية إلى قرى جنوبية محتلة"
+      },
+      "actor": {
+        "en": "Lebanese Army Command",
+        "ar": "قيادة الجيش اللبناني"
+      },
+      "action": {
+        "en": "The army instructed citizens to avoid routes it had closed because they led to villages with Israeli troops. The same statement reported other roads reopening.",
+        "ar": "طلب الجيش تجنب الطرق التي أقفلها لأنها تؤدي إلى قرى تتمركز فيها قوات إسرائيلية. وأعلن البيان نفسه فتح طرق أخرى."
+      },
+      "limit": {
+        "en": "A dated safety restriction on access; it does not establish a policy against reopening roads.",
+        "ar": "قيد وصول مؤرخ لدواعٍ أمنية؛ لا يثبت سياسة لمنع فتح الطرقات."
+      },
+      "date_kind": "notice_date",
+      "blocked": {
+        "en": "Travel on army-closed routes; individual roads were not named.",
+        "ar": "المرور على الطرق التي أقفلها الجيش؛ لم يسمّ البيان كل طريق."
+      }
+    },
+    {
+      "id": "blat_return",
+      "category": "return",
+      "status": "temporary_restriction",
+      "date": "2026-06-19",
+      "sources": [
+        "blat"
+      ],
+      "title": {
+        "en": "Wait before entering the village",
+        "ar": "التريث قبل الدخول إلى البلدة"
+      },
+      "place": {
+        "en": "Blat — Marjayoun",
+        "ar": "بلاط — مرجعيون"
+      },
+      "actor": {
+        "en": "Blat municipality, coordinating with the army",
+        "ar": "بلدية بلاط بالتنسيق مع الجيش"
+      },
+      "action": {
+        "en": "The municipality asked residents not to enter until a new notice, while the army opened roads, inspected damage and removed suspected explosive remnants.",
+        "ar": "طلبت البلدية عدم الدخول حتى إشعار جديد أثناء فتح الجيش الطرق والكشف على الأضرار وإزالة الأجسام المشبوهة ومخلفات الحرب."
+      },
+      "limit": {
+        "en": "Temporary safety notice. Its present status has not been verified; it is not shown as an active ban.",
+        "ar": "إشعار سلامة مؤقت. لم يُتحقق من وضعه الحالي؛ ولا يُعرض كحظر سارٍ."
+      },
+      "date_kind": "notice_date",
+      "blocked": {
+        "en": "Entry to the village until a further municipal notice.",
+        "ar": "الدخول إلى البلدة حتى صدور إشعار بلدي جديد."
+      }
+    },
+    {
+      "id": "leap_clearance",
+      "category": "building",
+      "status": "programme_condition",
+      "date": "2026-02-17",
+      "sources": [
+        "leap"
+      ],
+      "title": {
+        "en": "Army clearance before LEAP eligibility",
+        "ar": "تطهير الجيش شرط لأهلية LEAP"
+      },
+      "place": {
+        "en": "Sites seeking LEAP financing",
+        "ar": "المواقع المطلوب تمويلها عبر LEAP"
+      },
+      "actor": {
+        "en": "CDR / Lebanese Army",
+        "ar": "مجلس الإنماء والإعمار / الجيش اللبناني"
+      },
+      "action": {
+        "en": "Sites uncleared of explosive remnants, or with unmanaged human remains, are ineligible under the programme.",
+        "ar": "المواقع غير المطهرة من مخلفات الحرب أو التي لم تُعالج فيها الرفات البشرية غير مؤهلة للبرنامج."
+      },
+      "limit": {
+        "en": "A government-project safeguard, not a nationwide private-building prohibition.",
+        "ar": "شرط حماية في مشروع حكومي، وليس حظراً وطنياً على البناء الخاص."
+      },
+      "date_kind": "document_date",
+      "blocked": {
+        "en": "LEAP-funded works at uncleared sites.",
+        "ar": "أعمال ممولة عبر LEAP في مواقع غير مطهّرة."
+      }
+    }
+  ],
+  "updates": [
+    {
+      "date": "2025-07-11",
+      "source": "dgu",
+      "title": {
+        "en": "A later route to rebuilding permits",
+        "ar": "مسار لاحق لتسهيل معاملات الإعمار"
+      },
+      "text": {
+        "en": "Law 22/2025 was followed by dedicated reconstruction registers in urban-planning offices. Earlier permit disputes should be read alongside this change.",
+        "ar": "تبع القانون 22/2025 فتح سجلات خاصة للإعمار في دوائر التنظيم المدني. ينبغي قراءة خلافات التراخيص السابقة مع هذا التطور."
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "source": "harvest_road",
+      "title": {
+        "en": "Access to farmland also reopened",
+        "ar": "فتح طريق أيضاً للوصول إلى الأراضي"
+      },
+      "text": {
+        "en": "Yasour reported army work opening a route between Bint Jbeil and Marjayoun villages ahead of the olive harvest. This concerns a different route from the restrictions above.",
+        "ar": "أفاد ياصور ببدء الجيش فتح طريق بين قرى بنت جبيل ومرجعيون قبل قطاف الزيتون. وهو طريق مختلف عن القيود الواردة أعلاه."
+      }
+    }
+  ],
+  "funding": {
+    "as_of": "2026-02-17",
+    "source": "leap",
+    "unit": "USD_million",
+    "basis": "initial_programme_financing",
+    "rows": [
+      {
+        "code": "C3b",
+        "label": {
+          "en": "Major reconstruction works",
+          "ar": "أعمال إعادة الإعمار الكبرى"
+        },
+        "available": 0,
+        "gap": 455
+      },
+      {
+        "code": "C2",
+        "label": {
+          "en": "Public services",
+          "ar": "الخدمات العامة"
+        },
+        "available": 175,
+        "gap": 245
+      },
+      {
+        "code": "C1",
+        "label": {
+          "en": "Immediate response",
+          "ar": "الاستجابة الفورية"
+        },
+        "available": 50,
+        "gap": 30
+      },
+      {
+        "code": "C3a",
+        "label": {
+          "en": "Reconstruction designs",
+          "ar": "تصاميم الإعمار"
+        },
+        "available": 15,
+        "gap": 5
+      },
+      {
+        "code": "C4",
+        "label": {
+          "en": "Project management",
+          "ar": "إدارة المشروع"
+        },
+        "available": 10,
+        "gap": 15
+      }
+    ],
+    "place": {
+      "en": "Eligible LEAP locations; no town-by-town split in this table.",
+      "ar": "مواقع LEAP المؤهلة؛ لا يوزع هذا الجدول التمويل بحسب البلدة."
+    },
+    "actor": {
+      "en": "Council for Development and Reconstruction — programme implementation.",
+      "ar": "مجلس الإنماء والإعمار — تنفيذ البرنامج."
+    }
+  },
+  "budget_history": [
+    {
+      "date": "2025-10-28",
+      "source": "draft_budget",
+      "title": {
+        "en": "No explicit reconstruction line in the draft",
+        "ar": "غياب بند صريح للإعمار في المشروع"
+      },
+      "text": {
+        "en": "TPI's analysis of the 2026 draft identified no explicit post-war reconstruction line. This finding concerns that draft version.",
+        "ar": "رصد تحليل مبادرة سياسات الغد لمشروع موازنة 2026 غياب بند صريح لإعمار ما بعد الحرب. تخص النتيجة تلك النسخة من المشروع."
+      }
+    },
+    {
+      "date": "2025-12-10",
+      "source": "budget_committee",
+      "title": {
+        "en": "Committee then added shelter and repairs",
+        "ar": "أضافت اللجنة لاحقاً الإيواء والترميم"
+      },
+      "text": {
+        "en": "Ibrahim Kanaan announced a provision and a reserve transfer for shelter and repairs. The statement gives neither a sum nor evidence of payment.",
+        "ar": "أعلن إبراهيم كنعان اعتماد نبذة ونقل مبلغ من الاحتياطي للإيواء والترميم. لا يحدد البيان المبلغ ولا يثبت دفعه."
+      }
+    }
+  ],
+  "funding_cases": [
+    {
+      "id": "hosh_residual_debris",
+      "date": "2025-07-21",
+      "date_kind": "report_date",
+      "evidence": "reported_uncovered_cost",
+      "allocation_usd": null,
+      "household_cost_usd": 1500,
+      "sources": [
+        "houla_services"
+      ],
+      "title": {
+        "en": "The remaining rubble bill",
+        "ar": "كلفة ما تبقى من الركام"
+      },
+      "place": {
+        "en": "Al-Hosh — Tyre",
+        "ar": "الحوش — صور"
+      },
+      "actor": {
+        "en": "Council of the South — commissioning authority; site contractor unnamed.",
+        "ar": "مجلس الجنوب — جهة التلزيم؛ متعهد الموقع غير مسمى."
+      },
+      "activity": {
+        "en": "Clearing rubble left around surviving columns.",
+        "ar": "إزالة الركام المتبقي حول الأعمدة."
+      },
+      "action": {
+        "en": "Hatem Hallawi reported incomplete clearing at his father’s building and an estimated $1,500 further cost.",
+        "ar": "أفاد حاتم حلاوي بعدم اكتمال التنظيف في مبنى والده، وقدّر الكلفة الإضافية بنحو 1500 دولار."
+      },
+      "limit": {
+        "en": "A reported uncovered household cost, not proof that the state allocated nothing to debris removal.",
+        "ar": "كلفة أسرية غير مغطاة بحسب الشهادة، لا دليل على انعدام تخصيص الدولة لإزالة الركام."
+      }
+    },
+    {
+      "id": "houla_municipal_services",
+      "date": "2025-07-21",
+      "date_kind": "report_date",
+      "evidence": "reported_unmet_need",
+      "allocation_usd": null,
+      "sources": [
+        "houla_services"
+      ],
+      "title": {
+        "en": "Municipal equipment and water repairs",
+        "ar": "تجهيز البلدية وإصلاح المياه"
+      },
+      "place": {
+        "en": "Houla — Marjayoun",
+        "ar": "حولا — مرجعيون"
+      },
+      "actor": {
+        "en": "Houla municipality — Mayor Ali Yassine; national funding authority unspecified.",
+        "ar": "بلدية حولا — الرئيس علي ياسين؛ لم تُحدد جهة التمويل الوطنية."
+      },
+      "activity": {
+        "en": "Waste-collection vehicle, ambulance and artesian-well repair.",
+        "ar": "آلية جمع نفايات وسيارة إسعاف وإصلاح البئر الارتوازية."
+      },
+      "action": {
+        "en": "Yassine reported an empty municipal fund and sought donations. He also acknowledged electricity restoration in three neighbourhoods.",
+        "ar": "أفاد ياسين بخلو صندوق البلدية وسعيه للتبرعات. وأشار أيضاً إلى إعادة الكهرباء إلى ثلاثة أحياء."
+      },
+      "limit": {
+        "en": "An unmet local need, not proof of a zero appropriation. No budget amount was provided.",
+        "ar": "حاجة محلية غير ملباة، وليست إثباتاً لاعتماد صفري. لم يُذكر مبلغ في الموازنة."
+      }
+    },
+    {
+      "id": "houla_school_support",
+      "date": "2025-12-29",
+      "date_kind": "report_date",
+      "evidence": "reported_unmet_need",
+      "allocation_usd": null,
+      "sources": [
+        "border_schools"
+      ],
+      "title": {
+        "en": "Support for the temporary public school",
+        "ar": "دعم المدرسة الرسمية المؤقتة"
+      },
+      "place": {
+        "en": "Houla — Marjayoun",
+        "ar": "حولا — مرجعيون"
+      },
+      "actor": {
+        "en": "Education Ministry (sector authority); Houla municipality covering local costs.",
+        "ar": "وزارة التربية (الجهة القطاعية)؛ بلدية حولا تتكفل بكلفة محلية."
+      },
+      "activity": {
+        "en": "Heating, adequate solar power, teacher pay and pupil transport.",
+        "ar": "التدفئة والطاقة الشمسية الكافية ورواتب المعلمين ونقل التلامذة."
+      },
+      "action": {
+        "en": "The report found insufficient heating and two hours of power. The municipality needed support for nine of eleven teachers and transport.",
+        "ar": "رصد التقرير نقص التدفئة وكهرباء لساعتين. واحتاجت البلدية دعماً لتسعة معلمين من أصل أحد عشر ولنقل التلامذة."
+      },
+      "limit": {
+        "en": "Reported support shortfall. The article does not identify a rejected grant or a zero state-budget line.",
+        "ar": "نقص دعم مبلّغ عنه. لا يحدد المقال منحة مرفوضة أو بنداً صفرياً في موازنة الدولة."
+      }
+    },
+    {
+      "id": "mays_school_fees",
+      "date": "2025-12-29",
+      "date_kind": "report_date",
+      "evidence": "fee_relief_missing",
+      "allocation_usd": null,
+      "sources": [
+        "border_schools"
+      ],
+      "title": {
+        "en": "School registration fees not waived",
+        "ar": "عدم الإعفاء من رسوم التسجيل المدرسي"
+      },
+      "place": {
+        "en": "Mays al-Jabal — Marjayoun",
+        "ar": "ميس الجبل — مرجعيون"
+      },
+      "actor": {
+        "en": "Education Ministry / public-school fee system.",
+        "ar": "وزارة التربية / نظام رسوم المدرسة الرسمية."
+      },
+      "activity": {
+        "en": "Registration-fee relief for returning pupils.",
+        "ar": "الإعفاء من رسوم التسجيل للتلامذة العائدين."
+      },
+      "action": {
+        "en": "Legal Agenda reported no requested exemption; the municipality and donors covered the fees.",
+        "ar": "أفادت المفكرة بعدم تحقق الإعفاء المطلوب؛ فغطت البلدية ومتبرعون الرسوم."
+      },
+      "limit": {
+        "en": "Missing fee relief, not a quantified zero allocation for education.",
+        "ar": "غياب إعفاء من الرسوم، وليس تخصيصاً صفرياً محدداً للتعليم."
+      }
+    }
+  ]
+}

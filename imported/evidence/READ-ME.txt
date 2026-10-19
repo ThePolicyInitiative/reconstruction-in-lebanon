@@ -1,0 +1,7 @@
+LEBANON — LOCAL VISUAL ARCHIVE
+
+Open index.html in a web browser. No installation or internet connection is needed for images, reports or page controls. External source links need internet access.
+
+To move this website, copy the entire lebanon-gallery folder, including assets and collection.
+
+The gallery contains only before-and-after satellite comparisons. Clean comparisons are shown by default; use Show annotated originals to reveal comparisons whose marks are embedded in the source. No AI reconstruction was used. Native map tiles are rendered together to prevent display seams. Town names and dates are below the images. Before means the earlier displayed date, not necessarily an undamaged baseline. Original archived reports retain their published layouts. Click an image to enlarge it; use Escape or Close to return.

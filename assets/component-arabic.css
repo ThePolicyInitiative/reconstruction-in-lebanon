@@ -1,0 +1,18 @@
+html[lang="ar"] body,html[lang="ar"] button,html[lang="ar"] input,html[lang="ar"] select{font-family:Tahoma,Arial,sans-serif;letter-spacing:0;line-height:1.85}
+html[lang="ar"] body{text-align:right}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .eyebrow,html[lang="ar"] .kicker{letter-spacing:0;line-height:1.5}
+html[lang="ar"] h1{max-width:none}
+html[lang="ar"] th,html[lang="ar"] .member-link,html[lang="ar"] .party-card{text-align:right}
+html[lang="ar"] ul,html[lang="ar"] ol{padding-left:0;padding-right:22px}
+html[lang="ar"] blockquote{border-left:0;border-right:3px solid #b6c8bd;padding-right:18px;padding-left:0}
+html[lang="ar"] blockquote[data-translated="true"]::before{content:"ترجمة المقتطف";display:block;font-size:11px;font-weight:700;margin-bottom:6px}
+html[lang="ar"] .assessment{border-left:0;border-right:3px solid #b6c8bd}
+html[lang="ar"] .source-id,html[lang="ar"] code{direction:ltr;unicode-bidi:isolate;display:inline-block}
+html[lang="ar"] .panels img{direction:ltr}
+html[lang="ar"] .viewer-caption{direction:rtl;text-align:right}
+html[lang="ar"] .meta,html[lang="ar"] .meta-row{flex-wrap:wrap}
+html[lang="ar"] a{overflow-wrap:anywhere}
+/* Streamlit disables viewport scrolling in component frames. */
+body.party-page{height:100%;overflow:hidden}
+.party-scroll{height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;scrollbar-gutter:stable;-webkit-overflow-scrolling:touch}
+@media(max-width:560px){html[lang="ar"] h1{font-size:29px}html[lang="ar"] h2{font-size:23px}}

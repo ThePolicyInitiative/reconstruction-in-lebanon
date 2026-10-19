@@ -1,0 +1,151 @@
+"""Official Gazette, presented alongside Tenders using Memo automation data."""
+from __future__ import annotations
+import html
+import json
+import pandas as pd
+from i18n import st, translate
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from .data_feed import YEARS, SITE_URL, FIELDS
+from .live_data import CloudGazetteFeed
+from .analytics import ALL, RELATED, CATEGORIES, tag_records, filter_records, csv_rows
+from .labels import STATUS_LABELS, TYPE_LABELS
+from .charts import subject_charts, timeline_charts, classification_charts
+
+FILTER_KEYS = ('gazette_search', 'gazette_years', 'gazette_subject', 'gazette_types', 'gazette_majors', 'gazette_statuses', 'gazette_detail',
+               'gazette_comparison_window', 'gazette_policy_chart_scope')
+
+
+def preserve_filters():
+    for key in FILTER_KEYS:
+        for candidate in (key, key + '__ar'):
+            if candidate in st.session_state:
+                st.session_state[candidate] = st.session_state[candidate]
+
+
+@st.cache_data(show_spinner=False, max_entries=3)
+def saved_data(snapshot):
+    return {**snapshot, 'records': tag_records(snapshot['records'])}
+
+
+@st.cache_resource
+def get_feed():
+    return CloudGazetteFeed()
+
+
+def status_label(value):
+    return STATUS_LABELS.get(value, value)
+
+
+def detail(row):
+    st.subheader('Gazette record details')
+    st.markdown(f'<div class="gazette-title">{html.escape(row["title"])}</div>', unsafe_allow_html=True)
+    c1, c2, c3 = st.columns(3)
+    c1.metric('Document type', translate(TYPE_LABELS[row['type']]))
+    c2.metric('Document number', row['number'] or '—')
+    c3.metric('Published', row['date'])
+    st.link_button('Open original Gazette record ↗', row['url'])
+    st.caption('Original record pages may require your Gazette subscription.')
+    st.write('Assessment status: ' + status_label(row['status']))
+    if row['status'] == 'needs-source-review':
+        st.info('This saved classification still needs source review. It is included in the totals and is not an approved finding.')
+    fields = [('Nature', row['nature']), ('Administrative function', row['admin_function']),
+              ('Main category', row['major']), ('Subcategory', row['sub'])]
+    st.dataframe(pd.DataFrame([{'Field': name, 'Saved classification': value or 'Not specified'} for name, value in fields]),
+                 hide_index=True, width='stretch')
+    with st.expander('Subject matches and source notes'):
+        if row['subject_evidence']:
+            st.caption('These website subjects use wording in the saved title. They do not replace Memo automation classifications.')
+            st.dataframe(pd.DataFrame([{'Subject': e['Category'], 'Matched wording': e['Matched wording']} for e in row['subject_evidence']]), hide_index=True, width='stretch')
+        else:
+            st.caption('No explicit match for the seven subjects was found in this title.')
+        st.caption('Blank source fields remain blank in downloads. Original Arabic titles are preserved in both languages.')
+        st.download_button('Download original Gazette record · JSON',
+                           json.dumps({k: row[k] for k in FIELDS}, ensure_ascii=False, indent=2),
+                           file_name=f'gazette_{row["id"]}.json', mime='application/json', key='gazette_record_json')
+
+
+@st.fragment(run_every='60s')
+def dashboard():
+    st.title('Official Gazette')
+    st.caption('Laws, decrees and decisions from Memo automation · 2024–2026')
+    try:
+        connection = get_feed().refresh()
+        snapshot = saved_data(connection['snapshot'])
+    except (ValueError, OSError):
+        st.error('The Gazette export could not be loaded. Open Memo automation to view the source records.')
+        st.link_button('Open live Memo automation dashboard ↗', SITE_URL)
+        return
+    rows = snapshot['records']
+    if connection.get('error'):
+        st.warning(connection['error'])
+    if snapshot['invalid_exports']:
+        st.warning('A newer Gazette export could not be read. The last valid saved records remain available.')
+    with st.expander('Filter Gazette records'):
+        search = st.text_input('Search Gazette records', placeholder='Arabic title, document number, subject or ID', key='gazette_search')
+        a, b, c = st.columns(3)
+        years = a.multiselect('Publication year', YEARS, key='gazette_years', placeholder='2024, 2025 and 2026')
+        subject = b.selectbox('Website subject', [ALL, RELATED, *CATEGORIES], key='gazette_subject')
+        types = c.multiselect('Document type', list(TYPE_LABELS), format_func=lambda v: TYPE_LABELS[v], key='gazette_types')
+        a, b = st.columns(2)
+        majors = a.multiselect('Memo main category', sorted({r['major'] for r in rows if r['major']}), key='gazette_majors')
+        statuses = b.multiselect('Assessment status', sorted({r['status'] for r in rows}), format_func=status_label, key='gazette_statuses')
+        if st.button('Refresh Gazette data', key='gazette_reload'):
+            get_feed().refresh(force=True)
+            saved_data.clear()
+            st.rerun()
+    filtered = filter_records(rows, search, years, subject, types, majors, statuses)
+    a, b, c, d = st.columns(4)
+    a.metric('Gazette records', f'{len(rows):,}', help='Unique saved records published in 2024, 2025 or 2026, before filtering.')
+    b.metric('Matching records', f'{len(filtered):,}')
+    c.metric('Records matching a subject', f'{sum(bool(r["subjects"]) for r in filtered):,}')
+    d.metric('Latest saved publication', snapshot['latest_publication'] or '—')
+    latest, subjects, timeline, classifications, notes = st.tabs(['Latest Gazette records', 'By subject', 'By month', 'Classifications', 'Gazette sources & notes'])
+    with latest:
+        if not filtered:
+            st.info('No Gazette records match these filters. Clear the search or choose another subject or year.')
+        else:
+            st.subheader('Latest laws, decrees and decisions')
+            for column, row in zip(st.columns(3), filtered[:3]):
+                with column, st.container(border=True):
+                    st.caption(f'{row["date"]} · {translate(TYPE_LABELS[row["type"]])} {row["number"]}')
+                    st.markdown(f'<div class="gazette-title">{html.escape(row["title"])}</div>', unsafe_allow_html=True)
+                    if row['subjects']:
+                        st.markdown(' '.join(f'<span class="gazette-tag">{html.escape(translate(c))}</span>' for c in row['subjects']), unsafe_allow_html=True)
+                    st.link_button('Open Gazette record ↗', row['url'])
+            frame = pd.DataFrame(csv_rows(filtered))
+            st.dataframe(frame, hide_index=True, width='stretch', height=430, column_order=['Published', 'Document type', 'Document number', 'Gazette title', 'Website subjects', 'Main category', 'Source'],
+                         column_config={'Gazette title': st.column_config.TextColumn(width='large'),
+                                        'Source': st.column_config.LinkColumn(display_text='Open ↗')}, key='gazette_records_table')
+            safe = frame.map(lambda value: "'" + value if isinstance(value, str) and value.lstrip().startswith(('=', '+', '-', '@')) else value)
+            st.download_button('Download Gazette records · CSV', safe.to_csv(index=False).encode('utf-8-sig'),
+                               file_name='gazette_2024_2026_filtered.csv', mime='text/csv', key='gazette_csv')
+            lookup = {r['id']: r for r in filtered}
+            selected = st.selectbox('Explore a Gazette record', list(lookup), format_func=lambda rid: f'{lookup[rid]["date"]} · {lookup[rid]["type"]} {lookup[rid]["number"]} · {lookup[rid]["title"]}', key='gazette_detail')
+            detail(lookup[selected])
+    with subjects:
+        subject_charts(filtered, years)
+    with timeline:
+        timeline_charts(filtered, rows, years)
+    with classifications:
+        classification_charts(filtered)
+    with notes:
+        st.subheader('Where these records come from')
+        st.write('The records come from your Memo automation Gazette archive. Each entry links to the original Lebanese Official Gazette record.')
+        st.link_button('Open live Memo automation dashboard ↗', SITE_URL)
+        st.markdown('''**Coverage**
+
+Only laws, decrees and decisions published in 2024–2026 appear here. Totals describe saved records, not a certified complete Gazette archive.
+
+**Classifications and subjects**
+
+Memo automation supplies Nature, Administrative function, Main category and Subcategory. Original values and blanks are preserved in downloads. Owner-supplied fields, automated proposals and records needing review remain distinguishable. The seven website subjects are separate title-based filters; indirect references and information inside scans may be missed.
+
+**Updates**
+
+Memo automation collects and classifies new Gazette records in the cloud every Monday at 09:00 Beirut, even when your computer is off. This tab connects directly to that cloud feed and checks for saved updates every minute while open. When you reopen the website, it retrieves records collected while you were away. No manual export is needed. Refresh Gazette data checks the latest cloud results; it does not start another collection.
+''')
+        if connection.get('connected_at'):
+            checked = datetime.fromisoformat(connection['connected_at']).astimezone(ZoneInfo('Asia/Beirut')).strftime('%d %b %Y, %H:%M')
+            st.caption('Last successful cloud connection: ' + checked + ' · Beirut')
+        st.caption('Saved data prepared: ' + (snapshot.get('built_at') or 'Not specified'))

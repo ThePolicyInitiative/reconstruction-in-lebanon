@@ -1,0 +1,11 @@
+{
+  "source_url": "http://127.0.0.1:8787/?view=countries",
+  "imported_at": "2026-10-12T09:31:19.626378+00:00",
+  "source_sha256": "f93df25dfb2316ab6410126a1c334906638aadcd2b865aa9991b8b4e25cb3ef9",
+  "research_checked": "2026-10-12",
+  "countries": 22,
+  "statements": 33,
+  "additions_file": "data/country_additions.json",
+  "additions_sha256": "157e14926bc713550391847364de8eee6b57ab53e1573006502d61bcfc82d6fd",
+  "additions_reviewed": "2026-10-12"
+}

@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/ThePolicyInitiative/mona2asat",
+  "revision": "bed27eaa684f6039f8e0c1075209be70b78ab1bf",
+  "changes": "Package-relative imports only. Collection and parsing retained. No notification module is included.",
+  "upstreamSha256": {
+    "monitor.py": "92fc37ae5769c8d2241c562a00be10ec786a79cc7192d733c3c95ea006d83cbc",
+    "ppa_parser.py": "0c5d4366b271a15175a9e55629f386301485ceaba8bd83b8e239522c91f9853c",
+    "cdr_monitor.py": "f5c2fcd16caf00fb2f5fdc79c82d04309abbacbb6bae5836b9cd1308fb4e7c93",
+    "cdr_parser.py": "7a8bbfb026aa9f9988b80a4823b152abfb2eef05f0c30c4b87fcc15e3274a3f6",
+    "build_dashboard.py": "958604dd891f439f119e280b992bd9e2f8982a496f815e2969f7b416f51d5697",
+    "tender_analytics.py": "5dc911624ac65981a0d3f1985693bd00b1ed53d2d14e57b954faae135a41e05a"
+  }
+}

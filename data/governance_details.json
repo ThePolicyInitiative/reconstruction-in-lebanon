@@ -1,0 +1,27 @@
+{
+  "source": "wb_faq",
+  "roles": {
+    "NS": {"scope": "Overall direction", "duties": ["Provides strategic guidance in consultation with the Finance Minister.", "Requested CDR's priority project list in December 2025."], "sources": ["cdr_faq", "pm_leap"]},
+    "YJ": {"scope": "Strategic consultation", "duties": ["Advises the Prime Minister on LEAP's overall direction.", "The Finance Ministry helped prepare the government prioritisation method."], "sources": ["cdr_faq"]},
+    "FR": {"scope": "Execution oversight", "duties": ["The ministry leads oversight of LEAP execution.", "CDR retains implementation responsibility for all components."], "sources": ["cdr_faq"]},
+    "MK": {"scope": "All four components", "duties": ["Heads CDR, the implementing agency for the entire programme.", "The project unit reports to the CDR president and Board."], "sources": ["cdr_faq", "pm_cdr"]},
+    "TE": {"scope": "Rubble + safeguards", "duties": ["Oversees rubble management under Component 1a.", "Oversees environmental and social requirements across the project."], "sources": ["cdr_faq"]}
+  },
+  "technical_ministries": [
+    {"initials": "JS", "sector": "Energy & water", "focus": "Water and energy services", "icon": "energy"},
+    {"initials": "RK", "sector": "Education", "focus": "Schools and education facilities", "icon": "education"},
+    {"initials": "RN", "sector": "Public health", "focus": "Health facilities and services", "icon": "services"},
+    {"initials": "HS", "sector": "Social affairs", "focus": "Social-sector needs and services", "icon": "family"}
+  ],
+  "project_unit": [
+    {"title": "Coordinate", "detail": "Manage daily implementation and report progress.", "icon": "people"},
+    {"title": "Procure", "detail": "Manage contracts through procurement specialists.", "icon": "oversight"},
+    {"title": "Account", "detail": "Record commitments, expenditure and project budgets.", "icon": "fund"},
+    {"title": "Manage risks", "detail": "Use environmental, social and safety specialists.", "icon": "shield"}
+  ],
+  "assurance": [
+    {"number": "01", "title": "Engineering supervision", "engaged_by": "To be engaged by the CDR project unit", "detail": "Check workmanship, timing, costs and safeguards; report departures from contract requirements.", "output": "Site supervision findings", "icon": "building"},
+    {"number": "02", "title": "Third-party monitoring", "engaged_by": "To be engaged by CDR", "detail": "Cross-check activities and expenditure using site visits, satellite imagery, surveys and records.", "output": "Independent verification", "icon": "oversight"},
+    {"number": "03", "title": "World Bank technical checks", "engaged_by": "Engineering firm to be engaged by the World Bank", "detail": "Review procurement, eligible transactions and reported results across the programme.", "output": "Compliance and results checks", "icon": "shield"}
+  ]
+}

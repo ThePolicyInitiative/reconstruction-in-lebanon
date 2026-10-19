@@ -1,0 +1,580 @@
+{
+  "reviewed_on": "2026-10-12",
+  "scope": "Selected public records on the response to the 2023–2024 conflict and subsequent 2026 developments. This is a curated snapshot, not a live feed or a complete inventory of projects.",
+  "sources": {
+    "cdr_leap": {
+      "publisher": "Council for Development and Reconstruction",
+      "title": "Lebanon Emergency Assistance Project: programme and components",
+      "date": null,
+      "kind": "Government",
+      "url": "https://cdr.gov.lb/en-US/Projects/LEAP.aspx",
+      "access": "Page reviewed"
+    },
+    "wb_faq": {
+      "publisher": "World Bank",
+      "title": "LEAP: Frequently Asked Questions",
+      "date": "2026-02-17",
+      "kind": "International institution",
+      "url": "https://www.worldbank.org/en/news/factsheet/2026/02/17/lebanon-emergency-assistance-project-frequently-asked-questions",
+      "access": "Page reviewed"
+    },
+    "wb_rdna": {
+      "publisher": "World Bank",
+      "title": "Lebanon's recovery and reconstruction needs estimated at US$11 billion",
+      "date": "2025-03-07",
+      "kind": "International institution",
+      "url": "https://www.worldbank.org/en/news/press-release/2025/03/07/lebanon-s-recovery-and-reconstruction-needs-estimated-at-us-11-billion",
+      "access": "Page reviewed"
+    },
+    "committee": {
+      "publisher": "Annahar",
+      "title": "Ministerial reconstruction committee sets out three parallel tracks",
+      "date": "2025-08-25",
+      "kind": "Media",
+      "url": "https://www.annahar.com/lebanon/politics/239826/لجنة-إعادة-الإعمار-من-السراي-استراتيجية-التعافي-والإعمار-تتمحور-حول-3-مسارات",
+      "access": "Page reviewed; reporting a committee statement"
+    },
+    "pm_leap": {
+      "publisher": "Prime Minister's Office",
+      "title": "Prime Minister Salam meets officials responsible for LEAP",
+      "date": "2025-12-31",
+      "kind": "Government",
+      "url": "https://www.pcm.gov.lb/arabic/subpg.aspx?pageid=26677",
+      "access": "Indexed official excerpt reviewed; direct page retrieval unavailable"
+    },
+    "pm_cdr": {
+      "publisher": "Prime Minister's Office",
+      "title": "Salam meets Central Inspection and CDR presidents",
+      "date": "2026-06-08",
+      "kind": "Government",
+      "url": "https://www.pcm.gov.lb/arabic/subpg.aspx?pageid=27215",
+      "access": "Indexed official excerpt reviewed; direct page retrieval unavailable"
+    },
+    "mosa": {
+      "publisher": "Ministry of Social Affairs",
+      "title": "Minister Hanin Sayed visits displaced families in Beirut",
+      "date": "2026-04-08",
+      "kind": "Government",
+      "url": "https://www.socialaffairs.gov.lb/news/وزيرة-الشؤون-تتفقد-احوال-النازحين-في-بيروت/",
+      "access": "Indexed official excerpt reviewed; direct page retrieval unavailable"
+    },
+    "mtv": {
+      "publisher": "MTV / Al-Liwaa",
+      "title": "Reconstruction on the agenda: ministers discuss implementation",
+      "date": "2026-07-09",
+      "kind": "Media",
+      "url": "https://www.mtv.com.lb/news/محليات/1715414/الإعمار-على-الطاولة----رسامني-وهاني--التنفيذ-سينطلق-في-هذا-التاريخ",
+      "access": "Page reviewed; media reporting"
+    },
+    "procurement": {
+      "publisher": "Council for Development and Reconstruction",
+      "title": "Procurement 1260: assessment, reconstruction design and supervision of totally damaged public buildings",
+      "date": "2026-09-08",
+      "kind": "Government",
+      "url": "https://www.cdr.gov.lb/Procurment/ProcurementDetail.aspx?id=1260&lot=0",
+      "access": "Page reviewed; status displayed as Under Evaluation"
+    },
+    "ppa": {
+      "publisher": "Public Procurement Authority",
+      "title": "Consultancy framework for totally damaged public buildings",
+      "date": null,
+      "kind": "Government",
+      "url": "https://www.ppa.gov.lb/en/plan/details/12491",
+      "access": "Page reviewed; geographical scope and service modules"
+    },
+    "un_update": {
+      "publisher": "United Nations in Lebanon",
+      "title": "Lebanon Response Plan 2026 Addendum",
+      "date": "2026-09-18",
+      "kind": "International institution",
+      "url": "https://lebanon.un.org/en/323037-lebanon-response-plan-2026-addendum",
+      "access": "Page reviewed"
+    },
+    "cdr_faq": {
+      "publisher": "Council for Development and Reconstruction",
+      "title": "LEAP FAQ: component budget and implementation responsibilities",
+      "date": null,
+      "kind": "Government",
+      "url": "https://www.cdr.gov.lb/getmedia/eabe3d25-9415-4f02-917c-c7d912968da2/QA-on-LEAP-ENGLISH.pdf.aspx",
+      "access": "Official PDF reviewed; budget on page 2, institutional roles on page 4; undated document"
+    },
+    "roads": {
+      "publisher": "Council for Development and Reconstruction",
+      "title": "CDR 1250: damaged roads clearing and restoration in Nabatieh",
+      "date": "2026-08-18",
+      "kind": "Government",
+      "url": "https://www.cdr.gov.lb/en-us/Procurment/ProcurementDetail.aspx?aliaspath=%2FProcurment%2FProcurementDetail&id=1250&lot=0",
+      "access": "The saved CDR record collected on 9 October 2026 says “Awarded”. The web reader returned an older “Under Evaluation” version and direct retrieval was unavailable. Award date, contractor and completed works were not verified.",
+      "review_note": "The saved CDR record collected on 9 October 2026 says “Awarded”. The web reader returned an older “Under Evaluation” version and direct retrieval was unavailable. Award date, contractor and completed works were not verified."
+    },
+    "esia": {
+      "publisher": "Council for Development and Reconstruction",
+      "title": "CDR 1258: environmental and social assessment framework",
+      "date": "2026-09-04",
+      "kind": "Government",
+      "url": "https://cdr.gov.lb/Procurment/ProcurementDetail.aspx?id=1258&lot=0",
+      "access": "The saved CDR record collected on 1 October 2026 says “Under Evaluation”. The notice is verified; an award or delivery of the consultancy was not established.",
+      "review_note": "The saved CDR record collected on 1 October 2026 says “Under Evaluation”. The notice is verified; an award or delivery of the consultancy was not established."
+    },
+    "finance_minister": {
+      "publisher": "Ministry of Finance",
+      "title": "Minister Yassine Jaber: official biography",
+      "date": null,
+      "kind": "Government",
+      "url": "https://www.finance.gov.lb/en-us/About/Minister/",
+      "access": "Official biography reviewed on 8 October 2026"
+    },
+    "environment_minister": {
+      "publisher": "Ministry of Environment",
+      "title": "Tamara Elzein discusses LEAP environmental safeguards",
+      "date": "2026-01-16",
+      "kind": "Government",
+      "url": "https://www.moe.gov.lb/للحصول-على-المعلومات/الاخبار-والنشاطات/الاخبار/الزين-تبحث-مع-مجلس-ادارة-البنك-الدولي-مواءمة-انشطة.aspx?lang=en-us",
+      "access": "Official article reviewed"
+    },
+    "energy_minister": {
+      "publisher": "Ministry of Energy and Water",
+      "title": "Minister Joe Saddi visits Doha",
+      "date": "2026-09-09",
+      "kind": "Government",
+      "url": "https://www.energyandwater.gov.lb/ar/details/101193/زار-وزير-الطاقة-والمياه-جو-الصدي-الدوحة",
+      "access": "Official article reviewed; identifies the minister, while LEAP duties are sourced separately to the programme FAQ"
+    },
+    "education_minister": {
+      "publisher": "Ministry of Education and Higher Education",
+      "title": "Minister Rima Karami: official biography",
+      "date": null,
+      "kind": "Government",
+      "url": "https://www.mehe.gov.lb/en/about-the-ministry/minister/cv",
+      "access": "Indexed official biography reviewed; direct retrieval timed out. Identifies the minister; LEAP duties come from the programme FAQ."
+    },
+    "health_minister": {
+      "publisher": "Ministry of Public Health",
+      "title": "Nassereddine discusses support for Lebanon's healthcare sector",
+      "date": "2026-05-14",
+      "kind": "Government",
+      "url": "https://www.moph.gov.lb/en/Pages/0/84608/nassereddine-discusses-political-developments-and-chinese-support-for-lebanons-healthcare-sector",
+      "access": "Official article and indexed excerpt reviewed; identifies the minister, with LEAP duties sourced separately to the programme FAQ"
+    },
+    "nabatieh_oct": {
+      "publisher": "Prime Minister's Office",
+      "title": "Nabatieh: tenders and reopening of public offices",
+      "date": "2026-10-02",
+      "kind": "Government",
+      "url": "https://pcm.gov.lb/arabic/subpg.aspx?pageid=27598",
+      "access": "Official indexed speech reviewed; the full page could not be retrieved by the web reader.",
+      "purpose": "Salam reports 23 issued tenders and 12 planned for October. This is not a count of completed projects."
+    },
+    "un_oct": {
+      "publisher": "United Nations in Lebanon",
+      "title": "Southern return: water, power, schools and livelihoods",
+      "date": "2026-10-09",
+      "kind": "International institution",
+      "url": "https://lebanon.un.org/en/324094-southern-lebanon-families-are-returning-daily-survival-remains-struggle",
+      "access": "Full page read.",
+      "purpose": "Reports findings from consultations held between 27 July and 4 September 2026."
+    },
+    "eu_sep": {
+      "publisher": "European Commission",
+      "title": "EU support for services, recovery and reforms",
+      "date": "2026-09-23",
+      "kind": "International institution",
+      "url": "https://north-africa-middle-east-gulf.ec.europa.eu/news/eu-adopts-eur505-million-package-support-lebanons-stability-recovery-and-reforms-2026-09-23_en",
+      "access": "Full page read.",
+      "purpose": "A broad €505 million package for 2026–2027; not an additional LEAP allocation."
+    }
+  },
+  "funding": {
+    "framework_usd": 1000000000,
+    "approved_usd": 250000000,
+    "gap_usd": 750000000,
+    "as_of": "2026-02-17",
+    "source": "wb_faq",
+    "needs_usd": 11000000000,
+    "needs_source": "wb_rdna",
+    "needs_period": "8 Oct 2023 – 20 Dec 2024"
+  },
+  "allocations": [
+    {
+      "code": "C1",
+      "label": "Immediate response",
+      "detail": "Rubble, safety & emergency access",
+      "available_m": 50,
+      "gap_m": 30,
+      "total_m": 80,
+      "color": "#af5d37",
+      "source": "wb_faq"
+    },
+    {
+      "code": "C2",
+      "label": "Restoring public services",
+      "detail": "Water, power, roads, health & schools",
+      "available_m": 175,
+      "gap_m": 245,
+      "total_m": 420,
+      "color": "#137066",
+      "source": "wb_faq"
+    },
+    {
+      "code": "C3a",
+      "label": "Reconstruction designs",
+      "detail": "Engineering studies & designs",
+      "available_m": 15,
+      "gap_m": 5,
+      "total_m": 20,
+      "color": "#477eac",
+      "source": "wb_faq"
+    },
+    {
+      "code": "C3b",
+      "label": "Reconstruction works",
+      "detail": "Major rebuilding of public infrastructure",
+      "available_m": 0,
+      "gap_m": 455,
+      "total_m": 455,
+      "color": "#bd3437",
+      "source": "wb_faq"
+    },
+    {
+      "code": "C4",
+      "label": "Management & oversight",
+      "detail": "Includes the front-end fee",
+      "available_m": 10,
+      "gap_m": 15,
+      "total_m": 25,
+      "color": "#777c87",
+      "source": "wb_faq"
+    }
+  ],
+  "stages": [
+    {
+      "number": "01",
+      "title": "Make areas safe",
+      "official_name": "Immediate response",
+      "icon": "shield",
+      "color": "green",
+      "summary": "Manage rubble, secure unstable buildings and reopen access routes.",
+      "items": [
+        "Rubble management",
+        "Building safety",
+        "Road access"
+      ],
+      "source": "cdr_leap"
+    },
+    {
+      "number": "02",
+      "title": "Restore daily life",
+      "official_name": "Rapid recovery",
+      "icon": "services",
+      "color": "gold",
+      "summary": "Bring essential public services back to affected communities.",
+      "items": [
+        "Water & electricity",
+        "Schools & healthcare",
+        "Municipal services"
+      ],
+      "source": "cdr_leap"
+    },
+    {
+      "number": "03",
+      "title": "Rebuild for the future",
+      "official_name": "Resilient reconstruction",
+      "icon": "building",
+      "color": "red",
+      "summary": "Prepare designs and rebuild critical infrastructure as financing becomes available.",
+      "items": [
+        "Engineering & design",
+        "Reconstruction works",
+        "Long-term resilience"
+      ],
+      "source": "cdr_leap"
+    }
+  ],
+  "people": [
+    {
+      "name": "Nawaf Salam",
+      "arabic": "نواف سلام",
+      "initials": "NS",
+      "role": "Prime Minister",
+      "institution": "Prime Minister's Office",
+      "lane": "Strategic direction",
+      "description": "Convened the reconstruction committee and requested priority LEAP projects.",
+      "source": "pm_leap",
+      "context_source": "committee"
+    },
+    {
+      "name": "Mohammad Ali Kabbani",
+      "arabic": "محمد علي قباني",
+      "initials": "MK",
+      "role": "President of CDR",
+      "institution": "Council for Development and Reconstruction",
+      "lane": "Project delivery",
+      "description": "Heads the institution implementing LEAP and coordinating its projects.",
+      "source": "pm_cdr",
+      "context_source": "wb_faq"
+    },
+    {
+      "name": "Hanin Sayed",
+      "arabic": "حنين السيد",
+      "initials": "HS",
+      "role": "Minister of Social Affairs",
+      "institution": "Ministry of Social Affairs",
+      "lane": "Support for families",
+      "description": "The ministry's response covers displaced families and social assistance.",
+      "source": "mosa",
+      "context_source": "committee"
+    },
+    {
+      "name": "Fayez Rassamni",
+      "arabic": "فايز رسامني",
+      "initials": "FR",
+      "role": "Minister of Public Works & Transport",
+      "institution": "Ministry of Public Works and Transport",
+      "lane": "Execution oversight",
+      "description": "His ministry leads oversight of LEAP execution.",
+      "source": "mtv",
+      "context_source": "cdr_faq"
+    },
+    {
+      "name": "Yassine Jaber",
+      "arabic": "ياسين جابر",
+      "initials": "YJ",
+      "role": "Minister of Finance",
+      "institution": "Ministry of Finance",
+      "lane": "Strategic guidance",
+      "description": "Consulted by the Prime Minister on LEAP's strategic direction.",
+      "source": "finance_minister",
+      "context_source": "cdr_faq"
+    },
+    {
+      "name": "Tamara Elzein",
+      "arabic": "تمارا الزين",
+      "initials": "TE",
+      "role": "Minister of Environment",
+      "institution": "Ministry of Environment",
+      "lane": "Rubble & safeguards",
+      "description": "Her ministry oversees rubble management and environmental safeguards.",
+      "source": "environment_minister",
+      "context_source": "cdr_faq"
+    },
+    {
+      "name": "Joe Saddi",
+      "arabic": "جو الصدي",
+      "initials": "JS",
+      "role": "Minister of Energy and Water",
+      "institution": "Ministry of Energy and Water",
+      "lane": "Technical input",
+      "description": "The ministry provides technical input for service recovery and reconstruction.",
+      "source": "energy_minister",
+      "context_source": "wb_faq"
+    },
+    {
+      "name": "Rima Karami",
+      "arabic": "ريما كرامي",
+      "initials": "RK",
+      "role": "Minister of Education and Higher Education",
+      "institution": "Ministry of Education and Higher Education",
+      "lane": "Technical input",
+      "description": "The ministry identifies urgent education needs and helps develop technical specifications.",
+      "source": "education_minister",
+      "context_source": "wb_faq"
+    },
+    {
+      "name": "Rakan Nassereddine",
+      "arabic": "ركان ناصر الدين",
+      "initials": "RN",
+      "role": "Minister of Public Health",
+      "institution": "Ministry of Public Health",
+      "lane": "Technical input",
+      "description": "The ministry provides technical input on health-sector recovery needs.",
+      "source": "health_minister",
+      "context_source": "wb_faq"
+    }
+  ],
+  "events": [
+    {
+      "date": "2025-03-27",
+      "title": "Cabinet approves prioritisation method",
+      "description": "Decision 4/2025 approves how LEAP interventions are prioritised, using CNRS-L damage data.",
+      "actor": "Council of Ministers · CDR · CNRS-L",
+      "status": "Cabinet decision",
+      "sector": "Public infrastructure",
+      "source": "cdr_faq"
+    },
+    {
+      "date": "2025-06",
+      "title": "Initial LEAP financing approved",
+      "description": "The World Bank approved the initial $250 million. Approval does not measure money spent or works completed.",
+      "actor": "World Bank · Government of Lebanon",
+      "status": "Financing approved",
+      "sector": "Funding",
+      "source": "wb_faq"
+    },
+    {
+      "date": "2025-08-25",
+      "title": "Three parallel recovery tracks outlined",
+      "description": "Family assistance, urgent infrastructure and livelihoods, and regional social and economic development.",
+      "actor": "Committee chaired by Nawaf Salam",
+      "status": "Strategy announced",
+      "sector": "Social support",
+      "source": "committee"
+    },
+    {
+      "date": "2025-12-31",
+      "title": "Priority projects requested",
+      "description": "Salam asked CDR to identify the first priority projects before mid-January 2026. This was a target, not proof of completion.",
+      "actor": "Nawaf Salam · Mohammad Ali Kabbani",
+      "status": "Planning directive",
+      "sector": "Public infrastructure",
+      "source": "pm_leap"
+    },
+    {
+      "date": "2026-07-09",
+      "title": "Infrastructure implementation discussed",
+      "description": "Media reported plans for rubble removal, reopening roads and services, alongside technical studies; security and funding remain conditions.",
+      "actor": "Fayez Rassamni · relevant ministries",
+      "status": "Media report",
+      "sector": "Public infrastructure",
+      "source": "mtv"
+    },
+    {
+      "date": "2026-08-18",
+      "title": "Nabatieh road works put to tender",
+      "description": "CDR 1250 seeks clearing and restoration of damaged roads in Nabatieh district. A start of works is not established by this notice.",
+      "actor": "Council for Development and Reconstruction",
+      "status": "Works tender",
+      "sector": "Public infrastructure",
+      "source": "roads"
+    },
+    {
+      "date": "2026-09-04",
+      "title": "Environmental assessment consultancy advertised",
+      "description": "CDR 1258 seeks firms for impact studies, management plans and audits under LEAP.",
+      "actor": "Council for Development and Reconstruction",
+      "status": "Procurement",
+      "sector": "Public infrastructure",
+      "source": "esia"
+    },
+    {
+      "date": "2026-09-08",
+      "title": "Public-building consultancy tender published",
+      "description": "CDR procurement 1260 covers assessment, reconstruction design and construction supervision. The listed status is Under Evaluation.",
+      "actor": "Council for Development and Reconstruction",
+      "status": "Procurement",
+      "sector": "Public infrastructure",
+      "source": "procurement"
+    },
+    {
+      "date": "2026-09-18",
+      "title": "Response priorities updated for late 2026",
+      "description": "The UN addendum aligns with the government's return and early-recovery plan, including shelter repairs and basic services.",
+      "actor": "Government of Lebanon · UN partners",
+      "status": "Response update",
+      "sector": "Social support",
+      "source": "un_update"
+    }
+  ],
+  "projects": [
+    {
+      "id": "CDR 1250",
+      "title": "Nabatieh road restoration",
+      "subtitle": "Clearing and restoring damaged roads · LEAP-SW4-Nabatieh",
+      "location": "Nabatieh district",
+      "areas": [
+        "Nabatieh"
+      ],
+      "category": "Works",
+      "sector": "Roads",
+      "status": "Reported awarded",
+      "step": 3,
+      "status_as_of": "2026-10-09",
+      "published": "2026-08-18",
+      "deadline": "2026-09-03",
+      "institution": "Council for Development and Reconstruction",
+      "funder": "World Bank / IBRD",
+      "source": "roads",
+      "note": "The saved CDR record collected on 9 October 2026 says “Awarded”. The web reader returned an older “Under Evaluation” version and direct retrieval was unavailable. Award date, contractor and completed works were not verified."
+    },
+    {
+      "id": "CDR 1258",
+      "title": "Environmental & social studies",
+      "subtitle": "Impact assessments, management plans and audits · FA-CS-ESIA-ESMP",
+      "location": "LEAP programme-wide · local sites not specified",
+      "areas": [
+        "Programme-wide"
+      ],
+      "category": "Consultancy",
+      "sector": "Environment",
+      "status": "Under evaluation (saved CDR record)",
+      "step": 2,
+      "status_as_of": "2026-10-01",
+      "published": "2026-09-04",
+      "deadline": "2026-09-11",
+      "institution": "Council for Development and Reconstruction",
+      "funder": "World Bank / IBRD",
+      "source": "esia",
+      "note": "The saved CDR record collected on 1 October 2026 says “Under Evaluation”. The notice is verified; an award or delivery of the consultancy was not established."
+    },
+    {
+      "id": "CDR 1260",
+      "title": "Destroyed public buildings",
+      "subtitle": "Assessment, designs and supervision · FA-CS-BLDG",
+      "location": "Beirut & Mount Lebanon · Beqaa · South Lebanon",
+      "areas": [
+        "Beirut & Mount Lebanon",
+        "Beqaa",
+        "South Lebanon"
+      ],
+      "category": "Consultancy",
+      "sector": "Public buildings",
+      "status": "Under evaluation",
+      "step": 2,
+      "status_as_of": "2026-10-08",
+      "published": "2026-09-08",
+      "deadline": "2026-09-15",
+      "institution": "Council for Development and Reconstruction",
+      "funder": "World Bank / IBRD",
+      "source": "procurement",
+      "scope_source": "ppa",
+      "note": "Consultancy procurement. Contract award, services delivery and physical reconstruction are not verified."
+    }
+  ],
+  "updates": [
+    {
+      "date": "2026-10-02",
+      "status": "Reported by Salam",
+      "value": "23",
+      "title": "Tenders launched",
+      "detail": "CDR tenders cover roads, shelters, ambulances and equipment. Publication does not establish completion.",
+      "source": "nabatieh_oct",
+      "link_label": "Nabatieh speech"
+    },
+    {
+      "date": "2026-10-02",
+      "status": "Planned for October",
+      "value": "12",
+      "title": "Additional tenders planned",
+      "detail": "Includes repairs to five hospitals, including Nabatieh Governmental Hospital, and rescue and firefighting vehicles.",
+      "source": "nabatieh_oct",
+      "link_label": "Nabatieh speech"
+    },
+    {
+      "date": "2026-10-09",
+      "status": "UN field findings",
+      "value": "5",
+      "title": "Local consultations",
+      "detail": "Imran Riza, Social Affairs and partners heard from more than 40 mayors about restoring services and livelihoods.",
+      "source": "un_oct",
+      "link_label": "Read the UN findings"
+    },
+    {
+      "date": "2026-09-23",
+      "status": "Package adopted",
+      "value": "€505M",
+      "title": "EU support for 2026–2027",
+      "detail": "Services, recovery, reforms and security. Part of the earlier €1 billion EU package; separate from LEAP financing below.",
+      "source": "eu_sep",
+      "link_label": "European Commission announcement"
+    }
+  ]
+}
