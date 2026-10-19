@@ -106,6 +106,20 @@ UI = {
     'analysis': ('Draft-budget analysis', 'تحليل مشروع الموازنة'),
     'undated': ('Publication date not listed', 'تاريخ النشر غير مذكور'),
     'download': ('Download evidence and sources', 'تنزيل الأدلة والمصادر'),
+    'town': ('Town / area', 'البلدة / المنطقة'),
+    'authority': ('Responsible authority', 'الجهة المسؤولة'),
+    'detail_toggle': ('Context & sources', 'التفاصيل والمصادر'),
+    'status_unverified': ('Current status unverified', 'الوضع الحالي غير متحقق منه'),
+    'return_reported': ('Later return reported · 17 Mar 2025', 'عودة لاحقة بحسب تقرير · 17 آذار 2025'),
+    'rule_scope': ('Requirement at the document date', 'شرط قائم بتاريخ الوثيقة'),
+    'funding_shortfall': ('Uncovered need', 'الحاجة غير المغطاة'),
+    'amount_unknown': ('Gap not quantified', 'قيمة النقص غير محددة'),
+    'initial_gap': ('Initial programme gap', 'فجوة التمويل الأولية للبرنامج'),
+    'funding_snapshot': ('LEAP: funding at a glance', 'تمويل LEAP في لمحة'),
+    'funding_implementation': ('Implemented by the Council for Development and Reconstruction', 'ينفذه مجلس الإنماء والإعمار'),
+    'million_short': ('M', ' مليون'),
+    'funding_split': ('Funding split', 'توزيع التمويل'),
+    'conditional_blocked': ('Blocked / conditional work', 'أعمال ممنوعة أو مشروطة'),
 }
 
 RESTRICTION_GROUPS = ('stopped', 'roads', 'return', 'conditions')
@@ -149,16 +163,33 @@ def field(label, value):
     return f'<div class="barrier-fact"><dt>{label}</dt><dd>{value}</dd></div>'
 
 
+def place_html(record, lang):
+    return f'''<div class="barrier-place"><span class="barrier-field-label">{icon('pin', 16, '#000')}{ui('town', lang)}</span>
+      <h3>{escape(record['place'][lang])}</h3>{case_date(record, lang)}</div>'''
+
+
+def infographic_field(label, value, symbol, extra_class=''):
+    return f'''<div class="barrier-visual-field {extra_class}"><span class="barrier-field-label">{icon(symbol, 16, '#000')}{label}</span><p>{value}</p></div>'''
+
+
+def evidence_details(data, record, lang):
+    return f'''<details class="barrier-details"><summary>{ui('detail_toggle', lang)}</summary>
+      <div class="barrier-detail-body"><h4>{escape(record['title'][lang])}</h4><p>{escape(record['action'][lang])}</p>
+      <p class="barrier-detail-limit">{escape(record['limit'][lang])}</p>{links_html(data, record['sources'], lang)}</div></details>'''
+
+
 def barrier_card(data, record, lang):
     text = lambda key: escape(record[key][lang])
-    requirement = 'requirement' if case_group(record) == 'conditions' else 'blocked'
-    return f'''<article class="barrier-card" data-case="{record['id']}">
-      <div class="barrier-card-top"><span class="barrier-tag">{ui(record['status'], lang)}</span>{case_date(record, lang)}</div>
-      <h3>{text('place')}</h3><p class="barrier-case-title">{text('title')}</p>
-      <dl class="barrier-facts">{field(ui('responsible', lang), text('actor'))}
-        {field(ui(requirement, lang), text('blocked'))}{field(ui('why', lang), text('action'))}</dl>
-      <div class="barrier-status"><b>{ui('known_status', lang)}</b><p>{text('limit')}</p></div>
-      {links_html(data, record['sources'], lang)}</article>'''
+    requirement = 'conditional_blocked' if case_group(record) == 'conditions' else 'blocked'
+    status = 'return_reported' if record['id'] == 'houla_return' else 'rule_scope' if case_group(record) == 'conditions' else 'status_unverified'
+    symbol = {'building': 'building', 'roads': 'road', 'return': 'family', 'debris': 'services'}[record['category']]
+    arrow = '<span class="barrier-flow-arrow" aria-hidden="true"></span>'
+    return f'''<article class="barrier-card barrier-flow-card" data-case="{record['id']}">
+      <div class="barrier-flow">{place_html(record, lang)}{arrow}
+        {infographic_field(ui('authority', lang), text('actor'), 'building', 'barrier-actor')}{arrow}
+        {infographic_field(ui(requirement, lang), text('blocked'), symbol, 'barrier-impact')}</div>
+      <div class="barrier-row-footer"><p class="barrier-status-brief"><span class="barrier-tag">{ui(record['status'], lang)}</span><span>{ui(status, lang)}</span></p>
+        {evidence_details(data, record, lang)}</div></article>'''
 
 
 def section_heading(question, intro, lang, count=None):
@@ -187,15 +218,17 @@ def local_funding_html(data, lang):
         allocation = ui('not_quantified', lang) if record['allocation_usd'] is None else f"${record['allocation_usd']:,.0f}"
         cost = ''
         if record.get('household_cost_usd') is not None:
-            cost = f'<p class="barrier-household-cost"><strong><bdi>${record["household_cost_usd"]:,.0f}</bdi></strong> {ui("household_cost", lang)}</p>'
+            cost = f'<strong class="barrier-gap-amount"><bdi>${record["household_cost_usd"]:,.0f}</bdi></strong><span>{ui("household_cost", lang)}</span>'
+        else:
+            cost = f'<strong class="barrier-gap-unknown">{ui("amount_unknown", lang)}</strong>'
+        symbol = 'education' if 'school' in record['id'] else 'services'
         cards.append(f'''<article class="barrier-card barrier-local-card" data-funding-case="{record['id']}">
-          <div class="barrier-card-top"><span class="barrier-tag">{ui(record['evidence'], lang)}</span>{case_date(record, lang)}</div>
-          <h3>{text('place')}</h3><p class="barrier-case-title">{text('title')}</p>
-          <dl class="barrier-facts">{field(ui('uncovered_activity', lang), text('activity'))}
-            {field(ui('local_authority', lang), text('actor'))}{field(ui('local_what', lang), text('action'))}</dl>
-          <div class="barrier-status barrier-allocation"><b>{ui('allocation', lang)}: {allocation}</b>{cost}</div>
-          <details class="barrier-limit"><summary>{ui('limits', lang)}</summary><p>{text('limit')}</p></details>
-          {links_html(data, record['sources'], lang)}</article>''')
+          <div class="barrier-local-flow">{place_html(record, lang)}
+            {infographic_field(ui('local_authority', lang), text('actor'), 'building', 'barrier-actor')}
+            {infographic_field(ui('uncovered_activity', lang), text('activity'), symbol, 'barrier-impact')}
+            <div class="barrier-local-amount"><span class="barrier-field-label">{icon('fund', 16, '#000')}{ui('funding_shortfall', lang)}</span>{cost}
+              <p class="barrier-allocation"><b>{ui('allocation', lang)}:</b> {allocation}</p></div></div>
+          <div class="barrier-row-footer"><p class="barrier-status-brief"><span class="barrier-tag">{ui(record['evidence'], lang)}</span></p>{evidence_details(data, record, lang)}</div></article>''')
     return f'<section data-group="local">{section_heading("local_question", "local_intro", lang)}<div class="barrier-case-grid">{"".join(cards)}</div></section>'
 
 
@@ -208,6 +241,10 @@ def money(value, lang):
     return f'<bdi>${value:,}</bdi> {"مليون" if lang == "ar" else "million"}'
 
 
+def compact_money(value, lang):
+    return f'<bdi>${value:,}</bdi><small>{ui("million_short", lang)}</small>'
+
+
 def funding_html(data, lang):
     funding = data['funding']
     available = sum(row['available'] for row in funding['rows'])
@@ -218,21 +255,20 @@ def funding_html(data, lang):
     for row in funding['rows']:
         label = escape(row['label'][lang])
         accessible = f'{row["label"][lang]}; {ui("available", lang)}: ${row["available"]}M; {ui("gap", lang)}: ${row["gap"]}M'
-        rows.append(f'''<tr data-component="{row['code']}"><th scope="row">{label}
-          <div class="barrier-track" role="img" aria-label="{escape(accessible, quote=True)}"><span class="barrier-funded" style="width:{row['available'] / scale * 100:.4f}%"></span><span class="barrier-gap" style="width:{row['gap'] / scale * 100:.4f}%"></span></div></th>
+        rows.append(f'''<tr data-component="{row['code']}"><th scope="row">{label}</th><td class="barrier-bar-cell">
+          <div class="barrier-track" role="img" aria-label="{escape(accessible, quote=True)}"><span class="barrier-funded" style="width:{row['available'] / scale * 100:.4f}%"></span><span class="barrier-gap" style="width:{row['gap'] / scale * 100:.4f}%"></span></div></td>
           <td><bdi>${row['available']}</bdi></td><td><bdi>${row['gap']}</bdi></td></tr>''')
-    return f'''<section data-group="leap">{section_heading('leap_question', 'leap_intro', lang)}
-      <p class="barrier-asof">{ui('initial_date', lang)} · <time datetime="{funding['as_of']}">{dated(funding['as_of'], lang)}</time></p>
-      <div class="barrier-programme-grid"><div class="barrier-funding-takeaway"><h3>{ui('major_works', lang)}</h3>
-        <div class="barrier-zero"><strong>{money(works['available'], lang)}</strong><span>{ui('available', lang)}</span></div>
-        <p class="barrier-needed"><b>{money(works['gap'] + works['available'], lang)}</b> {ui('needed', lang)}</p>
-        <p>{ui('zero_explanation', lang)}</p><div class="barrier-scope-note">{ui('zero_limit', lang)}</div>
-        <div class="barrier-programme-total"><b>{ui('programme_total', lang)}</b><dl>
-          {field(ui('total', lang), money(available + gap, lang))}{field(ui('available', lang), money(available, lang))}{field(ui('gap', lang), money(gap, lang))}</dl></div></div>
-      <div class="barrier-money-chart"><h3>{ui('money_table', lang)}</h3><p>{ui('money_unit', lang)}</p>
-        <table><thead><tr><th scope="col">{ui('activity', lang)}</th><th scope="col">{ui('available', lang)}</th><th scope="col">{ui('gap', lang)}</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
-        <p class="barrier-chart-note">{ui('chart_note', lang)}</p></div></div>
-      <p class="barrier-reading-note">{ui('programme_scope', lang)}</p>{links_html(data, [funding['source'], 'cdr'], lang)}</section>'''
+    return f'''<section data-group="leap"><div class="barrier-section-heading"><h2>{ui('funding_snapshot', lang)}</h2>
+      <p>{ui('funding_implementation', lang)} · {ui('initial_date', lang)}: <time datetime="{funding['as_of']}">{dated(funding['as_of'], lang)}</time></p>
+      <p><b>{ui('town', lang)}:</b> {escape(funding['place'][lang])}</p></div>
+      <div class="barrier-funding-metrics"><div><span>{ui('total', lang)}</span><strong>{compact_money(available + gap, lang)}</strong></div>
+        <div><span>{ui('available', lang)}</span><strong>{compact_money(available, lang)}</strong></div>
+        <div class="barrier-gap-metric"><span>{ui('initial_gap', lang)}</span><strong>{compact_money(gap, lang)}</strong></div></div>
+      <div class="barrier-money-chart"><div class="barrier-chart-heading"><h3>{ui('money_table', lang)}</h3><p>{ui('money_unit', lang)}</p></div>
+        <table><thead><tr><th scope="col">{ui('activity', lang)}</th><th scope="col" class="barrier-bar-cell">{ui('funding_split', lang)}</th><th scope="col">{ui('available', lang)}</th><th scope="col">{ui('gap', lang)}</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
+        <p class="barrier-chart-note">{ui('chart_note', lang)}</p></div>
+      <div class="barrier-zero-strip">{icon('building', 24, '#000')}<div><b>{ui('major_works', lang)}: {money(works['available'], lang)} {ui('available', lang).lower()} · {money(works['gap'], lang)} {ui('gap', lang).lower()}</b><p>{ui('zero_limit', lang)}</p></div></div>
+      <details class="barrier-later"><summary>{ui('detail_toggle', lang)}</summary><p>{ui('leap_intro', lang)}</p><p>{escape(funding['place'][lang])}</p><p>{ui('programme_scope', lang)}</p>{links_html(data, [funding['source'], 'cdr'], lang)}</details></section>'''
 
 
 def budget_html(data, lang):
@@ -276,15 +312,18 @@ def show_reconstruction_barriers():
     lang = language()
     st.html(ROOT / 'assets/reconstruction-barriers.css')
     st.html(heading_html(data, lang))
-    view = st.segmented_control(ui('explore', lang), ('restrictions', 'funding'), default='restrictions',
-                                format_func=lambda value: ui(value, lang), key='barriers_view', selection_mode='single') or 'restrictions'
-    if view == 'restrictions':
-        counts = {key: sum(case_group(record) == key for record in data['physical']) for key in RESTRICTION_GROUPS}
-        group = st.segmented_control(ui('restriction_type', lang), RESTRICTION_GROUPS, default='stopped',
-                                     format_func=lambda value: f'{ui(value, lang)} · {counts[value]}', key='barriers_restriction_group', selection_mode='single') or 'stopped'
-    else:
-        group = st.segmented_control(ui('funding_type', lang), FUNDING_GROUPS, default='leap',
-                                     format_func=lambda value: ui(value, lang), key='barriers_funding_group', selection_mode='single') or 'leap'
+    mode_column, category_column = st.columns([1, 1.65], gap='small', vertical_alignment='bottom')
+    with mode_column:
+        view = st.segmented_control(ui('explore', lang), ('restrictions', 'funding'), default='restrictions',
+                                    format_func=lambda value: ui(value, lang), key='barriers_view', selection_mode='single', label_visibility='collapsed') or 'restrictions'
+    with category_column:
+        if view == 'restrictions':
+            counts = {key: sum(case_group(record) == key for record in data['physical']) for key in RESTRICTION_GROUPS}
+            group = st.segmented_control(ui('restriction_type', lang), RESTRICTION_GROUPS, default='stopped',
+                                         format_func=lambda value: f'{ui(value, lang)} · {counts[value]}', key='barriers_restriction_group', selection_mode='single', label_visibility='collapsed') or 'stopped'
+        else:
+            group = st.segmented_control(ui('funding_type', lang), FUNDING_GROUPS, default='leap',
+                                         format_func=lambda value: ui(value, lang), key='barriers_funding_group', selection_mode='single', label_visibility='collapsed') or 'leap'
     st.html(barriers_html(data, lang, view, group))
     with st.expander(ui('source_notes', lang)):
         st.html(sources_html(data, lang))

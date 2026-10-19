@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 import unittest
 from unittest.mock import patch
 
+from lxml import html as html_parser
 from streamlit.testing.v1 import AppTest
 
 from dashboard_data import load_data
@@ -133,6 +134,36 @@ class ReconstructionBarriersTests(unittest.TestCase):
                     for record in data['budget_history']:
                         self.assertIn(record['date'], page)
         self.assertEqual(dated('2026-10-19', 'ar'), '19 تشرين الأول 2026')
+
+    def test_infographic_keeps_required_fields_outside_collapsed_details(self):
+        data = load_barriers()
+        for lang in ('en', 'ar'):
+            root = html_parser.fromstring(barriers_html(data, lang))
+            for detail in root.xpath('.//details[not(@open)]'):
+                for child in list(detail):
+                    if child.tag != 'summary':
+                        detail.remove(child)
+            for record in data['physical']:
+                card = root.xpath(f'.//article[@data-case="{record["id"]}"]')[0]
+                visible = ' '.join(card.itertext())
+                for key in ('place', 'actor', 'blocked'):
+                    self.assertIn(record[key][lang], visible)
+                self.assertEqual(card.xpath('.//time/@datetime'), [record['date']])
+                self.assertIn(ui(record['date_kind'], lang), visible)
+                self.assertNotIn(record['action'][lang], visible)
+            for record in data['funding_cases']:
+                card = root.xpath(f'.//article[@data-funding-case="{record["id"]}"]')[0]
+                visible = ' '.join(card.itertext())
+                for key in ('place', 'actor', 'activity'):
+                    self.assertIn(record[key][lang], visible)
+                self.assertEqual(card.xpath('.//time/@datetime'), [record['date']])
+                self.assertIn(ui('not_quantified', lang), visible)
+                self.assertNotIn('$0', visible)
+                if record.get('household_cost_usd'):
+                    self.assertIn('$1,500', visible)
+                    self.assertIn(ui('household_cost', lang), visible)
+                else:
+                    self.assertIn(ui('amount_unknown', lang), visible)
 
     def test_funding_selection_and_language_switch_show_the_same_evidence(self):
         with patch('integrated_tenders.get_monitor'):
