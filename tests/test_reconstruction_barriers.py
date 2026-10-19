@@ -8,7 +8,10 @@ from streamlit.testing.v1 import AppTest
 
 from dashboard_data import load_data
 from i18n import TAB_LABELS, translate
-from reconstruction_barriers import ROOT, barriers_html, load_barriers, sources_html, local_funding_html, ui
+from reconstruction_barriers import (
+    ROOT, RESTRICTION_GROUPS, barriers_html, case_group, dated,
+    load_barriers, sources_html, local_funding_html, ui,
+)
 
 
 class PageText(HTMLParser):
@@ -104,6 +107,64 @@ class ReconstructionBarriersTests(unittest.TestCase):
             self.assertEqual(set(sources.links), {source['url'] for source in data['sources'].values()})
             self.assertTrue(set(parsed.links).issubset(set(sources.links)))
             self.assertNotIn('NaN', page)
+
+    def test_focused_sections_separate_stoppages_rules_and_funding(self):
+        data = load_barriers()
+        grouped = {key: [row for row in data['physical'] if case_group(row) == key]
+                   for key in RESTRICTION_GROUPS}
+        self.assertEqual({key: len(rows) for key, rows in grouped.items()},
+                         {'stopped': 2, 'roads': 2, 'return': 5, 'conditions': 3})
+        for lang in ('en', 'ar'):
+            for group, records in grouped.items():
+                page = barriers_html(data, lang, 'restrictions', group)
+                self.assertEqual(page.count('data-case='), len(records))
+                for row in data['physical']:
+                    self.assertEqual('data-case="' + row['id'] + '"' in page, row in records)
+                self.assertNotIn('data-funding-case=', page)
+            for group in ('leap', 'local', 'budget'):
+                page = barriers_html(data, lang, 'funding', group)
+                self.assertIn('data-group="' + group + '"', page)
+                self.assertNotIn('data-case=', page)
+                if group == 'local':
+                    self.assertEqual(page.count('data-funding-case='), 4)
+                    self.assertNotIn('$0', page)
+                if group == 'budget':
+                    self.assertIn(ui('budget_answer', lang), page)
+                    for record in data['budget_history']:
+                        self.assertIn(record['date'], page)
+        self.assertEqual(dated('2026-10-19', 'ar'), '19 تشرين الأول 2026')
+
+    def test_funding_selection_and_language_switch_show_the_same_evidence(self):
+        with patch('integrated_tenders.get_monitor'):
+            app = AppTest.from_file(str(ROOT / 'streamlit_app.py'), default_timeout=30).run()
+            label = 'Restrictions & funding gaps'
+            app.session_state['reconstruction_section'] = label
+            app.run()
+            html = ''.join(node.proto.body for node in app.get('html'))
+            self.assertIn('data-group="stopped"', html)
+            self.assertNotIn('data-group="local"', html)
+            app.session_state['reconstruction_section'] = label
+            app.button_group(key='barriers_view').set_value('funding')
+            app.run()
+            self.assertFalse(app.exception)
+            html = ''.join(node.proto.body for node in app.get('html'))
+            self.assertIn('data-group="leap"', html)
+            app.session_state['reconstruction_section'] = label
+            app.button_group(key='barriers_funding_group').set_value('local')
+            app.run()
+            self.assertFalse(app.exception)
+            html = ''.join(node.proto.body for node in app.get('html'))
+            self.assertIn('data-funding-case="hosh_residual_debris"', html)
+            self.assertNotIn('<tr data-component="C3b"', html)
+            app.session_state['reconstruction_section'] = label
+            app.button(key='language_toggle').click().run()
+            self.assertFalse(app.exception)
+            self.assertEqual(app.session_state['barriers_view'], 'funding')
+            self.assertEqual(app.session_state['barriers_funding_group'], 'local')
+            html = ''.join(node.proto.body for node in app.get('html'))
+            self.assertIn('data-group="local"', html)
+            self.assertIn('المبلغ غير مذكور', html)
+            self.assertIn('dir="rtl"', html)
 
     def test_new_tab_renders_and_survives_language_switch(self):
         with patch('integrated_tenders.get_monitor'):

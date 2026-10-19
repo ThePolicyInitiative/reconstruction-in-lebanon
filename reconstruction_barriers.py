@@ -1,4 +1,4 @@
-"""Dated evidence on Lebanese authorities' restrictions and funding gaps."""
+"""Plain-language, bilingual guide to restrictions and missing funding."""
 from datetime import date
 from html import escape
 import json
@@ -20,52 +20,84 @@ UI = {
     'title': ('Restrictions & funding gaps', 'القيود وفجوات التمويل'),
     'scope': ('Lebanese authorities only', 'السلطات اللبنانية فقط'),
     'reviewed': ('Sources reviewed', 'مراجعة المصادر'),
-    'intro': ('What restricts rebuilding, road access and return — and where funding is missing.', 'ما يقيّد البناء والوصول والعودة، وأين تنقص الأموال.'),
-    'physical': ('Rebuilding & access', 'البناء والوصول'),
-    'physical_intro': ('Dated cases and requirements. Safety measures, permit conditions and reported enforcement are identified separately.', 'وقائع وشروط مؤرخة، مع توضيح الفرق بين تدابير السلامة وشروط الترخيص والإجراءات المبلّغ عنها.'),
-    'building': ('Rebuilding', 'إعادة البناء'),
-    'roads': ('Roads', 'الطرق'),
-    'return': ('Returning to land', 'العودة إلى الأرض'),
-    'debris': ('Rubble removal', 'إزالة الأنقاض'),
-    'funding': ('Funding', 'التمويل'),
-    'reported_enforcement': ('Reported work stoppage', 'وقف ورشة مبلّغ عنه'),
-    'administrative_condition': ('Administrative condition', 'شرط إداري'),
-    'safety_restriction': ('Safety restriction', 'قيد سلامة'),
-    'temporary_restriction': ('Temporary entry restriction', 'قيد دخول مؤقت'),
-    'programme_condition': ('Programme eligibility', 'أهلية البرنامج'),
-    'responsible': ('Authority', 'الجهة'),
-    'town': ('Town / area', 'البلدة / المنطقة'),
-    'blocked': ('What was blocked or required', 'ما مُنع أو اشترط'),
-    'report_date': ('Report date', 'تاريخ التقرير'),
-    'notice_date': ('Notice date', 'تاريخ الإعلان'),
-    'statement_date': ('Statement date', 'تاريخ البيان'),
-    'document_date': ('Document date', 'تاريخ الوثيقة'),
-    'case_detail': ('Reason & context', 'السبب والسياق'),
-    'local_money_title': ('Local needs still seeking support', 'حاجات محلية ما زالت تطلب الدعم'),
-    'local_money_intro': ('These reports identify specific missing support. They do not establish that Parliament allocated zero to these services.', 'تحدد هذه التقارير دعماً ناقصاً بعينه، ولا تثبت أن مجلس النواب خصص صفراً لهذه الخدمات.'),
-    'uncovered_activity': ('What needed funding', 'ما احتاج إلى تمويل'),
-    'allocation': ('State allocation', 'تخصيص الدولة'),
-    'not_quantified': ('Not quantified in the source', 'غير محدد رقمياً في المصدر'),
-    'reported_unmet_need': ('Reported unmet need', 'حاجة غير ملباة بحسب التقرير'),
-    'reported_uncovered_cost': ('Reported uncovered cost', 'كلفة غير مغطاة بحسب التقرير'),
-    'fee_relief_missing': ('No fee exemption reported', 'عدم الإعفاء بحسب التقرير'),
-    'household_cost': ('Additional household cost (reported estimate)', 'الكلفة الإضافية للأسرة (تقدير منقول)'),
-    'source': ('Read source', 'قراءة المصدر'),
-    'changes': ('Later developments to keep in view', 'تطورات لاحقة يجب أخذها في الاعتبار'),
-    'money_title': ('What was left without funding?', 'ما الذي بقي دون تمويل؟'),
-    'money_scope': ('Initial LEAP programme financing · 17 February 2026 · USD millions', 'التمويل الأولي لبرنامج LEAP · 17 شباط 2026 · مليون دولار'),
-    'zero_label': ('Initial financing for major works', 'التمويل الأولي للأعمال الكبرى'),
-    'zero_detail': ('The $455M works component had no initial financing.', 'لم يُموّل مكوّن الأعمال البالغ 455 مليون دولار في المرحلة الأولى.'),
-    'zero_limit': ('This is a programme allocation, not a claim of zero national reconstruction spending.', 'هذا تخصيص داخل البرنامج، وليس دليلاً على انعدام الإنفاق الوطني على الإعمار.'),
-    'available': ('Available initially', 'المتاح أولياً'),
-    'gap': ('Unfunded in this plan', 'غير المموّل في الخطة'),
-    'chart_note': ('Bar lengths use the same dollar scale. Figures are financing, not completed work or payments.', 'الأشرطة على مقياس مالي واحد. الأرقام تمويل وليست أعمالاً منجزة أو مدفوعات.'),
-    'total': ('Total programme', 'إجمالي البرنامج'),
-    'national_title': ('And the state budget?', 'وماذا عن موازنة الدولة؟'),
-    'national_note': ('An absent draft line, an approved allocation and an actual payment are different things. These records do not establish zero funding across the final national budget.', 'غياب بند في مشروع الموازنة والتخصيص المعتمد والدفع الفعلي أمور مختلفة. لا تثبت هذه السجلات انعدام التمويل في الموازنة الوطنية النهائية.'),
-    'source_notes': ('Sources & how to read this page', 'المصادر وكيفية قراءة الصفحة'),
-    'method_title': ('What the labels mean', 'ماذا تعني التسميات؟'),
-    'method': ('“Reported” identifies news coverage, not an enforcement order inspected here. Old restrictions are not assumed to remain active. “Zero” is used only for an explicit numeric allocation; missing figures remain unknown. This page is a reviewed selection, not a live register of closures or spending.', '«مبلّغ عنه» يعني تغطية إعلامية، لا أمراً تنفيذياً اطلعنا عليه. لا نفترض استمرار القيود القديمة. يُستخدم «صفر» فقط عند وجود تخصيص رقمي صريح؛ وتبقى الأرقام الغائبة غير معروفة. هذه مجموعة منتقاة ومراجعة، وليست سجلاً حياً للإقفالات أو الإنفاق.'),
+    'intro': ('Where was work or access restricted? Which needs were left without funding?', 'أين قُيّدت الأعمال أو حركة الدخول؟ وأي حاجات بقيت دون تمويل؟'),
+    'explore': ('What would you like to understand?', 'ما الذي تريد الاطلاع عليه؟'),
+    'restrictions': ('Restrictions on work & access', 'قيود الأعمال والدخول'),
+    'funding': ('Missing funding', 'التمويل الناقص'),
+    'restriction_type': ('Choose a type of restriction', 'اختر نوع القيد'),
+    'funding_type': ('Choose the funding evidence', 'اختر نوع أدلة التمويل'),
+    'stopped': ('Work stopped', 'وقف الأعمال'),
+    'roads': ('Road access', 'استخدام الطرق'),
+    'return': ('Return to villages', 'العودة إلى القرى'),
+    'conditions': ('Rules before work', 'شروط بدء الأعمال'),
+    'stopped_question': ('Where was building or repair work stopped?', 'أين أُوقفت أعمال البناء أو الترميم؟'),
+    'stopped_intro': ('Two reports describe work stopped by the Internal Security Forces. Each case has a different permit dispute.', 'يصف تقريران وقف أعمال من قِبل قوى الأمن الداخلي، مع خلاف مختلف حول الترخيص في كل حالة.'),
+    'roads_question': ('Which roads could residents not use?', 'أي طرق مُنع الأهالي من استخدامها؟'),
+    'roads_intro': ('These cases concern restrictions on using roads for safety reasons. The sources do not establish a ban on repairing roads.', 'تتناول هذه الحالات قيوداً على استخدام الطرق لأسباب تتعلق بالسلامة. ولا تثبت المصادر وجود منع لإصلاح الطرق.'),
+    'return_question': ('Where was return delayed or controlled?', 'أين تأخرت العودة أو خضعت لضوابط؟'),
+    'return_intro': ('Municipal notices asked residents to wait or use specific routes while the army secured villages.', 'طلبت بيانات بلدية من الأهالي الانتظار أو سلوك طرق محددة أثناء تأمين الجيش للقرى.'),
+    'conditions_question': ('What had to happen before work could proceed?', 'ما المطلوب قبل السماح ببدء الأعمال؟'),
+    'conditions_intro': ('These are permit, transport or safety requirements. They are different from an order stopping an existing workshop.', 'هذه متطلبات للترخيص أو النقل أو السلامة، وتختلف عن قرار بوقف ورشة قائمة.'),
+    'cases': ('cases in this section', 'حالات في هذا القسم'),
+    'reported_enforcement': ('Reported work stoppage', 'وقف أعمال بحسب تقرير'),
+    'administrative_condition': ('Approval required', 'موافقة مطلوبة'),
+    'safety_restriction': ('Safety restriction', 'قيد لأسباب السلامة'),
+    'temporary_restriction': ('Temporary entry rules', 'ضوابط دخول مؤقتة'),
+    'programme_condition': ('Funding eligibility rule', 'شرط أهلية للتمويل'),
+    'responsible': ('Who imposed it?', 'من فرض القيد؟'),
+    'blocked': ('What was restricted?', 'ما الذي قُيّد؟'),
+    'requirement': ('What was required?', 'ما المطلوب؟'),
+    'why': ('Reason & what happened', 'السبب وما حدث'),
+    'known_status': ('What we know about its status', 'ما نعرفه عن وضع القيد'),
+    'report_date': ('Reported', 'تاريخ التقرير'),
+    'notice_date': ('Notice published', 'نُشر الإعلان'),
+    'statement_date': ('Statement issued', 'صدر البيان'),
+    'document_date': ('Document dated', 'تاريخ الوثيقة'),
+    'source': ('Source', 'المصدر'),
+    'changes': ('Later changes', 'تطورات لاحقة'),
+    'dated_note': ('Read the dates: these records describe what happened then. An old notice is not confirmation that a restriction is still in force.', 'انتبه إلى التاريخ: تصف السجلات ما حدث حينها. الإعلان القديم لا يؤكد استمرار القيد اليوم.'),
+    'leap': ('LEAP programme', 'برنامج LEAP'),
+    'local': ('Local services & households', 'الخدمات المحلية والأسر'),
+    'budget': ('State budget', 'موازنة الدولة'),
+    'leap_question': ('Which reconstruction work had no initial financing?', 'أي أعمال إعمار لم تحصل على تمويل أولي؟'),
+    'leap_intro': ('The Lebanon Emergency Assistance Project (LEAP) is implemented by the Council for Development and Reconstruction. Its initial financing table shows the following shortfall.', 'ينفّذ مجلس الإنماء والإعمار مشروع المساعدة الطارئة للبنان (LEAP). ويوضح جدول تمويله الأولي النقص التالي.'),
+    'initial_date': ('Initial financing table', 'جدول التمويل الأولي'),
+    'major_works': ('Major reconstruction works', 'أعمال إعادة الإعمار الكبرى'),
+    'needed': ('Planned funding needed', 'التمويل المطلوب في الخطة'),
+    'available': ('Available initially', 'متاح أولياً'),
+    'gap': ('Still needed', 'التمويل الناقص'),
+    'zero_explanation': ('This entire works component was unfunded in the initial plan.', 'كان هذا المكوّن من الأعمال غير مموّل بالكامل في الخطة الأولية.'),
+    'zero_limit': ('The $0 applies to this LEAP component. It does not mean Lebanon spent nothing on all reconstruction.', 'يخص مبلغ الصفر هذا المكوّن من LEAP، ولا يعني انعدام الإنفاق على كل الإعمار في لبنان.'),
+    'programme_total': ('Across the whole programme', 'على مستوى البرنامج كاملاً'),
+    'total': ('Planned total', 'إجمالي الخطة'),
+    'money_table': ('Where was the funding missing?', 'أين كان نقص التمويل؟'),
+    'money_unit': ('All amounts in US$ millions', 'جميع الأرقام بملايين الدولارات الأميركية'),
+    'activity': ('Activity', 'النشاط'),
+    'chart_note': ('Solid = available. Striped = missing. Bar lengths share one dollar scale.', 'اللون المصمت = المتاح. المخطط = الناقص. أطوال الأشرطة على مقياس مالي واحد.'),
+    'programme_scope': ('The source gives programme totals, without a town-by-town allocation or proof of payments.', 'يعرض المصدر إجماليات البرنامج دون توزيع بحسب البلدة أو إثبات للمدفوعات.'),
+    'local_question': ('Which local needs were not fully covered?', 'أي حاجات محلية لم تُغطَّ بالكامل؟'),
+    'local_intro': ('Reports identify missing services, school support and household costs. The state allocation for each case is not given, so these amounts remain unknown.', 'تحدد التقارير نقصاً في الخدمات والدعم المدرسي وتكاليف على الأسر. لم يُذكر تخصيص الدولة لكل حالة، لذلك يبقى المبلغ غير معروف.'),
+    'uncovered_activity': ('What needed money?', 'ما الذي احتاج إلى تمويل؟'),
+    'local_authority': ('Authority involved', 'الجهة المعنية'),
+    'local_what': ('What the report found', 'ما الذي رصده التقرير؟'),
+    'allocation': ('State funding allocated', 'تمويل الدولة المخصص'),
+    'not_quantified': ('Amount not stated', 'المبلغ غير مذكور'),
+    'reported_unmet_need': ('Service needing support', 'خدمة تحتاج إلى دعم'),
+    'reported_uncovered_cost': ('Cost left to a household', 'كلفة بقيت على أسرة'),
+    'fee_relief_missing': ('Fee exemption missing', 'غياب الإعفاء من الرسوم'),
+    'household_cost': ('Estimated extra household cost', 'كلفة إضافية تقديرية على الأسرة'),
+    'limits': ('What this evidence establishes', 'ما الذي تثبته الأدلة؟'),
+    'budget_question': ('Did the state allocate nothing to reconstruction?', 'هل لم تخصص الدولة أي تمويل للإعمار؟'),
+    'budget_answer': ('The available records do not establish that.', 'السجلات المتاحة لا تثبت ذلك.'),
+    'budget_intro': ('A missing line in a draft budget is only one stage. A later committee announcement added a shelter and repair provision, without stating the amount.', 'غياب بند في مشروع الموازنة يخص مرحلة واحدة فقط. فقد أعلنت اللجنة لاحقاً إضافة بند للإيواء والترميم دون تحديد المبلغ.'),
+    'draft_stage': ('Draft budget', 'مشروع الموازنة'),
+    'committee_stage': ('Committee change', 'تعديل اللجنة'),
+    'payment_stage': ('Amount & payments', 'المبلغ والمدفوعات'),
+    'payment_unknown': ('Not established by these sources', 'غير مثبتة في هذه المصادر'),
+    'payment_detail': ('These records do not provide the final allocation or evidence that payments reached beneficiaries.', 'لا تقدم هذه السجلات قيمة الاعتماد النهائي أو دليلاً على وصول المدفوعات إلى المستفيدين.'),
+    'source_notes': ('Sources & how to read the evidence', 'المصادر وكيفية قراءة الأدلة'),
+    'method_title': ('How the cases are labelled', 'كيف صُنّفت الحالات؟'),
+    'method': ('“Reported” identifies news coverage, not an enforcement order inspected here. Dates identify a report, statement, notice or document; they are not necessarily the start of a restriction. Past notices are not assumed to remain active. Zero is used only for an explicit numeric allocation; an unreported amount stays unknown. This is a reviewed selection, not a live register.', '«بحسب تقرير» تعني تغطية إعلامية، لا أمراً تنفيذياً اطلعنا عليه. تشير التواريخ إلى تقرير أو بيان أو إعلان أو وثيقة، وليست بالضرورة بداية القيد. لا نفترض استمرار القيود السابقة. يُستخدم الصفر فقط عند وجود تخصيص رقمي صريح؛ والمبلغ غير المذكور يبقى مجهولاً. هذه مجموعة مراجعة وليست سجلاً حياً.'),
     'official': ('Official source', 'مصدر رسمي'),
     'programme': ('Programme document', 'وثيقة برنامج'),
     'report': ('News report', 'تقرير إعلامي'),
@@ -74,25 +106,10 @@ UI = {
     'analysis': ('Draft-budget analysis', 'تحليل مشروع الموازنة'),
     'undated': ('Publication date not listed', 'تاريخ النشر غير مذكور'),
     'download': ('Download evidence and sources', 'تنزيل الأدلة والمصادر'),
-    'case_count': ('dated cases & requirements', 'وقائع وشروط مؤرخة'),
-    'local_count': ('local funding gaps', 'فجوات تمويل محلية'),
-    'date_label': ('Date', 'التاريخ'),
-    'case_heading': ('Town & date', 'البلدة والتاريخ'),
-    'short_blocked': ('Blocked / required', 'المنع / الشرط'),
-    'historic_note': ('Historical reports and conditions; continued enforcement is not assumed. Open a row for context and sources.', 'تقارير وشروط مؤرخة؛ لا نفترض استمرار تطبيقها. افتح السطر لقراءة السياق والمصادر.'),
-    'evidence_details': ('Context, status & sources', 'السياق والحالة والمصادر'),
-    'funding_summary': ('LEAP financing gap', 'فجوة تمويل LEAP'),
-    'unfunded_share': ('unfunded initially', 'غير مموّل أولياً'),
-    'available_short': ('Available', 'متاح'),
-    'gap_short': ('Gap', 'فجوة'),
-    'programme_scope': ('Initial programme financing', 'التمويل الأولي للبرنامج'),
-    'programme_details': ('Programme scope & source', 'نطاق البرنامج ومصدره'),
-    'funding_limit_short': ('Programme financing, not national spending.', 'تمويل البرنامج، لا الإنفاق الوطني.'),
-    'allocation_unknown': ('State allocation: amount unknown', 'تخصيص الدولة: المبلغ غير معروف'),
-    'more_evidence': ('Policy changes & budget history', 'تطورات القرارات والموازنة'),
-    'open_case': ('Open case details', 'فتح تفاصيل الحالة'),
-    'local_short_note': ('Reported unmet needs and costs. Unknown allocations are not zero.', 'حاجات وكلف غير مغطاة بحسب التقارير. التخصيص غير المعروف لا يعني صفراً.'),
 }
+
+RESTRICTION_GROUPS = ('stopped', 'roads', 'return', 'conditions')
+FUNDING_GROUPS = ('leap', 'local', 'budget')
 
 
 def ui(key, lang):
@@ -112,132 +129,163 @@ def source_link(data, key, lang, label=None):
     return f'<a href="{escape(source["url"], quote=True)}" target="_blank" rel="noopener noreferrer">{escape(label or source["publisher"][lang])} ↗</a>'
 
 
-def barrier_card(data, record, lang):
-    text = lambda field: escape(record[field][lang])
-    return f'''<details class="barrier-case" data-case="{record['id']}">
-      <summary class="barrier-case-summary">
-        <span class="barrier-location"><strong>{text('place')}</strong>{case_date(record, lang)}</span>
-        <span class="barrier-case-actor"><span class="barrier-mobile-label">{ui('responsible', lang)}</span>{text('actor')}</span>
-        <span class="barrier-case-impact"><span class="barrier-mobile-label">{ui('short_blocked', lang)}</span>{text('blocked')}
-          <span class="barrier-status-label">{ui(record['status'], lang)}</span></span>
-        <span class="barrier-expand" aria-hidden="true"></span>
-      </summary>
-      <div class="barrier-case-detail"><h4>{text('title')}</h4><p>{text('action')}</p>
-      <p class="barrier-detail-limit">{text('limit')}</p>
-      <div class="barrier-links">{''.join(source_link(data, key, lang) for key in record['sources'])}</div>
-      </div></details>'''
+def case_group(record):
+    if record['status'] == 'reported_enforcement':
+        return 'stopped'
+    if record['status'] in ('administrative_condition', 'programme_condition'):
+        return 'conditions'
+    return record['category']
 
 
 def case_date(record, lang):
-    return f'''<span class="barrier-case-date"><span>{ui(record['date_kind'], lang)}</span>
-      <time datetime="{record['date']}">{dated(record['date'], lang)}</time></span>'''
+    return f'<span class="barrier-date">{ui(record["date_kind"], lang)} <time datetime="{record["date"]}">{dated(record["date"], lang)}</time></span>'
 
 
-def restrictions_html(data, lang):
-    groups = []
-    for category, symbol in [('building', 'building'), ('roads', 'road'), ('return', 'pin'), ('debris', 'services')]:
-        records = [row for row in data['physical'] if row['category'] == category]
-        if not records:
-            continue
-        groups.append(f'''<section class="barrier-group barrier-group-{category}">
-          <h3>{icon(symbol, 20, '#000')}{ui(category, lang)}<span class="barrier-group-count">{len(records):02d}</span></h3>
-          {''.join(barrier_card(data, row, lang) for row in records)}</section>''')
-    return f'''<section class="barrier-register"><div class="barrier-section-heading"><h2>{ui('physical', lang)}</h2>
-      <span>{len(data['physical'])} {ui('case_count', lang)}</span></div>
-      <p class="barrier-reading-note">{ui('historic_note', lang)}</p>
-      <div class="barrier-register-head" aria-hidden="true"><span>{ui('case_heading', lang)}</span><span>{ui('responsible', lang)}</span><span>{ui('short_blocked', lang)}</span><span></span></div>
-      {''.join(groups)}</section>'''
+def links_html(data, keys, lang):
+    return f'<div class="barrier-links"><b>{ui("source", lang)}</b>{"".join(source_link(data, key, lang) for key in keys)}</div>'
+
+
+def field(label, value):
+    return f'<div class="barrier-fact"><dt>{label}</dt><dd>{value}</dd></div>'
+
+
+def barrier_card(data, record, lang):
+    text = lambda key: escape(record[key][lang])
+    requirement = 'requirement' if case_group(record) == 'conditions' else 'blocked'
+    return f'''<article class="barrier-card" data-case="{record['id']}">
+      <div class="barrier-card-top"><span class="barrier-tag">{ui(record['status'], lang)}</span>{case_date(record, lang)}</div>
+      <h3>{text('place')}</h3><p class="barrier-case-title">{text('title')}</p>
+      <dl class="barrier-facts">{field(ui('responsible', lang), text('actor'))}
+        {field(ui(requirement, lang), text('blocked'))}{field(ui('why', lang), text('action'))}</dl>
+      <div class="barrier-status"><b>{ui('known_status', lang)}</b><p>{text('limit')}</p></div>
+      {links_html(data, record['sources'], lang)}</article>'''
+
+
+def section_heading(question, intro, lang, count=None):
+    count_html = f'<span class="barrier-count">{count} {ui("cases", lang)}</span>' if count is not None else ''
+    return f'<div class="barrier-section-heading"><h2>{ui(question, lang)}</h2>{count_html}<p>{ui(intro, lang)}</p></div>'
+
+
+def restrictions_html(data, lang, group=None):
+    if group is None:
+        return ''.join(restrictions_html(data, lang, key) for key in RESTRICTION_GROUPS)
+    records = [record for record in data['physical'] if case_group(record) == group]
+    updates = [data['updates'][1]] if group == 'roads' else [data['updates'][0]] if group in ('stopped', 'conditions') else []
+    later = ''
+    if updates:
+        later = f'<details class="barrier-later"><summary>{ui("changes", lang)}</summary>{"".join(event_html(data, record, lang) for record in updates)}</details>'
+    return f'''<section class="barrier-restrictions" data-group="{group}">
+      {section_heading(group + '_question', group + '_intro', lang, len(records))}
+      <div class="barrier-case-grid">{''.join(barrier_card(data, record, lang) for record in records)}</div>
+      <p class="barrier-reading-note">{icon('calendar', 18, '#000')}{ui('dated_note', lang)}</p>{later}</section>'''
 
 
 def local_funding_html(data, lang):
     cards = []
     for record in data['funding_cases']:
-        # Unknown amounts must never be displayed as zero.
+        text = lambda key: escape(record[key][lang])
         allocation = ui('not_quantified', lang) if record['allocation_usd'] is None else f"${record['allocation_usd']:,.0f}"
-        household_cost = ''
+        cost = ''
         if record.get('household_cost_usd') is not None:
-            household_cost = f'<span class="barrier-household-cost"><bdi>${record["household_cost_usd"]:,.0f}</bdi> · {ui("household_cost", lang)}</span>'
-        cards.append(f'''<details class="barrier-local-case" data-funding-case="{record['id']}">
-          <summary><span class="barrier-location"><strong>{escape(record['place'][lang])}</strong>{case_date(record, lang)}</span>
-            <span class="barrier-local-impact"><strong>{escape(record['activity'][lang])}</strong>
-              <span class="barrier-local-actor"><b>{ui('responsible', lang)}:</b> {escape(record['actor'][lang])}</span>
-              <span class="barrier-allocation"><b>{ui('allocation', lang)}:</b> {allocation}</span>{household_cost}</span>
-            <span class="barrier-expand" aria-hidden="true"></span></summary>
-          <div class="barrier-case-detail"><h4>{escape(record['title'][lang])}</h4><p>{escape(record['action'][lang])}</p>
-            <p class="barrier-detail-limit"><b>{ui(record['evidence'], lang)}.</b> {escape(record['limit'][lang])}</p>
-            <div class="barrier-links">{''.join(source_link(data, key, lang) for key in record['sources'])}</div></div></details>''')
-    return f'''<section class="barrier-local-funding"><div class="barrier-section-heading"><h2>{ui('local_money_title', lang)}</h2><span>{len(cards):02d}</span></div>
-      <p class="barrier-reading-note">{ui('local_short_note', lang)}</p><div class="barrier-funding-cases">{''.join(cards)}</div></section>'''
+            cost = f'<p class="barrier-household-cost"><strong><bdi>${record["household_cost_usd"]:,.0f}</bdi></strong> {ui("household_cost", lang)}</p>'
+        cards.append(f'''<article class="barrier-card barrier-local-card" data-funding-case="{record['id']}">
+          <div class="barrier-card-top"><span class="barrier-tag">{ui(record['evidence'], lang)}</span>{case_date(record, lang)}</div>
+          <h3>{text('place')}</h3><p class="barrier-case-title">{text('title')}</p>
+          <dl class="barrier-facts">{field(ui('uncovered_activity', lang), text('activity'))}
+            {field(ui('local_authority', lang), text('actor'))}{field(ui('local_what', lang), text('action'))}</dl>
+          <div class="barrier-status barrier-allocation"><b>{ui('allocation', lang)}: {allocation}</b>{cost}</div>
+          <details class="barrier-limit"><summary>{ui('limits', lang)}</summary><p>{text('limit')}</p></details>
+          {links_html(data, record['sources'], lang)}</article>''')
+    return f'<section data-group="local">{section_heading("local_question", "local_intro", lang)}<div class="barrier-case-grid">{"".join(cards)}</div></section>'
 
 
 def event_html(data, record, lang):
     return f'''<article class="barrier-event"><time datetime="{record['date']}">{dated(record['date'], lang)}</time>
-      <h3>{escape(record['title'][lang])}</h3><p>{escape(record['text'][lang])}</p>
-      {source_link(data, record['source'], lang)}</article>'''
+      <h3>{escape(record['title'][lang])}</h3><p>{escape(record['text'][lang])}</p>{source_link(data, record['source'], lang)}</article>'''
+
+
+def money(value, lang):
+    return f'<bdi>${value:,}</bdi> {"مليون" if lang == "ar" else "million"}'
 
 
 def funding_html(data, lang):
     funding = data['funding']
-    scale = max(row['available'] + row['gap'] for row in funding['rows'])
     available = sum(row['available'] for row in funding['rows'])
     gap = sum(row['gap'] for row in funding['rows'])
-    missing_percent = gap / (available + gap) * 100 if available + gap else 0
+    scale = max(row['available'] + row['gap'] for row in funding['rows'])
     works = next(row for row in funding['rows'] if row['code'] == 'C3b')
     rows = []
     for row in funding['rows']:
-        label = row['label'][lang]
-        amount = f'{ui("available", lang)}: ${row["available"]}M; {ui("gap", lang)}: ${row["gap"]}M'
-        # Numeric labels stay next to their bars; the accessible label states both values.
-        rows.append(f'''<div class="barrier-money-row" data-component="{row['code']}">
-          <div class="barrier-money-label"><b>{escape(label)}</b><span><bdi>${row['available']}M</bdi></span><span><bdi>${row['gap']}M</bdi></span></div>
-          <div class="barrier-track" role="img" aria-label="{escape(label + ': ' + amount, quote=True)}">
-            <span class="barrier-funded" style="width:{row['available'] / scale * 100:.4f}%"></span><span class="barrier-gap" style="width:{row['gap'] / scale * 100:.4f}%"></span>
-          </div></div>''')
-    ring_label = f'{missing_percent:.0f}% {ui("unfunded_share", lang)}; {ui("available", lang)}: ${available}M; {ui("gap", lang)}: ${gap}M'
-    return f'''<section id="barrier-funding" class="barrier-programme"><h2>{ui('funding_summary', lang)}</h2>
-      <p class="barrier-reading-note">{ui('programme_scope', lang)} · {dated(funding['as_of'], lang)}</p>
-      <div class="barrier-finance-hero"><div class="barrier-ring" role="img" aria-label="{escape(ring_label, quote=True)}" style="--gap-share:{missing_percent:.4f}%">
-        <span><strong>{missing_percent:.0f}%</strong><small>{ui('unfunded_share', lang)}</small></span></div>
-        <div class="barrier-finance-totals"><div><strong><bdi>${gap}M</bdi></strong><span>{ui('gap', lang)}</span></div>
-          <p><bdi>${available}M</bdi> {ui('available', lang)}</p><p><bdi>${available + gap}M</bdi> {ui('total', lang)}</p></div></div>
-      <div class="barrier-money-chart"><div class="barrier-money-label barrier-money-head"><span></span>
-        <span><i class="barrier-funded"></i>{ui('available_short', lang)}</span><span><i class="barrier-gap"></i>{ui('gap_short', lang)}</span></div>
-        {''.join(rows)}</div>
-      <div class="barrier-zero"><strong><bdi>${works['available']}M</bdi></strong><span><b>{ui('zero_label', lang)}</b><small>{ui('zero_detail', lang)}</small></span></div>
-      <p class="barrier-chart-note">{ui('funding_limit_short', lang)}</p>
-      <p class="barrier-programme-meta"><b>{ui('responsible', lang)}:</b> {escape(funding['actor'][lang])}</p>
-      <p class="barrier-programme-meta"><b>{ui('town', lang)}:</b> {escape(funding['place'][lang])}</p>
-      <details class="barrier-supporting"><summary>{ui('programme_details', lang)}</summary><div class="barrier-case-detail">
-        <p>{ui('zero_limit', lang)}</p><p>{ui('chart_note', lang)}</p>{source_link(data, funding['source'], lang)}</div></details></section>'''
+        label = escape(row['label'][lang])
+        accessible = f'{row["label"][lang]}; {ui("available", lang)}: ${row["available"]}M; {ui("gap", lang)}: ${row["gap"]}M'
+        rows.append(f'''<tr data-component="{row['code']}"><th scope="row">{label}
+          <div class="barrier-track" role="img" aria-label="{escape(accessible, quote=True)}"><span class="barrier-funded" style="width:{row['available'] / scale * 100:.4f}%"></span><span class="barrier-gap" style="width:{row['gap'] / scale * 100:.4f}%"></span></div></th>
+          <td><bdi>${row['available']}</bdi></td><td><bdi>${row['gap']}</bdi></td></tr>''')
+    return f'''<section data-group="leap">{section_heading('leap_question', 'leap_intro', lang)}
+      <p class="barrier-asof">{ui('initial_date', lang)} · <time datetime="{funding['as_of']}">{dated(funding['as_of'], lang)}</time></p>
+      <div class="barrier-programme-grid"><div class="barrier-funding-takeaway"><h3>{ui('major_works', lang)}</h3>
+        <div class="barrier-zero"><strong>{money(works['available'], lang)}</strong><span>{ui('available', lang)}</span></div>
+        <p class="barrier-needed"><b>{money(works['gap'] + works['available'], lang)}</b> {ui('needed', lang)}</p>
+        <p>{ui('zero_explanation', lang)}</p><div class="barrier-scope-note">{ui('zero_limit', lang)}</div>
+        <div class="barrier-programme-total"><b>{ui('programme_total', lang)}</b><dl>
+          {field(ui('total', lang), money(available + gap, lang))}{field(ui('available', lang), money(available, lang))}{field(ui('gap', lang), money(gap, lang))}</dl></div></div>
+      <div class="barrier-money-chart"><h3>{ui('money_table', lang)}</h3><p>{ui('money_unit', lang)}</p>
+        <table><thead><tr><th scope="col">{ui('activity', lang)}</th><th scope="col">{ui('available', lang)}</th><th scope="col">{ui('gap', lang)}</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
+        <p class="barrier-chart-note">{ui('chart_note', lang)}</p></div></div>
+      <p class="barrier-reading-note">{ui('programme_scope', lang)}</p>{links_html(data, [funding['source'], 'cdr'], lang)}</section>'''
 
 
-def barriers_html(data, lang='en'):
-    direction = 'rtl' if lang == 'ar' else 'ltr'
-    return f'''<article class="barriers-page" lang="{lang}" dir="{direction}">
-      <header class="barriers-heading"><div class="barriers-meta"><b>{ui('scope', lang)}</b><span>{ui('reviewed', lang)} {dated(data['reviewed_on'], lang)}</span></div>
-        <h1>{ui('title', lang)}</h1><p>{ui('intro', lang)}</p></header>
-      <div class="barrier-dashboard">{restrictions_html(data, lang)}
-        <div class="barrier-finance-column">{funding_html(data, lang)}{local_funding_html(data, lang)}</div></div>
-      <details class="barrier-history barrier-supporting"><summary>{icon('calendar', 18, '#000')}{ui('more_evidence', lang)}<span>{len(data['updates']) + len(data['budget_history']):02d}</span></summary>
-        <div class="barrier-history-body"><section><h3>{ui('changes', lang)}</h3><div class="barrier-events">{''.join(event_html(data, record, lang) for record in data['updates'])}</div></section>
-          <section><h3>{ui('national_title', lang)}</h3><div class="barrier-events">{''.join(event_html(data, record, lang) for record in data['budget_history'])}</div><p class="barrier-context">{ui('national_note', lang)}</p></section></div></details></article>'''
+def budget_html(data, lang):
+    events = ''.join(f'<div class="barrier-budget-step"><span class="barrier-step-label">{ui(key, lang)}</span>{event_html(data, record, lang)}</div>' for key, record in zip(('draft_stage', 'committee_stage'), data['budget_history']))
+    return f'''<section data-group="budget">{section_heading('budget_question', 'budget_intro', lang)}
+      <div class="barrier-budget-answer">{ui('budget_answer', lang)}</div><div class="barrier-budget-timeline">{events}
+      <div class="barrier-budget-step"><span class="barrier-step-label">{ui('payment_stage', lang)}</span><article class="barrier-event"><h3>{ui('payment_unknown', lang)}</h3><p>{ui('payment_detail', lang)}</p></article></div></div></section>'''
+
+
+def page_wrapper(content, lang, view='all'):
+    return f'<div class="barriers-page" lang="{lang}" dir="{"rtl" if lang == "ar" else "ltr"}" data-view="{view}">{content}</div>'
+
+
+def heading_html(data, lang):
+    return page_wrapper(f'''<header class="barriers-heading"><div class="barriers-meta"><b>{ui('scope', lang)}</b><span>{ui('reviewed', lang)} {dated(data['reviewed_on'], lang)}</span></div>
+      <h1>{ui('title', lang)}</h1><p>{ui('intro', lang)}</p></header>''', lang)
+
+
+def barriers_html(data, lang='en', view='all', group=None):
+    """Render one focused section, or all evidence for export and validation."""
+    if view == 'restrictions':
+        content = restrictions_html(data, lang, group)
+    elif view == 'funding':
+        render = {'leap': funding_html, 'local': local_funding_html, 'budget': budget_html}
+        content = render[group or 'leap'](data, lang)
+    else:
+        content = restrictions_html(data, lang) + funding_html(data, lang) + local_funding_html(data, lang) + budget_html(data, lang)
+    return page_wrapper(content, lang, view)
 
 
 def sources_html(data, lang='en'):
     records = []
     for key, source in data['sources'].items():
         records.append(f'''<article class="barrier-source"><b>{source_link(data, key, lang, source['title'][lang])}</b>
-          <p>{escape(source['publisher'][lang])} · {ui(source['kind'], lang)} · {dated(source['date'], lang)}</p>
-          <p>{escape(source['access'][lang])}</p></article>''')
-    return f'''<div class="barriers-page" lang="{lang}" dir="{'rtl' if lang == 'ar' else 'ltr'}"><h3>{ui('method_title', lang)}</h3>
-      <p>{ui('method', lang)}</p><div class="barrier-source-grid">{''.join(records)}</div></div>'''
+          <p>{escape(source['publisher'][lang])} · {ui(source['kind'], lang)} · {dated(source['date'], lang)}</p><p>{escape(source['access'][lang])}</p></article>''')
+    return page_wrapper(f'<h3>{ui("method_title", lang)}</h3><p>{ui("method", lang)}</p><div class="barrier-source-grid">{"".join(records)}</div>', lang)
 
 
 def show_reconstruction_barriers():
     data = load_barriers()
     lang = language()
     st.html(ROOT / 'assets/reconstruction-barriers.css')
-    st.html(barriers_html(data, lang))
+    st.html(heading_html(data, lang))
+    view = st.segmented_control(ui('explore', lang), ('restrictions', 'funding'), default='restrictions',
+                                format_func=lambda value: ui(value, lang), key='barriers_view', selection_mode='single') or 'restrictions'
+    if view == 'restrictions':
+        counts = {key: sum(case_group(record) == key for record in data['physical']) for key in RESTRICTION_GROUPS}
+        group = st.segmented_control(ui('restriction_type', lang), RESTRICTION_GROUPS, default='stopped',
+                                     format_func=lambda value: f'{ui(value, lang)} · {counts[value]}', key='barriers_restriction_group', selection_mode='single') or 'stopped'
+    else:
+        group = st.segmented_control(ui('funding_type', lang), FUNDING_GROUPS, default='leap',
+                                     format_func=lambda value: ui(value, lang), key='barriers_funding_group', selection_mode='single') or 'leap'
+    st.html(barriers_html(data, lang, view, group))
     with st.expander(ui('source_notes', lang)):
         st.html(sources_html(data, lang))
         st.download_button(ui('download', lang), json.dumps(data, ensure_ascii=False, indent=2).encode('utf-8'),
