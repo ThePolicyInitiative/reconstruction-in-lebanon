@@ -13,21 +13,20 @@ SOURCE = ROOT / "data/Economic_losses_war_AY.xlsx"
 UI = {
     "title": ("Economic losses", "الخسائر الاقتصادية"),
     "intro": ("The cost of war across 2023–2024 and 2026", "كلفة الحرب خلال <bdi>2023–2024</bdi> و<bdi>2026</bdi>"),
-    "source_button": ("Sources & workbook", "المصادر وملف البيانات"),
+    "source_button": ("Sources", "المصادر"),
     "cost": ("Total economic cost", "الكلفة الاقتصادية الإجمالية"),
     "damage": ("Physical damage", "الأضرار المادية"),
     "losses": ("Economic losses", "الخسائر الاقتصادية"),
     "billion": ("billion", "مليار دولار"),
     "million": ("US$ million", "مليون دولار أميركي"),
-    "estimate": ("Indicative estimate in workbook", "تقدير استرشادي في الملف"),
-    "listed": ("Reported in workbook", "كما ورد في الملف"),
-    "estimate_note": ("2026 totals are estimates. The workbook marks total cost and physical damage “NA” and provides these indicative ranges.", "إجماليات 2026 تقديرية. يضع الملف «غير متاح» للكلفة الإجمالية والأضرار المادية، ويورد هذه النطاقات الاسترشادية."),
+    "estimate": ("Indicative estimate", "تقدير استرشادي"),
+    "estimate_note": ("2026 totals are indicative estimates.", "إجماليات 2026 تقديرات استرشادية."),
     "housing": ("Housing damage", "أضرار المساكن"),
     "units": ("More than 100,000 housing units damaged", "تضررت أكثر من 100,000 وحدة سكنية"),
     "subset": ("Housing is included in physical damage.", "أضرار المساكن مشمولة ضمن الأضرار المادية."),
     "channels": ("Tourism & household losses", "خسائر السياحة والأسر"),
     "channels_note": ("The earlier column covers 2024 losses; 2026 figures are projections.", "يغطي العمود السابق خسائر 2024؛ وأرقام 2026 توقعات."),
-    "reported_total": ("Total as listed", "الإجمالي الوارد"),
+    "reported_total": ("Total", "الإجمالي"),
     "regions": ("Where household spending fell", "أين تراجع إنفاق الأسر؟"),
     "regional_period": ("2024 household spending losses", "خسائر إنفاق الأسر في 2024"),
     "regional_total": ("Total across the five regions", "الإجمالي في المناطق الخمس"),
@@ -38,17 +37,16 @@ UI = {
     "no_war": ("Without war", "دون الحرب"),
     "no_baseline": ("No-war rate not separately stated", "معدل عدم الحرب غير مذكور منفصلاً"),
     "projected": ("Projection", "توقع"),
-    "gdp_note": ("GDP values follow the workbook. The 2026 figures are projections; percentage-point losses are not dollar amounts.", "تتبع قيم الناتج المحلي الملف. أرقام 2026 توقعات، والخسائر بالنقاط المئوية ليست مبالغ مالية."),
+    "gdp_note": ("The 2026 figures are projections; percentage-point losses are not dollar amounts.", "أرقام 2026 توقعات، والخسائر بالنقاط المئوية ليست مبالغ مالية."),
     "notes": ("How to read these figures", "كيف تُقرأ هذه الأرقام؟"),
-    "period_note": ("The workbook compares a 2023–2024 phase with 2026. It specifies that the earlier US$4.2 billion tourism-and-consumption figure relates to 2024 alone.", "يقارن الملف مرحلة 2023–2024 بعام 2026، ويوضح أن خسائر السياحة والاستهلاك السابقة البالغة 4.2 مليارات دولار تخص 2024 وحده."),
+    "period_note": ("The comparison covers 2023–2024 and 2026. The earlier US$4.2 billion tourism-and-consumption figure relates to 2024 alone.", "تشمل المقارنة مرحلة 2023–2024 وعام 2026. تخص خسائر السياحة والاستهلاك السابقة البالغة 4.2 مليارات دولار عام 2024 وحده."),
     "overlap_note": ("Physical damage and economic losses make up total economic cost. Housing, tourism, household and regional figures are breakdowns; do not add them again to the headline totals.", "تتكون الكلفة الاقتصادية من الأضرار المادية والخسائر الاقتصادية. أرقام المساكن والسياحة والأسر والمناطق تفصيلات ضمنها؛ لا تُضاف مجدداً إلى الإجماليات الرئيسية."),
-    "rounding": ("Component sums differ slightly from the listed totals", "تختلف مجاميع المكونات قليلاً عن الإجماليات الواردة"),
-    "rounding_kept": ("The website preserves both the component values and the original totals.", "يحافظ الموقع على قيم المكونات والإجماليات الأصلية معاً."),
-    "gdp_revision": ("The workbook’s 2023 GDP value is −0.8%. The Summer 2026 World Bank report lists −0.5% for 2023; this page retains the supplied workbook’s −0.8% and its 1.0-point comparison.", "قيمة نمو 2023 في الملف هي ‎−0.8%. يورد تقرير البنك الدولي لصيف 2026 قيمة ‎−0.5% لعام 2023؛ تحتفظ هذه الصفحة بقيمة الملف ‎−0.8% وبفارق النقطة المئوية الواحدة."),
-    "links": ("Source links listed in the workbook", "روابط المصادر الواردة في الملف"),
+    "rounding": ("Component sums differ slightly from the totals", "تختلف مجاميع المكونات قليلاً عن الإجماليات"),
+    "gdp_revision": ("The 2023 GDP comparison uses the earlier −0.8% growth estimate and a 1.0-percentage-point loss. The Summer 2026 World Bank report revises 2023 growth to −0.5%.", "تستند مقارنة الناتج المحلي لعام 2023 إلى تقدير النمو السابق البالغ ‎−0.8% وخسارة نقطة مئوية واحدة. يعدّل تقرير البنك الدولي لصيف 2026 نمو عام 2023 إلى ‎−0.5%."),
+    "links": ("Source links", "روابط المصادر"),
     "download": ("Download original Excel workbook", "تنزيل ملف إكسل الأصلي"),
     "original": ("Original cells & notes", "الخلايا والملاحظات الأصلية"),
-    "original_language": ("Original workbook wording is preserved below in English.", "يُحفظ نص الملف الأصلي أدناه باللغة الإنجليزية."),
+    "original_language": ("Source data in English.", "البيانات المصدرية باللغة الإنجليزية."),
     "cell": ("Cell", "الخلية"),
     "original_value": ("Original value", "القيمة الأصلية"),
 }
@@ -83,8 +81,9 @@ def headline_html(data, lang):
             for key in ("damage", "losses")
         )
         estimated = phase["total"]["estimated"]
+        badge = f'<span>{tr("estimate", lang)}</span>' if estimated else ""
         cards.append(f'''<article class="losses-phase {"losses-estimated" if estimated else ""}" data-period="{phase['period']}">
-          <header><h2><bdi>{phase['period']}</bdi></h2><span>{tr("estimate" if estimated else "listed", lang)}</span></header>
+          <header><h2><bdi>{phase['period']}</bdi></h2>{badge}</header>
           <p>{tr("cost", lang)}</p><strong class="losses-headline" data-cell="{phase['total']['cell']}">{billions(phase['total'], lang)}</strong>
           <div class="losses-components">{components}</div></article>''')
     housing = data["housing"]
@@ -152,7 +151,7 @@ def source_notes_html(data, lang):
     return wrapper(f'''<section class="losses-sources"><h2>{tr("notes", lang)}</h2>
       <p><b>{escape(data['source_file'])}</b> · {data['sheet']}</p>
       <ul><li>{tr("period_note", lang)}</li><li>{tr("overlap_note", lang)}</li><li>{tr("estimate_note", lang)}</li>
-      <li>{tr("rounding", lang)} ({tr("million", lang)}): {'; '.join(differences)}. {tr("rounding_kept", lang)}</li>
+      <li>{tr("rounding", lang)} ({tr("million", lang)}): {'; '.join(differences)}.</li>
       <li>{tr("gdp_revision", lang)}</li></ul>
       <h3>{tr("links", lang)}</h3><ul>{sources}</ul></section>''', lang)
 
