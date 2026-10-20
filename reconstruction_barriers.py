@@ -120,6 +120,18 @@ UI = {
     'million_short': ('M', ' مليون'),
     'funding_split': ('Funding split', 'توزيع التمويل'),
     'conditional_blocked': ('Blocked / conditional work', 'أعمال ممنوعة أو مشروطة'),
+    'choose_restriction': ('Choose a restriction case', 'اختر حالة قيد'),
+    'choose_local_gap': ('Choose a local funding gap', 'اختر فجوة تمويل محلية'),
+    'restriction_panel': ('Restrictions', 'القيود'),
+    'local_panel': ('Local funding gaps', 'فجوات التمويل المحلية'),
+    'all_sources': ('Sources & details', 'المصادر والتفاصيل'),
+    'case_evidence': ('Case context & sources', 'سياق الحالة ومصادرها'),
+    'local_evidence': ('Funding context & sources', 'سياق التمويل ومصادره'),
+    'initial_leap': ('LEAP · initial financing', 'LEAP · التمويل الأولي'),
+    'works_short': ('Major works: initially available / needed', 'الأعمال الكبرى: المتاح أولياً / المطلوب'),
+    'funded_short': ('Initially funded', 'مموّل أولياً'),
+    'gap_short': ('Funding gap', 'فجوة التمويل'),
+    'programme_only': ('Programme figures; not total state spending.', 'أرقام البرنامج؛ لا إجمالي إنفاق الدولة.'),
 }
 
 RESTRICTION_GROUPS = ('stopped', 'roads', 'return', 'conditions')
@@ -307,25 +319,98 @@ def sources_html(data, lang='en'):
     return page_wrapper(f'<h3>{ui("method_title", lang)}</h3><p>{ui("method", lang)}</p><div class="barrier-source-grid">{"".join(records)}</div>', lang)
 
 
+def board_header(data, lang):
+    return page_wrapper(f'''<header class="barriers-board-heading"><h1>{ui('title', lang)}</h1>
+      <p>{ui('scope', lang)} · {ui('reviewed', lang)} {dated(data['reviewed_on'], lang)}</p></header>''', lang)
+
+
+def funding_strip(data, lang):
+    funding = data['funding']
+    available = sum(row['available'] for row in funding['rows'])
+    gap = sum(row['gap'] for row in funding['rows'])
+    works = next(row for row in funding['rows'] if row['code'] == 'C3b')
+    return page_wrapper(f'''<section class="barriers-board-funding" aria-label="{ui('initial_leap', lang)}">
+      <div class="board-funding-scope"><b>{ui('initial_leap', lang)}</b><time datetime="{funding['as_of']}">{dated(funding['as_of'], lang)}</time><small>{ui('programme_only', lang)}</small></div>
+      <div class="board-total"><strong>{compact_money(available, lang)}</strong><span>{ui('funded_short', lang)}</span></div>
+      <div class="board-total board-main-gap"><strong>{compact_money(gap, lang)}</strong><span>{ui('gap_short', lang)}</span></div>
+      <div class="board-total board-works"><strong>{compact_money(works['available'], lang)} <span>/</span> {compact_money(works['available'] + works['gap'], lang)}</strong><span>{ui('works_short', lang)}</span></div>
+      </section>''', lang, 'overview')
+
+
+def board_case_html(record, lang, funding=False):
+    text = lambda key: escape(record[key][lang])
+    label = ui('uncovered_activity', lang) if funding else ui('conditional_blocked' if case_group(record) == 'conditions' else 'blocked', lang)
+    amount_html = ''
+    if funding:
+        allocation = ui('not_quantified', lang) if record['allocation_usd'] is None else f"${record['allocation_usd']:,.0f}"
+        if record.get('household_cost_usd') is not None:
+            amount = f'<strong><bdi>${record["household_cost_usd"]:,.0f}</bdi></strong><span>{ui("household_cost", lang)}</span>'
+        else:
+            amount = f'<strong class="board-unknown">{ui("amount_unknown", lang)}</strong>'
+        amount_html = f'<div class="board-money">{amount}<p><b>{ui("allocation", lang)}:</b> {allocation}</p></div>'
+        status_html = ''
+    else:
+        status = 'return_reported' if record['id'] == 'houla_return' else 'rule_scope' if case_group(record) == 'conditions' else 'status_unverified'
+        status_html = f'<p class="board-status"><b>{ui(record["status"], lang)}</b> · {ui(status, lang)}</p>'
+    attribute = 'data-funding-case' if funding else 'data-case'
+    return page_wrapper(f'''<article class="board-case {'board-local' if funding else 'board-restriction'}" {attribute}="{record['id']}">
+      <header aria-label="{ui('town', lang)}"><div class="board-location-title">{icon('pin', 16, '#000')}<h3>{text('place')}</h3></div>{case_date(record, lang)}</header>
+      {infographic_field(ui('local_authority' if funding else 'authority', lang), text('actor'), 'building', 'board-authority')}
+      {infographic_field(label, text('activity' if funding else 'blocked'), 'fund' if funding else 'shield', 'board-impact')}
+      {amount_html}{status_html}</article>''', lang, 'selected-funding' if funding else 'selected-restriction')
+
+
+def selected_evidence(data, record, lang):
+    return page_wrapper(f'''<div class="board-evidence"><h3>{escape(record['title'][lang])}</h3><p>{escape(record['action'][lang])}</p>
+      <p>{escape(record['limit'][lang])}</p>{links_html(data, record['sources'], lang)}</div>''', lang)
+
+
+def _remember_board_choice(canonical_key, widget_key):
+    st.session_state[canonical_key] = st.session_state[widget_key]
+
+
+def board_selector(key, label, options, formatter, lang):
+    # A fresh widget per language also refreshes BaseWeb's selected label.
+    # Keep the actual case ID separately so switching language retains the case.
+    widget_key = f'{key}__{lang}'
+    selected = st.session_state.get(key, options[0])
+    st.session_state[widget_key] = selected if selected in options else options[0]
+    return st.selectbox(label, options, key=widget_key, format_func=formatter, label_visibility='collapsed',
+                        on_change=_remember_board_choice, args=(key, widget_key))
+
+
 def show_reconstruction_barriers():
     data = load_barriers()
     lang = language()
     st.html(ROOT / 'assets/reconstruction-barriers.css')
-    st.html(heading_html(data, lang))
-    mode_column, category_column = st.columns([1, 1.65], gap='small', vertical_alignment='bottom')
-    with mode_column:
-        view = st.segmented_control(ui('explore', lang), ('restrictions', 'funding'), default='restrictions',
-                                    format_func=lambda value: ui(value, lang), key='barriers_view', selection_mode='single', label_visibility='collapsed') or 'restrictions'
-    with category_column:
-        if view == 'restrictions':
-            counts = {key: sum(case_group(record) == key for record in data['physical']) for key in RESTRICTION_GROUPS}
-            group = st.segmented_control(ui('restriction_type', lang), RESTRICTION_GROUPS, default='stopped',
-                                         format_func=lambda value: f'{ui(value, lang)} · {counts[value]}', key='barriers_restriction_group', selection_mode='single', label_visibility='collapsed') or 'stopped'
-        else:
-            group = st.segmented_control(ui('funding_type', lang), FUNDING_GROUPS, default='leap',
-                                         format_func=lambda value: ui(value, lang), key='barriers_funding_group', selection_mode='single', label_visibility='collapsed') or 'leap'
-    st.html(barriers_html(data, lang, view, group))
-    with st.expander(ui('source_notes', lang)):
-        st.html(sources_html(data, lang))
-        st.download_button(ui('download', lang), json.dumps(data, ensure_ascii=False, indent=2).encode('utf-8'),
-                           file_name='lebanon-restrictions-and-funding-gaps.json', mime='application/json', key='barriers_evidence')
+    with st.container(key='barriers-onepage'):
+        heading_column, source_column = st.columns([3, 1], gap='small', vertical_alignment='center')
+        with heading_column:
+            st.html(board_header(data, lang))
+        with source_column:
+            with st.popover(ui('all_sources', lang), width='stretch'):
+                st.html(page_wrapper(funding_html(data, lang) + budget_html(data, lang), lang))
+                st.html(sources_html(data, lang))
+                st.download_button(ui('download', lang), json.dumps(data, ensure_ascii=False, indent=2).encode('utf-8'),
+                                   file_name='lebanon-restrictions-and-funding-gaps.json', mime='application/json', key='barriers_evidence')
+        st.html(funding_strip(data, lang))
+        restrictions_column, funding_column = st.columns(2, gap='medium')
+        with restrictions_column:
+            st.html(page_wrapper(f'<h2 class="board-panel-title">{ui("restriction_panel", lang)}<span>{len(data["physical"])} {ui("cases", lang)}</span></h2>', lang))
+            physical = {row['id']: row for row in data['physical']}
+            selected = board_selector('barriers_selected_case', ui('choose_restriction', lang), list(physical),
+                                      lambda key: f'{physical[key]["place"][lang]} · {ui(case_group(physical[key]), lang)}', lang)
+            record = physical[selected]
+            st.html(board_case_html(record, lang))
+            with st.popover(ui('case_evidence', lang), width='stretch'):
+                st.html(selected_evidence(data, record, lang))
+                st.html(page_wrapper(f'<p>{ui("dated_note", lang)}</p>' + ''.join(event_html(data, row, lang) for row in data['updates']), lang))
+        with funding_column:
+            st.html(page_wrapper(f'<h2 class="board-panel-title">{ui("local_panel", lang)}<span>{len(data["funding_cases"])} {ui("cases", lang)}</span></h2>', lang))
+            local = {row['id']: row for row in data['funding_cases']}
+            selected_local = board_selector('barriers_selected_local', ui('choose_local_gap', lang), list(local),
+                                            lambda key: f'{local[key]["place"][lang]} · {local[key]["title"][lang]}', lang)
+            st.html(board_case_html(local[selected_local], lang, funding=True))
+            with st.popover(ui('local_evidence', lang), width='stretch'):
+                st.html(selected_evidence(data, local[selected_local], lang))
+                st.html(page_wrapper(f'<p>{ui("local_intro", lang)}</p>', lang))
