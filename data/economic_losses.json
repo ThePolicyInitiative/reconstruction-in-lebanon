@@ -1,0 +1,289 @@
+{
+  "source_file": "Economic_losses_war_AY.xlsx",
+  "source_sha256": "ddc6719d958c5ec905859e2a78ff4c54cb0bd6c5b269a2b0335152343377cc2d",
+  "sheet": "Sheet1",
+  "raw_cells": {
+    "B1": "Phase 1: 2023-2024",
+    "C1": "Phase 2: 2026",
+    "A2": "Total economic cost",
+    "B2": "US$14 billion",
+    "C2": "NA (estimated at US$7-9 billion)",
+    "A3": "Physical damage",
+    "B3": "US$6.8 billion (of which housing US$4.6 billion, more than 100,000 housing units damaged)",
+    "C3": "NA (estimated at US$3-4 billion)",
+    "A4": "Economic losses",
+    "B4": "US$7.2 billion (lost tourism + consumption in 2024 alone = US$4.2 billion)",
+    "C4": "Lost tourism + consumption = US$3.571 billion (total of all sectors estimated at US$4-5 billion)",
+    "A5": "GDP impact",
+    "B5": "2023: –0.8%, against +0.2% without the war (1.0 point lost)\n\n2024: –5.2%, 6.1 points below the no-war scenario",
+    "C5": "2026: –6.4%, against +4.0% without the war (10.4 points lost)",
+    "A9": "Group",
+    "B9": "2023-2024 Losses (US$ m)",
+    "C9": "2026 Losses (US$ m)",
+    "A10": "Businesses (tourism)",
+    "B10": 1263.7,
+    "C10": 3001,
+    "A11": "Individuals and households",
+    "B11": 2937,
+    "C11": 569.6,
+    "A12": "Total",
+    "B12": 4200,
+    "C12": 3571,
+    "A15": "Household spending losses by region in 2024 (US$ million)",
+    "A16": "Region",
+    "B16": "Losses",
+    "A17": "South Lebanon",
+    "B17": 1066.1,
+    "A18": "Nabatieh",
+    "B18": 794.5,
+    "A19": "Bekaa",
+    "B19": 809.7,
+    "A20": "Baalbek–Hermel",
+    "B20": 206.3,
+    "A21": "Beirut’s southern suburbs",
+    "B21": 60.4,
+    "A22": "Total",
+    "B22": 2937,
+    "A26": "https://documents1.worldbank.org/curated/en/099613508202629849/pdf/IDU-7d906a5a-127e-4567-9de3-8b13b0b6bbd1.pdf",
+    "A27": "https://www.worldbank.org/en/news/press-release/2026/08/21/renewed-conflict-derails-lebanon-s-fragile-economic-recovery",
+    "A28": "https://today.lorientlejour.com/article/1545802/war-expected-to-cost-lebanon-at-least-3-5-billion-in-tourism-and-consumption.html",
+    "A29": "https://www.aa.com.tr/en/middle-east/israeli-wars-may-cost-lebanon-over-27b-prime-minister-says/4057780",
+    "A30": "https://www.worldbank.org/en/news/press-release/2024/11/14/new-world-bank-report-assesses-impact-of-conflict-on-lebanon-s-economy-and-key-sectors",
+    "A31": "https://www.globalsecurity.org/military/library/news/2025/03/mil-250307-presstv05.htm",
+    "A32": "https://www.worldbank.org/en/news/press-release/2025/03/07/lebanon-s-recovery-and-reconstruction-needs-estimated-at-us-11-billion"
+  },
+  "phases": [
+    {
+      "period": "2023–2024",
+      "total": {
+        "usd_m": [
+          14000.0
+        ],
+        "estimated": false,
+        "cell": "B2"
+      },
+      "damage": {
+        "usd_m": [
+          6800.0
+        ],
+        "estimated": false,
+        "cell": "B3"
+      },
+      "losses": {
+        "usd_m": [
+          7200.0
+        ],
+        "estimated": false,
+        "cell": "B4"
+      }
+    },
+    {
+      "period": "2026",
+      "total": {
+        "usd_m": [
+          7000.0,
+          9000.0
+        ],
+        "estimated": true,
+        "cell": "C2"
+      },
+      "damage": {
+        "usd_m": [
+          3000.0,
+          4000.0
+        ],
+        "estimated": true,
+        "cell": "C3"
+      },
+      "losses": {
+        "usd_m": [
+          4000,
+          5000
+        ],
+        "estimated": true,
+        "cell": "C4"
+      }
+    }
+  ],
+  "housing": {
+    "damage_usd_m": 4600,
+    "units_more_than": 100000,
+    "cell": "B3"
+  },
+  "channels": [
+    {
+      "id": "tourism",
+      "label": {
+        "en": "Businesses (tourism)",
+        "ar": "الأعمال السياحية"
+      },
+      "values": [
+        {
+          "value": 1263.7,
+          "cell": "B10"
+        },
+        {
+          "value": 3001,
+          "cell": "C10"
+        }
+      ]
+    },
+    {
+      "id": "households",
+      "label": {
+        "en": "Individuals and households",
+        "ar": "الأفراد والأسر"
+      },
+      "values": [
+        {
+          "value": 2937,
+          "cell": "B11"
+        },
+        {
+          "value": 569.6,
+          "cell": "C11"
+        }
+      ]
+    }
+  ],
+  "channel_totals": [
+    {
+      "value": 4200,
+      "cell": "B12"
+    },
+    {
+      "value": 3571,
+      "cell": "C12"
+    }
+  ],
+  "regions": [
+    {
+      "label": {
+        "en": "South Lebanon",
+        "ar": "جنوب لبنان"
+      },
+      "value": 1066.1,
+      "cell": "B17"
+    },
+    {
+      "label": {
+        "en": "Nabatieh",
+        "ar": "النبطية"
+      },
+      "value": 794.5,
+      "cell": "B18"
+    },
+    {
+      "label": {
+        "en": "Bekaa",
+        "ar": "البقاع"
+      },
+      "value": 809.7,
+      "cell": "B19"
+    },
+    {
+      "label": {
+        "en": "Baalbek–Hermel",
+        "ar": "بعلبك–الهرمل"
+      },
+      "value": 206.3,
+      "cell": "B20"
+    },
+    {
+      "label": {
+        "en": "Beirut’s southern suburbs",
+        "ar": "ضاحية بيروت الجنوبية"
+      },
+      "value": 60.4,
+      "cell": "B21"
+    }
+  ],
+  "regional_total": {
+    "value": 2937,
+    "cell": "B22"
+  },
+  "gdp": [
+    {
+      "year": 2023,
+      "growth_pct": -0.8,
+      "no_war_pct": 0.2,
+      "lost_pp": 1.0,
+      "projected": false,
+      "cell": "B5"
+    },
+    {
+      "year": 2024,
+      "growth_pct": -5.2,
+      "no_war_pct": null,
+      "lost_pp": 6.1,
+      "projected": false,
+      "cell": "B5"
+    },
+    {
+      "year": 2026,
+      "growth_pct": -6.4,
+      "no_war_pct": 4.0,
+      "lost_pp": 10.4,
+      "projected": true,
+      "cell": "C5"
+    }
+  ],
+  "sources": [
+    {
+      "cell": "A26",
+      "url": "https://documents1.worldbank.org/curated/en/099613508202629849/pdf/IDU-7d906a5a-127e-4567-9de3-8b13b0b6bbd1.pdf",
+      "label": {
+        "en": "World Bank · Lebanon Economic Monitor, Summer 2026 (PDF)",
+        "ar": "البنك الدولي · المرصد الاقتصادي للبنان، صيف 2026 (PDF)"
+      }
+    },
+    {
+      "cell": "A27",
+      "url": "https://www.worldbank.org/en/news/press-release/2026/08/21/renewed-conflict-derails-lebanon-s-fragile-economic-recovery",
+      "label": {
+        "en": "World Bank · Economic outlook, 21 Aug 2026",
+        "ar": "البنك الدولي · الآفاق الاقتصادية، 21 آب 2026"
+      }
+    },
+    {
+      "cell": "A28",
+      "url": "https://today.lorientlejour.com/article/1545802/war-expected-to-cost-lebanon-at-least-3-5-billion-in-tourism-and-consumption.html",
+      "label": {
+        "en": "L’Orient Today · Tourism and consumption losses",
+        "ar": "لوريان توداي · خسائر السياحة والاستهلاك"
+      }
+    },
+    {
+      "cell": "A29",
+      "url": "https://www.aa.com.tr/en/middle-east/israeli-wars-may-cost-lebanon-over-27b-prime-minister-says/4057780",
+      "label": {
+        "en": "Anadolu · Prime minister’s cost estimate",
+        "ar": "الأناضول · تقدير رئيس الحكومة لكلفة الحرب"
+      }
+    },
+    {
+      "cell": "A30",
+      "url": "https://www.worldbank.org/en/news/press-release/2024/11/14/new-world-bank-report-assesses-impact-of-conflict-on-lebanon-s-economy-and-key-sectors",
+      "label": {
+        "en": "World Bank · Conflict assessment, 14 Nov 2024",
+        "ar": "البنك الدولي · تقييم آثار النزاع، 14 تشرين الثاني 2024"
+      }
+    },
+    {
+      "cell": "A31",
+      "url": "https://www.globalsecurity.org/military/library/news/2025/03/mil-250307-presstv05.htm",
+      "label": {
+        "en": "GlobalSecurity / Press TV · Report, 7 Mar 2025",
+        "ar": "غلوبال سيكيوريتي / برس تي في · تقرير، 7 آذار 2025"
+      }
+    },
+    {
+      "cell": "A32",
+      "url": "https://www.worldbank.org/en/news/press-release/2025/03/07/lebanon-s-recovery-and-reconstruction-needs-estimated-at-us-11-billion",
+      "label": {
+        "en": "World Bank · Damage and recovery needs, 7 Mar 2025",
+        "ar": "البنك الدولي · الأضرار واحتياجات التعافي، 7 آذار 2025"
+      }
+    }
+  ]
+}

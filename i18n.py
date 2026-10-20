@@ -10,7 +10,7 @@ import streamlit as native
 from streamlit.delta_generator import DeltaGenerator
 
 ROOT = Path(__file__).resolve().parent
-TAB_LABELS = ['Government response', 'Budget', 'Restrictions & funding gaps', 'Tenders', 'Gazette', 'What parties are saying', 'What countries are saying', 'Evidence of destruction']
+TAB_LABELS = ['Government response', 'Budget', 'Economic losses', 'Restrictions & funding gaps', 'Tenders', 'Gazette', 'What parties are saying', 'What countries are saying', 'Evidence of destruction']
 
 
 def language():

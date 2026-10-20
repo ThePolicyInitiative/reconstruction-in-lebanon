@@ -12,6 +12,7 @@ from integrated_tenders import dashboard as tenders_dashboard, preserve_filters,
 from integrated_gazette import dashboard as gazette_dashboard, preserve_filters as preserve_gazette_filters
 from integrated_pages import show_parties, show_countries, show_evidence
 from budget import show_budget
+from economic_losses import show_economic_losses
 from reconstruction_barriers import show_reconstruction_barriers
 
 ROOT = Path(__file__).parent
@@ -34,7 +35,7 @@ with st.container(key='site-header'):
 
 preserve_filters()
 preserve_gazette_filters()
-government_tab, budget_tab, barriers_tab, tenders_tab, gazette_tab, parties_tab, countries_tab, evidence_tab = st.tabs(
+government_tab, budget_tab, losses_tab, barriers_tab, tenders_tab, gazette_tab, parties_tab, countries_tab, evidence_tab = st.tabs(
     TAB_LABELS, key='reconstruction_section', on_change='rerun')
 
 
@@ -51,6 +52,10 @@ if government_tab.open:
 if budget_tab.open:
     with budget_tab:
         show_budget()
+
+if losses_tab.open:
+    with losses_tab:
+        show_economic_losses()
 
 if barriers_tab.open:
     with barriers_tab:

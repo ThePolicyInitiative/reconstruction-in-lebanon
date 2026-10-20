@@ -58,7 +58,7 @@ class EvidenceTests(unittest.TestCase):
         self.enterContext(offline_tender_feed())
         app = AppTest.from_file(str(ROOT / "streamlit_app.py"), default_timeout=30).run()
         self.assertEqual(len(app.exception), 0, str(app.exception))
-        main_labels = ['Government response', 'Budget', 'Restrictions & funding gaps', 'Tenders', 'Gazette', 'What parties are saying', 'What countries are saying', 'Evidence of destruction']
+        main_labels = ['Government response', 'Budget', 'Economic losses', 'Restrictions & funding gaps', 'Tenders', 'Gazette', 'What parties are saying', 'What countries are saying', 'Evidence of destruction']
         self.assertEqual([tab.label for tab in app.tabs if tab.label in main_labels], main_labels)
         html = "".join(element.proto.body for element in app.get("html"))
         self.assertNotIn('id="delivery"', html)
