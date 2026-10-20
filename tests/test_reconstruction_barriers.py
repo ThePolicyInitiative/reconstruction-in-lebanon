@@ -11,7 +11,7 @@ from dashboard_data import load_data
 from i18n import TAB_LABELS, translate
 from reconstruction_barriers import (
     ROOT, RESTRICTION_GROUPS, barriers_html, case_group, dated,
-    load_barriers, sources_html, local_funding_html, ui, board_case_html,
+    load_barriers, sources_html, local_funding_html, ui, all_cases_html,
 )
 
 
@@ -165,52 +165,50 @@ class ReconstructionBarriersTests(unittest.TestCase):
                 else:
                     self.assertIn(ui('amount_unknown', lang), visible)
 
-    def test_selected_cases_and_language_switch_show_the_same_evidence(self):
+    def test_all_cases_show_without_selectors_in_both_languages(self):
         with patch('integrated_tenders.get_monitor'):
             app = AppTest.from_file(str(ROOT / 'streamlit_app.py'), default_timeout=30).run()
             label = 'Restrictions & funding gaps'
             app.session_state['reconstruction_section'] = label
             app.run()
-            html = ''.join(node.proto.body for node in app.get('html'))
-            self.assertIn('data-case="permit_stoppage"', html)
-            self.assertIn('data-funding-case="hosh_residual_debris"', html)
-            self.assertEqual(len(app.selectbox(key='barriers_selected_case__en').options), 12)
-            self.assertEqual(len(app.selectbox(key='barriers_selected_local__en').options), 4)
-            app.session_state['reconstruction_section'] = label
-            app.selectbox(key='barriers_selected_case__en').set_value('blat_return')
-            app.selectbox(key='barriers_selected_local__en').set_value('houla_school_support')
-            app.run()
-            self.assertFalse(app.exception)
-            html = ''.join(node.proto.body for node in app.get('html'))
-            self.assertIn('data-case="blat_return"', html)
-            self.assertIn('data-funding-case="houla_school_support"', html)
-            self.assertNotIn('data-case="permit_stoppage"', html)
-            app.session_state['reconstruction_section'] = label
-            app.button(key='language_toggle').click().run()
-            self.assertFalse(app.exception)
-            self.assertEqual(app.session_state['barriers_selected_case'], 'blat_return')
-            self.assertEqual(app.session_state['barriers_selected_local'], 'houla_school_support')
-            self.assertEqual(app.selectbox(key='barriers_selected_case__ar').value, 'blat_return')
-            self.assertTrue(any('حولا' in option for option in app.selectbox(key='barriers_selected_local__ar').options))
-            html = ''.join(node.proto.body for node in app.get('html'))
-            self.assertIn('data-funding-case="houla_school_support"', html)
-            self.assertIn('المبلغ غير مذكور', html)
-            self.assertIn('dir="rtl"', html)
+            for lang in ('en', 'ar'):
+                if lang == 'ar':
+                    app.session_state['reconstruction_section'] = label
+                    app.button(key='language_toggle').click().run()
+                self.assertFalse(app.exception)
+                self.assertFalse(any((widget.key or '').startswith('barriers_') for widget in app.selectbox))
+                html = ''.join(node.proto.body for node in app.get('html'))
+                root = html_parser.fromstring(html)
+                for record in load_barriers()['physical']:
+                    self.assertEqual(len(root.xpath(f'.//article[@data-case="{record["id"]}"]')), 1)
+                for record in load_barriers()['funding_cases']:
+                    self.assertEqual(len(root.xpath(f'.//article[@data-funding-case="{record["id"]}"]')), 1)
+                self.assertIn(ui('not_quantified', lang), html)
 
-    def test_one_page_case_panels_keep_all_key_fields_visible(self):
+    def test_all_case_summaries_keep_required_fields_and_sources(self):
         data = load_barriers()
         for lang in ('en', 'ar'):
+            root = html_parser.fromstring(all_cases_html(data, lang))
             for funding, records in ((False, data['physical']), (True, data['funding_cases'])):
                 for record in records:
-                    root = html_parser.fromstring(board_case_html(record, lang, funding))
-                    self.assertFalse(root.xpath('.//details'))
-                    visible = ' '.join(root.itertext())
+                    attribute = 'data-funding-case' if funding else 'data-case'
+                    card = root.xpath(f'.//article[@{attribute}="{record["id"]}"]')[0]
+                    summary = card.xpath('./details/summary')[0]
+                    visible = ' '.join(summary.itertext())
                     for field in ('place', 'actor', 'activity' if funding else 'blocked'):
                         self.assertIn(record[field][lang], visible)
-                    self.assertEqual(root.xpath('.//time/@datetime'), [record['date']])
+                    self.assertEqual(summary.xpath('.//time/@datetime'), [record['date']])
+                    self.assertIn(ui(record['date_kind'], lang), visible)
+                    self.assertEqual(set(card.xpath('.//a/@href')),
+                                     {data['sources'][key]['url'] for key in record['sources']})
+                    for field in ('action', 'limit'):
+                        self.assertIn(record[field][lang], ' '.join(card.itertext()))
                     if funding:
                         self.assertIn(ui('not_quantified', lang), visible)
                         self.assertNotIn('$0', visible)
+                        if record.get('household_cost_usd'):
+                            self.assertIn('$1,500', visible)
+                            self.assertIn(ui('household_cost', lang), visible)
 
     def test_new_tab_renders_and_survives_language_switch(self):
         with patch('integrated_tenders.get_monitor'):
