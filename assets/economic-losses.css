@@ -5,6 +5,9 @@
 .losses-page h2{font-size:19px;line-height:1.3}
 .losses-page h3{font-size:14px;line-height:1.35}
 .losses-page small{font-weight:400}
+.losses-page .losses-provenance{font-size:12px;line-height:1.55;margin-top:13px;padding-top:10px;border-top:1px solid #ccd7df;overflow-wrap:anywhere}
+.losses-page .losses-caution{font-size:12px;line-height:1.55;padding:10px 12px;border-inline-start:3px solid #b38c49;background:#fcf6eb;margin-top:12px}
+.losses-phase>header>span{max-width:55%;text-align:end}
 .losses-page a{color:#000;text-underline-offset:3px}
 .losses-heading>p{margin-top:3px;font-size:13px}
 .stMainBlockContainer:has(.st-key-economic-losses){padding-top:12px;padding-bottom:18px}
@@ -15,7 +18,7 @@
 .losses-phase.losses-estimated{border-color:#d5c29d;background:#fcf6eb}
 .losses-phase>header{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .losses-phase>header h2{font-size:19px}
-.losses-phase>header span{font-size:11px}
+.losses-phase>header span{font-size:12px}
 .losses-phase>p{font-size:12px;margin-top:8px}
 .losses-headline{display:flex;align-items:baseline;gap:7px;font-size:38px;line-height:1.2;margin-top:1px}
 .losses-headline>small{font-size:15px}
@@ -28,30 +31,39 @@
 .losses-housing>strong{font-size:18px;white-space:nowrap}
 .losses-housing>div{font-size:12px}
 .losses-housing>div>span{display:block}
-.losses-housing>small{margin-inline-start:auto;max-width:180px;font-size:11px}
-.losses-page .losses-note{font-size:11px;line-height:1.5;margin-top:6px}
+.losses-housing>small{margin-inline-start:auto;max-width:180px;font-size:12px}
+.losses-page .losses-note{font-size:12px;line-height:1.5;margin-top:6px}
+.losses-sector-grid,.losses-idp-grid,.losses-location-grid{display:grid;gap:12px;margin-top:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.losses-idp-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.losses-page .losses-section-title{font-size:17px;margin-top:20px}
+.losses-report{margin-top:12px;padding-top:10px;border-top:1px solid #d1d8df}
+.losses-report>p{font-size:13px}
+.losses-idp-value{display:block;font-size:25px;line-height:1.35;margin-top:10px;overflow-wrap:anywhere}
+.losses-original+h3{margin-top:20px}
+@media(max-width:900px){.losses-sector-grid,.losses-idp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.losses-sector-grid,.losses-idp-grid,.losses-location-grid{grid-template-columns:minmax(0,1fr)}}
 .losses-charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
 .losses-panel{border:1px solid #d1d8df;border-radius:7px;padding:14px 16px;min-width:0}
 .losses-panel>header{display:flex;justify-content:space-between;align-items:baseline;gap:7px;flex-wrap:wrap}
-.losses-panel>header>span{font-size:10px}
+.losses-panel>header>span{font-size:11px}
 .losses-panel>header>h2{font-size:17px}
 .losses-channel{margin-top:13px}
 .losses-channel>h3{margin-bottom:7px}
 .losses-pair{display:grid;grid-template-columns:66px minmax(0,1fr) 58px;align-items:center;gap:7px;margin-top:5px}
-.losses-pair>span{font-size:10px}
+.losses-pair>span{font-size:11px}
 .losses-pair>strong{font-size:13px;text-align:end}
 .losses-track{height:12px;background:#f0f2f4;direction:ltr;overflow:hidden;border-radius:2px}
 .losses-track>span{display:block;height:100%;background:#aabed1}
 .losses-track>span.losses-projection{background:repeating-linear-gradient(135deg,#e4c48d 0,#e4c48d 4px,#b99456 4px,#b99456 5px)}
 .losses-channel-totals{display:flex;justify-content:space-between;align-items:baseline;gap:9px;border-top:1px solid #d1d8df;padding-top:8px;margin-top:13px}
-.losses-channel-totals>b{font-size:11px}
+.losses-channel-totals>b{font-size:12px}
 .losses-channel-totals>div{display:flex;flex-direction:column;gap:2px;text-align:end}
-.losses-channel-totals span{font-size:10px}
+.losses-channel-totals span{font-size:11px}
 .losses-channel-totals strong{font-size:16px}
 .losses-region{margin-top:10px}
 .losses-region>div:first-child{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:12px;margin-bottom:3px}
 .losses-region .losses-track{height:8px}
-.losses-regional-total{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid #d1d8df;margin-top:10px;padding-top:7px;font-size:11px}
+.losses-regional-total{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid #d1d8df;margin-top:10px;padding-top:7px;font-size:12px}
 .losses-regional-total>strong{font-size:17px}
 .losses-gdp>header{display:flex;align-items:baseline;justify-content:space-between;gap:6px 15px;flex-wrap:wrap}
 .losses-gdp>header>p{font-size:12px}
@@ -59,9 +71,9 @@
 .losses-gdp-card{border:1px solid #d1d8df;border-radius:6px;padding:11px 14px}
 .losses-gdp-card>header{display:flex;justify-content:space-between;align-items:baseline;gap:5px}
 .losses-gdp-card>header h3{font-size:17px}
-.losses-gdp-card>header span{font-size:10px}
+.losses-gdp-card>header span{font-size:11px}
 .losses-gdp-card>strong{display:flex;align-items:baseline;gap:7px;margin:6px 0;font-size:28px;line-height:1.25}
-.losses-gdp-card>strong>small{font-size:11px}
+.losses-gdp-card>strong>small{font-size:12px}
 .losses-gdp-card>p{font-size:13px;margin-top:7px}
 .losses-gdp-card .losses-track{height:8px}
 .losses-sources ul{padding-inline-start:20px;margin-top:8px}
@@ -72,6 +84,8 @@
 .losses-original th:first-child{width:65px}
 .losses-page[dir="rtl"]{text-align:right;line-height:1.65}
 .losses-page[dir="rtl"] .losses-headline{font-size:36px}
-@media(max-width:700px){.losses-phase{padding:12px}.losses-phase>header{flex-wrap:wrap;gap:2px}.losses-headline{font-size:31px}.losses-headline>small{font-size:12px}.losses-components{gap:6px}.losses-components strong{font-size:18px}.losses-components strong>small{font-size:10px}.losses-housing{flex-wrap:wrap;gap:7px 12px}.losses-housing>small{max-width:none;flex-basis:100%;margin:0}.losses-charts{grid-template-columns:minmax(0,1fr)}.losses-gdp-grid{gap:8px}.losses-gdp-card{padding:10px}.losses-gdp-card>strong{flex-wrap:wrap;gap:2px;font-size:24px}.losses-gdp-card>strong>small{flex-basis:100%;font-size:10px}.losses-gdp-card>p{font-size:12px}}
-@media(max-width:440px){.losses-page h1{font-size:24px}.losses-phases{gap:8px}.losses-phase{padding:10px}.losses-phase>header h2{font-size:16px}.losses-headline,.losses-page[dir="rtl"] .losses-headline{font-size:29px;flex-wrap:wrap;gap:0 4px}.losses-headline>small{font-size:11px}.losses-components{grid-template-columns:minmax(0,1fr);gap:7px}.losses-components span{font-size:11px}.losses-gdp-grid{grid-template-columns:minmax(0,1fr)}.losses-gdp-card{display:grid;grid-template-columns:55px minmax(0,1fr);gap:4px 10px}.losses-gdp-card>header{grid-column:1;grid-row:1 / 3;flex-direction:column;justify-content:flex-start}.losses-gdp-card>strong{margin:0;flex-wrap:nowrap}.losses-gdp-card>strong>small{flex-basis:auto}.losses-gdp-card>.losses-track,.losses-gdp-card>p{grid-column:2}.losses-gdp-card>p{margin:0}.losses-gdp>header>p{font-size:11px}}
+@media(max-width:700px){.losses-phase{padding:12px}.losses-phase>header{flex-wrap:wrap;gap:2px}.losses-headline{font-size:31px}.losses-headline>small{font-size:12px}.losses-components{gap:6px}.losses-components strong{font-size:18px}.losses-components strong>small{font-size:11px}.losses-housing{flex-wrap:wrap;gap:7px 12px}.losses-housing>small{max-width:none;flex-basis:100%;margin:0}.losses-charts{grid-template-columns:minmax(0,1fr)}.losses-gdp-grid{gap:8px}.losses-gdp-card{padding:10px}.losses-gdp-card>strong{flex-wrap:wrap;gap:2px;font-size:24px}.losses-gdp-card>strong>small{flex-basis:100%;font-size:11px}.losses-gdp-card>p{font-size:12px}}
+@media(max-width:440px){.losses-page h1{font-size:24px}.losses-phases{gap:8px}.losses-phase{padding:10px}.losses-phase>header h2{font-size:16px}.losses-headline,.losses-page[dir="rtl"] .losses-headline{font-size:29px;flex-wrap:wrap;gap:0 4px}.losses-headline>small{font-size:12px}.losses-components{grid-template-columns:minmax(0,1fr);gap:7px}.losses-components span{font-size:12px}.losses-gdp-grid{grid-template-columns:minmax(0,1fr)}.losses-gdp-card{display:grid;grid-template-columns:55px minmax(0,1fr);gap:4px 10px}.losses-gdp-card>header{grid-column:1;grid-row:1 / 3;flex-direction:column;justify-content:flex-start}.losses-gdp-card>strong{margin:0;flex-wrap:nowrap}.losses-gdp-card>strong>small{flex-basis:auto}.losses-gdp-card>.losses-track,.losses-gdp-card>p{grid-column:2}.losses-gdp-card>p{margin:0}.losses-gdp>header>p{font-size:12px}}
 @media(max-width:440px){.losses-phase>header{display:block;min-height:46px}}
+/* Workbook wording kept under its Arabic translation. */
+.losses-page .losses-original{font-size:11px;color:#333;margin-top:3px;text-align:left;overflow-wrap:anywhere}

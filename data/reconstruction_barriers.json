@@ -346,6 +346,7 @@
   "physical": [
     {
       "id": "permit_stoppage",
+      "rationale": {"en":"Reported planning and property-registration permit dispute.","ar":"خلاف بحسب التقرير حول تراخيص التنظيم والتسجيل العقاري."},
       "category": "building",
       "status": "reported_enforcement",
       "date": "2025-03-04",
@@ -380,6 +381,7 @@
     },
     {
       "id": "basta_repairs",
+      "rationale": {"en":"Permit dispute; the NGO says governor approval had been obtained.","ar":"خلاف حول الترخيص؛ وتقول الجمعية إنها حصلت على موافقة المحافظ."},
       "category": "building",
       "status": "reported_enforcement",
       "date": "2025-10-10",
@@ -415,6 +417,7 @@
     },
     {
       "id": "houla_markaba_road",
+      "rationale": {"en":"Residents’ safety after attacks on the route.","ar":"سلامة الأهالي بعد استهداف الطريق."},
       "category": "roads",
       "status": "safety_restriction",
       "date": "2025-03-17",
@@ -449,6 +452,7 @@
     },
     {
       "id": "aitaroun_return",
+      "rationale": {"en":"Army clearance of mines and unexploded ordnance before entry.","ar":"مسح الجيش للألغام والذخائر غير المنفجرة قبل الدخول."},
       "category": "return",
       "status": "temporary_restriction",
       "date": "2025-02-01",
@@ -483,6 +487,7 @@
     },
     {
       "id": "blida_entry",
+      "rationale": {"en":"Army clearance, a designated entry route and municipal permission for moving belongings.","ar":"مسح الجيش، وطريق دخول محدد، وإذن بلدي لنقل الأغراض."},
       "category": "return",
       "status": "temporary_restriction",
       "date": "2025-02-17",
@@ -517,6 +522,7 @@
     },
     {
       "id": "houla_return",
+      "rationale": {"en":"Engineering work to reopen and secure roads before return.","ar":"أعمال هندسية لفتح الطرق وتأمينها قبل العودة."},
       "category": "return",
       "status": "temporary_restriction",
       "date": "2025-02-17",
@@ -552,6 +558,7 @@
     },
     {
       "id": "maroun_return",
+      "rationale": {"en":"Road clearance and army engineering work before scheduled entry.","ar":"فتح الطرق وأعمال هندسية للجيش قبل موعد الدخول المحدد."},
       "category": "return",
       "status": "temporary_restriction",
       "date": "2025-02-17",
@@ -587,6 +594,7 @@
     },
     {
       "id": "boundary_documents",
+      "rationale": {"en":"A boundary document was required before a building permit.","ar":"اشتُرط مستند لتحديد الحدود قبل منح رخصة البناء."},
       "category": "building",
       "status": "administrative_condition",
       "date": "2025-01-16",
@@ -621,6 +629,7 @@
     },
     {
       "id": "rubble_approval",
+      "rationale": {"en":"Municipal approval and authorised transport to a designated disposal site.","ar":"موافقة البلدية وترخيص النقل إلى موقع مخصص للتخلص من الردميات."},
       "category": "debris",
       "status": "administrative_condition",
       "date": "2025-01-16",
@@ -655,6 +664,7 @@
     },
     {
       "id": "army_road_closures",
+      "rationale": {"en":"Safety on closed routes and in villages with Israeli troops.","ar":"السلامة على الطرق المغلقة وفي القرى التي توجد فيها قوات إسرائيلية."},
       "category": "roads",
       "status": "safety_restriction",
       "date": "2026-04-17",
@@ -689,6 +699,7 @@
     },
     {
       "id": "blat_return",
+      "rationale": {"en":"Army road surveys and clearance of explosive hazards.","ar":"مسح الجيش للطرق وإزالة مخاطر المتفجرات."},
       "category": "return",
       "status": "temporary_restriction",
       "date": "2026-06-19",
@@ -723,6 +734,7 @@
     },
     {
       "id": "leap_clearance",
+      "rationale": {"en":"Site eligibility depends on clearance of explosives and human remains.","ar":"تعتمد أهلية الموقع على خلوّه من المتفجرات والرفات البشرية."},
       "category": "building",
       "status": "programme_condition",
       "date": "2026-02-17",

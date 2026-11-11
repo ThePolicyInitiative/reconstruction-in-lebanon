@@ -547,7 +547,8 @@
       "title": "Tenders launched",
       "detail": "CDR tenders cover roads, shelters, ambulances and equipment. Publication does not establish completion.",
       "source": "nabatieh_oct",
-      "link_label": "Nabatieh speech"
+      "link_label": "Nabatieh speech",
+      "delivery_evidence": "Tender publication is reported. Work on site and completion are not established by this announcement."
     },
     {
       "date": "2026-10-02",
@@ -556,7 +557,8 @@
       "title": "Additional tenders planned",
       "detail": "Includes repairs to five hospitals, including Nabatieh Governmental Hospital, and rescue and firefighting vehicles.",
       "source": "nabatieh_oct",
-      "link_label": "Nabatieh speech"
+      "link_label": "Nabatieh speech",
+      "delivery_evidence": "These tenders were planned. Publication, award and delivery are not established by this announcement."
     },
     {
       "date": "2026-10-09",
@@ -565,7 +567,8 @@
       "title": "Local consultations",
       "detail": "Imran Riza, Social Affairs and partners heard from more than 40 mayors about restoring services and livelihoods.",
       "source": "un_oct",
-      "link_label": "Read the UN findings"
+      "link_label": "Read the UN findings",
+      "delivery_evidence": "Consultations took place. They document local needs, not completed reconstruction."
     },
     {
       "date": "2026-09-23",
@@ -574,7 +577,8 @@
       "title": "EU support for 2026–2027",
       "detail": "Services, recovery, reforms and security. Part of the earlier €1 billion EU package; separate from LEAP financing below.",
       "source": "eu_sep",
-      "link_label": "European Commission announcement"
+      "link_label": "European Commission announcement",
+      "delivery_evidence": "A support package was adopted. This record does not establish reconstruction payments or completed works."
     }
   ]
 }

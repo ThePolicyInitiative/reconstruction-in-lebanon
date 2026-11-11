@@ -236,12 +236,36 @@ def build():
                     assert sources[ref]['actor'] in row['actorIds'], (row['id'], ref)
     for axis, bundles in used_bundles.items():
         assert bundles == set(category_coding['assignments'][axis]), (axis, 'Unused category coding')
-    output = dict(reviewed=additions['reviewed'], rosterReviewed=ROSTER_REVIEWED,
+    # Topic claims are non-exclusive and tied to named actors, never membership.
+    review = read_json(ROOT / 'data' / 'political_topic_review.json')
+    for ref, statement in review['sources'].items():
+        assert ref not in sources, ref
+        sources[ref] = statement
+    by_id = {row['id']: row for row in entities}
+    for identifier, actors_to_add in review['actorBindings'].items():
+        assert identifier in by_id, identifier
+        by_id[identifier]['actorIds'] += [a for a in actors_to_add if a not in by_id[identifier]['actorIds']]
+    for row in entities:
+        row['stances'] = {axis: [copy.deepcopy(pos)] if pos else [] for axis, pos in row['positions'].items()}
+    for claim in review['claims']:
+        axis = claim['axis']
+        assert claim['category'] in category_ids[axis]
+        assert claim['sources'] and all(claim['reason'].values())
+        for identifier in claim['entities']:
+            row = by_id[identifier]
+            for ref in claim['sources']:
+                assert ref in sources and sources[ref]['actor'] in row['actorIds'], (identifier, ref)
+            if not any(p['category'] == claim['category'] and p['sources'] == claim['sources'] for p in row['stances'][axis]):
+                row['stances'][axis].append({k: copy.deepcopy(claim[k]) for k in ('category', 'sources', 'reason')})
+    for row in entities:
+        row['statementIds'] = list(dict.fromkeys(row['statementIds'] + [ref for ps in row['stances'].values() for p in ps for ref in p['sources']]))
+    output = dict(reviewed=max(additions['reviewed'], review['reviewed']), rosterReviewed=ROSTER_REVIEWED,
+                  topicReview=review['reviewed'], topicReviewNote=review['note'],
                   categories=category_coding['axes'], categoryMethod=category_coding['method'], categoriesReviewed=category_coding['reviewed'],
                   statementsReviewed=additions['reviewed'], archiveReviewed=archive['checked'], entities=entities, sources=sources,
                   rosterSources={'deputies':MP_LIST,'ministers':CABINET,'parties':PARTY_LIST},
                   rosterMethod='MPs: 128 region-populated entries in the official directory, cross-checked against the saved names. Cabinet: 24 members on the official government roster. Party directory: all non-defunct entries in the cited list, existing archive and Project Watan. No completeness claim for Lebanon’s legal register; activity of minor movements is not individually reverified.')
-    (PARTIES / 'positions.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (PARTIES / 'positions.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\r\n')
     print({layer:sum(e['layer']==layer for e in entities) for layer in ('parties','deputies','ministers')})
     return output
 

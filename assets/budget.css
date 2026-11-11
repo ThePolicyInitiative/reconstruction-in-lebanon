@@ -3,7 +3,7 @@
 .budget-page h1,.budget-page h2,.budget-page p{margin:0}
 .budget-heading{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px 0 20px}
 .budget-heading h1{font-size:32px;letter-spacing:-1px;line-height:1.2;margin:3px 0 8px}
-.budget-kicker{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px}
+.budget-kicker{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px}
 .budget-unit{text-align:right;font-size:12px;flex-shrink:0}
 .budget-unit span{display:block}
 .budget-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #c7d4ce}
@@ -17,12 +17,12 @@
 .budget-difference>strong{font-size:21px;white-space:nowrap}
 .budget-difference strong span{font-size:13px;font-weight:600}
 .budget-difference p{font-size:12px}
-.budget-page .budget-scope{font-size:11px;margin:12px 0 4px;line-height:1.6}
+.budget-page .budget-scope{font-size:12px;margin:12px 0 4px;line-height:1.6}
 .budget-breakdown{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;margin:5px 0 16px}
 .budget-allocations,.budget-draft-change{border:1px solid #d7dfda;padding:22px;min-width:0}
 .budget-page h2{font-size:21px;line-height:1.25;margin:4px 0 10px;letter-spacing:-.4px}
 .budget-total h2{font-size:13px;letter-spacing:0;margin:0 0 8px}
-.budget-chart-note{font-size:11px;margin-bottom:18px!important}
+.budget-chart-note{font-size:12px;margin-bottom:18px!important}
 .budget-bars{list-style:none;padding:0;margin:0;display:grid;gap:16px}
 .budget-bar-label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:12px}
 .budget-bar-label strong{font-size:15px;white-space:nowrap}
@@ -30,31 +30,31 @@
 .budget-bar-track span{display:block;height:100%;background:#88ab9b}
 .budget-bars li:nth-child(2) .budget-bar-track span{background:#9eafc2}
 .budget-bars li:nth-child(3) .budget-bar-track span{background:#c6b287}
-.budget-bar-detail{display:flex;justify-content:space-between;font-size:10px;gap:8px}
-.budget-missing{font-size:11px;line-height:1.5;border-top:1px solid #dce4e0;padding-top:12px;margin-top:18px!important}
+.budget-bar-detail{display:flex;justify-content:space-between;font-size:11px;gap:8px}
+.budget-missing{font-size:12px;line-height:1.5;border-top:1px solid #dce4e0;padding-top:12px;margin-top:18px!important}
 .budget-draft-change{background:#fafaf7}
 .budget-draft-change>p:not(.budget-kicker){font-size:12px;line-height:1.7}
 .budget-flow-start{margin-top:20px;border:1px solid #bccbd6;background:#eef3f7;padding:13px 16px;display:grid;gap:3px}
 .budget-flow-start strong{font-size:28px;letter-spacing:-.8px}
-.budget-flow-start small,.budget-flow-split small{font-size:11px;font-weight:600}
+.budget-flow-start small,.budget-flow-split small{font-size:12px;font-weight:600}
 .budget-flow-arrow{text-align:center;font-size:25px;line-height:35px}
 .budget-flow-split{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .budget-flow-split>div{display:flex;flex-direction:column;border:1px solid #d0d9d1;background:#eef4ed;padding:12px;gap:7px;min-width:0}
 .budget-flow-split>div+div{background:#f7f1e5;border-color:#ded3bc}
 .budget-flow-split strong{font-size:20px;letter-spacing:-.5px;white-space:nowrap}
-.budget-flow-split span{font-size:11px;line-height:1.5}
-.budget-flow-note{margin-top:15px!important;font-size:11px!important}
-.budget-code-note{font-size:11px;border-top:1px solid #d8dfd9;margin-top:14px;padding-top:10px}
+.budget-flow-split span{font-size:12px;line-height:1.5}
+.budget-flow-note{margin-top:15px!important;font-size:12px!important}
+.budget-code-note{font-size:12px;border-top:1px solid #d8dfd9;margin-top:14px;padding-top:10px}
 .budget-code-note summary{cursor:pointer;font-weight:600}
-.budget-code-note p{overflow-wrap:anywhere;font-size:10px;padding-top:6px}
+.budget-code-note p{overflow-wrap:anywhere;font-size:11px;padding-top:6px}
 .budget-table-wrap{max-width:100%;overflow-x:auto;padding:0 0 10px}
 .budget-table{width:100%;min-width:760px;border-collapse:collapse;font-size:12px}
 .budget-table caption{text-align:left;font-size:12px;font-weight:600;padding:10px 0}
 .budget-table th,.budget-table td{text-align:left;vertical-align:top;padding:13px 12px;border-bottom:1px solid #dce4e0}
 .budget-table thead th{background:#f1f5f2;font-weight:700;white-space:nowrap}
 .budget-table tbody th{width:46%;font-weight:500}
-.budget-table small{display:block;font-size:10px;overflow-wrap:anywhere;margin-top:5px}
-.budget-table details{margin-top:7px;font-size:11px}
+.budget-table small{display:block;font-size:11px;overflow-wrap:anywhere;margin-top:5px}
+.budget-table details{margin-top:7px;font-size:12px}
 .budget-table details p{margin:6px 0}
 .budget-table details summary{cursor:pointer}
 .budget-table .budget-number{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
@@ -62,4 +62,4 @@
 .st-key-budget-page [data-testid="stWidgetLabel"] p,.st-key-budget-page [data-testid="stCaptionContainer"] p,.st-key-budget-page [data-testid="stMarkdownContainer"] *,.st-key-budget-page [data-baseweb="select"] *{color:#000!important}
 .st-key-budget-page [data-testid="stSelectbox"]{max-width:330px;margin:7px 0}
 @media(max-width:900px){.budget-breakdown{grid-template-columns:1fr}.budget-total{padding:16px}.budget-total>strong{font-size:30px}.budget-heading h1{font-size:29px}}
-@media(max-width:560px){.budget-heading{display:block;padding:15px 0}.budget-unit{display:flex;flex-wrap:wrap;gap:12px;text-align:left;margin-top:9px}.budget-totals{grid-template-columns:1fr}.budget-total+.budget-total{border-left:0;border-top:1px solid #c7d4ce}.budget-total{padding:14px 18px}.budget-total>strong{font-size:32px}.budget-difference{display:block;padding:12px}.budget-difference p{margin-top:4px}.budget-heading h1{font-size:28px}.budget-allocations,.budget-draft-change{padding:17px}.budget-flow-split{grid-template-columns:1fr}.budget-breakdown{gap:16px}.budget-bar-label{font-size:11px}.budget-bar-label strong{font-size:14px}.budget-bar-detail{font-size:10px}}
+@media(max-width:560px){.budget-heading{display:block;padding:15px 0}.budget-unit{display:flex;flex-wrap:wrap;gap:12px;text-align:left;margin-top:9px}.budget-totals{grid-template-columns:1fr}.budget-total+.budget-total{border-left:0;border-top:1px solid #c7d4ce}.budget-total{padding:14px 18px}.budget-total>strong{font-size:32px}.budget-difference{display:block;padding:12px}.budget-difference p{margin-top:4px}.budget-heading h1{font-size:28px}.budget-allocations,.budget-draft-change{padding:17px}.budget-flow-split{grid-template-columns:1fr}.budget-breakdown{gap:16px}.budget-bar-label{font-size:12px}.budget-bar-label strong{font-size:14px}.budget-bar-detail{font-size:11px}}

@@ -8,11 +8,14 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from .data_feed import YEARS, SITE_URL, FIELDS
 from .live_data import CloudGazetteFeed
-from .analytics import ALL, RELATED, CATEGORIES, tag_records, filter_records, csv_rows
+from .analytics import (ALL, RELATED, CATEGORIES, NO_SUBJECT, tag_records, filter_records, csv_rows,
+                        classification_options, field_matches)
+from integrated_tenders.categories import ALL_PROGRAMMES, NO_LEAP, VERSION as CATEGORY_VERSION
 from .labels import STATUS_LABELS, TYPE_LABELS
 from .charts import subject_charts, timeline_charts, classification_charts
 
 FILTER_KEYS = ('gazette_search', 'gazette_years', 'gazette_subject', 'gazette_types', 'gazette_majors', 'gazette_statuses', 'gazette_detail',
+               'gazette_subs', 'gazette_natures', 'gazette_functions', 'gazette_programme',
                'gazette_comparison_window', 'gazette_policy_chart_scope')
 
 
@@ -24,7 +27,7 @@ def preserve_filters():
 
 
 @st.cache_data(show_spinner=False, max_entries=3)
-def saved_data(snapshot):
+def saved_data(snapshot, category_version=CATEGORY_VERSION):
     return {**snapshot, 'records': tag_records(snapshot['records'])}
 
 
@@ -47,6 +50,7 @@ def detail(row):
     st.link_button('Open original Gazette record ↗', row['url'])
     st.caption('Original record pages may require your Gazette subscription.')
     st.write('Assessment status: ' + status_label(row['status']))
+    st.caption(translate('Programme') + ': ' + (' · '.join(row['programmes']) or translate(NO_LEAP)))
     if row['status'] == 'needs-source-review':
         st.info('This saved classification still needs source review. It is included in the totals and is not an approved finding.')
     fields = [('Nature', row['nature']), ('Administrative function', row['admin_function']),
@@ -58,7 +62,7 @@ def detail(row):
             st.caption('These website subjects use wording in the saved title. They do not replace Memo automation classifications.')
             st.dataframe(pd.DataFrame([{'Subject': e['Category'], 'Matched wording': e['Matched wording']} for e in row['subject_evidence']]), hide_index=True, width='stretch')
         else:
-            st.caption('No explicit match for the seven subjects was found in this title.')
+            st.caption('No explicit recovery subject or LEAP reference was found in the saved title.')
         st.caption('Blank source fields remain blank in downloads. Original Arabic titles are preserved in both languages.')
         st.download_button('Download original Gazette record · JSON',
                            json.dumps({k: row[k] for k in FIELDS}, ensure_ascii=False, indent=2),
@@ -81,20 +85,37 @@ def dashboard():
         st.warning(connection['error'])
     if snapshot['invalid_exports']:
         st.warning('A newer Gazette export could not be read. The last valid saved records remain available.')
-    with st.expander('Filter Gazette records'):
+    with st.expander('Filter Gazette records', expanded=True):
         search = st.text_input('Search Gazette records', placeholder='Arabic title, document number, subject or ID', key='gazette_search')
         a, b, c = st.columns(3)
         years = a.multiselect('Publication year', YEARS, key='gazette_years', placeholder='2024, 2025 and 2026')
-        subject = b.selectbox('Website subject', [ALL, RELATED, *CATEGORIES], key='gazette_subject')
+        subject = b.selectbox('Website subject', [ALL, RELATED, NO_SUBJECT, *CATEGORIES], key='gazette_subject')
         types = c.multiselect('Document type', list(TYPE_LABELS), format_func=lambda v: TYPE_LABELS[v], key='gazette_types')
         a, b = st.columns(2)
-        majors = a.multiselect('Memo main category', sorted({r['major'] for r in rows if r['major']}), key='gazette_majors')
-        statuses = b.multiselect('Assessment status', sorted({r['status'] for r in rows}), format_func=status_label, key='gazette_statuses')
+        majors = a.multiselect('Memo main category', classification_options(rows, 'major'), key='gazette_majors')
+        sub_options = classification_options([r for r in rows if field_matches(r, 'major', majors)], 'sub')
+        # A new main category can invalidate a previously selected subcategory.
+        for key in ('gazette_subs', 'gazette_subs__ar'):
+            if key in st.session_state:
+                st.session_state[key] = [v for v in st.session_state[key] if v in sub_options]
+        saved = st.session_state.get('_localized_choices', {}).get('gazette_subs')
+        if saved:
+            saved['value'] = [v for v in saved['value'] if v in sub_options]
+        subs = b.multiselect('Memo subcategory', sub_options, key='gazette_subs')
+        a, b = st.columns(2)
+        natures = a.multiselect('Nature', classification_options(rows, 'nature'), key='gazette_natures')
+        functions = b.multiselect('Administrative function', classification_options(rows, 'admin_function'), key='gazette_functions')
+        a, b = st.columns(2)
+        statuses = a.multiselect('Assessment status', sorted({r['status'] for r in rows}), format_func=status_label, key='gazette_statuses')
+        programme = b.selectbox('Programme', [ALL_PROGRAMMES, 'LEAP', NO_LEAP], key='gazette_programme')
+        st.caption('Equivalent classification labels are grouped for filtering. Original labels and blank fields remain unchanged in downloads.')
+        st.caption('Recovery subjects describe the work. LEAP is a separate programme filter; a programme reference alone does not establish reconstruction.')
         if st.button('Refresh Gazette data', key='gazette_reload'):
             get_feed().refresh(force=True)
             saved_data.clear()
             st.rerun()
-    filtered = filter_records(rows, search, years, subject, types, majors, statuses)
+    filtered = filter_records(rows, search, years, subject, types, majors, statuses,
+                              subs, natures, functions, programme)
     a, b, c, d = st.columns(4)
     a.metric('Gazette records', f'{len(rows):,}', help='Unique saved records published in 2024, 2025 or 2026, before filtering.')
     b.metric('Matching records', f'{len(filtered):,}')
@@ -112,9 +133,11 @@ def dashboard():
                     st.markdown(f'<div class="gazette-title">{html.escape(row["title"])}</div>', unsafe_allow_html=True)
                     if row['subjects']:
                         st.markdown(' '.join(f'<span class="gazette-tag">{html.escape(translate(c))}</span>' for c in row['subjects']), unsafe_allow_html=True)
+                    if row['programmes']:
+                        st.caption(translate('Programme') + ': ' + ' · '.join(row['programmes']))
                     st.link_button('Open Gazette record ↗', row['url'])
             frame = pd.DataFrame(csv_rows(filtered))
-            st.dataframe(frame, hide_index=True, width='stretch', height=430, column_order=['Published', 'Document type', 'Document number', 'Gazette title', 'Website subjects', 'Main category', 'Source'],
+            st.dataframe(frame, hide_index=True, width='stretch', height=430, column_order=['Published', 'Document type', 'Document number', 'Gazette title', 'Website subjects', 'Programme', 'Main category', 'Subcategory', 'Source'],
                          column_config={'Gazette title': st.column_config.TextColumn(width='large'),
                                         'Source': st.column_config.LinkColumn(display_text='Open ↗')}, key='gazette_records_table')
             safe = frame.map(lambda value: "'" + value if isinstance(value, str) and value.lstrip().startswith(('=', '+', '-', '@')) else value)
@@ -124,6 +147,8 @@ def dashboard():
             selected = st.selectbox('Explore a Gazette record', list(lookup), format_func=lambda rid: f'{lookup[rid]["date"]} · {lookup[rid]["type"]} {lookup[rid]["number"]} · {lookup[rid]["title"]}', key='gazette_detail')
             detail(lookup[selected])
     with subjects:
+        st.caption(f"{sum('LEAP' in r['programmes'] for r in filtered):,} · " + translate('Explicit LEAP references'))
+        st.caption(f"{sum(not r['subjects'] for r in filtered):,} · " + translate(NO_SUBJECT))
         subject_charts(filtered, years)
     with timeline:
         timeline_charts(filtered, rows, years)
@@ -139,7 +164,7 @@ Only laws, decrees and decisions published in 2024–2026 appear here. Totals de
 
 **Classifications and subjects**
 
-Memo automation supplies Nature, Administrative function, Main category and Subcategory. Original values and blanks are preserved in downloads. Owner-supplied fields, automated proposals and records needing review remain distinguishable. The seven website subjects are separate title-based filters; indirect references and information inside scans may be missed.
+Memo automation supplies Nature, Administrative function, Main category and Subcategory. Original values and blanks are preserved in downloads. Owner-supplied fields, automated proposals and records needing review remain distinguishable. Equivalent labels are grouped in filters, and subcategories follow the selected main categories. Choose Not specified to find blank fields. The six recovery subjects and the separate LEAP programme filter use saved title wording; indirect references and information inside scans may be missed. No recovery subject match means no explicit match in the saved title, not a reviewed finding that the record is unrelated to recovery.
 
 **Updates**
 

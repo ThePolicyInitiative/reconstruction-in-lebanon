@@ -1,0 +1,160 @@
+{
+  "reviewed": "2026-10-23",
+  "baseline_reviewed": "2026-10-19",
+  "note": {
+    "en": "Additional topic coding retains the original dated evidence. It does not establish current policy or change the roster verification date.",
+    "ar": "يحافظ التصنيف الإضافي للمواضيع على الأدلة المؤرخة الأصلية، ولا يثبت السياسة الحالية أو يغيّر تاريخ مراجعة اللوائح."
+  },
+  "sources": {
+    "REFORM-JUL28": {
+      "id": "REFORM-JUL28",
+      "actor": "reform-group-july",
+      "speaker": {
+        "en": "Yassine Yassine, Waddah Sadek, Firas Hamdan, Michel Doueihy and Mark Daou — joint statement",
+        "ar": "ياسين ياسين ووضاح الصادق وفراس حمدان وميشال الدويهي ومارك ضو — موقف مشترك"
+      },
+      "publisher": {
+        "en": "Lebanon24 — reported joint statement",
+        "ar": "لبنان24 — موقف مشترك منقول"
+      },
+      "date": "2026-07-28",
+      "url": "https://www.lebanon24.com/news/lebanon-news/1554792/lebanon24",
+      "summary": {
+        "en": "The five named MPs backed state-led negotiations, Israeli withdrawal, residents’ return and reconstruction under state authority. The report does not specify a financing channel or an explicit weapons-transfer proposal.",
+        "ar": "أيد النواب الخمسة المذكورون التفاوض بقيادة الدولة والانسحاب الإسرائيلي وعودة الأهالي والإعمار تحت سقف الشرعية. لا يحدد التقرير قناة تمويل أو مقترحاً صريحاً لتسليم السلاح."
+      },
+      "attribution": {
+        "en": "Reported collective position of the five named MPs; not separate individual interviews or a statement by their parties.",
+        "ar": "موقف جماعي منقول للنواب الخمسة المذكورين؛ ليس مقابلات فردية ولا بياناً صادراً عن أحزابهم."
+      },
+      "checked": "2026-10-23"
+    }
+  },
+  "actorBindings": {
+    "mp-381": [
+      "reform-group-july"
+    ],
+    "mp-400": [
+      "reform-group-july"
+    ],
+    "mp-386": [
+      "reform-group-july"
+    ],
+    "mp-397": [
+      "reform-group-july"
+    ],
+    "mp-393": [
+      "reform-group-july"
+    ]
+  },
+  "claims": [
+    {
+      "entities": [
+        "mp-381",
+        "mp-400",
+        "mp-386",
+        "mp-397",
+        "mp-393"
+      ],
+      "axis": "reconstruction",
+      "category": 8,
+      "sources": [
+        "REFORM-JUL28"
+      ],
+      "reason": {
+        "en": "Supports state-led return and reconstruction in a jointly reported statement.",
+        "ar": "يؤيد العودة والإعمار بقيادة الدولة في موقف مشترك منقول."
+      }
+    },
+    {
+      "entities": [
+        "mp-381",
+        "mp-400",
+        "mp-386",
+        "mp-397",
+        "mp-393"
+      ],
+      "axis": "reconstruction",
+      "category": 4,
+      "sources": [
+        "REFORM-JUL28"
+      ],
+      "reason": {
+        "en": "Includes residents’ return to their villages among the stated objectives.",
+        "ar": "يضع عودة الأهالي إلى قراهم ضمن الأهداف المعلنة."
+      }
+    },
+    {
+      "entities": [
+        "party-lf",
+        "mp-372"
+      ],
+      "axis": "financing",
+      "category": 8,
+      "sources": [
+        "GH-02"
+      ],
+      "reason": {
+        "en": "Identifies investment as a reconstruction financing channel, conditional on addressing the arms crisis.",
+        "ar": "يطرح الاستثمار قناة لتمويل الإعمار ويربط توافره بمعالجة أزمة السلاح."
+      }
+    },
+    {
+      "entities": [
+        "party-lf",
+        "mp-372"
+      ],
+      "axis": "financing",
+      "category": 9,
+      "sources": [
+        "GH-02"
+      ],
+      "reason": {
+        "en": "Links access to reconstruction support to resolving the arms crisis.",
+        "ar": "يربط الحصول على دعم الإعمار بمعالجة أزمة السلاح."
+      }
+    },
+    {
+      "entities": [
+        "minister-mitri"
+      ],
+      "axis": "financing",
+      "category": 6,
+      "sources": [
+        "TM-01"
+      ],
+      "reason": {
+        "en": "Discusses a World Bank reconstruction loan awaiting approval at the statement date.",
+        "ar": "يناقش قرضاً للإعمار من البنك الدولي كان ينتظر الإقرار بتاريخ التصريح."
+      }
+    },
+    {
+      "entities": [
+        "minister-mitri"
+      ],
+      "axis": "reconstruction",
+      "category": 7,
+      "sources": [
+        "TM-01"
+      ],
+      "reason": {
+        "en": "Describes a reconstruction fund backed by Arab and international contributions.",
+        "ar": "يصف صندوق إعمار تدعمه مساهمات عربية ودولية."
+      }
+    },
+    {
+      "entities": [
+        "minister-hani"
+      ],
+      "axis": "reconstruction",
+      "category": 7,
+      "sources": [
+        "NH-RECOVERY"
+      ],
+      "reason": {
+        "en": "Proposes a disaster fund alongside agricultural recovery measures.",
+        "ar": "يقترح صندوقاً للكوارث إلى جانب إجراءات التعافي الزراعي."
+      }
+    }
+  ]
+}

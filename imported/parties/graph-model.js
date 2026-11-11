@@ -100,7 +100,29 @@
         }
       }
     }
+    for (const e of data.entities) for (const axis of axes) for (const p of stances(e,axis)) {
+      if (!categoryValues(axis,data.categories).includes(p.category) || !p.sources?.length || !p.reason?.en || !p.reason?.ar) throw Error('Invalid topic claim: '+e.id);
+      for (const ref of p.sources) {
+        const s=data.sources[ref];
+        if (!s || !e.actorIds.includes(s.actor) || !/^https:\/\//.test(s.url)) throw Error('Unattributed topic evidence: '+e.id);
+      }
+    }
     return true;
   }
-  return {axes, categoryValue, categoryValues, normalize, placement, filter, cells, reconstructionOnly, evidence, packLabels, statistics, validate};
+  function stances(entity, axis) {
+    return entity.stances?.[axis] || (entity.positions[axis] ? [entity.positions[axis]] : []);
+  }
+  function topicCounts(entities, axis, categories) {
+    return categories[axis].map(category => ({...category,
+      entities: entities.filter(e => stances(e, axis).some(p => p.category === category.id))}));
+  }
+  function topicFilter(entities, {layer, query='', coverage='documented', topic=''}) {
+    const tokens=normalize(query).split(/\s+/).filter(Boolean);
+    const [axis,id]=topic.split(':');
+    return entities.filter(e => e.layer===layer &&
+      tokens.every(token=>normalize([e.name.en,e.name.ar,e.role.en,e.role.ar,...(e.aliases||[])].join(' ')).includes(token)) &&
+      (coverage==='all' || (coverage==='missing' ? axes.some(a=>!stances(e,a).length) : axes.some(a=>stances(e,a).length))) &&
+      (!topic || stances(e,axis).some(p=>p.category===Number(id))));
+  }
+  return {axes, categoryValue, categoryValues, normalize, placement, filter, cells, reconstructionOnly, evidence, packLabels, statistics, validate, stances, topicCounts, topicFilter};
 });

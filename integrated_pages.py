@@ -19,9 +19,9 @@ _evidence = components.declare_component(
 def _page_key(name):
     """Reload an open component when its saved content or translations change."""
     directory = ROOT / 'imported' / name
-    filenames = ['index.html', 'ar.json']
+    filenames = ['index.html', 'ar.json', 'arabic.css']
     if name == 'parties':
-        filenames += ['positions.json', 'graphs.js', 'graph-model.js', 'graphs.css']
+        filenames += ['positions.json', 'comparison.js', 'graph-model.js', 'comparison.css']
     revision = max((directory / filename).stat().st_mtime_ns for filename in filenames)
     return f'{name}_{language()}_{revision}'
 

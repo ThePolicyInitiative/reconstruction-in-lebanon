@@ -37,3 +37,7 @@
 @media(max-width:800px){.funding-panel{border-left:0}.overview-title>p,.budget-unit{text-align:right}}
 @media(max-width:560px){.budget-total+.budget-total{border-right:0}.budget-page h2{font-size:21px}.overview h1{font-size:29px}}
 @media(max-width:760px){.overview .stage:not(:last-child):after{content:'↓';right:29px;left:auto}.overview .actor{border-left:0;border-right:2px solid #6c9c85}.overview .stages-panel .panel-title>small{margin-right:24px}.funding-numbers{gap:25px}}
+.stMainBlockContainer :is(button,input,textarea,summary,li,td,th,h4),.stMainBlockContainer [data-testid="stMetricValue"],.stMainBlockContainer [data-baseweb="select"] div{font-family:Tahoma,Arial,sans-serif}
+.st-key-tenders-page h1,.st-key-gazette-page h1{letter-spacing:0;line-height:1.45}
+.stApp[data-test-script-state="running"]:not(:has([data-baseweb="tab-panel"]:not([hidden]) [data-testid="stElementContainer"]))::after{content:"جارٍ التحميل…";font-family:Tahoma,Arial,sans-serif}
+.stMainBlockContainer :is(.overview,.budget-heading,.losses-page,.barriers-page,.st-key-tenders-page,.st-key-gazette-page) h1{letter-spacing:0;line-height:1.4}

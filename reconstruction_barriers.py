@@ -26,7 +26,7 @@ UI = {
     'funding': ('Missing funding', 'التمويل الناقص'),
     'restriction_type': ('Choose a type of restriction', 'اختر نوع القيد'),
     'funding_type': ('Choose the funding evidence', 'اختر نوع أدلة التمويل'),
-    'stopped': ('Work stopped', 'وقف الأعمال'),
+    'stopped': ('Reported work stoppages', 'وقف أعمال بحسب تقارير'),
     'roads': ('Road access', 'استخدام الطرق'),
     'return': ('Return to villages', 'العودة إلى القرى'),
     'conditions': ('Rules before work', 'شروط بدء الأعمال'),
@@ -131,6 +131,12 @@ UI = {
     'place_date': ('Town / area · date', 'البلدة / المنطقة · التاريخ'),
     'all_cases_hint': ('All cases shown · Open any row for context and sources.', 'كل الحالات ظاهرة · افتح أي سطر للاطلاع على التفاصيل والمصادر.'),
     'dated_short': ('Dated records; restrictions are not confirmed to remain in force.', 'سجلات مؤرخة؛ لم يُؤكد استمرار القيود حتى اليوم.'),
+    'scope_limit': ('Decisions by Lebanese authorities. This is not a complete account of all obstacles to reconstruction, including Israeli military actions.', 'قرارات السلطات اللبنانية. لا يشمل هذا القسم كل عوائق الإعمار، ومنها الأعمال العسكرية الإسرائيلية.'),
+    'reason_short': ('Reported reason / requirement', 'السبب أو الشرط الوارد في المصدر'),
+    'status_short': ('Status & evidence limits', 'الوضع وحدود الأدلة'),
+    'safety_count': ('Safety & entry notices', 'إعلانات السلامة والدخول'),
+    'requirements_count': ('Administrative / programme requirements', 'شروط إدارية أو خاصة بالبرنامج'),
+    'distinction': ('These are different kinds of constraint. A safety notice or eligibility requirement is not evidence of a policy to prevent reconstruction.', 'هذه قيود من أنواع مختلفة. لا يثبت إعلان سلامة أو شرط أهلية وجود سياسة لمنع الإعمار.'),
     'allocation_short': ('State allocation', 'تخصيص الدولة'),
     'local_short': ('Unmet needs reported; unknown allocations do not mean zero funding.', 'حاجات غير مغطاة بحسب التقارير؛ المبالغ المجهولة لا تعني انعدام التمويل.'),
 }
@@ -322,7 +328,8 @@ def sources_html(data, lang='en'):
 
 def board_header(data, lang):
     return page_wrapper(f'''<header class="barriers-board-heading"><h1>{ui('title', lang)}</h1>
-      <p>{ui('scope', lang)} · {ui('reviewed', lang)} {dated(data['reviewed_on'], lang)}</p></header>''', lang)
+      <p>{ui('scope', lang)} · {ui('reviewed', lang)} {dated(data['reviewed_on'], lang)}</p>
+      <p class="barriers-scope-limit">{ui('scope_limit', lang)}</p></header>''', lang)
 
 
 def funding_strip(data, lang):
@@ -352,12 +359,15 @@ def compact_case_row(data, record, lang, funding=False):
     later = f'<small class="ledger-later">{ui("return_reported", lang)}</small>' if record['id'] == 'houla_return' else ''
     impact_label = ui('uncovered_activity' if funding else 'conditional_blocked', lang)
     attribute = 'data-funding-case' if funding else 'data-case'
+    reason = '' if funding else f'<span><b>{ui("reason_short", lang)}</b>{text("rationale")}</span>'
+    status = ui('return_reported', lang) if record['id'] == 'houla_return' else ui('rule_scope', lang) if not funding and case_group(record) == 'conditions' else ui('status_unverified', lang) if not funding else ui(record['evidence'], lang)
+    context = f'<span class="ledger-context">{reason}<span><b>{ui("status_short", lang)} · {status}</b>{text("limit")}</span></span>'
     return f'''<article {attribute}="{record['id']}"><details class="ledger-case">
       <summary class="ledger-columns {'ledger-funding-columns' if funding else ''}">
         <span class="ledger-place"><span class="ledger-toggle" aria-hidden="true"></span><strong>{text('place')}</strong>{case_date(record, lang)}</span>
         <span class="ledger-authority" data-label="{ui('local_authority' if funding else 'authority', lang)}">{text('actor')}</span>
         <span class="ledger-impact" data-label="{impact_label}">{text('activity' if funding else 'blocked')}{later}</span>
-        {amount_html}</summary>
+        {amount_html}{context}</summary>
       <div class="ledger-evidence"><h4>{text('title')}</h4><p>{text('action')}</p><p>{text('limit')}</p>
         {links_html(data, record['sources'], lang)}</div></details></article>'''
 
@@ -377,8 +387,11 @@ def all_cases_html(data, lang):
         groups.append(f'''<section class="ledger-group" data-group="{group}">
           <h3>{icon(symbols[group], 16, '#000')}{ui(group, lang)}<span>{len(records)}</span></h3>
           {''.join(compact_case_row(data, row, lang) for row in records)}</section>''')
+    counts = {group: sum(case_group(row) == group for row in data['physical']) for group in RESTRICTION_GROUPS}
+    overview = ''.join(f'<div><strong>{count}</strong><span>{ui(label, lang)}</span></div>' for count, label in ((counts['stopped'], 'stopped'), (counts['roads'] + counts['return'], 'safety_count'), (counts['conditions'], 'requirements_count')))
     return page_wrapper(f'''<div class="case-ledger">
       <header class="ledger-section-title"><h2>{ui('restriction_panel', lang)} <span>{len(data['physical'])}</span></h2><p>{ui('dated_short', lang)}</p></header>
+      <div class="restriction-overview">{overview}</div><p class="restriction-distinction">{ui('distinction', lang)}</p>
       {ledger_labels(lang)}{''.join(groups)}
       <header class="ledger-section-title ledger-local-title"><h2>{ui('local_panel', lang)} <span>{len(data['funding_cases'])}</span></h2><p>{ui('local_short', lang)}</p></header>
       <section class="ledger-group ledger-local" data-group="local">{ledger_labels(lang, True)}

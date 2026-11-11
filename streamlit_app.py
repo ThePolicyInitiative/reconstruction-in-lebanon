@@ -3,25 +3,14 @@ import json
 from pathlib import Path
 
 from i18n import st, initialize_language, language, toggle_language, translate, TAB_LABELS
-
-from dashboard_data import load_data
-from overview import government_overview
-from source_notes import sources_explained
 from visuals import icon
-from integrated_tenders import dashboard as tenders_dashboard, preserve_filters, get_monitor
-from integrated_gazette import dashboard as gazette_dashboard, preserve_filters as preserve_gazette_filters
-from integrated_pages import show_parties, show_countries, show_evidence
-from budget import show_budget
-from economic_losses import show_economic_losses
-from reconstruction_barriers import show_reconstruction_barriers
 
 ROOT = Path(__file__).parent
-DATA = load_data()
 
+# Send the styles and site header first, so a cold start shows the header and
+# the loading indicator while the data modules below are imported.
 initialize_language()
 st.set_page_config(page_title=translate('Reconstruction in Lebanon'), page_icon='🇱🇧', layout='wide')
-# Start once per server process; collection continues independently of the selected tab.
-get_monitor()
 st.html(ROOT / 'assets' / 'overview.css')
 st.html(ROOT / 'assets' / 'tabs.css')
 if language() == 'ar':
@@ -32,6 +21,23 @@ with st.container(key='site-header'):
         st.html(f'''<header class="brand"><div class="brand-cedar">{icon('cedar',27,'#ba3037')}</div><div><strong>RECONSTRUCTION</strong><span>IN LEBANON</span></div></header>''')
     with language_column:
         st.button('العربية' if language() == 'en' else 'English', key='language_toggle', on_click=toggle_language, width='stretch')
+
+from dashboard_data import load_data
+from overview import government_overview
+from source_notes import sources_explained
+from integrated_tenders import dashboard as tenders_dashboard, preserve_filters, get_monitor
+from integrated_gazette import dashboard as gazette_dashboard, preserve_filters as preserve_gazette_filters
+from integrated_pages import show_parties, show_countries, show_evidence
+from budget import show_budget
+from economic_losses import show_economic_losses
+from reconstruction_barriers import show_reconstruction_barriers
+from auto_update.ui import start_updater, show_headlines, auto_update_footer
+
+DATA = load_data()
+# Start once per server process; collection continues independently of the selected tab.
+get_monitor()
+# Rebuilds changed data files and collects new headlines while the server runs.
+start_updater()
 
 preserve_filters()
 preserve_gazette_filters()
@@ -48,18 +54,22 @@ def show_government():
 if government_tab.open:
     with government_tab:
         show_government()
+        show_headlines('government')
 
 if budget_tab.open:
     with budget_tab:
         show_budget()
+        show_headlines('budget')
 
 if losses_tab.open:
     with losses_tab:
         show_economic_losses()
+        show_headlines('losses')
 
 if barriers_tab.open:
     with barriers_tab:
         show_reconstruction_barriers()
+        show_headlines('barriers')
 
 if tenders_tab.open:
     with tenders_tab:
@@ -74,11 +84,16 @@ if gazette_tab.open:
 if parties_tab.open:
     with parties_tab:
         show_parties()
+        show_headlines('parties')
 
 if countries_tab.open:
     with countries_tab:
         show_countries()
+        show_headlines('countries')
 
 if evidence_tab.open:
     with evidence_tab:
         show_evidence()
+        show_headlines('evidence')
+
+auto_update_footer()

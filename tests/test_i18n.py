@@ -65,12 +65,12 @@ class ArabicTests(unittest.TestCase):
         app.session_state['reconstruction_section'] = 'المناقصات'
         app.run()
         self.assertFalse(app.exception)
-        app.selectbox(key='tender_category__ar').set_value('LEAP')
+        app.selectbox(key='tender_programme__ar').set_value('LEAP')
         app.session_state['reconstruction_section'] = 'المناقصات'
         app.run()
         self.assertFalse(app.exception)
-        self.assertEqual(app.selectbox(key='tender_category__ar').value,'LEAP')
-        self.assertEqual(app.selectbox(key='tender_category__ar').label,translate('Category','ar'))
+        self.assertEqual(app.selectbox(key='tender_programme__ar').value,'LEAP')
+        self.assertEqual(app.selectbox(key='tender_programme__ar').label,translate('Programme','ar'))
         counts=[int(metric.value.replace(',','')) for metric in app.metric if metric.label==translate('Filtered tenders','ar')]
         self.assertEqual(len(counts),2)
         self.assertTrue(all(value>0 for value in counts))

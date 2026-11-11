@@ -2,12 +2,13 @@
 from __future__ import annotations
 import re
 from collections import Counter
-from integrated_tenders.categories import CATEGORIES, classify, category_normalize
+from integrated_tenders.categories import (SUBJECTS as CATEGORIES, classify, category_normalize,
+    ANY_SUBJECT, NO_SUBJECT, ALL_PROGRAMMES, matches_subject, matches_programme)
 from .data_feed import YEARS
 from .labels import TYPE_LABELS
 
 ALL = 'All Gazette records'
-RELATED = 'Any of the seven subjects'
+RELATED = ANY_SUBJECT
 
 
 def tag_records(rows):
@@ -23,18 +24,24 @@ def tag_records(rows):
             title = re.sub(pattern, lambda m: ' ' * len(m[0]), title)
         matched = classify({'title': title})
         # The original title and original classification are always retained.
-        result.append({**row, 'subjects': matched['categories'], 'subject_evidence': matched['category_evidence']})
+        result.append({**row, 'subjects': matched['recovery_subjects'], 'programmes': matched['programmes'],
+                       'subject_evidence': matched['category_evidence']})
     return result
 
 
-def filter_records(rows, query='', years=(), subject=ALL, types=(), majors=(), statuses=()):
+def filter_records(rows, query='', years=(), subject=ALL, types=(), majors=(), statuses=(),
+                   subs=(), natures=(), functions=(), programme=ALL_PROGRAMMES):
     query = category_normalize(query).strip()
     return [r for r in rows
             if r['date'][:4] in (years or YEARS)
             and (not query or query in category_normalize(' '.join(str(r.get(k) or '') for k in ('id', 'number', 'title', 'major', 'sub', 'admin_function'))))
-            and (subject == ALL or subject == RELATED and r['subjects'] or subject in r['subjects'])
+            and (subject == ALL or matches_subject(r['subjects'], subject))
+            and matches_programme(r.get('programmes', []), programme)
             and (not types or r['type'] in types)
-            and (not majors or r['major'] in majors)
+            and field_matches(r, 'major', majors)
+            and field_matches(r, 'sub', subs)
+            and field_matches(r, 'nature', natures)
+            and field_matches(r, 'admin_function', functions)
             and (not statuses or r['status'] in statuses)]
 
 
@@ -42,6 +49,7 @@ def csv_rows(rows):
     return [{'ID': r['id'], 'Published': r['date'], 'Document type': r['type'],
              'Document number': r['number'], 'Gazette title': r['title'],
              'Website subjects': ' · '.join(r['subjects']), 'Nature': r['nature'],
+             'Programme': ' · '.join(r.get('programmes', [])),
              'Administrative function': r['admin_function'], 'Main category': r['major'],
              'Subcategory': r['sub'], 'Assessment status': r['status'],
              'Assessment method': r['method'], 'Review notes': r['review_reasons'],
@@ -107,11 +115,24 @@ def year_comparison(rows, coverage, years=(), same_window=True):
     return result
 
 
+def classification_label(value):
+    return ' '.join(str(value or '').split()) or 'Not specified'
+
+
+def field_matches(row, field, selected):
+    return not selected or classification_label(row.get(field)).casefold() in {
+        classification_label(value).casefold() for value in selected}
+
+
+def classification_options(rows, field):
+    return sorted((r['label'] for r in classification_breakdown(rows, field)), key=str.casefold)
+
+
 def classification_breakdown(rows, field):
     """Group case/space variants for charts only; retain all original labels in exports."""
     groups = {}
     for row in rows:
-        label = row.get(field, '').strip() or 'Not specified'
+        label = classification_label(row.get(field))
         group = groups.setdefault(label.casefold(), {'variants': Counter(), 'records': []})
         group['variants'][label] += 1
         group['records'].append(row)

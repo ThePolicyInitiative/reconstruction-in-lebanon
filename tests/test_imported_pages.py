@@ -57,7 +57,7 @@ class ImportedPageTests(unittest.TestCase):
         self.assertEqual(filtered, ['0', '0'])
         app.text_input(key='search').set_value('')
         run_tenders()
-        app.selectbox(key='tender_category').set_value('LEAP')
+        app.selectbox(key='tender_programme').set_value('LEAP')
         run_tenders()
         self.assertFalse(app.exception)
         filtered = [int(metric.value.replace(',', '')) for metric in app.metric if metric.label == 'Filtered tenders']
@@ -68,7 +68,7 @@ class ImportedPageTests(unittest.TestCase):
         app.session_state['reconstruction_section'] = 'Tenders'
         app.run()
         self.assertFalse(app.exception)
-        self.assertEqual(app.selectbox(key='tender_category').value, 'LEAP')
+        self.assertEqual(app.selectbox(key='tender_programme').value, 'LEAP')
 
     def test_other_tabs_do_not_wait_for_the_tender_feed(self):
         from unittest.mock import patch

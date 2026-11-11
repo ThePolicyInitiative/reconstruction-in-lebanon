@@ -8,6 +8,29 @@ DATA = json.loads((ROOT/'imported/parties/positions.json').read_text(encoding='u
 
 
 class PoliticalGraphTests(unittest.TestCase):
+    def test_additional_topics_are_attributed_and_do_not_imply_missing_views(self):
+        by_id = {e['id']: e for e in DATA['entities']}
+        for entity in DATA['entities']:
+            for axis, positions in entity['stances'].items():
+                if entity['positions'][axis]:
+                    self.assertIn(entity['positions'][axis], positions)
+                for position in positions:
+                    self.assertIn(position['category'], {c['id'] for c in DATA['categories'][axis]})
+                    self.assertTrue(position['reason']['en'])
+                    self.assertTrue(position['reason']['ar'])
+                    for ref in position['sources']:
+                        self.assertIn(DATA['sources'][ref]['actor'], entity['actorIds'])
+                        self.assertIn(ref, entity['statementIds'])
+                        self.assertLessEqual(DATA['sources'][ref]['date'], DATA['topicReview'])
+        for id in ('mp-381', 'mp-400', 'mp-386', 'mp-397'):
+            entry = by_id[id]
+            self.assertEqual({p['category'] for p in entry['stances']['reconstruction']}, {4, 8})
+            self.assertFalse(entry['stances']['arms'])
+            self.assertFalse(entry['stances']['financing'])
+        self.assertIn('collective', DATA['sources']['REFORM-JUL28']['attribution']['en'])
+        self.assertTrue({8, 9}.issubset({p['category'] for p in by_id['mp-372']['stances']['financing']}))
+        self.assertEqual(DATA['topicReview'], '2026-10-23')
+
     def test_specific_categories_are_reviewed_against_exact_axis_evidence(self):
         coding = json.loads((ROOT/'data/political_specific_categories.json').read_text(encoding='utf-8'))
         self.assertEqual([len(DATA['categories'][a]) for a in ('reconstruction','arms','financing')], [9,8,10])

@@ -31,6 +31,18 @@ class PageText(HTMLParser):
 
 
 class ReconstructionBarriersTests(unittest.TestCase):
+    def test_rationale_and_status_limits_are_visible_before_expanding(self):
+        data = load_barriers()
+        for lang in ('en', 'ar'):
+            tree = html_parser.fromstring(all_cases_html(data, lang))
+            self.assertEqual(tree.xpath('.//div[@class="restriction-overview"]/div/strong/text()'), ['2', '7', '3'])
+            for record in data['physical']:
+                summary = tree.xpath(f'.//article[@data-case="{record["id"]}"]/details/summary')[0]
+                self.assertIn(record['rationale'][lang], summary.text_content())
+                self.assertIn(record['limit'][lang], summary.text_content())
+            houla = tree.xpath('.//article[@data-case="houla_return"]/details/summary')[0]
+            self.assertIn(ui('return_reported', lang), houla.text_content())
+
     def test_cases_have_dated_attribution_and_explicit_limits(self):
         data = load_barriers()
         reviewed = date.fromisoformat(data['reviewed_on'])

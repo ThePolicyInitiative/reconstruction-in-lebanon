@@ -9,7 +9,8 @@ from unittest.mock import patch
 
 from streamlit.testing.v1 import AppTest
 from integrated_gazette import saved_data
-from integrated_gazette.analytics import ALL, RELATED, tag_records, filter_records, csv_rows
+from integrated_gazette.analytics import (ALL, RELATED, NO_SUBJECT, tag_records, filter_records,
+                                         csv_rows, classification_options)
 from integrated_gazette.data_feed import FIELDS, ROOT, load_snapshot, read_snapshot
 
 
@@ -67,6 +68,25 @@ class GazetteTests(unittest.TestCase):
             self.assertEqual(len(fallback['records']), 2)
             self.assertEqual(fallback['revisions'], ['old'])
 
+    def test_classification_filters_group_variants_keep_blanks_and_combine(self):
+        base = deepcopy(self.bundle['records'][0])
+        rows = tag_records([{**base, 'id':'a', 'title':'LEAP procurement specialist',
+                             'major':'Government Operations', 'sub':'Appointments', 'nature':'Administrative', 'admin_function':''},
+                            {**base, 'id':'b', 'title':'LEAP road works',
+                             'major':' government   operations ', 'sub':'appointments', 'nature':'Administrative', 'admin_function':''},
+                            {**base, 'id':'c', 'title':'Office supplies',
+                             'major':'', 'sub':'', 'nature':'', 'admin_function':''}])
+        before = deepcopy(rows)
+        self.assertEqual(classification_options(rows, 'major'), ['Government Operations', 'Not specified'])
+        self.assertEqual([r['id'] for r in filter_records(rows, majors=['Government Operations'],
+                         subs=['Appointments'], natures=['Administrative'], functions=['Not specified'])], ['a','b'])
+        self.assertEqual([r['id'] for r in filter_records(rows, majors=['Not specified'])], ['c'])
+        self.assertEqual([r['id'] for r in filter_records(rows, subject=NO_SUBJECT, programme='LEAP')], ['a'])
+        self.assertEqual([r['id'] for r in filter_records(rows, subject='Roads', programme='LEAP')], ['b'])
+        self.assertEqual(rows, before)
+        self.assertEqual(csv_rows(rows)[1]['Main category'], ' government   operations ')
+        self.assertEqual(csv_rows(rows)[2]['Subcategory'], '')
+
     def test_gazette_filters_downloads_and_language_switch(self):
         self.enterContext(patch('integrated_tenders.get_monitor'))
         mock_feed = self.enterContext(patch('integrated_gazette.get_feed'))
@@ -76,7 +96,8 @@ class GazetteTests(unittest.TestCase):
         app.session_state['reconstruction_section'] = 'Gazette'
         app.run()
         self.assertFalse(app.exception)
-        self.assertEqual([t.label for t in app.tabs][:4], ['Government response', 'Budget', 'Tenders', 'Gazette'])
+        self.assertEqual([t.label for t in app.tabs][:6], ['Government response', 'Budget', 'Economic losses',
+                                                       'Restrictions & funding gaps', 'Tenders', 'Gazette'])
         self.assertEqual(app.multiselect(key='gazette_years').options, ['2026', '2025', '2024'])
         app.selectbox(key='gazette_subject').set_value('Reconstruction')
         app.multiselect(key='gazette_years').set_value(['2024'])

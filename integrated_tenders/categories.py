@@ -7,7 +7,12 @@ from .tender_analytics import ARABIC_PREFIX, COMPILED_RULES, PREQUALIFICATION, n
 
 CATEGORIES = ('LEAP', 'Reconstruction', 'Damage assessment', 'Roads',
               'Electricity / water', 'Shelter management', 'Debris removal')
-VERSION = 2
+SUBJECTS = CATEGORIES[1:]
+ANY_SUBJECT = 'Any recovery subject'
+NO_SUBJECT = 'No recovery subject match'
+ALL_PROGRAMMES = 'All programmes'
+NO_LEAP = 'No explicit LEAP reference'
+VERSION = 4
 DEFINITIONS = {
     'LEAP': 'An explicit LEAP or Lebanon Emergency Assistance Project reference. A programme link can cover consulting, equipment or works.',
     'Reconstruction': 'Explicit rebuilding, or repairs to damaged assets linked to war or LEAP. Routine repairs alone are not reconstruction.',
@@ -31,11 +36,17 @@ RULES = {
                           r'\b(?:assessment|survey|mapping|evaluation|documentation)\s+of\s+(?:(?:the|war|structural)\s+)*damage\b',
                           r'\bevaluation\s+des\s+dommages\b'],
     'Roads': [ar(r'طرقات|طرق|اوتوستراد(?:ات)?|جسور|تزفيت|اسفلت|تعبيد'),
+              r'(?:مشروع|مشاريع|وصلة|توسعة|توسيع|تاهيل|صيانة|انشاء|شق|تخطيط)\s+(?:و(?:توسعة|توسيع|تاهيل|صيانة)\s+)?(?:ال)?طريق(?!\w)',
+              r'نفق\s+ل(?:ل?طريق)(?!\w)',
               r'(?:اشغال|صيانة|تاهيل|انشاء|ترميم|توسيع|تحسين|تعبيد|تصميم|تنفيذ|شق)\s+(?:واعادة\s+تاهيل\s+)?(?:ال)?(?:طرق|طريق|جسر)(?!\w)',
               r'(?:شبكة|شبكات|مشاريع|مشروع)\s+(?:ال)?طرق(?!\w)',
               r'\b(?:roads?|roadworks?|highways?|bridges?|asphalt|paving|pavements?)\b',
               r'\b(?:routier(?:e|es|s)?|routes?|chaussee|ponts?)\b'],
     'Electricity / water': [ar(r'كهرباء|كهربائية|كهربائي|كهربا[ئي]ية|مولدات|مولد|انارة|كهربا|كهربائيه'),
+                            r'(?:امدادات|انظمة|قناة|قسطل|قساطل|انابيب|فلاتر|ابار|بئر|سدود)\s+(?:ال)?مياه(?!\w)',
+                            r'مياه\s+(?:الامطار|مبتذلة|المبتذلة)(?!\w)',
+                            r'\bwater\s+(?:supplies|mains?|systems?|dams?)\b',
+                            r'كابلات\s+\d+\s*ك\.?\s*ف',
                             r'(?:شبك(?:ة|ات)|خطوط|خط|محط(?:ة|ات)|مضخ(?:ة|ات)|ضخ|توزيع|تغذية|تكرير|معالجة|تنقية|خزان(?:ات)?|تخزين|جر|عدادات|توفير|تزويد|توصيل)\s+(?:ل?ل?مياه|ال?مياه)',
                             r'(?:مياه\s+(?:الشفة|الشرب|الصرف)|صرف\s+صحي|الصرف\s+الصحي)',
                             ar(r'اقنية|مجارير|ري|تصريف|فوتوفولطية|كهروضوئية'),
@@ -111,5 +122,70 @@ def classify(row):
                 evidence[category]={'Category':category,'Source field':label,'Matched wording':match[0],
                                     'Evidence':text[max(0,match.start()-90):match.end()+180]}
     categories=[category for category in CATEGORIES if category in evidence]
-    return {**row,'categories':categories,'category_evidence':[evidence[c] for c in categories],
+    return {**row,'categories':categories,
+            'recovery_subjects':[c for c in categories if c in SUBJECTS],
+            'programmes':['LEAP'] if 'LEAP' in categories else [],
+            'category_evidence':[evidence[c] for c in categories],
             'category_version':VERSION}
+
+
+def matches_subject(categories, subject):
+    """Programme membership alone does not establish a recovery work subject."""
+    subjects = set(categories) & set(SUBJECTS)
+    if subject == ANY_SUBJECT:
+        return bool(subjects)
+    if subject == NO_SUBJECT:
+        return not subjects
+    return subject in categories
+
+
+def matches_programme(categories, programme):
+    return (programme == ALL_PROGRAMMES or
+            programme == 'LEAP' and 'LEAP' in categories or
+            programme == NO_LEAP and 'LEAP' not in categories)
+
+
+ADMINISTRATIVE = re.compile(r'\b(?:financial\s+officer|procurement\s+specialist|accounting\s+software|financial\s+audit|forensic\s+audit|third\s+party\s+monitoring|compliance\s+monitoring)\b|برنامج\s+محاسب|مدقق\s+حسابات|تدقيق\s+(?:جنائي|مالي)|خبير\s+(?:مالي|في\s+المشتريات)|ادار[ةي]\s+مالية|مراجعة\s+وتدقيق\s+واعداد\s+التقارير')
+DISPOSAL_OR_FUEL = re.compile(r'\b(?:auction|sale\s+of|fuel|diesel|gasoline)\b|(?:لبيع|بيع)\s+(?:خردة|مولد|اليات)|محروقات|مازوت|بنزين')
+BUILDING_SCOPE = re.compile(r'مدارس|مدرسة|منشات\s+تربوية|قسم\s+(?:القسطرة|العناية)|\b(?:schools?|hospital\s+ward|medical\s+equipment)\b')
+SATELLITE_SCOPE = re.compile(r'صور\s+اقمار\s+صناعية|\bsatellite\s+(?:imagery|images?)\b')
+TELECOM_SCOPE = re.compile(r'\b(?:cell\s+on\s+wheels|cows|lte[- ]a[- ]cpes)\b|اجهزة\s+انتهائية\s+لاسلكية')
+
+
+def classify_recovery(row):
+    """Separate a procurement sector from evidence that it serves recovery.
+
+    General sector detection remains available to the Gazette and in exports.
+    Tender recovery labels require context and follow the stated contract scope.
+    """
+    result = classify(row)
+    texts = [(label, clean(text, row.get('procuring_entity', ''))) for label, text in fragments(row)]
+    title = clean(row.get('title', ''), row.get('procuring_entity', ''))
+    primary = classify({'title': row.get('title', ''), 'procuring_entity': row.get('procuring_entity', ''),
+                        'topic_evidence': [item for item in row.get('topic_evidence', [])
+                                           if 'lot' in item.get('source', '').lower()]})
+    subjects = list(primary['recovery_subjects'])
+    # A named building contract must not acquire utility labels from ancillary repairs.
+    if not subjects and not BUILDING_SCOPE.search(title):
+        subjects = list(result['recovery_subjects'])
+    if 'Reconstruction' in result['recovery_subjects'] and 'Reconstruction' not in subjects:
+        subjects.insert(0, 'Reconstruction')
+    if SATELLITE_SCOPE.search(title) and 'Damage assessment' in subjects:
+        subjects = ['Damage assessment']
+    if TELECOM_SCOPE.search(title):
+        subjects = []
+    contexts = []
+    for label, text in texts:
+        match = COMPILED['LEAP'].search(text) or COMPILED_RULES['war'].search(text) or COMPILED['Reconstruction'].search(text)
+        if match:
+            contexts.append({'Category': 'Recovery link', 'Source field': label,
+                             'Matched wording': match[0],
+                             'Evidence': text[max(0, match.start()-90):match.end()+180]})
+    # Buying fuel, selling assets and project administration do not perform these works.
+    if not contexts or ADMINISTRATIVE.search(title) or DISPOSAL_OR_FUEL.search(title):
+        subjects = []
+    result['procurement_subjects'] = result['recovery_subjects']
+    result['recovery_subjects'] = [subject for subject in SUBJECTS if subject in subjects]
+    result['recovery_evidence'] = ([e for e in result['category_evidence'] if e['Category'] in subjects]
+                                   + contexts) if subjects else []
+    return result

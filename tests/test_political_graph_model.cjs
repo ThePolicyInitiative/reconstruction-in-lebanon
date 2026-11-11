@@ -34,6 +34,18 @@ for(const layer of ['parties','deputies','ministers'])for(const metric of ['arms
 }
 assert.deepEqual(M.axes.map(axis=>data.categories[axis].length),[9,8,10]);
 assert(M.validate(data));
+const hamdan=data.entities.find(e=>e.id==='mp-381');
+assert.equal(M.topicFilter(data.entities,{layer:'deputies',query:hamdan.name.ar}).some(e=>e.id===hamdan.id),true,'newly sourced MPs are searchable in Arabic');
+assert.equal(M.topicFilter(data.entities,{layer:'deputies',topic:'reconstruction:8'}).some(e=>e.id===hamdan.id),true);
+assert.equal(M.topicFilter(data.entities,{layer:'deputies',topic:'arms:5'}).some(e=>e.id===hamdan.id),false,'state-led reconstruction alone does not establish an arms position');
+const duplicate=structuredClone(hamdan);
+duplicate.stances.reconstruction.push(duplicate.stances.reconstruction[0]);
+const overlapping=M.topicCounts([duplicate],'reconstruction',data.categories);
+assert.equal(overlapping.filter(c=>c.entities.length).length,2,'one MP can support two themes');
+assert(overlapping.every(c=>c.entities.length<=1),'multiple statements do not double-count an MP within one theme');
+const invalidTopic=structuredClone(data);
+invalidTopic.entities.find(e=>e.id===hamdan.id).stances.reconstruction[0].sources=['TM-01'];
+assert.throws(()=>M.validate(invalidTopic),/Unattributed topic/,'reject another person’s evidence');
 const party=id=>data.entities.find(e=>e.id==='party-'+id);
 assert.notEqual(M.placement(party('fpm'),'arms').x,M.placement(party('amal'),'financing').x,'rejecting political conditions differs from urgent state action');
 const minister=id=>data.entities.find(e=>e.id==='minister-'+id);

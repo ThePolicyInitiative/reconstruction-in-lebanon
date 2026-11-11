@@ -5,7 +5,7 @@ html[lang="ar"] h1{max-width:none}
 html[lang="ar"] th,html[lang="ar"] .member-link,html[lang="ar"] .party-card{text-align:right}
 html[lang="ar"] ul,html[lang="ar"] ol{padding-left:0;padding-right:22px}
 html[lang="ar"] blockquote{border-left:0;border-right:3px solid #b6c8bd;padding-right:18px;padding-left:0}
-html[lang="ar"] blockquote[data-translated="true"]::before{content:"ترجمة المقتطف";display:block;font-size:11px;font-weight:700;margin-bottom:6px}
+html[lang="ar"] blockquote[data-translated="true"]::before{content:"ترجمة المقتطف";display:block;font-size:12px;font-weight:700;margin-bottom:6px}
 html[lang="ar"] .assessment{border-left:0;border-right:3px solid #b6c8bd}
 html[lang="ar"] .source-id,html[lang="ar"] code{direction:ltr;unicode-bidi:isolate;display:inline-block}
 html[lang="ar"] .panels img{direction:ltr}
@@ -16,3 +16,13 @@ html[lang="ar"] a{overflow-wrap:anywhere}
 body.party-page{height:100%;overflow:hidden}
 .party-scroll{height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;scrollbar-gutter:stable;-webkit-overflow-scrolling:touch}
 @media(max-width:560px){html[lang="ar"] h1{font-size:29px}html[lang="ar"] h2{font-size:23px}}
+/* Accessibility and touch layer for the embedded archives. */
+.card-note a,.citations a,.source-notes a{display:inline-block;padding-block:2px}
+@media(pointer:coarse){.card-note a,.citations a,.source-notes a{padding-block:10px}summary{min-height:44px;align-content:center}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+/* Match the main site's typeface and headline style inside the embedded pages. */
+html:not([lang="ar"]),html:not([lang="ar"]) body{font-family:Arial,Helvetica,sans-serif}
+h1,h2,h3{font-family:inherit;color:#000}
+h1{font-size:32px;font-weight:800;line-height:1.15;letter-spacing:-1.2px}
+h2{font-weight:700;letter-spacing:-.6px}
+@media(max-width:560px){h1{font-size:28px}}

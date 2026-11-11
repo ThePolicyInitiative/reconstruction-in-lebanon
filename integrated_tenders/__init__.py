@@ -11,7 +11,9 @@ from i18n import st, translate
 from .tender_analytics import UNKNOWN, LEAP_SOURCE, district_counts, newest_first, normalize
 from .live_data import FeedError
 from .automatic import AutomaticTenderFeed, get_process_monitor
-from .categories import CATEGORIES, DEFINITIONS, VERSION as CATEGORY_VERSION, classify
+from .categories import CATEGORIES, DEFINITIONS, VERSION as CATEGORY_VERSION, classify_recovery as classify
+from .categories import (SUBJECTS, ANY_SUBJECT, NO_SUBJECT, ALL_PROGRAMMES, NO_LEAP,
+                         matches_subject, matches_programme)
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -37,12 +39,13 @@ def get_feed():
 def preserve_filters():
     """Retain tender choices while another top-level tab is being displayed."""
     keys = ['search', 'districts', 'declared_only', 'years_2024_2026', 'period', 'tender_category',
-            'buyers', 'cdr_stage']
+            'tender_programme', 'buyers', 'cdr_stage']
     keys += [source + suffix for source in ('ppa', 'cdr')
              for suffix in ('_all_tenders_leap', '_topic_tenders_leap', '_detail')]
     for key in keys:
-        if key in st.session_state:
-            st.session_state[key] = st.session_state[key]
+        for candidate in (key, key + '__ar'):
+            if candidate in st.session_state:
+                st.session_state[candidate] = st.session_state[candidate]
 
 @st.cache_data(show_spinner=False)
 def load_json(path, modified_ns):
@@ -69,8 +72,11 @@ def export_frame(rows):
         "Tender": r["title"], "Buyer": r["procuring_entity"],
         "Districts": " · ".join(r["districts"]), "District basis": r["district_basis"],
         "Deadline": r.get("submission_deadline", ""), "Source status": r.get("status", ""),
-        "Categories": " · ".join(r['categories']) or "Not classified",
-        **{category: category in r['categories'] for category in CATEGORIES},
+        "Categories": " · ".join(r['programmes'] + r['recovery_subjects']) or "Not classified",
+        "Recovery subjects": " · ".join(r['recovery_subjects']) or NO_SUBJECT,
+        "Procurement subjects": " · ".join(r['procurement_subjects']),
+        "Programme": " · ".join(r['programmes']) or NO_LEAP,
+        **{category: category in r['programmes'] + r['recovery_subjects'] for category in CATEGORIES},
         "Source": r["source_url"],
     } for r in rows])
 
@@ -81,7 +87,7 @@ def draw_table(rows, key, source):
         st.info("No tenders match these filters. Change the category, widen the date range, or clear the search.")
         return rows
     st.dataframe(frame, hide_index=True, width="stretch", height=440,
-                 column_order=["Announced", "Categories", "Tender", "Buyer", "Districts", "Deadline", "Source"],
+                 column_order=["Announced", "Recovery subjects", "Programme", "Tender", "Buyer", "Districts", "Deadline", "Source"],
                  column_config={"Tender": st.column_config.TextColumn(width="large"),
                                 "Buyer": st.column_config.TextColumn(width="medium"),
                                 "Categories": st.column_config.TextColumn(width="medium"),
@@ -98,7 +104,9 @@ def show_detail(row, source, revision):
     st.subheader("Tender details")
     st.markdown(f'<div class="tender-title">{html.escape(row["title"])}</div>', unsafe_allow_html=True)
     st.caption(f'ID {row["id"]} · {row["procuring_entity"]} · Announced {row.get("announcement_date") or "not specified"}')
-    st.caption("Categories: " + (" · ".join(row['categories']) or "Not classified"))
+    subject_label = ' · '.join(translate(c) for c in row['recovery_subjects']) or translate(NO_SUBJECT)
+    st.caption(translate("Recovery subjects") + ': ' + subject_label)
+    st.caption(translate("Programme") + ': ' + (' · '.join(row['programmes']) or translate(NO_LEAP)))
     st.link_button(f"Open original {source.upper()} record ↗", row["source_url"])
     if row["summary"]:
         st.markdown(f'<div class="arabic-copy">{html.escape(row["summary"])}</div>', unsafe_allow_html=True)
@@ -108,10 +116,11 @@ def show_detail(row, source, revision):
             st.dataframe(pd.DataFrame(row["district_evidence"]), hide_index=True, width="stretch")
         else:
             st.caption("The saved record does not identify an execution/delivery district or explicitly name a district in its project text.")
-        if row["category_evidence"]:
-            st.dataframe(pd.DataFrame(row["category_evidence"]), hide_index=True, width="stretch")
+        evidence = row['recovery_evidence'] or [e for e in row['category_evidence'] if e['Category'] == 'LEAP']
+        if evidence:
+            st.dataframe(pd.DataFrame(evidence), hide_index=True, width="stretch")
         else:
-            st.caption("No wording for the seven categories was found in the saved notice text.")
+            st.caption("No explicit recovery subject or LEAP reference was found in the saved notice text.")
     try:
         record = get_feed().detail(source, row['id'], revision)
     except (FeedError, OSError, ValueError):
@@ -148,28 +157,40 @@ def show_detail(row, source, revision):
 
 
 def tender_filters(rows):
-    with st.expander("Filter tenders", expanded=False):
-        st.divider()
-        search = st.text_input("Search tenders", placeholder="Arabic, English, buyer or ID", key="search")
+    with st.expander("Filter tenders", expanded=True):
+        # Keyed so the search box keeps a full row when the other filters pair up on phones.
+        with st.container(key='tender-filter-top'):
+            search_column, year_column, period_column = st.columns([2, 1, 1])
+        with search_column:
+            search = st.text_input("Search tenders", placeholder="Arabic, English, buyer or ID", key="search")
+        with year_column:
+            years = st.multiselect("Announcement year / السنة", ANNOUNCEMENT_YEARS, key="years_2024_2026", placeholder="2024, 2025 and 2026",
+                                   help="Choose one or more years. Leave empty to include 2024, 2025 and 2026. Applies to both source tabs and combines with the other filters.")
+        with period_column:
+            period = st.selectbox("Announcement period", ["All dates", "Last 7 days", "Last 30 days", "Last 90 days", "This year"], key="period")
+        district_column, buyer_column, topic_column, programme_column = st.columns([1.5, 1.5, 1, 1])
         district_options = sorted({d for r in rows for d in r["districts"] if d != UNKNOWN})
-        districts = st.multiselect("District / القضاء", district_options + [UNKNOWN], key="districts")
-        declared_only = st.checkbox("Use declared locations only", key="declared_only",
-                                    help="Exclude districts inferred from explicit district/caza names in project text, including Arabic district lists.")
-        years = st.multiselect("Announcement year / السنة", ANNOUNCEMENT_YEARS, key="years_2024_2026", placeholder="2024, 2025 and 2026",
-                               help="Choose one or more years. Leave empty to include 2024, 2025 and 2026. Applies to both source tabs and combines with the other filters.")
-        period = st.selectbox("Announcement period", ["All dates", "Last 7 days", "Last 30 days", "Last 90 days", "This year"], key="period")
-        topic = st.selectbox("Category", ["All tenders", *CATEGORIES], key="tender_category")
-        buyers = st.multiselect("Procuring entity / الجهة الشارية", sorted({r["procuring_entity"] for r in rows if r["procuring_entity"]}), key="buyers")
-        if st.button("Refresh data", width="stretch"):
+        with district_column:
+            districts = st.multiselect("District / القضاء", district_options + [UNKNOWN], key="districts")
+            declared_only = st.checkbox("Use declared locations only", key="declared_only",
+                                        help="Exclude districts inferred from explicit district/caza names in project text, including Arabic district lists.")
+        with buyer_column:
+            buyers = st.multiselect("Procuring entity / الجهة الشارية", sorted({r["procuring_entity"] for r in rows if r["procuring_entity"]}), key="buyers")
+        with topic_column:
+            topic = st.selectbox("Category", ["All tenders", ANY_SUBJECT, NO_SUBJECT, *SUBJECTS], key="tender_category")
+        with programme_column:
+            programme = st.selectbox("Programme", [ALL_PROGRAMMES, 'LEAP', NO_LEAP], key="tender_programme")
+        st.caption("Recovery subjects require an explicit recovery link and matching contract work. Routine sector procurement and project administration are excluded. LEAP remains a separate programme filter.")
+        if st.button("Refresh data"):
             get_feed().refresh(force=True)
             load_json.clear()
             st.rerun()
-    return search, districts, declared_only, years, period, topic, buyers
+    return search, districts, declared_only, years, period, topic, buyers, programme
 
 
 def source_dashboard(source, payload, status, filters, revision=None):
     rows = classified_tenders(payload["tenders"], CATEGORY_VERSION)
-    search, districts, declared_only, years, period, topic, buyers = filters
+    search, districts, declared_only, years, period, topic, buyers, programme = filters
     today = datetime.now(ZoneInfo("Asia/Beirut")).date()
     if source == "cdr":
         st.markdown('<div class="eyebrow">COUNCIL FOR DEVELOPMENT AND RECONSTRUCTION / مجلس الإنماء والإعمار</div>', unsafe_allow_html=True)
@@ -196,8 +217,9 @@ def source_dashboard(source, payload, status, filters, revision=None):
     if period != "All dates":
         start = today.replace(month=1, day=1) if period == "This year" else today - timedelta(days=int(period.split()[1])-1)
         filtered = [r for r in filtered if r.get("announcement_date") and start.isoformat() <= r["announcement_date"] <= today.isoformat()]
-    if topic in CATEGORIES:
-        filtered = [r for r in filtered if topic in r['categories']]
+    if topic != 'All tenders':
+        filtered = [r for r in filtered if matches_subject(r['recovery_subjects'], topic)]
+    filtered = [r for r in filtered if matches_programme(r['categories'], programme)]
     if buyers:
         filtered = [r for r in filtered if r["procuring_entity"] in buyers]
     filtered = newest_first(filtered)
@@ -205,8 +227,8 @@ def source_dashboard(source, payload, status, filters, revision=None):
     total, matching, related, mapped = st.columns(4)
     total.metric("Total tenders", f"{len(rows):,}", help="Unique tenders announced in 2024, 2025 or 2026, before applying the optional filters.")
     matching.metric("Filtered tenders", f"{len(filtered):,}")
-    ratio_metric(related, "Categorised tenders", sum(bool(r['categories']) for r in filtered), len(filtered),
-                 help="Tenders matching at least one of the seven categories, counted once. Open a tender to inspect the evidence.")
+    ratio_metric(related, "Recovery subject matches", sum(bool(r['recovery_subjects']) for r in filtered), len(filtered),
+                 help="Tenders matching at least one recovery subject, counted once. LEAP references alone are excluded. Open a tender to inspect the evidence.")
     mapped.metric("Districts represented", len({d for r in filtered for d in r["districts"] if d != UNKNOWN}), help="Within the current filters. See the Districts tab for source coverage and missing locations.")
     check = status.get("checked_at", "")
     try:
@@ -233,8 +255,8 @@ def source_dashboard(source, payload, status, filters, revision=None):
         for column, row in zip(st.columns(3), filtered[:3]):
             with column, st.container(border=True):
                 st.caption(f'{row.get("announcement_date") or "Date not specified"}  ·  #{row["id"]}')
-                if row['categories']:
-                    st.markdown(' '.join(f'<span class="tag">{html.escape(category)}</span>' for category in row['categories']), unsafe_allow_html=True)
+                if row['recovery_subjects'] or row['programmes']:
+                    st.markdown(' '.join(f'<span class="tag">{html.escape(category)}</span>' for category in row['programmes'] + row['recovery_subjects']), unsafe_allow_html=True)
                 st.markdown(f'<div class="tender-title">{html.escape(row["title"])}</div>', unsafe_allow_html=True)
                 st.markdown(f'<div class="tender-buyer">{html.escape(row["procuring_entity"])}</div>', unsafe_allow_html=True)
                 st.link_button(f"View on {source.upper()} ↗", row["source_url"])
@@ -271,19 +293,21 @@ def source_dashboard(source, payload, status, filters, revision=None):
     with topic_tab:
         st.subheader("Tenders by category")
         st.caption("A tender can appear in several categories. Each bar counts it once within that category; category totals must not be added together.")
-        counts = pd.DataFrame([{"Category": category, "Tenders": sum(category in r['categories'] for r in filtered)} for category in CATEGORIES])
+        counts = pd.DataFrame([{"Category": category, "Tenders": sum(category in r['recovery_subjects'] for r in filtered)} for category in SUBJECTS])
         chart = alt.Chart(counts).mark_bar(color="#24566B", cornerRadiusEnd=4).encode(
             x=alt.X("Tenders:Q", axis=alt.Axis(tickMinStep=1), title="Number of tenders"),
-            y=alt.Y("Category:N", sort=[translate(c) for c in CATEGORIES], title=None, axis=alt.Axis(labelLimit=210)),
+            y=alt.Y("Category:N", sort=[translate(c) for c in SUBJECTS], title=None, axis=alt.Axis(labelLimit=210)),
             tooltip=["Category", "Tenders"]).properties(height=300)
         st.altair_chart(chart.configure_axis(labelColor="#000", titleColor="#000"), width="stretch")
         st.dataframe(counts, hide_index=True, width="stretch")
-        st.caption("Categories are based on the saved wording, not an official source classification. Roads, utilities and shelter services are not automatically linked to war damage.")
-        candidates = [r for r in filtered if r['categories']]
+        st.caption(f"{sum('LEAP' in r['programmes'] for r in filtered):,} · " + translate("Explicit LEAP references"))
+        st.caption(f"{sum(not r['recovery_subjects'] for r in filtered):,} · " + translate(NO_SUBJECT))
+        st.caption("Recovery labels follow the contract scope and require war, reconstruction or LEAP context. General procurement sectors are retained separately in the CSV. These are website classifications, not official source labels.")
+        candidates = filtered
         candidates = draw_table(candidates, source + "_topic_tenders", source)
         if candidates:
             with st.expander("Why these tenders matched"):
-                evidence = [{"Tender ID": r["id"], **e} for r in candidates for e in r["category_evidence"]]
+                evidence = [{"Tender ID": r["id"], **e} for r in candidates for e in r["recovery_evidence"]]
                 st.dataframe(pd.DataFrame(evidence), hide_index=True, width="stretch")
         with st.expander("What each category includes"):
             for category, definition in DEFINITIONS.items():
@@ -301,8 +325,8 @@ def source_dashboard(source, payload, status, filters, revision=None):
 - **Newest:** announcement date parsed from the source, with ID as a tie-breaker. A newly discovered old notice retains its original publication date.
 - **Year filter:** coverage is limited to 2024, 2025 and 2026. Choose a year or leave empty for all three. Notices with other or unknown announcement years are excluded. Counts, district charts, ratios and downloads use this coverage; Total tenders is the three-year total before optional filters.
 - **District:** first use the source's `أماكن التنفيذ` execution/delivery fields. If absent, read named district lists after `قضاء`, `قضاءي`, `قضائي`, or `أقضية`, plus supported English caza/district names, in the title, purchase subject, summary, or lot title. No district is guessed from a buyer's head office or from a municipality name. Labels retain the source's district names; combined المنية–الضنية wording is kept together.
-- **Categories:** LEAP, Reconstruction, Damage assessment, Roads, Electricity / water, Shelter management, and Debris removal. A notice can match several categories; each category counts unique tenders. Categorised tenders counts the union once, divided by all filtered tenders.
-- **Classification:** the website rechecks titles, summaries and saved source-text evidence whenever the feed changes. Buyer names alone do not establish a category. Unmatched notices remain under All tenders; they are not forced into one of the seven categories.
+- **Recovery subjects:** Reconstruction, Damage assessment, Roads, Electricity / water, Shelter management, and Debris removal. A notice can match several subjects; each subject counts unique tenders. Recovery subject matches counts the union once, divided by all filtered tenders. LEAP is a separate programme filter and can combine with any subject, including No recovery subject match.
+- **Classification:** the website rechecks titles, summaries and saved source-text evidence whenever the feed changes. Buyer names alone do not establish a subject. Recovery labels require war, reconstruction or LEAP context plus matching contract work; routine procurement, asset sales, fuel and project administration are excluded. Ancillary building repairs and location names do not establish additional recovery subjects. No recovery subject match means no explicit match in the saved text; it does not prove that the notice is unrelated to recovery.
 - **Evidence:** open a tender to see the wording behind each category. Attached documents are not scanned, and indirect references may be missed. Source downloads retain the original monitor data; table CSVs include the website's categories.
 - **Automatic updates:** the cloud monitor can collect notices while this computer is off, provided GitHub Actions is available. This page checks its saved results every minute. If the cloud's last saved check is more than 36 hours old, local collection provides a backup every 30 minutes while this server is running. Refresh data checks for cloud results and requests a local scan. Each source's tables and downloads use the same saved version.
 - **PPA history:** saved PPA details and status labels are snapshots from first discovery. PPA amendments are not continuously refreshed. Document links point to the original source.

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "war-website",
+      "runtimeExecutable": "py",
+      "runtimeArgs": ["-3.12", ".claude/preview_server.py"],
+      "port": 8765
+    },
+    {
+      "name": "war-website-readonly",
+      "runtimeExecutable": "py",
+      "runtimeArgs": ["-3.12", ".claude/preview_readonly.py"],
+      "port": 8767
+    }
+  ]
+}
