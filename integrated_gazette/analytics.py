@@ -2,13 +2,17 @@
 from __future__ import annotations
 import re
 from collections import Counter
-from integrated_tenders.categories import (SUBJECTS as CATEGORIES, classify, category_normalize,
-    ANY_SUBJECT, NO_SUBJECT, ALL_PROGRAMMES, matches_subject, matches_programme)
+from integrated_tenders.categories import (SUBJECTS as CATEGORIES, classify_recovery, category_normalize,
+    ANY_SUBJECT, NO_SUBJECT, ALL_PROGRAMMES, DAMAGED, WAR, matches_subject, matches_programme)
 from .data_feed import YEARS
 from .labels import TYPE_LABELS
 
 ALL = 'All Gazette records'
 RELATED = ANY_SUBJECT
+# Laws for property destroyed or damaged by war rarely use the word "reconstruction".
+# Saved titles are cut at 255 characters, so the opening "those affected by" also counts.
+DAMAGED_PROPERTY = re.compile(r'(?:عقارات|ابنية|مباني|منازل|مساكن|منشات)[^.؛;\n]{0,80}?(?:' + DAMAGED + ')'
+                              r'|(?:ال)?متضررين\s+من\s+(?:ال)?(?:اعتداءات|اعتداء|عدوان|حرب)(?!\w)')
 
 
 def tag_records(rows):
@@ -22,10 +26,21 @@ def tag_records(rows):
             r'بنك\s+اعادة\s+الاعمار\s+الالماني',
         ):
             title = re.sub(pattern, lambda m: ' ' * len(m[0]), title)
-        matched = classify({'title': title})
+        # A sector word alone (a road alignment, an electricity tariff) is not recovery.
+        matched = classify_recovery({'title': title})
+        subjects, evidence = matched['recovery_subjects'], matched['recovery_evidence']
+        war, property_damage = WAR.search(title), DAMAGED_PROPERTY.search(title)
+        if 'Reconstruction' not in subjects and war and property_damage:
+            subjects = ['Reconstruction', *subjects]
+            evidence = [{'Category': 'Reconstruction', 'Matched wording': property_damage[0]},
+                        {'Category': 'Recovery link', 'Matched wording': war[0]},
+                        *[e for e in evidence if e['Category'] != 'Recovery link']]
+        evidence = evidence + [e for e in matched['category_evidence']
+                               if e['Category'] == 'LEAP' and e['Matched wording'] not in
+                               {x['Matched wording'] for x in evidence}]
         # The original title and original classification are always retained.
-        result.append({**row, 'subjects': matched['recovery_subjects'], 'programmes': matched['programmes'],
-                       'subject_evidence': matched['category_evidence']})
+        result.append({**row, 'subjects': subjects, 'programmes': matched['programmes'],
+                       'subject_evidence': evidence})
     return result
 
 

@@ -109,7 +109,7 @@ def dashboard():
         statuses = a.multiselect('Assessment status', sorted({r['status'] for r in rows}), format_func=status_label, key='gazette_statuses')
         programme = b.selectbox('Programme', [ALL_PROGRAMMES, 'LEAP', NO_LEAP], key='gazette_programme')
         st.caption('Equivalent classification labels are grouped for filtering. Original labels and blank fields remain unchanged in downloads.')
-        st.caption('Recovery subjects describe the work. LEAP is a separate programme filter; a programme reference alone does not establish reconstruction.')
+        st.caption('Recovery subjects require an explicit war, reconstruction or LEAP link in the title. Routine sector decisions, such as road alignments or electricity tariffs, are excluded. LEAP remains a separate programme filter.')
         if st.button('Refresh Gazette data', key='gazette_reload'):
             get_feed().refresh(force=True)
             saved_data.clear()

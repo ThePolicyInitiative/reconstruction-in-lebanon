@@ -18,6 +18,19 @@ class TenderCategoryTests(unittest.TestCase):
         row = classify_recovery({'title': 'LEAP rehabilitation of damaged roads and drainage; rubble removal'})
         self.assertEqual(row['recovery_subjects'], ['Reconstruction', 'Roads', 'Electricity / water', 'Debris removal'])
         self.assertTrue(any(e['Category'] == 'Recovery link' for e in row['recovery_evidence']))
+        # Repair of explicitly damaged roads is recovery work even where the war is not named.
+        row = classify_recovery({'title': 'إعداد الدراسات وملفات التلزيم لأعمال إزالة العوائق وترميم الطرق المتضررة في قضاءي صور وبنت جبيل'})
+        self.assertEqual(row['recovery_subjects'], ['Reconstruction', 'Roads'])
+        row = classify_recovery({'title': 'أشغال تأهيل وصيانة طريق عاليه', 'summary': 'تعبيد وتزفيت الاجزاء المتضررة'})
+        self.assertEqual(row['recovery_subjects'], [])
+
+    def test_names_methods_and_vehicles_are_not_infrastructure(self):
+        for title in ('تعيين السيدة فرح نبيه بري سفيرة لبنان', 'تحديد اصول وطرق استيفاء رسم دخول المسافرين',
+                      'قطع غيار لزوم المديرية العامة للطرق والمباني', 'اعفاء السيارات الكهربائية الجديدة المستوردة',
+                      'تحديد اجرة ايواء السيارات المحجوزة', 'تعيين رئيس واعضاء هيئة تنظيم قطاع الكهرباء'):
+            with self.subTest(title=title): self.assertEqual(categories(title), [])
+        self.assertIn('Electricity / water', categories('تأهيل قناة ري في البقاع'))
+        self.assertIn('Damage assessment', categories('تشكيل لجنة للكشف على الاضرار الزراعية الناتجة عن العدوان'))
 
     def test_real_notices_keep_primary_scope_and_do_not_inherit_incidental_labels(self):
         import json

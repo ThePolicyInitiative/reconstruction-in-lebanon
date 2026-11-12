@@ -48,6 +48,22 @@ class GazetteTests(unittest.TestCase):
         self.assertTrue(related)
         self.assertTrue(all(r['subjects'] for r in related))
 
+    def test_sector_words_alone_are_not_recovery_and_war_damage_measures_are(self):
+        records = {r['id']: r for r in tag_records(self.bundle['records'])}
+        # Road alignment, an ambassador named Berri, electric cars, vehicle impound fees,
+        # a directorate's name and "methods" of payment.
+        for rid in ('190098', '190895', '185061', '187122', '187481', '187257', '184188'):
+            with self.subTest(rid=rid):
+                self.assertEqual(records[rid]['subjects'], [])
+        for rid in ('187537', '189141', '190744'):
+            with self.subTest(rid=rid):
+                self.assertEqual(records[rid]['subjects'], ['Reconstruction'])
+                self.assertIn('Recovery link', [e['Category'] for e in records[rid]['subject_evidence']])
+        self.assertEqual(records['186693']['subjects'], ['Damage assessment'])
+        self.assertEqual(records['189573']['subjects'], [])
+        self.assertEqual(records['189573']['programmes'], ['LEAP'])
+        self.assertEqual([e['Category'] for e in records['189573']['subject_evidence']], ['LEAP'])
+
     def test_changed_export_updates_fields_retains_cloud_only_records_and_rejects_partial_write(self):
         row = deepcopy(self.bundle['records'][0])
         second = deepcopy(self.bundle['records'][1])

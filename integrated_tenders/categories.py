@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
-from .tender_analytics import ARABIC_PREFIX, COMPILED_RULES, PREQUALIFICATION, normalize
+from .tender_analytics import ARABIC_PREFIX, COMPILED_RULES, PREQUALIFICATION, TOPIC_RULES, normalize
 
 CATEGORIES = ('LEAP', 'Reconstruction', 'Damage assessment', 'Roads',
               'Electricity / water', 'Shelter management', 'Debris removal')
@@ -12,10 +12,10 @@ ANY_SUBJECT = 'Any recovery subject'
 NO_SUBJECT = 'No recovery subject match'
 ALL_PROGRAMMES = 'All programmes'
 NO_LEAP = 'No explicit LEAP reference'
-VERSION = 4
+VERSION = 5
 DEFINITIONS = {
     'LEAP': 'An explicit LEAP or Lebanon Emergency Assistance Project reference. A programme link can cover consulting, equipment or works.',
-    'Reconstruction': 'Explicit rebuilding, or repairs to damaged assets linked to war or LEAP. Routine repairs alone are not reconstruction.',
+    'Reconstruction': 'Explicit rebuilding, or repairs to damaged assets linked to war or LEAP. Measures for property destroyed or damaged by war also count. Routine repairs alone are not reconstruction.',
     'Damage assessment': 'Damage surveys, documentation, or structural assessments of affected buildings and infrastructure.',
     'Roads': 'Road, bridge, paving and asphalt works, including their design, supervision and maintenance.',
     'Electricity / water': 'Power supply, generators, lighting, water networks, irrigation, drainage and wastewater infrastructure.',
@@ -31,7 +31,7 @@ RULES = {
              r'مشروع\s+(?:الدعم|المساعدة|المساعدات)\s+الطار[ئيءة]+\s+للبنان'],
     'Reconstruction': [r'اعاد[ةه]\s+(?:(?:ال)?اعمار|(?:ال)?بناء)',
                        r'\breconstruction\b', r'\b(?:rebuild(?:ing|s)?|rebuilt)\b'],
-    'Damage assessment': [r'(?:تقييم|تقدير|حصر|مسح|توثيق|كشف)\s+(?:حجم\s+)?(?:ال)?(?:اضرار|تضرر)',
+    'Damage assessment': [r'(?:تقييم|تقدير|حصر|مسح|توثيق|كشف)\s+(?:(?:علي|عن)\s+)?(?:حجم\s+)?(?:ال)?(?:اضرار|تضرر)',
                           r'\bdamage\s+(?:and\s+needs\s+)?(?:assessment|survey|mapping|evaluation|documentation)s?\b',
                           r'\b(?:assessment|survey|mapping|evaluation|documentation)\s+of\s+(?:(?:the|war|structural)\s+)*damage\b',
                           r'\bevaluation\s+des\s+dommages\b'],
@@ -49,7 +49,9 @@ RULES = {
                             r'كابلات\s+\d+\s*ك\.?\s*ف',
                             r'(?:شبك(?:ة|ات)|خطوط|خط|محط(?:ة|ات)|مضخ(?:ة|ات)|ضخ|توزيع|تغذية|تكرير|معالجة|تنقية|خزان(?:ات)?|تخزين|جر|عدادات|توفير|تزويد|توصيل)\s+(?:ل?ل?مياه|ال?مياه)',
                             r'(?:مياه\s+(?:الشفة|الشرب|الصرف)|صرف\s+صحي|الصرف\s+الصحي)',
-                            ar(r'اقنية|مجارير|ري|تصريف|فوتوفولطية|كهروضوئية'),
+                            ar(r'اقنية|مجارير|تصريف|فوتوفولطية|كهروضوئية'),
+                            # "بري" is a surname and "by land": irrigation needs the bare word or an article.
+                            r'(?<!\w)و?(?:ال|لل|بال)?ري(?!\w)',
                             r'(?:الطاقة\s+(?:الشمسية|الكهربائية)|الواح\s+شمسية)',
                             r'\b(?:electricity|electrical|power\s+(?:supply|plant|grid|distribution|generation)|generators?|street\s*lighting|solar\s+(?:panels?|power|energy)|photovoltaic|sewage|sewers?|wastewater|irrigation|drainage)\b',
                             r'\bwater\s+(?:supply|network|distribution|treatment|pumping|pump|reservoir|tank|pipe|infrastructure|well)s?\b',
@@ -64,6 +66,12 @@ RULES = {
                        r'\b(?:decombres|gravats)\b'],
 }
 COMPILED = {key: re.compile('|'.join(rules), re.I) for key, rules in RULES.items()}
+DAMAGED = r'متضرر|تضرر|مدمر|مهدم|هدمت|\b(?:damaged|destroyed)\b'
+WAR = re.compile(COMPILED_RULES['war'].pattern + '|' + ARABIC_PREFIX
+                 + r'اعتداء(?:ات)?\s+(?:ال)?اسرائيلي[ةه]?(?!\w)', re.I)
+# "Repair of damaged roads" names recovery work even where the notice omits the war.
+REPAIR_OF_DAMAGE = re.compile('(?:' + '|'.join(TOPIC_RULES['rehabilitation'])
+                              + r')[^.؛;\n]{0,80}?(?:' + DAMAGED + ')', re.I)
 ASSESSMENT = re.compile(r'تقييم|مسح|كشف|\b(?:assessment|survey|inspection)\b')
 DAMAGED_ASSET = re.compile(r'(?:مباني|ابنية|جسور|بنية تحتية).{0,100}(?:متضرر|مدمر)|\b(?:damaged|affected)\s+(?:public\s+)?(?:buildings?|infrastructure|bridges?)\b')
 
@@ -88,7 +96,13 @@ def clean(text, buyer=''):
                     r'(?:باستثناء|ما عدا|excluding|except\s+for)\s+[^.،؛;\n]{0,180}',
                     r'محطة\s+الكهرباء\s*[-–—]',
                     r'المديريات\s+العامة\s+للموارد\s+المائية\s+والكهربائية',
-                    r'عن\s+طريق',r'طرق\s+(?:الدفع|التقديم|تقديم|الطعن)']:
+                    r'عن\s+طريق',r'طرق\s+(?:وكيفية\s+)?(?:الدفع|التقديم|تقديم|الطعن|استيفاء|تادية)',
+                    # Directorates, regulators, methods, vehicles and impound fees are not works.
+                    r'العامة\s+للطرق\s+والمباني',r'(?:ال|لل)?موارد\s+المائية\s+والكهربائية',
+                    r'تنظيم\s+قطاع\s+الكهرباء',
+                    r'(?:ال|لل)طرق\s+(?:الكيميائية|الميكانيكية|الثقافية)',
+                    r'(?:سيارات|مركبات|اليات|دراجات(?:\s+الالية)?|سلالم|مصاعد|محرك)\s+(?:ال)?كهربائي[ةه]?',
+                    r'تعمل\s+على\s+الكهرباء',r'ايواء\s+(?:ال)?(?:سيارات|اليات|مركبات)']:
         text = re.sub(pattern, lambda m:' '*len(m[0]), text)
     return PREQUALIFICATION.sub(lambda m:' '*len(m[0]), text)
 
@@ -115,9 +129,10 @@ def classify(row):
             match=rule.search(text)
             if category=='Damage assessment' and not match and ASSESSMENT.search(text):
                 match=DAMAGED_ASSET.search(text)
-            if category=='Reconstruction' and not match and (COMPILED_RULES['war'].search(text) or
-                    leap and re.search(r'متضرر|تضرر|مدمر|\b(?:damaged|destroyed)\b',text)):
-                match=COMPILED_RULES['rehabilitation'].search(text)
+            if category=='Reconstruction' and not match:
+                if WAR.search(text) or leap and re.search(DAMAGED,text):
+                    match=COMPILED_RULES['rehabilitation'].search(text)
+                match=match or REPAIR_OF_DAMAGE.search(text)
             if match:
                 evidence[category]={'Category':category,'Source field':label,'Matched wording':match[0],
                                     'Evidence':text[max(0,match.start()-90):match.end()+180]}
@@ -155,8 +170,8 @@ TELECOM_SCOPE = re.compile(r'\b(?:cell\s+on\s+wheels|cows|lte[- ]a[- ]cpes)\b|ا
 def classify_recovery(row):
     """Separate a procurement sector from evidence that it serves recovery.
 
-    General sector detection remains available to the Gazette and in exports.
-    Tender recovery labels require context and follow the stated contract scope.
+    General sector detection remains available in exports. Tender and Gazette
+    recovery labels require context and follow the stated scope.
     """
     result = classify(row)
     texts = [(label, clean(text, row.get('procuring_entity', ''))) for label, text in fragments(row)]
@@ -176,7 +191,8 @@ def classify_recovery(row):
         subjects = []
     contexts = []
     for label, text in texts:
-        match = COMPILED['LEAP'].search(text) or COMPILED_RULES['war'].search(text) or COMPILED['Reconstruction'].search(text)
+        match = (COMPILED['LEAP'].search(text) or WAR.search(text) or COMPILED['Reconstruction'].search(text)
+                 or REPAIR_OF_DAMAGE.search(text))
         if match:
             contexts.append({'Category': 'Recovery link', 'Source field': label,
                              'Matched wording': match[0],
