@@ -63,6 +63,7 @@ def filter_records(rows, query='', years=(), subject=ALL, types=(), majors=(), s
 def csv_rows(rows):
     return [{'ID': r['id'], 'Published': r['date'], 'Document type': r['type'],
              'Document number': r['number'], 'Gazette title': r['title'],
+             'Related to recovery': 'Yes' if r['subjects'] else 'No',
              'Website subjects': ' · '.join(r['subjects']), 'Nature': r['nature'],
              'Programme': ' · '.join(r.get('programmes', [])),
              'Administrative function': r['admin_function'], 'Main category': r['major'],

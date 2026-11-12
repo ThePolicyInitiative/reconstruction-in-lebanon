@@ -42,6 +42,8 @@ iframe[title="integrated_pages.party_statements"],iframe[title="integrated_pages
 .stMainBlockContainer,.stMainBlockContainer :is(p,h1,h2,h3,h4,label,button,input,textarea,summary,li,td,th){font-family:Arial,Helvetica,sans-serif}
 .stMainBlockContainer [data-baseweb="tab"],.stMainBlockContainer [data-testid="stMetricValue"],.stMainBlockContainer [data-baseweb="select"] div{font-family:Arial,Helvetica,sans-serif}
 .st-key-tenders-page h1,.st-key-gazette-page h1{font-size:32px;font-weight:800;letter-spacing:-1.2px;line-height:1.15}
+/* Tenders and Gazette tables use the whole window rather than the reading column. */
+.stMainBlockContainer:has(.st-key-tenders-page,.st-key-gazette-page){max-width:none}
 /* Loading feedback: the Streamlit header and its running indicator are hidden, so show our own. */
 @keyframes site-loading-slide{from{transform:translateX(-100%)}to{transform:translateX(350%)}}
 @keyframes site-loading-appear{to{opacity:1}}

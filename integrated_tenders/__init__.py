@@ -73,6 +73,7 @@ def export_frame(rows):
         "Districts": " · ".join(r["districts"]), "District basis": r["district_basis"],
         "Deadline": r.get("submission_deadline", ""), "Source status": r.get("status", ""),
         "Categories": " · ".join(r['programmes'] + r['recovery_subjects']) or "Not classified",
+        "Related to recovery": "Yes" if r['recovery_subjects'] else "No",
         "Recovery subjects": " · ".join(r['recovery_subjects']) or NO_SUBJECT,
         "Procurement subjects": " · ".join(r['procurement_subjects']),
         "Programme": " · ".join(r['programmes']) or NO_LEAP,
@@ -86,8 +87,8 @@ def draw_table(rows, key, source):
     if frame.empty:
         st.info("No tenders match these filters. Change the category, widen the date range, or clear the search.")
         return rows
-    st.dataframe(frame, hide_index=True, width="stretch", height=440,
-                 column_order=["Announced", "Recovery subjects", "Programme", "Tender", "Buyer", "Districts", "Deadline", "Source"],
+    st.dataframe(frame, hide_index=True, width="stretch", height=640,
+                 column_order=["Announced", "Related to recovery", "Recovery subjects", "Programme", "Tender", "Buyer", "Districts", "Deadline", "Source"],
                  column_config={"Tender": st.column_config.TextColumn(width="large"),
                                 "Buyer": st.column_config.TextColumn(width="medium"),
                                 "Categories": st.column_config.TextColumn(width="medium"),
