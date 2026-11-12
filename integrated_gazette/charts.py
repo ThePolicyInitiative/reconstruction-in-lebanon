@@ -50,7 +50,6 @@ def count_chart(rows, title, key, color='#a9c9e1'):
 
 def subject_charts(rows, years):
     st.subheader('Subjects by publication year')
-    st.caption('Each bar shows a subject total, split by publication year. Labels give the count and its share of all matching records. A record may appear under several subjects.')
     if not rows:
         st.info('No Gazette records match these filters. Clear the search or choose another subject or year.')
         return
@@ -75,10 +74,8 @@ def subject_charts(rows, years):
     numbers = alt.Chart(total_frame).mark_text(align='left', dx=7, fontSize=12, color='#000').encode(
         y=alt.Y('subject:N', sort=order), x='count:Q', text='value_label:N')
     render((bars + numbers).properties(height=330), 'gazette_subject_year_chart')
-    st.caption('Click a legend label to highlight a year or document type. Hover over a mark for its exact figures.')
 
     st.subheader('Which document types cover each subject?')
-    st.caption('The cells count laws, decrees and decisions within each subject. Hover for the document type’s share of that subject.')
     heat = pd.DataFrame([{**r, 'subject': tr(r['subject']), 'type': tr(r['type'])} for r in matrix])
     base = alt.Chart(heat).encode(
         y=alt.Y('subject:N', sort=order, title=None, axis=alt.Axis(labelLimit=210)),
@@ -102,7 +99,6 @@ def subject_charts(rows, years):
 
 def timeline_charts(rows, coverage, years):
     st.subheader('Monthly publications, by document type')
-    st.caption('Counts follow publication dates. Hover for each month’s laws, decrees, decisions and total. A zero means no matching records within a month present in the saved archive.')
     if not rows:
         st.info('No Gazette records match these filters. Clear the search or choose another subject or year.')
         return
@@ -124,19 +120,10 @@ def timeline_charts(rows, coverage, years):
         order=alt.Order('type:N'), opacity=alt.condition(pick, alt.value(1), alt.value(.25)), tooltip=tips,
     ).add_params(pick)
     render(bars.properties(height=360), 'gazette_monthly_type_chart')
-    st.caption('Months absent from the source archive are unavailable, not zero. The most recent month may be incomplete; later months are not projected.')
 
     st.subheader('Compare annual activity fairly')
     mode = st.selectbox('Comparison period', ['Same publication window', 'All saved publications'], key='gazette_comparison_window')
     comparison = year_comparison(rows, coverage, years, same_window=mode == 'Same publication window')
-    if mode == 'Same publication window':
-        through = next((r['through'][5:] for r in comparison if r['through']), '—')
-        if through != '—':
-            month, day = map(int, through.split('-'))
-            through = f'{day} {tr(month_name[month])}'
-        st.caption(tr('Each year is compared from 1 January through') + ' ' + through + '. ' + tr('This avoids comparing a partial year with an entire year.'))
-    else:
-        st.caption('This view includes all saved publications for each year. The latest year may cover fewer months.')
     yearly = pd.DataFrame(comparison)
     limit = max((r['count'] or 0 for r in comparison), default=1) or 1
     base = alt.Chart(yearly).encode(
@@ -162,7 +149,6 @@ def timeline_charts(rows, coverage, years):
 
 def classification_charts(rows):
     st.subheader('What do these records do?')
-    st.caption('These graphs use Memo automation’s saved classifications. Labels show counts and shares of matching records; hover for the number still needing source review.')
     if not rows:
         st.info('No Gazette records match these filters. Clear the search or choose another subject or year.')
         return
@@ -172,9 +158,7 @@ def classification_charts(rows):
     limit = st.selectbox('Policy areas to show', ['Top 10 policy areas', 'All policy areas'], key='gazette_policy_chart_scope')
     areas = classification_breakdown(rows, 'major')
     count_chart(areas[:10] if limit == 'Top 10 policy areas' else areas, 'Main category', 'gazette_policy_chart', color='#c5b9dc')
-    st.caption('Percentages use all matching records, including policy areas outside the top ten. Case and spacing variants are grouped only in charts; source labels remain unchanged.')
     st.subheader('How much classification review is complete?')
     review = classification_breakdown(rows, 'status')
     review = [{**r, 'label': STATUS_LABELS.get(r['label'], r['label'])} for r in review]
     count_chart(review, 'Assessment status', 'gazette_assessment_chart', color='#e7c997')
-    st.caption('Automated proposals and reviewed assessments are distinct from owner-supplied or owner-approved classifications. Review status describes the classification, not the legal validity of the document.')

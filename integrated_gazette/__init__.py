@@ -48,22 +48,17 @@ def detail(row):
     c2.metric('Document number', row['number'] or '—')
     c3.metric('Published', row['date'])
     st.link_button('Open original Gazette record ↗', row['url'])
-    st.caption('Original record pages may require your Gazette subscription.')
     st.write('Assessment status: ' + status_label(row['status']))
     st.caption(translate('Programme') + ': ' + (' · '.join(row['programmes']) or translate(NO_LEAP)))
-    if row['status'] == 'needs-source-review':
-        st.info('This saved classification still needs source review. It is included in the totals and is not an approved finding.')
     fields = [('Nature', row['nature']), ('Administrative function', row['admin_function']),
               ('Main category', row['major']), ('Subcategory', row['sub'])]
     st.dataframe(pd.DataFrame([{'Field': name, 'Saved classification': value or 'Not specified'} for name, value in fields]),
                  hide_index=True, width='stretch')
     with st.expander('Subject matches and source notes'):
         if row['subject_evidence']:
-            st.caption('These website subjects use wording in the saved title. They do not replace Memo automation classifications.')
             st.dataframe(pd.DataFrame([{'Subject': e['Category'], 'Matched wording': e['Matched wording']} for e in row['subject_evidence']]), hide_index=True, width='stretch')
         else:
             st.caption('No explicit recovery subject or LEAP reference was found in the saved title.')
-        st.caption('Blank source fields remain blank in downloads. Original Arabic titles are preserved in both languages.')
         st.download_button('Download original Gazette record · JSON',
                            json.dumps({k: row[k] for k in FIELDS}, ensure_ascii=False, indent=2),
                            file_name=f'gazette_{row["id"]}.json', mime='application/json', key='gazette_record_json')
@@ -72,7 +67,6 @@ def detail(row):
 @st.fragment(run_every='60s')
 def dashboard():
     st.title('Official Gazette')
-    st.caption('Laws, decrees and decisions from Memo automation · 2024–2026')
     try:
         connection = get_feed().refresh()
         snapshot = saved_data(connection['snapshot'])
@@ -81,10 +75,6 @@ def dashboard():
         st.link_button('Open live Memo automation dashboard ↗', SITE_URL)
         return
     rows = snapshot['records']
-    if connection.get('error'):
-        st.warning(connection['error'])
-    if snapshot['invalid_exports']:
-        st.warning('A newer Gazette export could not be read. The last valid saved records remain available.')
     with st.expander('Filter Gazette records', expanded=True):
         search = st.text_input('Search Gazette records', placeholder='Arabic title, document number, subject or ID', key='gazette_search')
         a, b, c = st.columns(3)
@@ -108,8 +98,6 @@ def dashboard():
         a, b = st.columns(2)
         statuses = a.multiselect('Assessment status', sorted({r['status'] for r in rows}), format_func=status_label, key='gazette_statuses')
         programme = b.selectbox('Programme', [ALL_PROGRAMMES, 'LEAP', NO_LEAP], key='gazette_programme')
-        st.caption('Equivalent classification labels are grouped for filtering. Original labels and blank fields remain unchanged in downloads.')
-        st.caption('Recovery subjects require an explicit war, reconstruction or LEAP link in the title. Routine sector decisions, such as road alignments or electricity tariffs, are excluded. LEAP remains a separate programme filter.')
         if st.button('Refresh Gazette data', key='gazette_reload'):
             get_feed().refresh(force=True)
             saved_data.clear()
@@ -117,11 +105,11 @@ def dashboard():
     filtered = filter_records(rows, search, years, subject, types, majors, statuses,
                               subs, natures, functions, programme)
     a, b, c, d = st.columns(4)
-    a.metric('Gazette records', f'{len(rows):,}', help='Unique saved records published in 2024, 2025 or 2026, before filtering.')
+    a.metric('Gazette records', f'{len(rows):,}')
     b.metric('Matching records', f'{len(filtered):,}')
     c.metric('Records matching a subject', f'{sum(bool(r["subjects"]) for r in filtered):,}')
     d.metric('Latest saved publication', snapshot['latest_publication'] or '—')
-    latest, subjects, timeline, classifications, notes = st.tabs(['Latest Gazette records', 'By subject', 'By month', 'Classifications', 'Gazette sources & notes'])
+    latest, subjects, timeline, classifications = st.tabs(['Latest Gazette records', 'By subject', 'By month', 'Classifications'])
     with latest:
         if not filtered:
             st.info('No Gazette records match these filters. Clear the search or choose another subject or year.')
@@ -154,23 +142,3 @@ def dashboard():
         timeline_charts(filtered, rows, years)
     with classifications:
         classification_charts(filtered)
-    with notes:
-        st.subheader('Where these records come from')
-        st.write('The records come from your Memo automation Gazette archive. Each entry links to the original Lebanese Official Gazette record.')
-        st.link_button('Open live Memo automation dashboard ↗', SITE_URL)
-        st.markdown('''**Coverage**
-
-Only laws, decrees and decisions published in 2024–2026 appear here. Totals describe saved records, not a certified complete Gazette archive.
-
-**Classifications and subjects**
-
-Memo automation supplies Nature, Administrative function, Main category and Subcategory. Original values and blanks are preserved in downloads. Owner-supplied fields, automated proposals and records needing review remain distinguishable. Equivalent labels are grouped in filters, and subcategories follow the selected main categories. Choose Not specified to find blank fields. The six recovery subjects and the separate LEAP programme filter use saved title wording; indirect references and information inside scans may be missed. No recovery subject match means no explicit match in the saved title, not a reviewed finding that the record is unrelated to recovery.
-
-**Updates**
-
-Memo automation collects and classifies new Gazette records in the cloud every Monday at 09:00 Beirut, even when your computer is off. This tab connects directly to that cloud feed and checks for saved updates every minute while open. When you reopen the website, it retrieves records collected while you were away. No manual export is needed. Refresh Gazette data checks the latest cloud results; it does not start another collection.
-''')
-        if connection.get('connected_at'):
-            checked = datetime.fromisoformat(connection['connected_at']).astimezone(ZoneInfo('Asia/Beirut')).strftime('%d %b %Y, %H:%M')
-            st.caption('Last successful cloud connection: ' + checked + ' · Beirut')
-        st.caption('Saved data prepared: ' + (snapshot.get('built_at') or 'Not specified'))
