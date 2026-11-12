@@ -23,7 +23,7 @@ class GazetteTests(unittest.TestCase):
     def test_saved_records_preserve_owner_values_and_year_scope(self):
         snapshot = load_snapshot([self.path])
         records = snapshot['records']
-        self.assertEqual(len(records), 5694)
+        self.assertEqual(len(records), 5810)
         self.assertEqual(len({r['id'] for r in records}), len(records))
         self.assertEqual({r['date'][:4] for r in records}, {'2024', '2025', '2026'})
         self.assertEqual(sum(r['status'] == 'owner-workbook' for r in records), 493)
