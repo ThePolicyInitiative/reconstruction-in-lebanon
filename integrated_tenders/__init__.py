@@ -88,7 +88,7 @@ def draw_table(rows, key, source):
         st.info("No tenders match these filters. Change the category, widen the date range, or clear the search.")
         return rows
     st.dataframe(frame, hide_index=True, width="stretch", height=640,
-                 column_order=["Announced", "Related to recovery", "Recovery subjects", "Programme", "Tender", "Buyer", "Districts", "Deadline", "Source"],
+                 column_order=["Announced", "Related to recovery", "Programme", "Tender", "Buyer", "Districts", "Deadline", "Source"],
                  column_config={"Tender": st.column_config.TextColumn(width="large"),
                                 "Buyer": st.column_config.TextColumn(width="medium"),
                                 "Categories": st.column_config.TextColumn(width="medium"),

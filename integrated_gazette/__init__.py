@@ -125,7 +125,7 @@ def dashboard():
                         st.caption(translate('Programme') + ': ' + ' · '.join(row['programmes']))
                     st.link_button('Open Gazette record ↗', row['url'])
             frame = pd.DataFrame(csv_rows(filtered))
-            st.dataframe(frame, hide_index=True, width='stretch', height=640, column_order=['Published', 'Related to recovery', 'Website subjects', 'Document type', 'Document number', 'Gazette title', 'Programme', 'Main category', 'Subcategory', 'Source'],
+            st.dataframe(frame, hide_index=True, width='stretch', height=640, column_order=['Published', 'Related to recovery', 'Document type', 'Document number', 'Gazette title', 'Programme', 'Main category', 'Subcategory', 'Source'],
                          column_config={'Gazette title': st.column_config.TextColumn(width='large'),
                                         'Source': st.column_config.LinkColumn(display_text='Open ↗')}, key='gazette_records_table')
             safe = frame.map(lambda value: "'" + value if isinstance(value, str) and value.lstrip().startswith(('=', '+', '-', '@')) else value)
